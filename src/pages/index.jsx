@@ -43,6 +43,10 @@ const DividerMiddle = styled(Divider)`
 
 `;
 
+const HeroContent = styled(ParallaxLayer)`
+  ${tw('p-6 md:p-12 lg:p-24 justify-center items-top flex z-50')};
+`;
+
 const Content = styled(ParallaxLayer)`
   ${tw('p-6 md:p-12 lg:p-24 justify-center items-center flex z-50')};
 `;
@@ -56,29 +60,27 @@ const Inner = styled.div`
 `;
 
 const BigTitle = styled.h1`
-  ${tw('text-5xl lg:text-6xl font-serif text-white mb-6 tracking-wide')};
+  ${tw('text-white mb-6 tracking-tight')};
   text-shadow: 0 5px 35px rgba(255, 255, 255, 0.15);
+  font-size: 4em;
+  @media (min-width: 0px) and (max-width: 767px) {
+    font-size: 3em;
+   }
 `;
 
 const Title = styled.h1`
-  ${tw('text-4xl lg:text-4xl font-serif text-white mb-8 tracking-wide relative inline-block')};
+  ${tw('text-4xl lg:text-4xl text-white mb-8 tracking-wide relative inline-block')};
   text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
-  &:before {
-    content: '';
-    width: 40px;
-    height: 40px;
-    background: url(${triangle});
-    position: absolute;
-    background-size: 40px;
-    animation: ${rotate} 4s linear infinite;
-    left: -60px;
-    top: 5px;
-  }
+  
 `;
 
 const Subtitle = styled.p`
-  ${tw('text-2xl lg:text-4xl font-sans text-white mt-8 xxl:w-3/4')};
+  ${tw('text-white mt-8')};
   text-shadow: 0 2px 15px rgba(0, 0, 0, 0.2);
+`;
+
+const HeroTextLink = styled.a`
+
 `;
 
 const ProjectsWrapper = styled.div`
@@ -171,27 +173,69 @@ const Index = () => (
       </HeaderContainer>
       <Divider speed={0.2} offset={0}>
         <UpDown>
-
+          <SVG icon="bubble" width={3} left="80%" top="30%" />
+          <SVG icon="bubble" width={4} left="40%" top="40%" />
+          <SVG icon="bubble" width={6} left="10%" top="10%" />
+          <SVG icon="bubble" width={3} left="50%" top="70%" />
+          <SVG icon="bubble" width={4} left="30%" top="20%" />
+          <SVG icon="bubble" width={3} left="10%" top="80%" />
         </UpDown>
         <UpDownWide>
-
+          <SVG icon="bubble" width={3} left="40%" top="60%" />
+          <SVG icon="bubble" width={6} left="30%" top="70%" />
+          <SVG icon="bubble" width={4} left="20%" top="80%" />
+          <SVG icon="bubble" width={6} left="30%" top="90%" />
+          <SVG icon="bubble" width={6} left="79%" top="40%" />
+          <SVG icon="bubble" width={4} left="60%" top="60%" />
         </UpDownWide>
-
+        <SVG icon="bubble" width={2} left="30%" top="70%" />
+        <SVG icon="bubble" width={2} left="60%" top="30%" />
+        <SVG icon="bubble" width={1} left="20%" top="70%" />
+        <SVG icon="bubble" width={2} left="20%" top="40%" />
+        <SVG icon="bubble" width={1} left="90%" top="50%" />
+        <SVG icon="bubble" width={2} left="20%" top="30%" />
       </Divider>
-      <Content speed={0.4} offset={0}>
+      <HeroContent speed={0.4} offset={0}>
         <Hero>
           <BigTitle>
-            Hello, <br /> I'm Matt Trice.
+            My name is Matt Trice.
           </BigTitle>
-          <Subtitle>I'm </Subtitle>
+          <Subtitle>I am an Atlanta based UX, prototype, web designer, front end development, from concept to completion from design to deployment full life cycle of the design.</Subtitle>
+          <HeroTextLink>
+            <a href="#" className={'text__link--yellow'}>Let's make something cool</a>
+          </HeroTextLink>
         </Hero>
-      </Content>
+      </HeroContent>
       <DividerMiddle
         speed={-0.2}
         offset={1}
         factor={2}
         className={'background-01'}
       />
+      <Divider speed={0.1} offset={1} factor={2}>
+        <UpDown>
+          <SVG icon="bubble" width={3} left="80%" top="30%" />
+          <SVG icon="bubble" width={4} left="40%" top="40%" />
+          <SVG icon="bubble" width={6} left="10%" top="10%" />
+          <SVG icon="bubble" width={3} left="50%" top="70%" />
+          <SVG icon="bubble" width={4} left="30%" top="20%" />
+          <SVG icon="bubble" width={3} left="10%" top="80%" />
+        </UpDown>
+        <UpDownWide>
+          <SVG icon="bubble" width={3} left="40%" top="60%" />
+          <SVG icon="bubble" width={6} left="30%" top="70%" />
+          <SVG icon="bubble" width={4} left="20%" top="80%" />
+          <SVG icon="bubble" width={6} left="30%" top="90%" />
+          <SVG icon="bubble" width={6} left="79%" top="40%" />
+          <SVG icon="bubble" width={4} left="60%" top="60%" />
+        </UpDownWide>
+        <SVG icon="bubble" width={2} left="30%" top="70%" />
+        <SVG icon="bubble" width={2} left="60%" top="30%" />
+        <SVG icon="bubble" width={1} left="20%" top="70%" />
+        <SVG icon="bubble" width={2} left="20%" top="40%" />
+        <SVG icon="bubble" width={1} left="90%" top="50%" />
+        <SVG icon="bubble" width={2} left="20%" top="30%" />
+      </Divider>
       <Content speed={0.4} offset={1.2} factor={2}>
         <Inner>
           <Title>Projects</Title>
@@ -207,15 +251,29 @@ const Index = () => (
         </UpDownWide>
 
       </Divider>
-      <Divider bg="#23262b" clipPath="polygon(0 16%, 100% 4%, 100% 82%, 0 94%)" speed={0.2} offset={3} />
       <Divider speed={0.1} offset={3}>
         <UpDown>
-
+          <SVG icon="bubble" width={3} left="80%" top="30%" />
+          <SVG icon="bubble" width={4} left="40%" top="40%" />
+          <SVG icon="bubble" width={6} left="10%" top="10%" />
+          <SVG icon="bubble" width={3} left="50%" top="70%" />
+          <SVG icon="bubble" width={4} left="30%" top="20%" />
+          <SVG icon="bubble" width={3} left="10%" top="80%" />
         </UpDown>
         <UpDownWide>
-
+          <SVG icon="bubble" width={3} left="40%" top="60%" />
+          <SVG icon="bubble" width={6} left="30%" top="70%" />
+          <SVG icon="bubble" width={4} left="20%" top="80%" />
+          <SVG icon="bubble" width={6} left="30%" top="90%" />
+          <SVG icon="bubble" width={6} left="79%" top="40%" />
+          <SVG icon="bubble" width={4} left="60%" top="60%" />
         </UpDownWide>
-
+        <SVG icon="bubble" width={2} left="30%" top="70%" />
+        <SVG icon="bubble" width={2} left="60%" top="30%" />
+        <SVG icon="bubble" width={1} left="20%" top="70%" />
+        <SVG icon="bubble" width={2} left="20%" top="40%" />
+        <SVG icon="bubble" width={1} left="90%" top="50%" />
+        <SVG icon="bubble" width={2} left="20%" top="30%" />
       </Divider>
       <Content speed={0.4} offset={3}>
         <Inner>
@@ -231,22 +289,7 @@ const Index = () => (
           </AboutDesc>
         </Inner>
       </Content>
-      <Divider fill="#23262b" speed={0.2} offset={4}>
-        <WaveWrapper>
-          <InnerWave>
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 338.05" preserveAspectRatio="none">
-              <path className={waveAnimation}>
-                <animate
-                  attributeName="d"
-                  values="M 0 100 Q 250 50 400 200 Q 550 350 800 300 L 800 0 L 0 0 L 0 100 Z;M 0 100 Q 200 150 400 200 Q 600 250 800 300 L 800 0 L 0 0 L 0 100 Z;M 0 100 Q 150 350 400 200 Q 650 50 800 300 L 800 0 L 0 0 L 0 100 Z"
-                  repeatCount="indefinite"
-                  dur="30s"
-                />
-              </path>
-            </svg>
-          </InnerWave>
-        </WaveWrapper>
-      </Divider>
+
       <Content speed={0.4} offset={4}>
         <Inner>
           <Title>Get in touch</Title>
@@ -257,7 +300,7 @@ const Index = () => (
           </ContactText>
         </Inner>
         <Footer>
-          &copy; 2018 by Gatsby Starter Portfolio Cara.{' '}
+          &copy; 2018 Trice Design, LLC{' '}
           <a href="https://github.com/LekoArts/gatsby-starter-portfolio-cara">Github Repository</a>.
         </Footer>
       </Content>
@@ -278,6 +321,12 @@ const Index = () => (
           <SVG icon="bubble" width={6} left="79%" top="40%" />
           <SVG icon="bubble" width={4} left="60%" top="60%" />
         </UpDownWide>
+        <SVG icon="bubble" width={2} left="30%" top="70%" />
+        <SVG icon="bubble" width={2} left="60%" top="30%" />
+        <SVG icon="bubble" width={1} left="20%" top="70%" />
+        <SVG icon="bubble" width={2} left="20%" top="40%" />
+        <SVG icon="bubble" width={1} left="90%" top="50%" />
+        <SVG icon="bubble" width={2} left="20%" top="30%" />
       </Divider>
     </Parallax>
   </React.Fragment>
