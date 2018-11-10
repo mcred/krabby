@@ -14,6 +14,22 @@ const Wrapper = styled.svg`
 `;
 
 const icons = {
+  bubble: {
+    shape: (
+      <React.Fragment>
+        <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" fill-opacity="0.08">
+            <g id="Artboard" transform="translate(-308.000000, -201.000000)" fill="#FFFFFF" fill-rule="nonzero">
+                <g id="Group" transform="translate(309.000000, 202.000000)">
+                    <circle id="Oval" stroke="#FFFFFF" cx="140.5" cy="140.5" r="140.5"></circle>
+                    <circle id="Oval-Copy" cx="109" cy="84" r="42"></circle>
+                    <circle id="Oval-Copy-2" cx="172" cy="209" r="21"></circle>
+                </g>
+            </g>
+        </g>
+      </React.Fragment>
+    ),
+    viewBox: '0 0 283 283',
+  },
   triangle: {
     shape: (
       <polygon
