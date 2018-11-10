@@ -14,6 +14,22 @@ import triangle from '../images/triangle.svg';
 import avatar from '../images/avatar.jpg';
 import '../styles/global';
 
+import dribbble from '../images/icon-dribbble.svg';
+import instagram from '../images/icon-instagram.svg';
+import linkedin from '../images/icon-linkedin.svg';
+import logotd from '../images/logo-td.svg';
+import '../assets/css/krabby.scss';
+
+const HeaderContainer = styled.div`
+  ${tw('justify-center items-center flex z-50')};
+  padding: 1rem 4rem 0 4rem;
+`;
+
+const Navigation = styled.div`
+  ${tw('w-full')};
+  padding-bottom:0;
+`;
+
 const Divider = styled(ParallaxLayer)`
   ${tw('absolute w-full h-full')};
   background: ${props => props.bg};
@@ -128,32 +144,39 @@ const Index = () => (
   <React.Fragment>
     <SEO />
     <Parallax pages={5}>
+      <HeaderContainer>
+      <Navigation>
+      <ul className="nav__main">
+        <li>
+          <img src={logotd} className="logo__main" alt="trice.design" />
+        </li>
+        <li className="contact">
+          <a href="contact" title="">Contact</a>
+        </li>
+        <li>
+          <ul className="social-icons">
+            <li><a href="https://dribbble.com/trice" title="Follow me on Dribbble">
+              <img src={dribbble} className="" alt="Dribbble" /></a>
+            </li>
+            <li><a href="https://www.linkedin.com/in/matt-trice-5053b325/" title="Serious as fuck">
+              <img src={linkedin} className="" alt="LINKED FUCKING IN" /></a>
+            </li>
+            <li><a href="https://www.instagram.com/trice.design/" title="Follow me on Instagram">
+              <img src={instagram} className="" alt="Instagram" /></a>
+            </li>
+          </ul>
+        </li>
+      </ul>
+      </Navigation>
+      </HeaderContainer>
       <Divider speed={0.2} offset={0}>
         <UpDown>
-          <SVG icon="triangle" className={hidden} width={48} stroke={colors.orange} left="10%" top="20%" />
-          <SVG icon="hexa" width={48} stroke={colors.red} left="60%" top="70%" />
-          <SVG icon="box" width={6} fill={colors['grey-darker']} left="60%" top="15%" />
+
         </UpDown>
         <UpDownWide>
-          <SVG icon="arrowUp" className={hidden} width={16} fill={colors['blue-dark']} left="80%" top="10%" />
-          <SVG icon="triangle" width={12} stroke={colors.white} left="90%" top="50%" />
-          <SVG icon="circle" width={16} fill={colors['grey-darker']} left="70%" top="90%" />
-          <SVG icon="triangle" width={16} stroke={colors['grey-darkest']} left="30%" top="65%" />
-          <SVG icon="circle" width={6} fill={colors['grey-darkest']} left="75%" top="10%" />
-          <SVG icon="upDown" className={hidden} width={8} fill={colors['grey-darkest']} left="45%" top="10%" />
+
         </UpDownWide>
-        <SVG icon="circle" className={hidden} width={24} fill={colors['grey-darker']} left="5%" top="70%" />
-        <SVG icon="circle" width={6} fill={colors['grey-darkest']} left="4%" top="20%" />
-        <SVG icon="circle" width={12} fill={colors['grey-darkest']} left="50%" top="60%" />
-        <SVG icon="upDown" width={8} fill={colors['grey-darkest']} left="95%" top="90%" />
-        <SVG icon="upDown" className={hidden} width={24} fill={colors['grey-darker']} left="40%" top="80%" />
-        <SVG icon="triangle" width={8} stroke={colors['grey-darker']} left="25%" top="5%" />
-        <SVG icon="circle" width={64} fill={colors.green} left="95%" top="5%" />
-        <SVG icon="box" className={hidden} width={64} fill={colors.purple} left="5%" top="90%" />
-        <SVG icon="box" width={6} fill={colors['grey-darkest']} left="10%" top="10%" />
-        <SVG icon="box" width={12} fill={colors['grey-darkest']} left="40%" top="30%" />
-        <SVG icon="hexa" width={16} stroke={colors['grey-darker']} left="10%" top="50%" />
-        <SVG icon="hexa" width={8} stroke={colors['grey-darker']} left="80%" top="70%" />
+
       </Divider>
       <Content speed={0.4} offset={0}>
         <Hero>
