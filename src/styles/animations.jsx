@@ -24,10 +24,10 @@ const wave = keyframes`
 
 const upDownAnimation = keyframes`
   from {
-    transform: translateY(0);
+    transform: translateY(100%);
   }
   to {
-    transform: translateY(30px);
+    transform: translateY(-100%);
   }
 `;
 
@@ -41,7 +41,7 @@ const upDownWideAnimation = keyframes`
 `;
 
 export const UpDown = styled.div`
-  animation: ${upDownAnimation} 4s ease-in-out infinite alternate;
+  animation: ${upDownAnimation} 14s ease-in-out infinite;
   ${tw('pin absolute')};
 `;
 

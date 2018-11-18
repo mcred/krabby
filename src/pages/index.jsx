@@ -71,7 +71,7 @@ const BigTitle = styled.h1`
 const Title = styled.h1`
   ${tw('text-4xl lg:text-4xl text-white mb-8 tracking-wide relative inline-block')};
   text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
-  
+
 `;
 
 const Subtitle = styled.p`
@@ -201,9 +201,10 @@ const Index = () => (
             My name is Matt Trice.
           </BigTitle>
           <Subtitle>I am an Atlanta based UX, prototype, web designer, front end development, from concept to completion from design to deployment full life cycle of the design.</Subtitle>
-          <HeroTextLink>
-            <a href="#" className={'text__link--yellow'}>Let's make something cool</a>
-          </HeroTextLink>
+          <button class="btn btn--success btn-spinner">
+  <span class="btn__text">success</span>
+  <i class="fa fa-spinner btn__icon btn__icon--spinner" aria-hidden="true"></i>
+</button>
         </Hero>
       </HeroContent>
       <DividerMiddle
