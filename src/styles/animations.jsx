@@ -23,30 +23,34 @@ const wave = keyframes`
 `;
 
 const upDownAnimation = keyframes`
-  from {
+  0% {
     transform: translateY(100%);
+    opacity: 1;
   }
-  to {
+  100% {
     transform: translateY(-100%);
+    opacity: 0;
   }
 `;
 
 const upDownWideAnimation = keyframes`
   from {
-    transform: translateY(0);
+    transform: translateY(100%);
+    opacity: 1;
   }
   to {
-    transform: translateY(200px);
+    transform: translateY(-100%);
+    opacity: 0;
   }
 `;
 
 export const UpDown = styled.div`
-  animation: ${upDownAnimation} 14s ease-in-out infinite;
+  animation: ${upDownAnimation} 14s ease-out infinite;
   ${tw('pin absolute')};
 `;
 
 export const UpDownWide = styled.div`
-  animation: ${upDownWideAnimation} 18s ease-in-out infinite alternate;
+  animation: ${upDownWideAnimation} 28s ease-out infinite;
   ${tw('pin absolute')};
 `;
 
