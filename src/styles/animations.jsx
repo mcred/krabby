@@ -22,6 +22,22 @@ const wave = keyframes`
   }
 `;
 
+const upBubblesAnimation = keyframes`
+  0% {
+    transform: translateY(0);
+    opacity: 0;
+  }
+
+  20% {
+    opacity: 1;
+  }
+
+  100% {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+`;
+
 const upDownAnimation = keyframes`
   0% {
     transform: translateY(100%);
@@ -44,8 +60,23 @@ const upDownWideAnimation = keyframes`
   }
 `;
 
+export const UpBubblesOne = styled.div`
+  animation: ${upBubblesAnimation} 10s ease-out infinite;
+  ${tw('pin absolute')};
+`;
+
+export const UpBubblesTwo = styled.div`
+  animation: ${upBubblesAnimation} 8s ease-out infinite;
+  ${tw('pin absolute')};
+`;
+
+export const UpBubblesThree = styled.div`
+  animation: ${upBubblesAnimation} 9s ease-out infinite;
+  ${tw('pin absolute')};
+`;
+
 export const UpDown = styled.div`
-  animation: ${upDownAnimation} 14s ease-out infinite;
+  animation: ${upDownAnimation} 11s ease-out infinite;
   ${tw('pin absolute')};
 `;
 

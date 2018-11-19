@@ -7,7 +7,7 @@ import { Parallax, ParallaxLayer } from 'react-spring/dist/addons';
 import SEO from '../components/SEO';
 import SVG from '../components/SVG';
 import ProjectCard from '../components/ProjectCard';
-import { rotate, UpDown, UpDownWide, waveAnimation } from '../styles/animations';
+import { rotate, UpBubblesOne, UpBubblesTwo, UpBubblesThree, UpDown, UpDownWide, waveAnimation } from '../styles/animations';
 import { hidden } from '../styles/utils';
 import { colors } from '../../tailwind';
 import triangle from '../images/triangle.svg';
@@ -172,28 +172,25 @@ const Index = () => (
       </Navigation>
       </HeaderContainer>
       <Divider speed={0.2} offset={0}>
-        <UpDown>
-          <SVG icon="bubble" width={3} left="80%" top="30%" />
-          <SVG icon="bubble" width={4} left="40%" top="40%" />
-          <SVG icon="bubble" width={6} left="10%" top="10%" />
-          <SVG icon="bubble" width={3} left="50%" top="70%" />
-          <SVG icon="bubble" width={4} left="30%" top="20%" />
-          <SVG icon="bubble" width={3} left="10%" top="80%" />
-        </UpDown>
-        <UpDownWide>
-          <SVG icon="bubble" width={3} left="40%" top="60%" />
-          <SVG icon="bubble" width={6} left="30%" top="70%" />
-          <SVG icon="bubble" width={4} left="20%" top="80%" />
-          <SVG icon="bubble" width={6} left="30%" top="90%" />
-          <SVG icon="bubble" width={6} left="79%" top="40%" />
-          <SVG icon="bubble" width={4} left="60%" top="60%" />
-        </UpDownWide>
-        <SVG icon="bubble" width={2} left="30%" top="70%" />
-        <SVG icon="bubble" width={2} left="60%" top="30%" />
-        <SVG icon="bubble" width={1} left="20%" top="70%" />
-        <SVG icon="bubble" width={2} left="20%" top="40%" />
-        <SVG icon="bubble" width={1} left="90%" top="50%" />
-        <SVG icon="bubble" width={2} left="20%" top="30%" />
+
+
+        <UpBubblesOne>
+          <SVG icon="bubble" width={3} left="46%" top="52%" />
+          <SVG icon="bubble" width={2} left="50%" top="54%" />
+          <SVG icon="bubble" width={4} left="52%" top="53%" />
+        </UpBubblesOne>
+        <UpBubblesTwo>
+          <SVG icon="bubble" width={4} left="44%" top="52%" />
+          <SVG icon="bubble" width={3} left="51%" top="54%" />
+          <SVG icon="bubble" width={2} left="49%" top="51%" />
+        </UpBubblesTwo>
+        <UpBubblesThree>
+          <SVG icon="bubble" width={2} left="42%" top="52%" />
+          <SVG icon="bubble" width={4} left="48%" top="54%" />
+          <SVG icon="bubble" width={3} left="46%" top="51%" />
+        </UpBubblesThree>
+
+
       </Divider>
       <HeroContent speed={0.4} offset={0}>
         <Hero>
@@ -214,28 +211,25 @@ const Index = () => (
         className={'background-01'}
       />
       <Divider speed={0.1} offset={1} factor={2}>
-        <UpDown>
-          <SVG icon="bubble" width={3} left="80%" top="30%" />
-          <SVG icon="bubble" width={4} left="40%" top="40%" />
-          <SVG icon="bubble" width={6} left="10%" top="10%" />
-          <SVG icon="bubble" width={3} left="50%" top="70%" />
-          <SVG icon="bubble" width={4} left="30%" top="20%" />
-          <SVG icon="bubble" width={3} left="10%" top="80%" />
-        </UpDown>
-        <UpDownWide>
-          <SVG icon="bubble" width={3} left="40%" top="60%" />
-          <SVG icon="bubble" width={6} left="30%" top="70%" />
-          <SVG icon="bubble" width={4} left="20%" top="80%" />
-          <SVG icon="bubble" width={6} left="30%" top="90%" />
-          <SVG icon="bubble" width={6} left="79%" top="40%" />
-          <SVG icon="bubble" width={4} left="60%" top="60%" />
-        </UpDownWide>
-        <SVG icon="bubble" width={2} left="30%" top="70%" />
-        <SVG icon="bubble" width={2} left="60%" top="30%" />
-        <SVG icon="bubble" width={1} left="20%" top="70%" />
-        <SVG icon="bubble" width={2} left="20%" top="40%" />
-        <SVG icon="bubble" width={1} left="90%" top="50%" />
-        <SVG icon="bubble" width={2} left="20%" top="30%" />
+
+
+      <UpBubblesOne>
+        <SVG icon="bubble" width={3} left="26%" top="32%" />
+        <SVG icon="bubble" width={2} left="30%" top="34%" />
+        <SVG icon="bubble" width={4} left="32%" top="33%" />
+      </UpBubblesOne>
+      <UpBubblesTwo>
+        <SVG icon="bubble" width={4} left="24%" top="32%" />
+        <SVG icon="bubble" width={3} left="31%" top="34%" />
+        <SVG icon="bubble" width={2} left="29%" top="31%" />
+      </UpBubblesTwo>
+      <UpBubblesThree>
+        <SVG icon="bubble" width={2} left="22%" top="32%" />
+        <SVG icon="bubble" width={4} left="28%" top="34%" />
+        <SVG icon="bubble" width={3} left="26%" top="31%" />
+      </UpBubblesThree>
+
+
       </Divider>
       <Content speed={0.4} offset={1.2} factor={2}>
         <Inner>
@@ -244,37 +238,26 @@ const Index = () => (
         </Inner>
       </Content>
       <Divider speed={0.1} offset={1} factor={2}>
-        <UpDown>
-
-        </UpDown>
-        <UpDownWide>
-
-        </UpDownWide>
+      <UpBubblesOne>
+        <SVG icon="bubble" width={3} left="36%" top="32%" />
+        <SVG icon="bubble" width={2} left="40%" top="34%" />
+        <SVG icon="bubble" width={4} left="42%" top="33%" />
+      </UpBubblesOne>
+      <UpBubblesTwo>
+        <SVG icon="bubble" width={4} left="34%" top="32%" />
+        <SVG icon="bubble" width={3} left="41%" top="34%" />
+        <SVG icon="bubble" width={2} left="39%" top="31%" />
+      </UpBubblesTwo>
+      <UpBubblesThree>
+        <SVG icon="bubble" width={2} left="32%" top="32%" />
+        <SVG icon="bubble" width={4} left="38%" top="34%" />
+        <SVG icon="bubble" width={3} left="36%" top="31%" />
+      </UpBubblesThree>
 
       </Divider>
       <Divider speed={0.1} offset={3}>
-        <UpDown>
-          <SVG icon="bubble" width={3} left="80%" top="30%" />
-          <SVG icon="bubble" width={4} left="40%" top="40%" />
-          <SVG icon="bubble" width={6} left="10%" top="10%" />
-          <SVG icon="bubble" width={3} left="50%" top="70%" />
-          <SVG icon="bubble" width={4} left="30%" top="20%" />
-          <SVG icon="bubble" width={3} left="10%" top="80%" />
-        </UpDown>
-        <UpDownWide>
-          <SVG icon="bubble" width={3} left="40%" top="60%" />
-          <SVG icon="bubble" width={6} left="30%" top="70%" />
-          <SVG icon="bubble" width={4} left="20%" top="80%" />
-          <SVG icon="bubble" width={6} left="30%" top="90%" />
-          <SVG icon="bubble" width={6} left="79%" top="40%" />
-          <SVG icon="bubble" width={4} left="60%" top="60%" />
-        </UpDownWide>
-        <SVG icon="bubble" width={2} left="30%" top="70%" />
-        <SVG icon="bubble" width={2} left="60%" top="30%" />
-        <SVG icon="bubble" width={1} left="20%" top="70%" />
-        <SVG icon="bubble" width={2} left="20%" top="40%" />
-        <SVG icon="bubble" width={1} left="90%" top="50%" />
-        <SVG icon="bubble" width={2} left="20%" top="30%" />
+
+
       </Divider>
       <Content speed={0.4} offset={3}>
         <Inner>
@@ -306,28 +289,8 @@ const Index = () => (
         </Footer>
       </Content>
       <Divider speed={0.2} offset={4} className={'foreground--coral'}>
-        <UpDown>
-          <SVG icon="bubble" width={3} left="80%" top="30%" />
-          <SVG icon="bubble" width={4} left="40%" top="40%" />
-          <SVG icon="bubble" width={6} left="10%" top="10%" />
-          <SVG icon="bubble" width={3} left="50%" top="70%" />
-          <SVG icon="bubble" width={4} left="30%" top="20%" />
-          <SVG icon="bubble" width={3} left="10%" top="80%" />
-        </UpDown>
-        <UpDownWide>
-          <SVG icon="bubble" width={3} left="40%" top="60%" />
-          <SVG icon="bubble" width={6} left="30%" top="70%" />
-          <SVG icon="bubble" width={4} left="20%" top="80%" />
-          <SVG icon="bubble" width={6} left="30%" top="90%" />
-          <SVG icon="bubble" width={6} left="79%" top="40%" />
-          <SVG icon="bubble" width={4} left="60%" top="60%" />
-        </UpDownWide>
-        <SVG icon="bubble" width={2} left="30%" top="70%" />
-        <SVG icon="bubble" width={2} left="60%" top="30%" />
-        <SVG icon="bubble" width={1} left="20%" top="70%" />
-        <SVG icon="bubble" width={2} left="20%" top="40%" />
-        <SVG icon="bubble" width={1} left="90%" top="50%" />
-        <SVG icon="bubble" width={2} left="20%" top="30%" />
+
+
       </Divider>
     </Parallax>
   </React.Fragment>
