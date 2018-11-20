@@ -199,7 +199,7 @@ const Index = () => (
           </BigTitle>
           <Subtitle>I am an Atlanta based UX, prototype, web designer, front end development, from concept to completion from design to deployment full life cycle of the design.</Subtitle>
           <button class="btn btn--success btn-spinner">
-            <span class="btn__text">success</span>
+            <span class="btn__text">Let's make something cool</span>
             <i class="fa fa-spinner btn__icon btn__icon--spinner" aria-hidden="true"></i>
           </button>
         </Hero>
