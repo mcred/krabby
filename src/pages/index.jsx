@@ -199,9 +199,9 @@ const Index = () => (
           </BigTitle>
           <Subtitle>I am an Atlanta based UX, prototype, web designer, front end development, from concept to completion from design to deployment full life cycle of the design.</Subtitle>
           <button class="btn btn--success btn-spinner">
-  <span class="btn__text">success</span>
-  <i class="fa fa-spinner btn__icon btn__icon--spinner" aria-hidden="true"></i>
-</button>
+            <span class="btn__text">success</span>
+            <i class="fa fa-spinner btn__icon btn__icon--spinner" aria-hidden="true"></i>
+          </button>
         </Hero>
       </HeroContent>
       <DividerMiddle
@@ -213,21 +213,21 @@ const Index = () => (
       <Divider speed={0.1} offset={1} factor={2}>
 
 
-      <UpBubblesOne>
-        <SVG icon="bubble" width={3} left="26%" top="32%" />
-        <SVG icon="bubble" width={2} left="30%" top="34%" />
-        <SVG icon="bubble" width={4} left="32%" top="33%" />
-      </UpBubblesOne>
-      <UpBubblesTwo>
-        <SVG icon="bubble" width={4} left="24%" top="32%" />
-        <SVG icon="bubble" width={3} left="31%" top="34%" />
-        <SVG icon="bubble" width={2} left="29%" top="31%" />
-      </UpBubblesTwo>
-      <UpBubblesThree>
-        <SVG icon="bubble" width={2} left="22%" top="32%" />
-        <SVG icon="bubble" width={4} left="28%" top="34%" />
-        <SVG icon="bubble" width={3} left="26%" top="31%" />
-      </UpBubblesThree>
+        <UpBubblesOne>
+          <SVG icon="bubble" width={3} left="26%" top="32%" />
+          <SVG icon="bubble" width={2} left="30%" top="34%" />
+          <SVG icon="bubble" width={4} left="32%" top="33%" />
+        </UpBubblesOne>
+        <UpBubblesTwo>
+          <SVG icon="bubble" width={4} left="24%" top="32%" />
+          <SVG icon="bubble" width={3} left="31%" top="34%" />
+          <SVG icon="bubble" width={2} left="29%" top="31%" />
+        </UpBubblesTwo>
+        <UpBubblesThree>
+          <SVG icon="bubble" width={2} left="22%" top="32%" />
+          <SVG icon="bubble" width={4} left="28%" top="34%" />
+          <SVG icon="bubble" width={3} left="26%" top="31%" />
+        </UpBubblesThree>
 
 
       </Divider>
