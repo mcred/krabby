@@ -31,7 +31,6 @@ const upBubblesAnimation = keyframes`
   20% {
     opacity: 1;
   }
-
   100% {
     transform: translateY(-100%);
     opacity: 0;
@@ -60,18 +59,33 @@ const upDownWideAnimation = keyframes`
   }
 `;
 
+export const UpBubblesOneTop = styled.div`
+  animation: ${upBubblesAnimation} 5s ease-in infinite;
+  ${tw('pin absolute')};
+`;
+
+export const UpBubblesTwoTop = styled.div`
+  animation: ${upBubblesAnimation} 4s ease-in infinite;
+  ${tw('pin absolute')};
+`;
+
+export const UpBubblesThreeTop = styled.div`
+  animation: ${upBubblesAnimation} 3.5s ease-in infinite;
+  ${tw('pin absolute')};
+`;
+
 export const UpBubblesOne = styled.div`
-  animation: ${upBubblesAnimation} 10s ease-out infinite;
+  animation: ${upBubblesAnimation} 10s ease-in infinite;
   ${tw('pin absolute')};
 `;
 
 export const UpBubblesTwo = styled.div`
-  animation: ${upBubblesAnimation} 8s ease-out infinite;
+  animation: ${upBubblesAnimation} 8s ease-in infinite;
   ${tw('pin absolute')};
 `;
 
 export const UpBubblesThree = styled.div`
-  animation: ${upBubblesAnimation} 9s ease-out infinite;
+  animation: ${upBubblesAnimation} 7s ease-in infinite;
   ${tw('pin absolute')};
 `;
 
