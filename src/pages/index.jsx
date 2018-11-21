@@ -20,6 +20,9 @@ import linkedin from '../images/icon-linkedin.svg';
 import logotd from '../images/logo-td.svg';
 import '../assets/css/krabby.scss';
 
+import { FaChevronRight } from 'react-icons/fa';
+
+
 const HeaderContainer = styled.div`
   ${tw('justify-center items-center flex z-50')};
   padding: 1rem 4rem 0 4rem;
@@ -44,7 +47,7 @@ const DividerMiddle = styled(Divider)`
 `;
 
 const HeroContent = styled(ParallaxLayer)`
-  ${tw('p-6 md:p-12 lg:p-24 justify-center items-top flex z-50')};
+  ${tw('justify-center items-top flex z-50')};
 `;
 
 const Content = styled(ParallaxLayer)`
@@ -60,7 +63,7 @@ const Inner = styled.div`
 `;
 
 const BigTitle = styled.h1`
-  ${tw('text-white mb-6 tracking-tight')};
+  ${tw('text-white mb-6')};
   text-shadow: 0 5px 35px rgba(255, 255, 255, 0.15);
   font-size: 4em;
   @media (min-width: 0px) and (max-width: 767px) {
@@ -192,15 +195,14 @@ const Index = () => (
 
 
       </Divider>
-      <HeroContent speed={0.4} offset={0}>
+      <HeroContent speed={0.4} offset={0} className="hero-padding">
         <Hero>
           <BigTitle>
             My name is Matt Trice.
           </BigTitle>
           <Subtitle>I am an Atlanta based UX, prototype, web designer, front end development, from concept to completion from design to deployment full life cycle of the design.</Subtitle>
-          <button class="btn btn--success btn-spinner">
-            <span class="btn__text">Let's make something cool</span>
-            <i class="fa fa-spinner btn__icon btn__icon--spinner" aria-hidden="true"></i>
+          <button class="btn btn--actionjackson btn-spinner">
+            <span class="btn__text">Let's make something cool</span> <FaChevronRight size="1.45em" />
           </button>
         </Hero>
       </HeroContent>
