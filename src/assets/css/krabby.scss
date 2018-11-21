@@ -54,7 +54,13 @@ p {
 
 a {
   font-family: 'Open Sans', sans-serif;
+  transition: 0.2s ease-in-out;
+  cursor: pointer;
+  &:hover {
+    color: #FFEE00;
+  }
 }
+
 
 
 
@@ -252,6 +258,9 @@ $button-text-color: $white;
     font-weight: 900;
     position: relative;
     top: 2px;
+    &:hover {
+      color: #FFEE00;
+    }
   }
   // li.contact a::before {
   //   content: url('../../images/icon-message-in-a-bottle.svg');

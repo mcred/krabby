@@ -148,32 +148,33 @@ const Footer = styled.footer`
 const Index = () => (
   <React.Fragment>
     <SEO />
-    <Parallax pages={5}>
-      <HeaderContainer>
+    <HeaderContainer>
       <Navigation>
-      <ul className="nav__main">
-        <li>
-          <img src={logotd} className="logo__main" alt="trice.design" />
-        </li>
-        <li className="contact">
-          <a href="contact" title="">Contact</a>
-        </li>
-        <li>
-          <ul className="social-icons">
-            <li><a href="https://dribbble.com/trice" title="Follow me on Dribbble">
-              <img src={dribbble} className="" alt="Dribbble" /></a>
-            </li>
-            <li><a href="https://www.linkedin.com/in/matt-trice-5053b325/" title="Serious as fuck">
-              <img src={linkedin} className="" alt="LINKED FUCKING IN" /></a>
-            </li>
-            <li><a href="https://www.instagram.com/trice.design/" title="Follow me on Instagram">
-              <img src={instagram} className="" alt="Instagram" /></a>
-            </li>
-          </ul>
-        </li>
-      </ul>
+        <ul className="nav__main">
+          <li>
+            <img src={logotd} className="logo__main" alt="trice.design" />
+          </li>
+          <li className="contact">
+            <a href="contact" title="">Contact</a>
+          </li>
+          <li>
+            <ul className="social-icons">
+              <li><a href="https://dribbble.com/trice" title="Follow me on Dribbble">
+                <img src={dribbble} className="" alt="Dribbble" /></a>
+              </li>
+              <li><a href="https://www.linkedin.com/in/matt-trice-5053b325/" title="Serious as fuck">
+                <img src={linkedin} className="" alt="LINKED FUCKING IN" /></a>
+              </li>
+              <li><a href="https://www.instagram.com/trice.design/" title="Follow me on Instagram">
+                <img src={instagram} className="" alt="Instagram" /></a>
+              </li>
+            </ul>
+          </li>
+        </ul>
       </Navigation>
-      </HeaderContainer>
+    </HeaderContainer>
+    <Parallax pages={5}>
+
       <Divider speed={0.2} offset={0}>
 
 
