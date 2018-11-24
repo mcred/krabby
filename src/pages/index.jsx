@@ -25,7 +25,6 @@ import { FaChevronRight } from 'react-icons/fa';
 
 const HeaderContainer = styled.div`
   ${tw('justify-center items-center flex z-50')};
-  padding: 1rem 4rem 0 4rem;
 `;
 
 const Navigation = styled.div`
@@ -148,36 +147,35 @@ const Footer = styled.footer`
 const Index = () => (
   <React.Fragment>
     <SEO />
-    <HeaderContainer>
-      <Navigation>
-        <ul className="nav__main">
-          <li>
-            <img src={logotd} className="logo__main" alt="trice.design" />
-          </li>
-          <li className="contact">
-            <a href="contact" title="">Contact</a>
-          </li>
-          <li>
-            <ul className="social-icons">
-              <li><a href="https://dribbble.com/trice" title="Follow me on Dribbble">
-                <img src={dribbble} className="" alt="Dribbble" /></a>
-              </li>
-              <li><a href="https://www.linkedin.com/in/matt-trice-5053b325/" title="Serious as fuck">
-                <img src={linkedin} className="" alt="LINKED FUCKING IN" /></a>
-              </li>
-              <li><a href="https://www.instagram.com/trice.design/" title="Follow me on Instagram">
-                <img src={instagram} className="" alt="Instagram" /></a>
-              </li>
-            </ul>
-          </li>
-        </ul>
-      </Navigation>
-    </HeaderContainer>
+
     <Parallax pages={5}>
+      <HeaderContainer className="header__container">
+        <Navigation>
+          <ul className="nav__main">
+            <li>
+              <div className="logo__main"></div>
+            </li>
 
-      <Divider speed={0.2} offset={0}>
-
-
+            <li>
+              <ul className="social-icons">
+                <li className="contact">
+                  <a href="contact" title="">Contact</a>
+                </li>
+                <li><a href="https://dribbble.com/trice" title="Follow me on Dribbble">
+                  <img src={dribbble} className="" alt="Dribbble" /></a>
+                </li>
+                <li><a href="https://www.linkedin.com/in/matt-trice-5053b325/" title="Serious as fuck">
+                  <img src={linkedin} className="" alt="LINKED FUCKING IN" /></a>
+                </li>
+                <li><a href="https://www.instagram.com/trice.design/" title="Follow me on Instagram">
+                  <img src={instagram} className="" alt="Instagram" /></a>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </Navigation>
+      </HeaderContainer>
+      <Divider speed={0.2} offset={0} className="click-through">
         <UpBubblesOneTop>
           <SVG icon="bubble" width={3} left="36%" top="32%" />
           <SVG icon="bubble" width={2} left="40%" top="34%" />
@@ -193,8 +191,6 @@ const Index = () => (
           <SVG icon="bubble" width={4} left="38%" top="30%" />
           <SVG icon="bubble" width={3} left="31%" top="35%" />
         </UpBubblesThreeTop>
-
-
       </Divider>
       <HeroContent speed={0.4} offset={0} className="hero-padding">
         <Hero>
