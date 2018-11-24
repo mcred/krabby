@@ -153,7 +153,8 @@ const Index = () => (
         <Navigation>
           <ul className="nav__main">
             <li>
-              <div className="logo__main"></div>
+              <img src={logotd} className="logo__main" />
+              
             </li>
 
             <li>

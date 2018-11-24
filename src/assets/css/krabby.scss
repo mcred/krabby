@@ -77,7 +77,7 @@ a {
 .header__container {
   padding: 1rem 4rem 0 4rem;
   @media (min-width: 0px) and (max-width: 767px) {
-  padding: 1rem 0 0 1rem;
+  padding:0;
   }
 }
 .hero-padding {
@@ -102,10 +102,10 @@ a {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+  transition: 0.2s ease-in-out;
   li {
     // flex: 0 0 auto;
     list-style-type: none;
-    padding: 0 2em 0 0;
   }
   @media (min-width: 0px) and (max-width: 767px) {
     padding-inline-start: 0px;
@@ -132,6 +132,7 @@ a {
     @media (min-width: 0px) and (max-width: 767px) {
       padding-right: .75em;
       margin-right: auto;
+      display: none;
     }
   }
   li.contact a {
@@ -156,19 +157,34 @@ a {
   }
 }
 
-.logo__main {
+.logo__main--background {
   background: url('../../images/logo-td.svg');
   background-repeat: no-repeat;
   background-position: top left;
-  width: 260px;
-  height: 100px;
+  width: 300px;
+  height: 40px;
   @media (min-width: 0px) and (max-width: 767px) {
-    background: url('../../images/logo-td-abbreviated.svg');
+    background: url('../../images/logo-td.svg');
+    // background: url('../../images/logo-td-abbreviated.svg');
     background-repeat: no-repeat;
     background-position: top left;
     margin-right: auto;
-    max-width: 2em;
+    max-width: 100%;
     max-height: 2em;
+  }
+}
+
+.logo__main {
+  width: 200px;
+  @media (min-width: 0px) and (max-width: 767px) {
+    margin-right: auto;
+    padding-left: .75em;
+    width: 200px;
+  }
+  @media (min-width: 0px) and (max-width: 462px) {
+    margin-right: auto;
+    padding-left: .75em;
+    width: 120px;
   }
 }
 
