@@ -148,19 +148,22 @@ const Index = () => (
   <React.Fragment>
     <SEO />
 
-    <Parallax pages={5}>
+
+
+    <Parallax pages={7}>
+
+
+
       <HeaderContainer className="header__container">
         <Navigation>
           <ul className="nav__main">
             <li>
               <img src={logotd} className="logo__main" />
-              
             </li>
-
             <li>
               <ul className="social-icons">
                 <li className="contact">
-                  <a href="contact" title="">Contact</a>
+                  <a href="#herehere" title="">Contact</a>
                 </li>
                 <li><a href="https://dribbble.com/trice" title="Follow me on Dribbble">
                   <img src={dribbble} className="" alt="Dribbble" /></a>
@@ -176,6 +179,9 @@ const Index = () => (
           </ul>
         </Navigation>
       </HeaderContainer>
+
+
+
       <Divider speed={0.2} offset={0} className="click-through">
         <UpBubblesOneTop>
           <SVG icon="bubble" width={3} left="36%" top="32%" />
@@ -193,7 +199,10 @@ const Index = () => (
           <SVG icon="bubble" width={3} left="31%" top="35%" />
         </UpBubblesThreeTop>
       </Divider>
-      <HeroContent speed={0.4} offset={0} className="hero-padding">
+
+
+
+      <HeroContent speed={0.4} offset={0} className="hero-padding" id="herehere">
         <Hero>
           <BigTitle>
             My name is Matt Trice.
@@ -204,15 +213,19 @@ const Index = () => (
           </button>
         </Hero>
       </HeroContent>
+
+
+
       <DividerMiddle
         speed={-0.2}
         offset={1}
         factor={2}
         className={'background-01'}
       />
+
+
+
       <Divider speed={0.1} offset={1} factor={2}>
-
-
         <UpBubblesOne>
           <SVG icon="bubble" width={3} left="26%" top="32%" />
           <SVG icon="bubble" width={2} left="30%" top="34%" />
@@ -228,20 +241,19 @@ const Index = () => (
           <SVG icon="bubble" width={4} left="28%" top="34%" />
           <SVG icon="bubble" width={3} left="26%" top="31%" />
         </UpBubblesThree>
-
-
       </Divider>
+
+
+
       <Content speed={0.4} offset={1.2} factor={2}>
         <Inner>
           <Title>Projects</Title>
-
         </Inner>
       </Content>
+
+
+
       <Divider speed={0.1} offset={1} factor={2}>
-
-
-
-
         <UpBubblesOne>
           <SVG icon="bubble" width={3} left="66%" top="28%" />
           <SVG icon="bubble" width={2} left="70%" top="38%" />
@@ -257,29 +269,28 @@ const Index = () => (
           <SVG icon="bubble" width={4} left="68%" top="44%" />
           <SVG icon="bubble" width={3} left="66%" top="21%" />
         </UpBubblesThree>
-
-
-
-
       </Divider>
+
+
+
       <Divider speed={0.1} offset={3}>
-
-
       </Divider>
+
+
+
       <Content speed={0.4} offset={3}>
         <Inner>
           <Title>Headline</Title>
           <AboutHero>
-
             <AboutSub>
-
             </AboutSub>
           </AboutHero>
           <AboutDesc>
-
           </AboutDesc>
         </Inner>
       </Content>
+
+
 
       <Content speed={0.4} offset={4}>
         <Inner>
@@ -295,6 +306,9 @@ const Index = () => (
           <a href="https://github.com/LekoArts/gatsby-starter-portfolio-cara">Github Repository</a>.
         </Footer>
       </Content>
+
+
+
       <Divider speed={0.2} offset={4} className={'foreground--coral'}>
         <UpBubblesOne>
           <SVG icon="bubble" width={3} left="26%" top="32%" />
