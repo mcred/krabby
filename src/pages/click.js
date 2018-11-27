@@ -5,10 +5,27 @@ import SVG from '../components/SVG';
 import '../styles/global';
 import styled from 'react-emotion';
 import ProjectCardText from '../components/ProjectCardText';
-
 import { rotate, UpBubblesOne, UpBubblesOneTop, UpBubblesTwo, UpBubblesTwoTop, UpBubblesThree, UpBubblesThreeTop, UpDown, UpDownWide, waveAnimation } from '../styles/animations'
 import topazshottt from '../images/shottt-topaz.png';
+import dribbble from '../images/icon-dribbble.svg';
+import instagram from '../images/icon-instagram.svg';
+import linkedin from '../images/icon-linkedin.svg';
+import logotd from '../images/logo-td.svg';
 import '../assets/css/krabby.scss';
+import { FaChevronRight } from 'react-icons/fa';
+
+
+const HeaderContainer = styled.div`
+  ${tw('justify-center items-center flex z-50')};
+`;
+const Navigation = styled.div`
+  ${tw('w-full')};
+  padding-bottom:0;
+`;
+const Jump = styled.p`
+
+`;
+
 // Little helpers ...
 const url = (name, wrap = false) => `${wrap ? 'url(' : ''}https://awv3node-homepage.surge.sh/build/assets/${name}.svg${wrap ? ')' : ''}`
 const Pink = ({ children }) => <span style={{ color: '#FF6AC1' }}>{children}</span>
@@ -35,8 +52,33 @@ const ProjectsWrapper = styled.div`
 class App extends React.Component {
   render() {
     return (
-      <Parallax ref={ref => (this.parallax = ref)} pages={3}>
-        <ParallaxLayer offset={0} speed={1}>
+      <Parallax ref={ref => (this.parallax = ref)} pages={4}>
+        <HeaderContainer className="header__container">
+          <Navigation>
+            <ul className="nav__main">
+              <li>
+                <img src={logotd} className="logo__main" />
+              </li>
+              <li>
+                <ul className="social-icons">
+                  <li className="contact">
+                    <Jump onClick={() => this.parallax.scrollTo(2)}>Contact</Jump>
+                  </li>
+                  <li><a href="https://dribbble.com/trice" title="Follow me on Dribbble">
+                    <img src={dribbble} className="" alt="Dribbble" /></a>
+                  </li>
+                  <li><a href="https://www.linkedin.com/in/matt-trice-5053b325/" title="Serious as fuck">
+                    <img src={linkedin} className="" alt="LINKED FUCKING IN" /></a>
+                  </li>
+                  <li><a href="https://www.instagram.com/trice.design/" title="Follow me on Instagram">
+                    <img src={instagram} className="" alt="Instagram" /></a>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </Navigation>
+        </HeaderContainer>
+        <ParallaxLayer offset={0} speed={1} className="click-through">
           <UpBubblesOneTop>
             <SVG icon="bubble" width={3} left="36%" top="32%" />
             <SVG icon="bubble" width={2} left="40%" top="34%" />
