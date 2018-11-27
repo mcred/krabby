@@ -333,3 +333,21 @@ $button-text-color: $white;
   color: #FFE000;
   text-decoration: none;
 }
+
+.red {
+  background-color: red;
+}
+.yellow {
+  background-color: yellow;
+}
+.green {
+  background-color: green;
+}
+
+.shottt-topaz {
+  max-width: 800px;
+  overflow-x: hidden;
+  @media (max-width: 900px) {
+    max-width: 100%;
+  }
+}
