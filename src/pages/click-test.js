@@ -19,6 +19,10 @@ import { FaChevronRight } from 'react-icons/fa';
 
 const HeaderContainer = styled.div`
   ${tw('justify-center items-center flex z-50')};
+  padding: 1rem 4rem;
+  @media (max-width: 900px) {
+    padding: .5rem 2rem;
+  }
 `;
 const Container = styled.div`
   ${tw('flex')};
@@ -81,7 +85,7 @@ class App extends React.Component {
         <ParallaxLayer offset={0} speed={0} factor={3} style={{ backgroundImage: url('stars', true), backgroundSize: 'cover' }} />
 
 
-        <ParallaxLayer offset={0} speed={1} className="click-through">
+        <ParallaxLayer offset={0} speed={1}>
           <UpBubblesOneTop>
             <SVG icon="bubble" width={3} left="36%" top="32%" />
             <SVG icon="bubble" width={2} left="40%" top="34%" />
@@ -97,6 +101,40 @@ class App extends React.Component {
             <SVG icon="bubble" width={4} left="38%" top="30%" />
             <SVG icon="bubble" width={3} left="31%" top="35%" />
           </UpBubblesThreeTop>
+        </ParallaxLayer>
+        <ParallaxLayer speed={0.1} offset={1} factor={2}>
+          <UpBubblesOne>
+            <SVG icon="bubble" width={3} left="26%" top="32%" />
+            <SVG icon="bubble" width={2} left="30%" top="34%" />
+            <SVG icon="bubble" width={4} left="32%" top="33%" />
+          </UpBubblesOne>
+          <UpBubblesTwo>
+            <SVG icon="bubble" width={4} left="24%" top="32%" />
+            <SVG icon="bubble" width={3} left="31%" top="34%" />
+            <SVG icon="bubble" width={2} left="29%" top="31%" />
+          </UpBubblesTwo>
+          <UpBubblesThree>
+            <SVG icon="bubble" width={2} left="22%" top="32%" />
+            <SVG icon="bubble" width={4} left="28%" top="34%" />
+            <SVG icon="bubble" width={3} left="26%" top="31%" />
+          </UpBubblesThree>
+        </ParallaxLayer>
+        <ParallaxLayer speed={0.1} offset={1} factor={2}>
+          <UpBubblesOne>
+            <SVG icon="bubble" width={3} left="66%" top="28%" />
+            <SVG icon="bubble" width={2} left="70%" top="38%" />
+            <SVG icon="bubble" width={4} left="72%" top="30%" />
+          </UpBubblesOne>
+          <UpBubblesTwo>
+            <SVG icon="bubble" width={4} left="64%" top="30%" />
+            <SVG icon="bubble" width={3} left="71%" top="14%" />
+            <SVG icon="bubble" width={2} left="69%" top="11%" />
+          </UpBubblesTwo>
+          <UpBubblesThree>
+            <SVG icon="bubble" width={2} left="62%" top="22%" />
+            <SVG icon="bubble" width={4} left="68%" top="44%" />
+            <SVG icon="bubble" width={3} left="66%" top="21%" />
+          </UpBubblesThree>
         </ParallaxLayer>
 
 
@@ -117,6 +155,14 @@ class App extends React.Component {
           <img src={url('cloud')} style={{ display: 'block', width: '20%', marginLeft: '5%' }} />
           <img src={url('cloud')} style={{ display: 'block', width: '15%', marginLeft: '75%' }} />
         </ParallaxLayer>
+
+
+        <ParallaxLayer
+          speed={-0.2}
+          offset={1}
+          factor={2}
+          className={'background-01'}
+        />
 
 
         <ParallaxLayer offset={1.3} speed={-0.3}>
@@ -169,7 +215,7 @@ class App extends React.Component {
         </ParallaxLayer>
 
 
-        <ParallaxLayer speed={0.4} offset={0.1}>
+        <ParallaxLayer speed={0.4} offset={0.25}>
           <Container>
             <Hero>
               <BigTitle>

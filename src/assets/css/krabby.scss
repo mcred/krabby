@@ -75,17 +75,11 @@ a {
 *****************************/
 
 .container {
-  padding: 2rem 6rem;
-  @media (min-width: 0px) and (max-width: 767px) {
-    padding: 2rem;
-  }
+
 }
 
 .header__container {
-  padding: 1rem 4rem 0 4rem;
-  @media (min-width: 0px) and (max-width: 767px) {
-    padding:0;
-  }
+
 }
 .hero-padding {
   padding: 2rem 6rem;
@@ -185,12 +179,10 @@ a {
   width: 200px;
   @media (min-width: 0px) and (max-width: 767px) {
     margin-right: auto;
-    padding-left: .75em;
     width: 200px;
   }
   @media (min-width: 0px) and (max-width: 462px) {
     margin-right: auto;
-    padding-left: .75em;
     width: 120px;
   }
 }
@@ -212,7 +204,7 @@ a {
         margin-right: auto;
       }
     li:last-child {
-        padding: 0 .75em 0 .75em;
+        padding: 0 0 0 .75em;
         margin-right: auto;
       }
 }
