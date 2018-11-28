@@ -20,12 +20,33 @@ import { FaChevronRight } from 'react-icons/fa';
 const HeaderContainer = styled.div`
   ${tw('justify-center items-center flex z-50')};
 `;
+const Container = styled.div`
+  ${tw('flex')};
+  padding: 0 4rem;
+  @media (max-width: 900px) {
+    padding: 0 2rem;
+  }
+`;
 const Navigation = styled.div`
   ${tw('w-full')};
   padding-bottom:0;
 `;
 const NavContact = styled.a`
-
+`;
+const Hero = styled.div`
+  ${tw('w-full')};
+`;
+const BigTitle = styled.h1`
+  ${tw('text-white mb-6')};
+  text-shadow: 0 5px 35px rgba(255, 255, 255, 0.15);
+  font-size: 4em;
+  @media (min-width: 0px) and (max-width: 767px) {
+    font-size: 3em;
+   }
+`;
+const Subtitle = styled.p`
+  ${tw('text-white mt-8')};
+  text-shadow: 0 2px 15px rgba(0, 0, 0, 0.2);
 `;
 
 // Little helpers ...
@@ -57,6 +78,8 @@ class App extends React.Component {
       <Parallax ref={ref => (this.parallax = ref)} pages={3}>
 
 
+        <ParallaxLayer offset={0} speed={0} factor={3} style={{ backgroundImage: url('stars', true), backgroundSize: 'cover' }} />
+
 
         <ParallaxLayer offset={0} speed={1} className="click-through">
           <UpBubblesOneTop>
@@ -75,102 +98,54 @@ class App extends React.Component {
             <SVG icon="bubble" width={3} left="31%" top="35%" />
           </UpBubblesThreeTop>
         </ParallaxLayer>
-        <ParallaxLayer offset={1} speed={1} style={{ backgroundColor: '#805E73' }} />
-        <ParallaxLayer offset={2} speed={1} style={{ backgroundColor: '#87BCDE' }} />
 
-        <ParallaxLayer offset={0} speed={0} factor={3} style={{ backgroundImage: url('stars', true), backgroundSize: 'cover' }} />
-
-        <ParallaxLayer offset={1.3} speed={-0.3} style={{ pointerEvents: 'none' }}>
-          <img src={url('satellite4')} style={{ width: '15%', marginLeft: '70%' }} />
-          <ProjectsWrapper>
-            <ProjectCardText
-              title="UX DESIGN, FRONT END DEVELOPMENT"
-              link="topaz"
-            >
-              This project was a redesign and rebuild of their attendee check in app. As part of their free ticketing software, this app allows an event organizer to check in participants and provides the organizer with attendance data.
-              <a href="/">
-                <img src={logotd} className="logo__main" />
-              </a>
-              <Link to="/records/create" className="subnav_link">Add a New Record</Link>
-            </ProjectCardText>
-            <div>
-              <img src={topazshottt} className="shottt-topaz" />
-            </div>
-          </ProjectsWrapper>
-        </ParallaxLayer>
-
-        <ParallaxLayer offset={1} speed={0.8} style={{ opacity: 0.1 }}>
-          <a href="http://google.com"><img src={url('cloud')} style={{ display: 'block', width: '20%', marginLeft: '55%' }} /></a>
-          <img src={url('cloud')} style={{ display: 'block', width: '10%', marginLeft: '15%' }} />
-        </ParallaxLayer>
 
         <ParallaxLayer offset={1.75} speed={0.5} style={{ opacity: 0.1 }}>
           <img src={url('cloud')} style={{ display: 'block', width: '20%', marginLeft: '70%' }} />
           <img src={url('cloud')} style={{ display: 'block', width: '20%', marginLeft: '40%' }} />
         </ParallaxLayer>
-
         <ParallaxLayer offset={1} speed={0.2} style={{ opacity: 0.2 }}>
           <img src={url('cloud')} style={{ display: 'block', width: '10%', marginLeft: '10%' }} />
           <img src={url('cloud')} style={{ display: 'block', width: '20%', marginLeft: '75%' }} />
         </ParallaxLayer>
-
         <ParallaxLayer offset={1.6} speed={-0.1} style={{ opacity: 0.4 }}>
           <img src={url('cloud')} style={{ display: 'block', width: '20%', marginLeft: '60%' }} />
           <img src={url('cloud')} style={{ display: 'block', width: '25%', marginLeft: '30%' }} />
           <img src={url('cloud')} style={{ display: 'block', width: '10%', marginLeft: '80%' }} />
         </ParallaxLayer>
-
         <ParallaxLayer offset={2.6} speed={0.4} style={{ opacity: 0.6 }}>
           <img src={url('cloud')} style={{ display: 'block', width: '20%', marginLeft: '5%' }} />
           <img src={url('cloud')} style={{ display: 'block', width: '15%', marginLeft: '75%' }} />
         </ParallaxLayer>
 
-        <ParallaxLayer offset={2.5} speed={-0.4} style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', pointerEvents: 'none' }}>
-          <img src={url('earth')} style={{ width: '60%' }} />
+
+        <ParallaxLayer offset={1.3} speed={-0.3}>
+          <Container>
+            <ProjectsWrapper>
+              <ProjectCardText
+                title="UX DESIGN, FRONT END DEVELOPMENT"
+                link="topaz"
+              >
+                This project was a redesign and rebuild of their attendee check in app. As part of their free ticketing software, this app allows an event organizer to check in participants and provides the organizer with attendance data.
+                <a href="/">
+                  <img src={logotd} className="logo__main" />
+                </a>
+                <Link to="/records/create" className="subnav_link">Add a New Record</Link>
+              </ProjectCardText>
+              <div>
+                <img src={topazshottt} className="shottt-topaz" />
+              </div>
+            </ProjectsWrapper>
+          </Container>
         </ParallaxLayer>
 
-        <ParallaxLayer
-          offset={2}
-          speed={-0.3}
-          style={{
-            backgroundSize: '80%',
-            backgroundPosition: 'center',
-            backgroundImage: url('clients', true)
-          }}
-        />
 
-        <ParallaxLayer
-          offset={0}
-          speed={0.1}
-          onClick={() => this.parallax.scrollTo(1)}
-          style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-          <img src={url('server')} style={{ width: '20%' }} />
-        </ParallaxLayer>
-
-        <ParallaxLayer
-          offset={1}
-          speed={0.1}
-          onClick={() => this.parallax.scrollTo(2)}
-          style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-          <img src={url('bash')} style={{ width: '40%' }} />
-        </ParallaxLayer>
-
-        <ParallaxLayer
-          offset={2}
-          speed={-0}
-          style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}
-          onClick={() => this.parallax.scrollTo(0)}>
-          <img src={url('clients-main')} style={{ width: '40%' }} />
-        </ParallaxLayer>
-        <ParallaxLayer offset={0} speed={1} className="testtest">
+        <ParallaxLayer offset={0} speed={1}>
           <HeaderContainer className="header__container">
             <Navigation>
               <ul className="nav__main">
                 <li>
-                  <a href="/">
-                    <img src={logotd} className="logo__main" />
-                  </a>
-                  <Link to="/records/create" className="subnav_link">Add a New Record</Link>
+                  <Link to="/" className=""><img src={logotd} className="logo__main" /></Link>
                 </li>
                 <li>
                   <ul className="social-icons">
@@ -192,6 +167,22 @@ class App extends React.Component {
             </Navigation>
           </HeaderContainer>
         </ParallaxLayer>
+
+
+        <ParallaxLayer speed={0.4} offset={0.1}>
+          <Container>
+            <Hero>
+              <BigTitle>
+                My name is Matt Trice.
+              </BigTitle>
+              <Subtitle>I am an Atlanta based UX, prototype, web designer, front end development, from concept to completion from design to deployment full life cycle of the design.</Subtitle>
+              <button class="btn btn--actionjackson btn-spinner">
+                <span class="btn__text">Let's make something cool</span> <FaChevronRight size="1.45em" />
+              </button>
+            </Hero>
+          </Container>
+        </ParallaxLayer>
+
       </Parallax>
     )
   }

@@ -74,10 +74,17 @@ a {
 ******************************
 *****************************/
 
+.container {
+  padding: 2rem 6rem;
+  @media (min-width: 0px) and (max-width: 767px) {
+    padding: 2rem;
+  }
+}
+
 .header__container {
   padding: 1rem 4rem 0 4rem;
   @media (min-width: 0px) and (max-width: 767px) {
-  padding:0;
+    padding:0;
   }
 }
 .hero-padding {
@@ -98,7 +105,7 @@ a {
 *****************************/
 
 .nav__main {
-  // padding-left: 0 !important;
+  padding-left: 0;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
@@ -196,12 +203,19 @@ a {
     list-style-type: none;
     padding: 0 2em 0 0;
   }
+  li:last-child {
+    padding-right: 0;
+  }
   @media (min-width: 0px) and (max-width: 767px) {
     li {
         padding: 0 .75em 0 .75em;
         margin-right: auto;
       }
-  }
+    li:last-child {
+        padding: 0 .75em 0 .75em;
+        margin-right: auto;
+      }
+}
   img {
     width: 24px;
   }
