@@ -27,6 +27,8 @@ const HeaderContainer = styled.div`
     padding: 0 1rem;
   }
 `;
+const SunRaysfromGod = styled(ParallaxLayer)``;
+const OceanBG = styled(ParallaxLayer)``;
 const Container = styled.div`
   ${tw('flex')};
   padding: 0 4rem;
@@ -38,8 +40,7 @@ const Navigation = styled.div`
   ${tw('w-full')};
   padding-bottom:0;
 `;
-const NavContact = styled.a`
-`;
+const NavContact = styled.a``;
 const Hero = styled.div`
   ${tw('w-full')};
   padding: 4rem 0;
@@ -77,14 +78,14 @@ const Gray = ({ children }) => <span style={{ color: '#909090' }}>{children}</sp
 const ProjectsWrapper = styled.div`
   ${tw('flex flex-wrap justify-between mt-8')};
   display: grid;
-  grid-gap: 4rem;
+  grid-gap: 2rem;
   grid-template-columns: 1fr 50%;
   @media (max-width: 1200px) {
-    grid-gap: 3rem;
+    grid-gap: 2rem;
   }
   @media (max-width: 900px) {
     grid-template-columns: 1fr;
-    grid-gap: 2rem;
+    grid-gap: 1rem;
   }
 `;
 
@@ -93,7 +94,8 @@ class App extends React.Component {
     return (
       <Parallax ref={ref => (this.parallax = ref)} pages={3}>
 
-
+        <OceanBG offset={0} factor={3} className="oceanbg" />
+        <SunRaysfromGod offset={-0.6} speed={.5} factor={3} className="sunrays" />
         <ParallaxLayer offset={0} speed={1}>
           <UpBubblesOneTop>
             <SVG icon="bubble" width={3} left="36%" top="32%" />
@@ -162,23 +164,28 @@ class App extends React.Component {
         <ParallaxLayer offset={1.3} speed={1}>
           <Container>
             <ProjectsWrapper>
-              <img src={logotopaz} />
-              <ProjectCardText
-                title="UX DESIGN, FRONT END DEVELOPMENT"
-              >
 
+              <ProjectCardText title="UX DESIGN, FRONT END DEVELOPMENT">
+                <img src={logotopaz} />
                 <Description>This project was a redesign and rebuild of their attendee check in app. As part of their free ticketing software, this app allows an event organizer to check in participants and provides the organizer with attendance data.</Description>
-
+                <button class="btn btn--actionjackson btn-spinner">
+                  <span class="btn__text">Case Study</span> <FaChevronRight size="1.45em" />
+                </button>
               </ProjectCardText>
-              <button class="btn btn--actionjackson btn-spinner">
-                <span class="btn__text">Case Study</span> <FaChevronRight size="1.45em" />
-              </button>
-              <div>
-                <img src={topazshottt} className="shottt-topaz" />
-              </div>
+              <img src={topazshottt} className="shottt-topaz" />
+              <img src={topazshottt} className="shottt-topaz" />
+              <ProjectCardText title="UX DESIGN, FRONT END DEVELOPMENT">
+                <img src={logotopaz} />
+                <Description>This project was a redesign and rebuild of their attendee check in app. As part of their free ticketing software, this app allows an event organizer to check in participants and provides the organizer with attendance data.</Description>
+                <button class="btn btn--actionjackson btn-spinner">
+                  <span class="btn__text">Case Study</span> <FaChevronRight size="1.45em" />
+                </button>
+              </ProjectCardText>
+
             </ProjectsWrapper>
           </Container>
         </ParallaxLayer>
+      
 
 
 

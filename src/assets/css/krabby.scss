@@ -8,8 +8,9 @@
 	5. Utilities..............  island of misfit classes
 
 ******************************
-*****************************/
-
+*****************************
+background-image: linear-gradient(-180deg, #00111F 0%, #00161E 64%, #00282B 100%);
+/
 
 
 
@@ -86,6 +87,20 @@ a {
   @media (min-width: 0px) and (max-width: 767px) {
     padding: 2rem;
   }
+}
+.sunrays {
+  background: url('../../images/radial-bright-gradient-top.svg');
+  background-repeat: no-repeat;
+  background-position: top center;
+}
+.oceanbg {
+  background: -moz-linear-gradient(270deg, rgba(0,40,43,1) 0%, rgba(0,22,30,1) 59%, rgba(0,12,22,1) 100%); /* ff3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, rgba(0,40,43,1)), color-stop(59%, rgba(0,22,30,1)), color-stop(100%, rgba(0,12,22,1))); /* safari4+,chrome */
+  background: -webkit-linear-gradient(270deg, rgba(0,40,43,1) 0%, rgba(0,22,30,1) 59%, rgba(0,12,22,1) 100%); /* safari5.1+,chrome10+ */
+  background: -o-linear-gradient(270deg, rgba(0,40,43,1) 0%, rgba(0,22,30,1) 59%, rgba(0,12,22,1) 100%); /* opera 11.10+ */
+  background: -ms-linear-gradient(270deg, rgba(0,40,43,1) 0%, rgba(0,22,30,1) 59%, rgba(0,12,22,1) 100%); /* ie10+ */
+  background: linear-gradient(180deg, rgba(0,40,43,1) 0%, rgba(0,22,30,1) 59%, rgba(0,12,22,1) 100%); /* w3c */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00282B', endColorstr='#000C16',GradientType=0 ); /* ie6-9 */
 }
 
 
