@@ -13,22 +13,25 @@ import dribbble from '../images/icon-dribbble.svg';
 import instagram from '../images/icon-instagram.svg';
 import linkedin from '../images/icon-linkedin.svg';
 import logotd from '../images/logo-td.svg';
+import logotopaz from '../images/logo-topaz.svg';
+import jellyfish from '../images/jellyfish-group.svg';
+import bottomburm from '../images/bottom-burm.svg';
 import '../assets/css/krabby.scss';
 import { FaChevronRight } from 'react-icons/fa';
 
 
 const HeaderContainer = styled.div`
   ${tw('justify-center items-center flex z-50')};
-  padding: 1rem 4rem;
+  padding: .5rem 4rem;
   @media (max-width: 900px) {
-    padding: .5rem 2rem;
+    padding: 0 1rem;
   }
 `;
 const Container = styled.div`
   ${tw('flex')};
   padding: 0 4rem;
   @media (max-width: 900px) {
-    padding: 0 2rem;
+    padding: 0 1rem;
   }
 `;
 const Navigation = styled.div`
@@ -39,6 +42,10 @@ const NavContact = styled.a`
 `;
 const Hero = styled.div`
   ${tw('w-full')};
+  padding: 4rem 0;
+  @media (max-width: 900px) {
+    padding: 2rem 0;
+  }
 `;
 const BigTitle = styled.h1`
   ${tw('text-white mb-6')};
@@ -49,8 +56,13 @@ const BigTitle = styled.h1`
    }
 `;
 const Subtitle = styled.p`
-  ${tw('text-white mt-8')};
+  ${tw('text-white')};
   text-shadow: 0 2px 15px rgba(0, 0, 0, 0.2);
+  line-height: 1.45em;
+`;
+const Description = styled.p`
+  ${tw('text-white')};
+  line-height: 1.45em;
 `;
 
 // Little helpers ...
@@ -99,6 +111,17 @@ class App extends React.Component {
             <SVG icon="bubble" width={3} left="31%" top="35%" />
           </UpBubblesThreeTop>
         </ParallaxLayer>
+
+
+
+        <ParallaxLayer offset={.85} speed={.75} style={{ opacity: 0.2 }} factor={2}>
+          <img src={jellyfish} style={{ display: 'block', width: '12%', marginLeft: '6%' }} />
+          <img src={jellyfish} style={{ display: 'block', width: '10%', marginLeft: '78%' }} />
+        </ParallaxLayer>
+
+
+
+        <ParallaxLayer speed={-0.2} offset={1} factor={1} className={'background-01'} />
         <ParallaxLayer speed={0.1} offset={1} factor={2}>
           <UpBubblesOne>
             <SVG icon="bubble" width={3} left="26%" top="32%" />
@@ -135,46 +158,21 @@ class App extends React.Component {
         </ParallaxLayer>
 
 
-        <ParallaxLayer offset={1.75} speed={0.5} style={{ opacity: 0.1 }}>
-          <img src={url('cloud')} style={{ display: 'block', width: '20%', marginLeft: '70%' }} />
-          <img src={url('cloud')} style={{ display: 'block', width: '20%', marginLeft: '40%' }} />
-        </ParallaxLayer>
-        <ParallaxLayer offset={1} speed={0.2} style={{ opacity: 0.2 }}>
-          <img src={url('cloud')} style={{ display: 'block', width: '10%', marginLeft: '10%' }} />
-          <img src={url('cloud')} style={{ display: 'block', width: '20%', marginLeft: '75%' }} />
-        </ParallaxLayer>
-        <ParallaxLayer offset={1.6} speed={-0.1} style={{ opacity: 0.4 }}>
-          <img src={url('cloud')} style={{ display: 'block', width: '20%', marginLeft: '60%' }} />
-          <img src={url('cloud')} style={{ display: 'block', width: '25%', marginLeft: '30%' }} />
-          <img src={url('cloud')} style={{ display: 'block', width: '10%', marginLeft: '80%' }} />
-        </ParallaxLayer>
-        <ParallaxLayer offset={2.6} speed={0.4} style={{ opacity: 0.6 }}>
-          <img src={url('cloud')} style={{ display: 'block', width: '20%', marginLeft: '5%' }} />
-          <img src={url('cloud')} style={{ display: 'block', width: '15%', marginLeft: '75%' }} />
-        </ParallaxLayer>
 
-
-        <ParallaxLayer
-          speed={-0.2}
-          offset={1}
-          factor={1}
-          className={'background-01'}
-        />
-
-
-        <ParallaxLayer offset={1.3} speed={-0.3}>
+        <ParallaxLayer offset={1.3} speed={1}>
           <Container>
             <ProjectsWrapper>
+              <img src={logotopaz} />
               <ProjectCardText
                 title="UX DESIGN, FRONT END DEVELOPMENT"
-                link="topaz"
               >
-                This project was a redesign and rebuild of their attendee check in app. As part of their free ticketing software, this app allows an event organizer to check in participants and provides the organizer with attendance data.
-                <a href="/">
-                  <img src={logotd} className="logo__main" />
-                </a>
-                <Link to="/records/create" className="subnav_link">Add a New Record</Link>
+
+                <Description>This project was a redesign and rebuild of their attendee check in app. As part of their free ticketing software, this app allows an event organizer to check in participants and provides the organizer with attendance data.</Description>
+
               </ProjectCardText>
+              <button class="btn btn--actionjackson btn-spinner">
+                <span class="btn__text">Case Study</span> <FaChevronRight size="1.45em" />
+              </button>
               <div>
                 <img src={topazshottt} className="shottt-topaz" />
               </div>
@@ -182,49 +180,6 @@ class App extends React.Component {
           </Container>
         </ParallaxLayer>
 
-
-        <ParallaxLayer offset={0} speed={1}>
-          <HeaderContainer className="header__container">
-            <Navigation>
-              <ul className="nav__main">
-                <li>
-                  <Link to="/" className=""><img src={logotd} className="logo__main" /></Link>
-                </li>
-                <li>
-                  <ul className="social-icons">
-                    <li className="contact">
-                      <NavContact onClick={() => this.parallax.scrollTo(2)}>Contact</NavContact>
-                    </li>
-                    <li><a href="https://dribbble.com/trice" title="Follow me on Dribbble">
-                      <img src={dribbble} className="" alt="Dribbble" /></a>
-                    </li>
-                    <li><a href="https://www.linkedin.com/in/matt-trice-5053b325/" title="Serious as fuck">
-                      <img src={linkedin} className="" alt="LINKED FUCKING IN" /></a>
-                    </li>
-                    <li><a href="https://www.instagram.com/trice.design/" title="Follow me on Instagram">
-                      <img src={instagram} className="" alt="Instagram" /></a>
-                    </li>
-                  </ul>
-                </li>
-              </ul>
-            </Navigation>
-          </HeaderContainer>
-        </ParallaxLayer>
-
-
-        <ParallaxLayer speed={0.4} offset={0.25}>
-          <Container>
-            <Hero>
-              <BigTitle>
-                My name is Matt Trice.
-              </BigTitle>
-              <Subtitle>I am an Atlanta based UX, prototype, web designer, front end development, from concept to completion from design to deployment full life cycle of the design.</Subtitle>
-              <button class="btn btn--actionjackson btn-spinner">
-                <span class="btn__text">Let's make something cool</span> <FaChevronRight size="1.45em" />
-              </button>
-            </Hero>
-          </Container>
-        </ParallaxLayer>
 
 
         <ParallaxLayer speed={0.2} offset={2.5} className={'foreground--coral'}>
@@ -258,6 +213,49 @@ class App extends React.Component {
             <SVG icon="bubble" width={4} left="68%" top="44%" />
             <SVG icon="bubble" width={3} left="66%" top="21%" />
           </UpBubblesThree>
+        </ParallaxLayer>
+
+
+
+        <ParallaxLayer offset={0} speed={1}>
+          <HeaderContainer className="header__container">
+            <Navigation>
+              <ul className="nav__main">
+                <li>
+                  <Link to="/" className=""><img src={logotd} className="logo__main" /></Link>
+                </li>
+                <li>
+                  <ul className="social-icons">
+                    <li className="contact">
+                      <NavContact onClick={() => this.parallax.scrollTo(2)}>Contact</NavContact>
+                    </li>
+                    <li><a href="https://dribbble.com/trice" title="Follow me on Dribbble">
+                      <img src={dribbble} className="" alt="Dribbble" /></a>
+                    </li>
+                    <li><a href="https://www.linkedin.com/in/matt-trice-5053b325/" title="Serious as fuck">
+                      <img src={linkedin} className="" alt="LINKED FUCKING IN" /></a>
+                    </li>
+                    <li><a href="https://www.instagram.com/trice.design/" title="Follow me on Instagram">
+                      <img src={instagram} className="" alt="Instagram" /></a>
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+            </Navigation>
+          </HeaderContainer>
+        </ParallaxLayer>
+        <ParallaxLayer speed={0.5} offset={.1}>
+          <Container>
+            <Hero>
+              <BigTitle>
+                Howdy. My name is Matt Trice.
+              </BigTitle>
+              <Subtitle>I am an Atlanta based UX, prototype, web designer, front end development, from concept to completion from design to deployment full life cycle of the design.</Subtitle>
+              <button class="btn btn--actionjackson btn-spinner">
+                <span class="btn__text">Let's make something cool</span> <FaChevronRight size="1.45em" />
+              </button>
+            </Hero>
+          </Container>
         </ParallaxLayer>
 
       </Parallax>
