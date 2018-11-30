@@ -65,18 +65,8 @@ const Description = styled.p`
   ${tw('text-white')};
   line-height: 1.45em;
 `;
-
-// Little helpers ...
-const url = (name, wrap = false) => `${wrap ? 'url(' : ''}https://awv3node-homepage.surge.sh/build/assets/${name}.svg${wrap ? ')' : ''}`
-const Pink = ({ children }) => <span style={{ color: '#FF6AC1' }}>{children}</span>
-const Yellow = ({ children }) => <span style={{ color: '#EFF59B' }}>{children}</span>
-const Lightblue = ({ children }) => <span style={{ color: '#9AEDFE' }}>{children}</span>
-const Green = ({ children }) => <span style={{ color: '#57EE89' }}>{children}</span>
-const Blue = ({ children }) => <span style={{ color: '#57C7FF' }}>{children}</span>
-const Gray = ({ children }) => <span style={{ color: '#909090' }}>{children}</span>
-
-const ProjectsWrapper = styled.div`
-  ${tw('flex flex-wrap justify-between mt-8')};
+const ProjectWrapper = styled.div`
+  ${tw('mt-8')};
   display: grid;
   grid-gap: 2rem;
   grid-template-columns: 1fr 50%;
@@ -89,13 +79,26 @@ const ProjectsWrapper = styled.div`
   }
 `;
 
+// Little helpers ...
+const url = (name, wrap = false) => `${wrap ? 'url(' : ''}https://awv3node-homepage.surge.sh/build/assets/${name}.svg${wrap ? ')' : ''}`
+const Pink = ({ children }) => <span style={{ color: '#FF6AC1' }}>{children}</span>
+const Yellow = ({ children }) => <span style={{ color: '#EFF59B' }}>{children}</span>
+const Lightblue = ({ children }) => <span style={{ color: '#9AEDFE' }}>{children}</span>
+const Green = ({ children }) => <span style={{ color: '#57EE89' }}>{children}</span>
+const Blue = ({ children }) => <span style={{ color: '#57C7FF' }}>{children}</span>
+const Gray = ({ children }) => <span style={{ color: '#909090' }}>{children}</span>
+
+
+
+
+
+
 class App extends React.Component {
   render() {
     return (
-      <Parallax ref={ref => (this.parallax = ref)} pages={3}>
+      <Parallax ref={ref => (this.parallax = ref)} pages={4}>
 
-        <OceanBG offset={0} factor={3} className="oceanbg" />
-        <SunRaysfromGod offset={-0.6} speed={.5} factor={3} className="sunrays" />
+        <SunRaysfromGod offset={-0.6} speed={.05} factor={4} className="sunrays" />
         <ParallaxLayer offset={0} speed={1}>
           <UpBubblesOneTop>
             <SVG icon="bubble" width={3} left="36%" top="32%" />
@@ -163,7 +166,7 @@ class App extends React.Component {
 
         <ParallaxLayer offset={1.3} speed={1}>
           <Container>
-            <ProjectsWrapper>
+            <ProjectWrapper>
 
               <ProjectCardText title="UX DESIGN, FRONT END DEVELOPMENT">
                 <img src={logotopaz} />
@@ -181,15 +184,31 @@ class App extends React.Component {
                   <span class="btn__text">Case Study</span> <FaChevronRight size="1.45em" />
                 </button>
               </ProjectCardText>
+              <ProjectCardText title="UX DESIGN, FRONT END DEVELOPMENT">
+                <img src={logotopaz} />
+                <Description>This project was a redesign and rebuild of their attendee check in app. As part of their free ticketing software, this app allows an event organizer to check in participants and provides the organizer with attendance data.</Description>
+                <button class="btn btn--actionjackson btn-spinner">
+                  <span class="btn__text">Case Study</span> <FaChevronRight size="1.45em" />
+                </button>
+              </ProjectCardText>
+              <img src={topazshottt} className="shottt-topaz" />
+              <img src={topazshottt} className="shottt-topaz" />
+              <ProjectCardText title="UX DESIGN, FRONT END DEVELOPMENT">
+                <img src={logotopaz} />
+                <Description>This project was a redesign and rebuild of their attendee check in app. As part of their free ticketing software, this app allows an event organizer to check in participants and provides the organizer with attendance data.</Description>
+                <button class="btn btn--actionjackson btn-spinner">
+                  <span class="btn__text">Case Study</span> <FaChevronRight size="1.45em" />
+                </button>
+              </ProjectCardText>
 
-            </ProjectsWrapper>
+            </ProjectWrapper>
           </Container>
         </ParallaxLayer>
-      
 
 
 
-        <ParallaxLayer speed={0.2} offset={2.5} className={'foreground--coral'}>
+
+        <ParallaxLayer speed={0.2} offset={3.4} className={'foreground--coral'}>
           <UpBubblesOne>
             <SVG icon="bubble" width={3} left="26%" top="32%" />
             <SVG icon="bubble" width={2} left="30%" top="34%" />
