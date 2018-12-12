@@ -17,6 +17,8 @@ import logotopaz from '../images/logo-topaz.svg';
 import jellyfish from '../images/jellyfish-group.svg';
 import bottomburm from '../images/bottom-burm.svg';
 import howdy from '../images/howdy.svg';
+import anglerbright from '../images/angler-bright.png';
+import anglerdark from '../images/angler-dark.png';
 import '../assets/css/krabby.scss';
 import { FaChevronRight } from 'react-icons/fa';
 
@@ -31,6 +33,9 @@ const HeaderContainer = styled.div`
 
 const SunRaysfromGod = styled(ParallaxLayer)`
 
+`;
+
+const Angler = styled.div`
 `;
 
 const OceanBG = styled(ParallaxLayer)``;
@@ -215,6 +220,7 @@ class App extends React.Component {
 
 
         <ParallaxLayer speed={0.2} offset={3.4} className={'foreground--coral'}>
+
           <UpBubblesOne>
             <SVG icon="bubble" width={3} left="26%" top="32%" />
             <SVG icon="bubble" width={2} left="30%" top="34%" />
@@ -245,6 +251,7 @@ class App extends React.Component {
             <SVG icon="bubble" width={4} left="68%" top="44%" />
             <SVG icon="bubble" width={3} left="66%" top="21%" />
           </UpBubblesThree>
+
         </ParallaxLayer>
 
 
@@ -287,6 +294,10 @@ class App extends React.Component {
               <button class="btn btn--actionjackson btn-spinner">
                 <span class="btn__text">Let's make something cool</span> <FaChevronRight size="1.45em" />
               </button>
+              <Angler className={'anglerFish'}>
+                <img class="bottom" src={anglerdark} />
+                <img class="top" src={anglerbright} />
+              </Angler>
             </Hero>
           </Container>
         </ParallaxLayer>

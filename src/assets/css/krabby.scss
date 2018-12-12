@@ -236,7 +236,7 @@ a {
 
   }
   @media (min-width: 0px) and (max-width: 462px) {
-    
+
   }
 }
 
@@ -386,4 +386,37 @@ $button-text-color: $white;
   @media (max-width: 900px) {
     max-width: 100%;
   }
+}
+
+.anglerFish {
+  // background: url('../../images/angler-dark.png');
+  // background-repeat: no-repeat;
+  // background-size: contain;
+  // background-position: top left;
+  width: 560px;
+  height: 360px;
+  // transition: 0.2s ease-in-out;
+  // &:hover {
+  //   background: url('../../images/angler-bright.png');
+  //   background-repeat: no-repeat;
+  //   background-size: contain;
+  //   width: 560px;
+  //   height: 360px;
+  // }
+}
+
+.anglerFish img {
+  position:absolute;
+  left:0;
+  max-width: 100%;
+  -webkit-transition: opacity 1s ease-in-out;
+  -moz-transition: opacity 1s ease-in-out;
+  -o-transition: opacity 1s ease-in-out;
+  transition: opacity 1s ease-in-out;
+}
+.anglerFish img.top {
+  opacity:0;
+}
+.anglerFish img.top:hover {
+  opacity:1;
 }
