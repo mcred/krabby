@@ -16,6 +16,7 @@ import logotd from '../images/logo-td.svg';
 import logotopaz from '../images/logo-topaz.svg';
 import jellyfish from '../images/jellyfish-group.svg';
 import bottomburm from '../images/bottom-burm.svg';
+import howdy from '../images/howdy.svg';
 import '../assets/css/krabby.scss';
 import { FaChevronRight } from 'react-icons/fa';
 
@@ -27,7 +28,11 @@ const HeaderContainer = styled.div`
     padding: 0 1rem;
   }
 `;
-const SunRaysfromGod = styled(ParallaxLayer)``;
+
+const SunRaysfromGod = styled(ParallaxLayer)`
+
+`;
+
 const OceanBG = styled(ParallaxLayer)``;
 const Container = styled.div`
   ${tw('flex')};
@@ -43,23 +48,26 @@ const Navigation = styled.div`
 const NavContact = styled.a``;
 const Hero = styled.div`
   ${tw('w-full')};
-  padding: 4rem 0;
+  display: grid;
+  justify-items: center;
+  padding: 2rem 12rem 4rem 12rem;
   @media (max-width: 900px) {
-    padding: 2rem 0;
+    padding: 2rem 0rem;
   }
 `;
 const BigTitle = styled.h1`
-  ${tw('text-white mb-6')};
+  ${tw('text-white mb-0')};
   text-shadow: 0 5px 35px rgba(255, 255, 255, 0.15);
-  font-size: 4em;
+  font-size: 3em;
   @media (min-width: 0px) and (max-width: 767px) {
-    font-size: 3em;
+    font-size: 1.85em;
    }
 `;
 const Subtitle = styled.p`
   ${tw('text-white')};
   text-shadow: 0 2px 15px rgba(0, 0, 0, 0.2);
   line-height: 1.45em;
+  font-size: 1.25em;
 `;
 const Description = styled.p`
   ${tw('text-white')};
@@ -98,7 +106,9 @@ class App extends React.Component {
     return (
       <Parallax ref={ref => (this.parallax = ref)} pages={4}>
 
-        <SunRaysfromGod offset={-0.6} speed={.05} factor={4} className="sunrays" />
+        <SunRaysfromGod offset={0} speed={.05} factor={2} className={'sunrays'} style={{ backgroundSize: 'contain' }} />
+
+
         <ParallaxLayer offset={0} speed={1}>
           <UpBubblesOneTop>
             <SVG icon="bubble" width={3} left="36%" top="32%" />
@@ -119,10 +129,6 @@ class App extends React.Component {
 
 
 
-        <ParallaxLayer offset={.85} speed={.75} style={{ opacity: 0.2 }} factor={2}>
-          <img src={jellyfish} style={{ display: 'block', width: '12%', marginLeft: '6%' }} />
-          <img src={jellyfish} style={{ display: 'block', width: '10%', marginLeft: '78%' }} />
-        </ParallaxLayer>
 
 
 
@@ -273,8 +279,9 @@ class App extends React.Component {
         <ParallaxLayer speed={0.5} offset={.1}>
           <Container>
             <Hero>
+              <img src={howdy} className="howdy__main" />
               <BigTitle>
-                Howdy. My name is Matt Trice.
+                My name is Matt Trice.
               </BigTitle>
               <Subtitle>I am an Atlanta based UX, prototype, web designer, front end development, from concept to completion from design to deployment full life cycle of the design.</Subtitle>
               <button class="btn btn--actionjackson btn-spinner">
