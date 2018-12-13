@@ -55,10 +55,10 @@ const Hero = styled.div`
   ${tw('w-full')};
   display: grid;
   justify-items: center;
-  padding: 2rem 12rem 4rem 12rem;
-  @media (max-width: 900px) {
-    padding: 2rem 0rem;
-  }
+  grid-template-columns:
+        [viewport-start] minmax(1em, 1fr)
+        [container-start] minmax(0, 30em) [container-end]
+        minmax(1em, 1fr) [viewport-end];
 `;
 const BigTitle = styled.h1`
   ${tw('text-white mb-0')};
@@ -286,18 +286,15 @@ class App extends React.Component {
         <ParallaxLayer speed={0.5} offset={.1}>
           <Container>
             <Hero>
-              <img src={howdy} className="howdy__main" />
-              <BigTitle>
+              <img src={howdy} className="item--contained howdy__main" />
+              <BigTitle className="item--contained">
                 My name is Matt Trice.
               </BigTitle>
-              <Subtitle>I am an Atlanta based UX, prototype, web designer, front end development, from concept to completion from design to deployment full life cycle of the design.</Subtitle>
-              <button class="btn btn--actionjackson btn-spinner">
-                <span class="btn__text">Let's make something cool</span> <FaChevronRight size="1.45em" />
+              <Subtitle className="item--contained">I am an Atlanta based UX, prototype, web designer, front end development, from concept to completion from design to deployment full life cycle of the design.</Subtitle>
+              <button className="item--contained btn btn--actionjackson btn-spinner">
+                <span className="btn__text">Let's make something cool</span> <FaChevronRight size="1.45em" />
               </button>
-              <Angler className={'anglerFish'}>
-                <img class="bottom" src={anglerdark} />
-                <img class="top" src={anglerbright} />
-              </Angler>
+
             </Hero>
           </Container>
         </ParallaxLayer>
