@@ -72,7 +72,10 @@ const Subtitle = styled.p`
   ${tw('text-white')};
   text-shadow: 0 2px 15px rgba(0, 0, 0, 0.2);
   line-height: 1.45em;
-  font-size: 1.25em;
+  font-size: 1.125em;
+  @media (min-width: 0px) and (max-width: 767px) {
+    font-size: 1em;
+   }
 `;
 const Description = styled.p`
   ${tw('text-white')};
@@ -294,7 +297,6 @@ class App extends React.Component {
               <button className="item--contained btn btn--actionjackson btn-spinner">
                 <span className="btn__text">Let's make something cool</span> <FaChevronRight size="1.45em" />
               </button>
-
             </Hero>
           </Container>
         </ParallaxLayer>
