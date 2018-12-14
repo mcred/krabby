@@ -224,6 +224,7 @@ class App extends React.Component {
 
         <ParallaxLayer speed={0.2} offset={3.4} className={'foreground--coral'}>
 
+
           <UpBubblesOne>
             <SVG icon="bubble" width={3} left="26%" top="32%" />
             <SVG icon="bubble" width={2} left="30%" top="34%" />
@@ -254,6 +255,10 @@ class App extends React.Component {
             <SVG icon="bubble" width={4} left="68%" top="44%" />
             <SVG icon="bubble" width={3} left="66%" top="21%" />
           </UpBubblesThree>
+          <Angler className={'anglerFish'}>
+            <img class="bottom" src={anglerdark} />
+            <img class="top" src={anglerbright} />
+          </Angler>
 
         </ParallaxLayer>
 
@@ -297,7 +302,7 @@ class App extends React.Component {
               <button className="item--contained btn btn--actionjackson btn-spinner">
                 <span className="btn__text">Let's make something cool</span> <FaChevronRight size="1.45em" />
               </button>
-            </Hero>
+            </Hero><form><input type="text" /></form>
           </Container>
         </ParallaxLayer>
 
