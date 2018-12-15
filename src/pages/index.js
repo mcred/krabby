@@ -117,6 +117,9 @@ class App extends React.Component {
         <SunRaysfromGod offset={0} speed={.05} factor={2} className={'sunrays'} style={{ backgroundSize: 'contain' }} />
 
 
+
+
+
         <ParallaxLayer offset={0} speed={1}>
           <UpBubblesOneTop>
             <SVG icon="bubble" width={3} left="36%" top="32%" />
@@ -179,6 +182,7 @@ class App extends React.Component {
 
 
         <ParallaxLayer offset={1.3} speed={1}>
+
           <Container>
             <ProjectWrapper>
 
@@ -302,11 +306,11 @@ class App extends React.Component {
               <button className="item--contained btn btn--actionjackson btn-spinner">
                 <span className="btn__text">Let's make something cool</span> <FaChevronRight size="1.45em" />
               </button>
-            </Hero><form><input type="text" /></form>
+            </Hero>
           </Container>
         </ParallaxLayer>
-
       </Parallax>
+
     )
   }
 }
