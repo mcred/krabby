@@ -21,7 +21,7 @@ import anglerbright from '../images/angler-bright.png';
 import anglerdark from '../images/angler-dark.png';
 import '../assets/css/krabby.scss';
 import { FaChevronRight } from 'react-icons/fa';
-
+import TextComponent from '../components/TextComponent/TextComponent.js';
 
 const HeaderContainer = styled.div`
   ${tw('justify-center items-center flex z-50')};
@@ -40,7 +40,6 @@ const Angler = styled.div`
 
 const OceanBG = styled(ParallaxLayer)``;
 const Container = styled.div`
-  ${tw('flex')};
   padding: 0 4rem;
   @media (max-width: 900px) {
     padding: 0 1rem;
@@ -112,12 +111,9 @@ const Gray = ({ children }) => <span style={{ color: '#909090' }}>{children}</sp
 class App extends React.Component {
   render() {
     return (
-      <Parallax ref={ref => (this.parallax = ref)} pages={4}>
+      <Parallax ref={ref => (this.parallax = ref)} pages={5}>
 
         <SunRaysfromGod offset={0} speed={.05} factor={2} className={'sunrays'} style={{ backgroundSize: 'contain' }} />
-
-
-
 
 
         <ParallaxLayer offset={0} speed={1}>
@@ -137,12 +133,6 @@ class App extends React.Component {
             <SVG icon="bubble" width={3} left="31%" top="35%" />
           </UpBubblesThreeTop>
         </ParallaxLayer>
-
-
-
-
-
-
         <ParallaxLayer speed={-0.2} offset={1} factor={1} className={'background-01'} />
         <ParallaxLayer speed={0.1} offset={1} factor={2}>
           <UpBubblesOne>
@@ -181,54 +171,9 @@ class App extends React.Component {
 
 
 
-        <ParallaxLayer offset={1.3} speed={1}>
-
-          <Container>
-            <ProjectWrapper>
-
-              <ProjectCardText title="UX DESIGN, FRONT END DEVELOPMENT">
-                <img src={logotopaz} />
-                <Description>This project was a redesign and rebuild of their attendee check in app. As part of their free ticketing software, this app allows an event organizer to check in participants and provides the organizer with attendance data.</Description>
-                <button class="btn btn--actionjackson btn-spinner">
-                  <span class="btn__text">Case Study</span> <FaChevronRight size="1.45em" />
-                </button>
-              </ProjectCardText>
-              <img src={topazshottt} className="shottt-topaz" />
-              <img src={topazshottt} className="shottt-topaz" />
-              <ProjectCardText title="UX DESIGN, FRONT END DEVELOPMENT">
-                <img src={logotopaz} />
-                <Description>This project was a redesign and rebuild of their attendee check in app. As part of their free ticketing software, this app allows an event organizer to check in participants and provides the organizer with attendance data.</Description>
-                <button class="btn btn--actionjackson btn-spinner">
-                  <span class="btn__text">Case Study</span> <FaChevronRight size="1.45em" />
-                </button>
-              </ProjectCardText>
-              <ProjectCardText title="UX DESIGN, FRONT END DEVELOPMENT">
-                <img src={logotopaz} />
-                <Description>This project was a redesign and rebuild of their attendee check in app. As part of their free ticketing software, this app allows an event organizer to check in participants and provides the organizer with attendance data.</Description>
-                <button class="btn btn--actionjackson btn-spinner">
-                  <span class="btn__text">Case Study</span> <FaChevronRight size="1.45em" />
-                </button>
-              </ProjectCardText>
-              <img src={topazshottt} className="shottt-topaz" />
-              <img src={topazshottt} className="shottt-topaz" />
-              <ProjectCardText title="UX DESIGN, FRONT END DEVELOPMENT">
-                <img src={logotopaz} />
-                <Description>This project was a redesign and rebuild of their attendee check in app. As part of their free ticketing software, this app allows an event organizer to check in participants and provides the organizer with attendance data.</Description>
-                <button class="btn btn--actionjackson btn-spinner">
-                  <span class="btn__text">Case Study</span> <FaChevronRight size="1.45em" />
-                </button>
-              </ProjectCardText>
-
-            </ProjectWrapper>
-          </Container>
-        </ParallaxLayer>
 
 
-
-
-        <ParallaxLayer speed={0.2} offset={3.4} className={'foreground--coral'}>
-
-
+        <ParallaxLayer speed={0.2} offset={4.4} className={'foreground--coral'}>
           <UpBubblesOne>
             <SVG icon="bubble" width={3} left="26%" top="32%" />
             <SVG icon="bubble" width={2} left="30%" top="34%" />
@@ -259,14 +204,76 @@ class App extends React.Component {
             <SVG icon="bubble" width={4} left="68%" top="44%" />
             <SVG icon="bubble" width={3} left="66%" top="21%" />
           </UpBubblesThree>
+        </ParallaxLayer>
+
+        <ParallaxLayer offset={1} speed={.5}>
+          <Container>
+            <ProjectWrapper>
+
+
+              <ProjectCardText title="UX DESIGN, FRONT END DEVELOPMENT">
+                <img src={logotopaz} />
+                <Description>This project was a redesign and rebuild of their attendee check in app. As part of their free ticketing software, this app allows an event organizer to check in participants and provides the organizer with attendance data.</Description>
+                <button class="btn btn--actionjackson btn-spinner">
+                  <span class="btn__text">Case Study</span> <FaChevronRight size="1.45em" />
+                </button>
+              </ProjectCardText>
+              <img src={topazshottt} className="shottt-topaz" />
+
+
+              <img src={topazshottt} className="shottt-topaz" />
+              <ProjectCardText title="UX DESIGN, FRONT END DEVELOPMENT">
+                <img src={logotopaz} />
+                <Description>This project was a redesign and rebuild of their attendee check in app. As part of their free ticketing software, this app allows an event organizer to check in participants and provides the organizer with attendance data.</Description>
+                <button class="btn btn--actionjackson btn-spinner">
+                  <span class="btn__text">Case Study</span> <FaChevronRight size="1.45em" />
+                </button>
+              </ProjectCardText>
+
+
+              <ProjectCardText title="UX DESIGN, FRONT END DEVELOPMENT">
+                <img src={logotopaz} />
+                <Description>This project was a redesign and rebuild of their attendee check in app. As part of their free ticketing software, this app allows an event organizer to check in participants and provides the organizer with attendance data.</Description>
+                <button class="btn btn--actionjackson btn-spinner">
+                  <span class="btn__text">Case Study</span> <FaChevronRight size="1.45em" />
+                </button>
+              </ProjectCardText>
+              <img src={topazshottt} className="shottt-topaz" />
+
+
+              <img src={topazshottt} className="shottt-topaz" />
+              <ProjectCardText title="UX DESIGN, FRONT END DEVELOPMENT">
+                <img src={logotopaz} />
+                <Description>This project was a redesign and rebuild of their attendee check in app. As part of their free ticketing software, this app allows an event organizer to check in participants and provides the organizer with attendance data.</Description>
+                <button class="btn btn--actionjackson btn-spinner">
+                  <span class="btn__text">Case Study</span> <FaChevronRight size="1.45em" />
+                </button>
+              </ProjectCardText>
+
+
+            </ProjectWrapper>
+          </Container>
+        </ParallaxLayer>
+
+        <ParallaxLayer offset={4.1} speed={1.2}>
           <Angler className={'anglerFish'}>
             <img class="bottom" src={anglerdark} />
             <img class="top" src={anglerbright} />
           </Angler>
-
         </ParallaxLayer>
-
-
+        <ParallaxLayer offset={4.4} speed={1.8}>
+          <Container>
+            <form class="contact__form" name="contact" method="POST" data-netlify="true">
+              <label>Name</label>
+              <input type="text" name="name" id="customer_name" required />
+              <label for="email_address">Email</label>
+              <input type="email" name="email" id="email_address" />
+              <label for="comments">Comments</label>
+              <textarea name="comments" id="comments" maxlength="500"></textarea>
+            	<button type="submit">Send</button>
+             </form>
+           </Container>
+        </ParallaxLayer>
 
         <ParallaxLayer offset={0} speed={1}>
           <HeaderContainer className="header__container">

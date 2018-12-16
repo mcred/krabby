@@ -5,7 +5,9 @@
   "author": "LekoArts <hello@lekoarts.de>",
   "license": "MIT",
   "dependencies": {
+    "aos": "^2.3.4",
     "babel-plugin-tailwind": "^0.1.10",
+    "classnames": "^2.2.6",
     "emotion": "^9.2.12",
     "emotion-server": "^9.2.12",
     "gatsby": "^2.0.35",
@@ -30,6 +32,7 @@
     "react-helmet": "^5.2.0",
     "react-icons": "^3.2.2",
     "react-spring": "^6.1.8",
+    "scrollmonitor-react": "^2.4.1",
     "tailwindcss": "^0.6.6",
     "typeface-cantata-one": "^0.0.54",
     "typeface-open-sans": "^0.0.54"
