@@ -21,7 +21,7 @@ import anglerbright from '../images/angler-bright.png';
 import anglerdark from '../images/angler-dark.png';
 import '../assets/css/krabby.scss';
 import { FaChevronRight } from 'react-icons/fa';
-import FloatingLabel, { floatingStyles, focusStyles, inputStyles, labelStyles } from 'floating-label-react';
+import FloatingLabel, { floatingStyles, focusStyles, inputStyles, labelStyles, spanStyles } from 'floating-label-react';
 
 
 const HeaderContainer = styled.div`
@@ -41,7 +41,7 @@ const Angler = styled.div`
 const inputStyle = {
   floating: {
     ...floatingStyles,
-    color: 'yellow'
+    color: 'yellow',
   },
   focus: {
     ...focusStyles,
@@ -52,13 +52,18 @@ const inputStyle = {
     borderWidth: 2,
     borderColor: 'red',
     width: '100%',
-    height: '4rem'
+    height: '4rem',
   },
   label: {
     ...labelStyles,
     marginTop: '.5em',
     width: '100%',
     color: 'white'
+  },
+  span: {
+    ...spanStyles,
+    top: '1rem',
+    left: '1rem'
   }
 }
 
