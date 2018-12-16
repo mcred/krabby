@@ -21,7 +21,7 @@ import anglerbright from '../images/angler-bright.png';
 import anglerdark from '../images/angler-dark.png';
 import '../assets/css/krabby.scss';
 import { FaChevronRight } from 'react-icons/fa';
-import FloatingLabel, { floatingStyles, focusStyles, inputStyles, labelStyles, spanStyles } from 'floating-label-react';
+import FloatingLabel, { floatingStyles, focusStyles, inputStyles, labelStyles, spanStyles, buttonStyles, textareaStyles } from 'floating-label-react';
 
 
 const HeaderContainer = styled.div`
@@ -36,8 +36,21 @@ const SunRaysfromGod = styled(ParallaxLayer)`
 `;
 
 const Angler = styled.div`
+  position: relative;
+  left: -2rem;
+  max-width: 100%;
 `;
 
+const FormTitle = styled.h3`
+  ${tw('text-white mb-0')};
+  text-shadow: -2px 4px 32px rgba(0, 0, 0, 1);
+  font-size: 2rem;
+  font-family: 'Abril Fatface', cursive;
+  color: #FFEE00;
+  @media (min-width: 0px) and (max-width: 767px) {
+    font-size: 1.85em;
+   }
+`;
 const inputStyle = {
   floating: {
     ...floatingStyles,
@@ -49,12 +62,13 @@ const inputStyle = {
   },
   input: {
     ...inputStyles,
-    borderWidth: 2,
-    borderColor: 'red',
+    fontFamily: 'Abril Fatface, cursive',
+    borderBottomWidth: 2,
+    borderColor: '#D81159',
     width: '100%',
     height: '4rem',
     color: 'white',
-    padding: '1rem 0px 0px 1rem'
+    padding: '1rem 0 0 1rem'
   },
   label: {
     ...labelStyles,
@@ -64,6 +78,7 @@ const inputStyle = {
   },
   span: {
     ...spanStyles,
+    fontFamily: 'Abril Fatface, cursive',
     top: '1rem',
     left: '1rem'
   }
@@ -292,14 +307,15 @@ class App extends React.Component {
             <img class="top" src={anglerbright} />
           </Angler>
         </ParallaxLayer>
-        <ParallaxLayer offset={4.4} speed={1.8}>
+        <ParallaxLayer offset={4.2} speed={1.8}>
           <Container>
           <Hero>
+            <FormTitle className="item--contained">Let's have a conversation</FormTitle>
             <form class="contact__form item--contained" name="contact" method="POST" data-netlify="true">
-              <FloatingLabel id='name' name='name' placeholder='Your email' type='text'styles={inputStyle} required />
-              <FloatingLabel id='email' name='email' placeholder='Your email' type='email'styles={inputStyle} required />
-              <FloatingLabel id='comments' element='textarea' name='comments' placeholder='Comments'styles={inputStyle} type='text' requried />
-            	<button type="submit">Send</button>
+              <FloatingLabel id='name' name='name' placeholder='Name' type='text' styles={inputStyle} required />
+              <FloatingLabel id='email' name='email' placeholder='Email' type='email' styles={inputStyle} required />
+              <FloatingLabel id='comments' name='comments' placeholder='Tell me about your project' styles={inputStyle} type='text' requried />
+            	<button className="btn btn--actionjackson--full" type="submit" styles={inputStyle}><span className="btn__text">Let's make something cool</span> <FaChevronRight size="1.45em" /></button>
              </form>
              </Hero>
            </Container>
@@ -340,7 +356,7 @@ class App extends React.Component {
                 My name is Matt Trice.
               </BigTitle>
               <Subtitle className="item--contained">I am an Atlanta based UX, prototype, web designer, front end development, from concept to completion from design to deployment full life cycle of the design.</Subtitle>
-              <button className="item--contained btn btn--actionjackson btn-spinner">
+              <button className="item--contained btn btn--actionjackson">
                 <span className="btn__text">Let's make something cool</span> <FaChevronRight size="1.45em" />
               </button>
             </Hero>
