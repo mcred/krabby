@@ -301,13 +301,13 @@ class App extends React.Component {
           </Container>
         </ParallaxLayer>
 
-        <ParallaxLayer offset={4.1} speed={1.2}>
+        <ParallaxLayer offset={3.1} speed={1.4}>
           <Angler className={'anglerFish'}>
             <img class="bottom" src={anglerdark} />
             <img class="top" src={anglerbright} />
           </Angler>
         </ParallaxLayer>
-        <ParallaxLayer offset={4.2} speed={1.8}>
+        <ParallaxLayer offset={4} speed={1}>
           <Container>
           <Hero>
             <FormTitle className="item--contained">Let's have a conversation</FormTitle>
