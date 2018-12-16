@@ -53,6 +53,8 @@ const inputStyle = {
     borderColor: 'red',
     width: '100%',
     height: '4rem',
+    color: 'white',
+    padding: '1rem 0px 0px 1rem'
   },
   label: {
     ...labelStyles,
