@@ -157,7 +157,7 @@ const Gray = ({ children }) => <span style={{ color: '#909090' }}>{children}</sp
 class App extends React.Component {
   render() {
     return (
-      <Parallax ref={ref => (this.parallax = ref)} pages={8}>
+      <Parallax ref={ref => (this.parallax = ref)} pages={5}>
 
         <SunRaysfromGod offset={0} speed={.05} factor={2} className={'sunrays'} style={{ backgroundSize: 'contain' }} />
 
@@ -301,13 +301,13 @@ class App extends React.Component {
           </Container>
         </ParallaxLayer>
 
-        <ParallaxLayer offset={6.1} speed={1.2}>
+        <ParallaxLayer offset={4.1} speed={1.2}>
           <Angler className={'anglerFish'}>
             <img class="bottom" src={anglerdark} />
             <img class="top" src={anglerbright} />
           </Angler>
         </ParallaxLayer>
-        <ParallaxLayer offset={6.2} speed={1.8}>
+        <ParallaxLayer offset={4.2} speed={1.8}>
           <Container>
           <Hero>
             <FormTitle className="item--contained">Let's have a conversation</FormTitle>
