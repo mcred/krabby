@@ -21,7 +21,8 @@ import anglerbright from '../images/angler-bright.png';
 import anglerdark from '../images/angler-dark.png';
 import '../assets/css/krabby.scss';
 import { FaChevronRight } from 'react-icons/fa';
-import TextComponent from '../components/TextComponent/TextComponent.js';
+import FloatingLabel, { floatingStyles, focusStyles, inputStyles, labelStyles } from 'floating-label-react';
+
 
 const HeaderContainer = styled.div`
   ${tw('justify-center items-center flex z-50')};
@@ -32,11 +33,34 @@ const HeaderContainer = styled.div`
 `;
 
 const SunRaysfromGod = styled(ParallaxLayer)`
-
 `;
 
 const Angler = styled.div`
 `;
+
+const inputStyle = {
+  floating: {
+    ...floatingStyles,
+    color: 'yellow'
+  },
+  focus: {
+    ...focusStyles,
+    borderColor: 'yellow'
+  },
+  input: {
+    ...inputStyles,
+    borderWidth: 2,
+    borderColor: 'red',
+    width: '100%',
+    height: '4rem'
+  },
+  label: {
+    ...labelStyles,
+    marginTop: '.5em',
+    width: '100%',
+    color: 'white'
+  }
+}
 
 const OceanBG = styled(ParallaxLayer)``;
 const Container = styled.div`
@@ -263,15 +287,14 @@ class App extends React.Component {
         </ParallaxLayer>
         <ParallaxLayer offset={4.4} speed={1.8}>
           <Container>
-            <form class="contact__form" name="contact" method="POST" data-netlify="true">
-              <label>Name</label>
-              <input type="text" name="name" id="customer_name" required />
-              <label for="email_address">Email</label>
-              <input type="email" name="email" id="email_address" />
-              <label for="comments">Comments</label>
-              <textarea name="comments" id="comments" maxlength="500"></textarea>
+          <Hero>
+            <form class="contact__form item--contained" name="contact" method="POST" data-netlify="true">
+              <FloatingLabel id='name' name='name' placeholder='Your email' type='text'styles={inputStyle} required />
+              <FloatingLabel id='email' name='email' placeholder='Your email' type='email'styles={inputStyle} required />
+              <FloatingLabel id='comments' element='textarea' name='comments' placeholder='Comments'styles={inputStyle} type='text' requried />
             	<button type="submit">Send</button>
              </form>
+             </Hero>
            </Container>
         </ParallaxLayer>
 

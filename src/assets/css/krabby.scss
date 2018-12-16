@@ -248,28 +248,42 @@ input, textarea {
 
   }
 }
+// 
+// .contact__form > * {
+//   width: 100%;
+//
+// }
+//
+// .contact__form label {
+//   width: 100%;
+//   color: white;
+// }
+//
+// .contact__form label span {
+//   position: absolute;
+//   top: 50px;
+// }
+//
+// .contact__form input, textarea {
+//   width: 100%;
+//   border: 3px solid red;
+//   height: 100px;
+//
+// }
 
-.contact__form {
-	display: grid;
-	grid-template-columns: [labels] auto [controls] 1fr;
-	// grid-auto-flow: row;
-	grid-gap: .8em;
-	padding: 1.2em;
-}
-
-.contact__form > label {
-	grid-column: labels;
-	grid-row: auto;
-}
-
-.contact__form > input, .contact__form > textarea {
-	grid-column: controls;
-	grid-row: auto;
-}
-
-.contact__form > button {
-	grid-column: span 2;
-}
+// .contact__form > label {
+// 	grid-column: labels;
+// 	grid-row: auto;
+// }
+//
+// .contact__form > input, .contact__form > textarea {
+// 	grid-column: controls;
+// 	grid-row: auto;
+// }
+//
+// .contact__form > button {
+// 	grid-column: span 2;
+// }
 
 .item--contained {
   grid-column: container;
