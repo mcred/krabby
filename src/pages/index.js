@@ -252,7 +252,7 @@ class App extends React.Component {
           </UpBubblesThree>
         </ParallaxLayer>
 
-        <ParallaxLayer offset={1} speed={.5}>
+        <ParallaxLayer offset={1} speed={1} factor={8}>
           <Container>
             <ProjectWrapper>
 
