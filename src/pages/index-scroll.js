@@ -172,10 +172,9 @@ class App extends React.Component {
 
 
 
-        <ParallaxLayer offset={1} speed={1} factor={1} style={{ backgroundColor: 'green' }}>
+        <ParallaxLayer offset={1} speed={1} style={{ backgroundColor: 'green' }}>
           <Container>
             <ProjectWrapper className="">
-
               <ProjectCardText title="UX DESIGN, FRONT END DEVELOPMENT">
                 <img src={logotopaz} />
                 <Description>This project was a redesign and rebuild of their attendee check in app. As part of their free ticketing software, this app allows an event organizer to check in participants and provides the organizer with attendance data.</Description>
@@ -184,8 +183,13 @@ class App extends React.Component {
                 </button>
               </ProjectCardText>
               <img src={topazshottt} className="shottt-topaz" />
+            </ProjectWrapper>
+          </Container>
+        </ParallaxLayer>
 
-
+        <ParallaxLayer offset={2} speed={1} style={{ backgroundColor: 'green' }}>
+          <Container>
+            <ProjectWrapper className="">
               <img src={freshtixshottt} className="shottt-topaz" />
               <ProjectCardText title="UX DESIGN, FRONT END DEVELOPMENT">
                 <img src={logofreshtix} />
@@ -194,8 +198,13 @@ class App extends React.Component {
                   <span class="btn__text">Case Study</span> <FaChevronRight size="1.45em" />
                 </button>
               </ProjectCardText>
+              </ProjectWrapper>
+            </Container>
+          </ParallaxLayer>
 
-
+          <ParallaxLayer offset={3} speed={1} style={{ backgroundColor: 'green' }}>
+            <Container>
+              <ProjectWrapper className="">
               <ProjectCardText title="UX DESIGN, FRONT END DEVELOPMENT">
                 <img src={logorobit} />
                 <Description>This project was a redesign and rebuild of their attendee check in app. As part of their free ticketing software, this app allows an event organizer to check in participants and provides the organizer with attendance data.</Description>
@@ -204,8 +213,13 @@ class App extends React.Component {
                 </button>
               </ProjectCardText>
               <img src={robitshottt} className="shottt-topaz" />
+              </ProjectWrapper>
+            </Container>
+          </ParallaxLayer>
 
-
+          <ParallaxLayer offset={4} speed={1} style={{ backgroundColor: 'green' }}>
+            <Container>
+              <ProjectWrapper className="">
               <img src={payscapeshottt} className="shottt-topaz" />
               <ProjectCardText title="UX DESIGN, FRONT END DEVELOPMENT">
                 <img src={logopayscape} />
@@ -214,13 +228,14 @@ class App extends React.Component {
                   <span class="btn__text">Case Study</span> <FaChevronRight size="1.45em" />
                 </button>
               </ProjectCardText>
+              </ProjectWrapper>
+            </Container>
+          </ParallaxLayer>
 
-            </ProjectWrapper>
-          </Container>
-        </ParallaxLayer>
 
 
-        <ParallaxLayer offset={4} speed={1} style={{ backgroundColor: 'red' }}>
+
+        <ParallaxLayer offset={5} speed={1} style={{ backgroundColor: 'red' }}>
           <Container>
           <Hero>
             <FormTitle className="item--contained">Let's have a conversation</FormTitle>
