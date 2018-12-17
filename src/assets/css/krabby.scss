@@ -452,11 +452,32 @@ $button-text-color: $white;
 }
 
 .shottt-topaz {
-  max-width: 800px;
-  overflow-x: hidden;
-  @media (max-width: 900px) {
-    max-width: 100%;
-  }
+  object-fit: cover;
+  width: 100%
+}
+
+.shottt-freshtix {
+  // max-width: 100%;
+  // overflow-x: hidden;
+  // @media (max-width: 900px) {
+  //   max-width: 100%;
+  // }
+}
+
+.shottt-robit {
+  // max-width: 100%;
+  // overflow-x: hidden;
+  // @media (max-width: 900px) {
+  //   max-width: 100%;
+  // }
+}
+
+.shottt-payscape {
+  // max-width: 100%;
+  // overflow-x: hidden;
+  // @media (max-width: 900px) {
+  //   max-width: 100%;
+  // }
 }
 
 .anglerFish {

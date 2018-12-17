@@ -6,9 +6,16 @@ import { Link } from "gatsby";
 import SVG from '../components/SVG';
 import '../styles/global';
 import styled from 'react-emotion';
+
+
 import ProjectCardText from '../components/ProjectCardText';
+
+
 import { rotate, UpBubblesOne, UpBubblesOneTop, UpBubblesTwo, UpBubblesTwoTop, UpBubblesThree, UpBubblesThreeTop, UpDown, UpDownWide, waveAnimation } from '../styles/animations'
 import topazshottt from '../images/shottt-topaz.png';
+import freshtixshottt from '../images/shottt-freshtix.png';
+import robitshottt from '../images/shottt-robit.png';
+import payscapeshottt from '../images/shottt-payscape.png';
 import dribbble from '../images/icon-dribbble.svg';
 import instagram from '../images/icon-instagram.svg';
 import linkedin from '../images/icon-linkedin.svg';
@@ -63,7 +70,7 @@ const inputStyle = {
   input: {
     ...inputStyles,
     fontFamily: 'Abril Fatface, cursive',
-    borderBottomWidth: 2,
+    borderBottomWidth: '2',
     borderColor: '#D81159',
     width: '100%',
     height: '4rem',
@@ -79,6 +86,7 @@ const inputStyle = {
   span: {
     ...spanStyles,
     fontFamily: 'Abril Fatface, cursive',
+    fontSize: '.85rem',
     top: '1rem',
     left: '1rem'
   }
@@ -127,10 +135,10 @@ const Description = styled.p`
   line-height: 1.45em;
 `;
 const ProjectWrapper = styled.div`
-  ${tw('mt-8')};
+
   display: grid;
   grid-gap: 2rem;
-  grid-template-columns: 1fr 50%;
+  grid-template-columns: repeat(2, minmax(200px, 1fr));
   @media (max-width: 1200px) {
     grid-gap: 2rem;
   }
@@ -139,16 +147,6 @@ const ProjectWrapper = styled.div`
     grid-gap: 1rem;
   }
 `;
-
-// Little helpers ...
-const url = (name, wrap = false) => `${wrap ? 'url(' : ''}https://awv3node-homepage.surge.sh/build/assets/${name}.svg${wrap ? ')' : ''}`
-const Pink = ({ children }) => <span style={{ color: '#FF6AC1' }}>{children}</span>
-const Yellow = ({ children }) => <span style={{ color: '#EFF59B' }}>{children}</span>
-const Lightblue = ({ children }) => <span style={{ color: '#9AEDFE' }}>{children}</span>
-const Green = ({ children }) => <span style={{ color: '#57EE89' }}>{children}</span>
-const Blue = ({ children }) => <span style={{ color: '#57C7FF' }}>{children}</span>
-const Gray = ({ children }) => <span style={{ color: '#909090' }}>{children}</span>
-
 
 
 
@@ -215,10 +213,6 @@ class App extends React.Component {
           </UpBubblesThree>
         </ParallaxLayer>
 
-
-
-
-
         <ParallaxLayer speed={0.2} offset={4.4} className={'foreground--coral'}>
           <UpBubblesOne>
             <SVG icon="bubble" width={3} left="26%" top="32%" />
@@ -254,47 +248,51 @@ class App extends React.Component {
 
         <ParallaxLayer offset={1} speed={1} factor={8}>
           <Container>
-            <ProjectWrapper>
+            <ProjectWrapper className="">
 
 
-              <ProjectCardText title="UX DESIGN, FRONT END DEVELOPMENT">
-                <img src={logotopaz} />
-                <Description>This project was a redesign and rebuild of their attendee check in app. As part of their free ticketing software, this app allows an event organizer to check in participants and provides the organizer with attendance data.</Description>
-                <button class="btn btn--actionjackson btn-spinner">
-                  <span class="btn__text">Case Study</span> <FaChevronRight size="1.45em" />
-                </button>
-              </ProjectCardText>
-              <img src={topazshottt} className="shottt-topaz" />
 
 
-              <img src={topazshottt} className="shottt-topaz" />
-              <ProjectCardText title="UX DESIGN, FRONT END DEVELOPMENT">
-                <img src={logotopaz} />
-                <Description>This project was a redesign and rebuild of their attendee check in app. As part of their free ticketing software, this app allows an event organizer to check in participants and provides the organizer with attendance data.</Description>
-                <button class="btn btn--actionjackson btn-spinner">
-                  <span class="btn__text">Case Study</span> <FaChevronRight size="1.45em" />
-                </button>
-              </ProjectCardText>
+            <ProjectCardText title="UX DESIGN, FRONT END DEVELOPMENT">
+              <img src={logotopaz} />
+              <Description>This project was a redesign and rebuild of their attendee check in app. As part of their free ticketing software, this app allows an event organizer to check in participants and provides the organizer with attendance data.</Description>
+              <button class="btn btn--actionjackson btn-spinner">
+                <span class="btn__text">Case Study</span> <FaChevronRight size="1.45em" />
+              </button>
+            </ProjectCardText>
+            <img src={topazshottt} className="shottt-topaz" />
 
 
-              <ProjectCardText title="UX DESIGN, FRONT END DEVELOPMENT">
-                <img src={logotopaz} />
-                <Description>This project was a redesign and rebuild of their attendee check in app. As part of their free ticketing software, this app allows an event organizer to check in participants and provides the organizer with attendance data.</Description>
-                <button class="btn btn--actionjackson btn-spinner">
-                  <span class="btn__text">Case Study</span> <FaChevronRight size="1.45em" />
-                </button>
-              </ProjectCardText>
-              <img src={topazshottt} className="shottt-topaz" />
+            <img src={freshtixshottt} className="shottt-topaz" />
+            <ProjectCardText title="UX DESIGN, FRONT END DEVELOPMENT">
+              <img src={logotopaz} />
+              <Description>This project was a redesign and rebuild of their attendee check in app. As part of their free ticketing software, this app allows an event organizer to check in participants and provides the organizer with attendance data.</Description>
+              <button class="btn btn--actionjackson btn-spinner">
+                <span class="btn__text">Case Study</span> <FaChevronRight size="1.45em" />
+              </button>
+            </ProjectCardText>
 
 
-              <img src={topazshottt} className="shottt-topaz" />
-              <ProjectCardText title="UX DESIGN, FRONT END DEVELOPMENT">
-                <img src={logotopaz} />
-                <Description>This project was a redesign and rebuild of their attendee check in app. As part of their free ticketing software, this app allows an event organizer to check in participants and provides the organizer with attendance data.</Description>
-                <button class="btn btn--actionjackson btn-spinner">
-                  <span class="btn__text">Case Study</span> <FaChevronRight size="1.45em" />
-                </button>
-              </ProjectCardText>
+            <ProjectCardText title="UX DESIGN, FRONT END DEVELOPMENT">
+              <img src={logotopaz} />
+              <Description>This project was a redesign and rebuild of their attendee check in app. As part of their free ticketing software, this app allows an event organizer to check in participants and provides the organizer with attendance data.</Description>
+              <button class="btn btn--actionjackson btn-spinner">
+                <span class="btn__text">Case Study</span> <FaChevronRight size="1.45em" />
+              </button>
+            </ProjectCardText>
+            <img src={robitshottt} className="shottt-topaz" />
+
+
+            <img src={payscapeshottt} className="shottt-topaz" />
+            <ProjectCardText title="UX DESIGN, FRONT END DEVELOPMENT">
+              <img src={logotopaz} />
+              <Description>This project was a redesign and rebuild of their attendee check in app. As part of their free ticketing software, this app allows an event organizer to check in participants and provides the organizer with attendance data.</Description>
+              <button class="btn btn--actionjackson btn-spinner">
+                <span class="btn__text">Case Study</span> <FaChevronRight size="1.45em" />
+              </button>
+            </ProjectCardText>
+
+
 
 
             </ProjectWrapper>
@@ -314,7 +312,7 @@ class App extends React.Component {
             <form class="contact__form item--contained" name="contact" method="POST" data-netlify="true">
               <FloatingLabel id='name' name='name' placeholder='Name' type='text' styles={inputStyle} required />
               <FloatingLabel id='email' name='email' placeholder='Email' type='email' styles={inputStyle} required />
-              <FloatingLabel id='comments' name='comments' placeholder='Tell me about your project' styles={inputStyle} type='text' requried />
+              <FloatingLabel id='comments' name='comments' placeholder='What are you working on?' styles={inputStyle} type='text' requried />
             	<button className="btn btn--actionjackson--full" type="submit" styles={inputStyle}><span className="btn__text">Let's make something cool</span> <FaChevronRight size="1.45em" /></button>
              </form>
              </Hero>

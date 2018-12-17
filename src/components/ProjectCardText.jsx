@@ -19,7 +19,6 @@ const Text = styled.div`
 const Title = styled.h4`
   ${tw('text-white uppercase')};
   text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
-
 `;
 
 const ProjectCard = ({ title, link, children }) => (
