@@ -164,9 +164,9 @@ const ProjectWrapper = styled.div`
 class App extends React.Component {
   render() {
     return (
-      <Parallax ref={ref => (this.parallax = ref)} pages={5}>
+      <Parallax ref={ref => (this.parallax = ref)} pages={6}>
 
-        <SunRaysfromGod offset={0} speed={.25} factor={4}  className={'sunrays'} style={{ backgroundSize: 'contain', backgroundColor: 'yellow' }} />
+        <SunRaysfromGod offset={0} speed={.25} factor={1}  className={'sunrays'} style={{ backgroundSize: 'contain', backgroundColor: 'yellow' }} />
 
 
 
