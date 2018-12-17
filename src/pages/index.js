@@ -12,6 +12,10 @@ import ProjectCardText from '../components/ProjectCardText';
 
 
 import { rotate, UpBubblesOne, UpBubblesOneTop, UpBubblesTwo, UpBubblesTwoTop, UpBubblesThree, UpBubblesThreeTop, UpDown, UpDownWide, waveAnimation } from '../styles/animations'
+import logotopaz from '../images/logo-topaz.svg';
+import logofreshtix from '../images/logo-freshtix.svg';
+import logorobit from '../images/logo-robit.svg';
+import logopayscape from '../images/logo-payscape.svg';
 import topazshottt from '../images/shottt-topaz.png';
 import freshtixshottt from '../images/shottt-freshtix.png';
 import robitshottt from '../images/shottt-robit.png';
@@ -20,7 +24,7 @@ import dribbble from '../images/icon-dribbble.svg';
 import instagram from '../images/icon-instagram.svg';
 import linkedin from '../images/icon-linkedin.svg';
 import logotd from '../images/logo-td.svg';
-import logotopaz from '../images/logo-topaz.svg';
+
 import jellyfish from '../images/jellyfish-group.svg';
 import bottomburm from '../images/bottom-burm.svg';
 import howdy from '../images/howdy.svg';
@@ -139,6 +143,11 @@ const ProjectWrapper = styled.div`
   display: grid;
   grid-gap: 2rem;
   grid-template-columns: repeat(2, minmax(200px, 1fr));
+  grid-template-rows: repeat(auto, 1fr);
+  grid-template-areas: "image text"
+                       "text image"
+                       "image text"
+                       "text image";
   @media (max-width: 1200px) {
     grid-gap: 2rem;
   }
@@ -265,7 +274,7 @@ class App extends React.Component {
 
             <img src={freshtixshottt} className="shottt-topaz" />
             <ProjectCardText title="UX DESIGN, FRONT END DEVELOPMENT">
-              <img src={logotopaz} />
+              <img src={logofreshtix} />
               <Description>This project was a redesign and rebuild of their attendee check in app. As part of their free ticketing software, this app allows an event organizer to check in participants and provides the organizer with attendance data.</Description>
               <button class="btn btn--actionjackson btn-spinner">
                 <span class="btn__text">Case Study</span> <FaChevronRight size="1.45em" />
@@ -274,7 +283,7 @@ class App extends React.Component {
 
 
             <ProjectCardText title="UX DESIGN, FRONT END DEVELOPMENT">
-              <img src={logotopaz} />
+              <img src={logorobit} />
               <Description>This project was a redesign and rebuild of their attendee check in app. As part of their free ticketing software, this app allows an event organizer to check in participants and provides the organizer with attendance data.</Description>
               <button class="btn btn--actionjackson btn-spinner">
                 <span class="btn__text">Case Study</span> <FaChevronRight size="1.45em" />
@@ -285,7 +294,7 @@ class App extends React.Component {
 
             <img src={payscapeshottt} className="shottt-topaz" />
             <ProjectCardText title="UX DESIGN, FRONT END DEVELOPMENT">
-              <img src={logotopaz} />
+              <img src={logopayscape} />
               <Description>This project was a redesign and rebuild of their attendee check in app. As part of their free ticketing software, this app allows an event organizer to check in participants and provides the organizer with attendance data.</Description>
               <button class="btn btn--actionjackson btn-spinner">
                 <span class="btn__text">Case Study</span> <FaChevronRight size="1.45em" />
