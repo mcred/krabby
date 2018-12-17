@@ -117,20 +117,16 @@ button {
   }
 }
 .sunrays {
-  background: url('../../images/sunraysfromgod.png');
+  background-image: url('../../images/sunraysfromgod.png');
+
   background-repeat: no-repeat;
   width: 100%;
   height: 100%;
   background-position: top center;
 }
 .oceanbg {
-  background: -moz-linear-gradient(270deg, rgba(0,40,43,1) 0%, rgba(0,22,30,1) 59%, rgba(0,12,22,1) 100%); /* ff3.6+ */
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, rgba(0,40,43,1)), color-stop(59%, rgba(0,22,30,1)), color-stop(100%, rgba(0,12,22,1))); /* safari4+,chrome */
-  background: -webkit-linear-gradient(270deg, rgba(0,40,43,1) 0%, rgba(0,22,30,1) 59%, rgba(0,12,22,1) 100%); /* safari5.1+,chrome10+ */
-  background: -o-linear-gradient(270deg, rgba(0,40,43,1) 0%, rgba(0,22,30,1) 59%, rgba(0,12,22,1) 100%); /* opera 11.10+ */
-  background: -ms-linear-gradient(270deg, rgba(0,40,43,1) 0%, rgba(0,22,30,1) 59%, rgba(0,12,22,1) 100%); /* ie10+ */
-  background: linear-gradient(180deg, rgba(0,40,43,1) 0%, rgba(0,22,30,1) 59%, rgba(0,12,22,1) 100%); /* w3c */
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00282B', endColorstr='#000C16',GradientType=0 ); /* ie6-9 */
+  background: rgb(1,13,30);
+  background: linear-gradient(360deg, rgba(1,13,30,1) 0%, rgba(0,49,98,1) 78%, rgba(0,101,157,1) 100%);
 }
 
 
@@ -357,45 +353,83 @@ $button-text-color: $white;
 
   }
 }
-//
-// .contact__form > * {
-//   width: 100%;
-//
-// }
-//
-// .contact__form label {
-//   width: 100%;
-//   color: white;
-// }
-//
-// .contact__form label span {
-//   position: absolute;
-//   top: 50px;
-// }
-//
-// .contact__form input, textarea {
-//   width: 100%;
-//   border: 3px solid red;
-//   height: 100px;
-//
-// }
-
-// .contact__form > label {
-// 	grid-column: labels;
-// 	grid-row: auto;
-// }
-//
-// .contact__form > input, .contact__form > textarea {
-// 	grid-column: controls;
-// 	grid-row: auto;
-// }
-//
-// .contact__form > button {
-// 	grid-column: span 2;
-// }
 
 .item--contained {
   grid-column: container;
+}
+
+.project__grid--imageLeft {
+  align-items: center;
+  grid-gap: 2rem;
+  grid-template-columns: repeat(2, minmax(200px, 1fr));
+  grid-template-rows: repeat(1fr);
+  grid-template-areas: "image text";
+  @media (max-width: 1200px) {
+   grid-gap: 2rem;
+  }
+  @media (max-width: 900px) {
+   grid-template-columns: 1fr;
+   grid-template-rows: auto;
+   grid-gap: 1rem;
+   grid-template-areas: "image" "text";
+  }
+}
+
+.project__grid--imageRight {
+  align-items: center;
+  grid-gap: 2rem;
+  grid-template-columns: repeat(2, minmax(200px, 1fr));
+  grid-template-rows: repeat(1fr);
+  grid-template-areas: "text image";
+  @media (max-width: 1200px) {
+   grid-gap: 2rem;
+  }
+  @media (max-width: 900px) {
+   grid-template-columns: 1fr;
+   grid-template-rows: auto;
+   grid-gap: 1rem;
+   grid-template-areas: "image" "text";
+  }
+}
+
+.shottt-topaz {
+  object-fit: cover;
+  grid-area: image;
+  width: 940px;
+  justify-self: left;
+  @media (max-width: 900px) {
+    width: 100%;
+  }
+}
+
+.shottt-freshtix {
+  object-fit: cover;
+  grid-area: image;
+  width: 660px;
+  justify-self: right;
+  @media (max-width: 900px) {
+    width: 100%;
+  }
+}
+
+.shottt-robit {
+  object-fit: cover;
+  grid-area: image;
+  width: 660px;
+  justify-self: left;
+  @media (max-width: 900px) {
+    width: 100%;
+  }
+}
+
+.shottt-payscape {
+  object-fit: cover;
+  grid-area: image;
+  width: 940px;
+  justify-self: right;
+  @media (max-width: 900px) {
+    width: 100%;
+  }
 }
 
 
@@ -451,10 +485,7 @@ $button-text-color: $white;
   background-color: green;
 }
 
-.shottt-topaz {
-  object-fit: cover;
-  width: 100%
-}
+
 
 .shottt-freshtix {
   // max-width: 100%;
