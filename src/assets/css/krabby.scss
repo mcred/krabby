@@ -466,6 +466,7 @@ $button-text-color: $white;
 .background--cliffs {
   // background-image: url('../../images/foreground-coral.png');
   // background-position: bottom;
+  background-size: contain;
   background-repeat: no-repeat;
   // background-color: #666;
   // width: 100%;
