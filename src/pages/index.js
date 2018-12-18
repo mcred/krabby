@@ -312,7 +312,7 @@ class App extends React.Component {
           <Container>
             <Hero>
               <FormTitle className="item--contained">Let's have a conversation</FormTitle>
-              <form class="contact__form item--contained"  name="contact" method="post" action="/herewego" data-netlify="true" data-netlify-honeypot="bot-field">
+              <form class="contact__form item--contained"  name="contact" method="post" action="/herewego/" data-netlify="true" data-netlify-honeypot="bot-field">
                 <input type="hidden" name="bot-field" />
                 <FloatingLabel id='name' name='name' placeholder='Name' type='text' styles={inputStyle} required />
                 <FloatingLabel id='email' name='email' placeholder='Email' type='email' styles={inputStyle} required />
