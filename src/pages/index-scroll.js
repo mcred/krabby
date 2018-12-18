@@ -6,11 +6,7 @@ import { Link } from "gatsby";
 import SVG from '../components/SVG';
 import '../styles/global';
 import styled from 'react-emotion';
-
-
 import ProjectCardText from '../components/ProjectCardText';
-
-
 import { rotate, UpBubblesOne, UpBubblesOneTop, UpBubblesTwo, UpBubblesTwoTop, UpBubblesThree, UpBubblesThreeTop, UpDown, UpDownWide, waveAnimation } from '../styles/animations'
 import logotopaz from '../images/logo-topaz.svg';
 import logofreshtix from '../images/logo-freshtix.svg';
@@ -157,7 +153,91 @@ class App extends React.Component {
 
         <OceanBG offset={0} speed={1} factor={5} className={'oceanbg'}   />
         <SunRaysfromGod offset={0} speed={.25} factor={6}  className={'sunrays'} style={{ backgroundSize: 'contain' }} />
+        <ParallaxLayer offset={0} speed={1}>
+          <UpBubblesOneTop>
+            <SVG icon="bubble" width={3} left="36%" top="32%" />
+            <SVG icon="bubble" width={2} left="40%" top="34%" />
+            <SVG icon="bubble" width={4} left="42%" top="33%" />
+          </UpBubblesOneTop>
+          <UpBubblesTwoTop>
+            <SVG icon="bubble" width={4} left="34%" top="32%" />
+            <SVG icon="bubble" width={3} left="41%" top="34%" />
+            <SVG icon="bubble" width={2} left="39%" top="31%" />
+          </UpBubblesTwoTop>
+          <UpBubblesThreeTop>
+            <SVG icon="bubble" width={2} left="32%" top="36%" />
+            <SVG icon="bubble" width={4} left="38%" top="30%" />
+            <SVG icon="bubble" width={3} left="31%" top="35%" />
+          </UpBubblesThreeTop>
+        </ParallaxLayer>
+        <ParallaxLayer offset={1} speed={0.1} factor={2}>
+          <UpBubblesOne>
+            <SVG icon="bubble" width={3} left="26%" top="32%" />
+            <SVG icon="bubble" width={2} left="30%" top="34%" />
+            <SVG icon="bubble" width={4} left="32%" top="33%" />
+          </UpBubblesOne>
+          <UpBubblesTwo>
+            <SVG icon="bubble" width={4} left="24%" top="32%" />
+            <SVG icon="bubble" width={3} left="31%" top="34%" />
+            <SVG icon="bubble" width={2} left="29%" top="31%" />
+          </UpBubblesTwo>
+          <UpBubblesThree>
+            <SVG icon="bubble" width={2} left="22%" top="32%" />
+            <SVG icon="bubble" width={4} left="28%" top="34%" />
+            <SVG icon="bubble" width={3} left="26%" top="31%" />
+          </UpBubblesThree>
+        </ParallaxLayer>
+        <ParallaxLayer offset={1} speed={0.1} factor={2}>
+          <UpBubblesOne>
+            <SVG icon="bubble" width={3} left="66%" top="28%" />
+            <SVG icon="bubble" width={2} left="70%" top="38%" />
+            <SVG icon="bubble" width={4} left="72%" top="30%" />
+          </UpBubblesOne>
+          <UpBubblesTwo>
+            <SVG icon="bubble" width={4} left="64%" top="30%" />
+            <SVG icon="bubble" width={3} left="71%" top="14%" />
+            <SVG icon="bubble" width={2} left="69%" top="11%" />
+          </UpBubblesTwo>
+          <UpBubblesThree>
+            <SVG icon="bubble" width={2} left="62%" top="22%" />
+            <SVG icon="bubble" width={4} left="68%" top="44%" />
+            <SVG icon="bubble" width={3} left="66%" top="21%" />
+          </UpBubblesThree>
+        </ParallaxLayer>
+        <ParallaxLayer speed={-0.2} offset={1} factor={1} className={'background-01'} />
 
+        <ParallaxLayer offset={5.4} speed={0.2} className={'foreground--coral'}>
+          <UpBubblesOne>
+            <SVG icon="bubble" width={3} left="26%" top="32%" />
+            <SVG icon="bubble" width={2} left="30%" top="34%" />
+            <SVG icon="bubble" width={4} left="32%" top="33%" />
+          </UpBubblesOne>
+          <UpBubblesTwo>
+            <SVG icon="bubble" width={4} left="24%" top="32%" />
+            <SVG icon="bubble" width={3} left="31%" top="34%" />
+            <SVG icon="bubble" width={2} left="29%" top="31%" />
+          </UpBubblesTwo>
+          <UpBubblesThree>
+            <SVG icon="bubble" width={2} left="22%" top="36%" />
+            <SVG icon="bubble" width={4} left="28%" top="30%" />
+            <SVG icon="bubble" width={3} left="21%" top="35%" />
+          </UpBubblesThree>
+          <UpBubblesOne>
+            <SVG icon="bubble" width={3} left="66%" top="28%" />
+            <SVG icon="bubble" width={2} left="70%" top="38%" />
+            <SVG icon="bubble" width={4} left="72%" top="30%" />
+          </UpBubblesOne>
+          <UpBubblesTwo>
+            <SVG icon="bubble" width={4} left="64%" top="30%" />
+            <SVG icon="bubble" width={3} left="71%" top="14%" />
+            <SVG icon="bubble" width={2} left="69%" top="11%" />
+          </UpBubblesTwo>
+          <UpBubblesThree>
+            <SVG icon="bubble" width={2} left="62%" top="22%" />
+            <SVG icon="bubble" width={4} left="68%" top="44%" />
+            <SVG icon="bubble" width={3} left="66%" top="21%" />
+          </UpBubblesThree>
+        </ParallaxLayer>
         <ParallaxLayer offset={1} speed={1}>
           <Container>
             <ProjectWrapper className="project__grid--imageRight">
@@ -218,7 +298,15 @@ class App extends React.Component {
           </Container>
         </ParallaxLayer>
 
-        <ParallaxLayer offset={5} speed={1}>
+        <ParallaxLayer offset={4.4} speed={-0.3} style={{  }}>
+          <Angler className={'anglerFish'}>
+            <img class="bottom" src={anglerdark} />
+            <img class="top" src={anglerbright} />
+          </Angler>
+        </ParallaxLayer>
+
+        <ParallaxLayer offset={5} speed={-0}>
+
           <Container>
           <Hero>
             <FormTitle className="item--contained">Let's have a conversation</FormTitle>
@@ -230,7 +318,9 @@ class App extends React.Component {
              </form>
              </Hero>
            </Container>
+
         </ParallaxLayer>
+
 
         <ParallaxLayer offset={0} speed={1}>
           <HeaderContainer className="header__container">
