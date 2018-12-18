@@ -21,7 +21,7 @@ import instagram from '../images/icon-instagram.svg';
 import linkedin from '../images/icon-linkedin.svg';
 import logotd from '../images/logo-td.svg';
 
-import jellyfish from '../images/jellyfish-group.svg';
+import squidsilhouette from '../images/squid-silhouette.png';
 import bottomburm from '../images/bottom-burm.svg';
 import howdy from '../images/howdy.svg';
 import anglerbright from '../images/angler-bright.png';
@@ -151,7 +151,7 @@ class App extends React.Component {
     return (
       <Parallax ref={ref => (this.parallax = ref)} pages={6}>
 
-        <OceanBG offset={0} speed={1} factor={5} className={'oceanbg'}   />
+        <OceanBG offset={0} speed={0} factor={6} className={'oceanbg'}   />
         <SunRaysfromGod offset={0} speed={.25} factor={6}  className={'sunrays'} style={{ backgroundSize: 'contain' }} />
         <ParallaxLayer offset={0} speed={1}>
           <UpBubblesOneTop>
@@ -204,9 +204,12 @@ class App extends React.Component {
             <SVG icon="bubble" width={3} left="66%" top="21%" />
           </UpBubblesThree>
         </ParallaxLayer>
-        <ParallaxLayer speed={-0.2} offset={1} factor={1} className={'background-01'} />
+        <ParallaxLayer offset={2.2} speed={-0.45} style={{ display: 'grid', justifyContent: 'right' }}>
+          <img src={squidsilhouette} className="squidSilhouette" />
+        </ParallaxLayer>
+        <ParallaxLayer offset={4.4} speed={-0.4} factor={1} className={'background-01'} />
 
-        <ParallaxLayer offset={5.4} speed={0.2} className={'foreground--coral'}>
+        <ParallaxLayer offset={4} speed={-0.3} factor={2} className={'background--cliffs'}>
           <UpBubblesOne>
             <SVG icon="bubble" width={3} left="26%" top="32%" />
             <SVG icon="bubble" width={2} left="30%" top="34%" />
@@ -306,21 +309,26 @@ class App extends React.Component {
         </ParallaxLayer>
 
         <ParallaxLayer offset={5} speed={-0}>
-
           <Container>
-          <Hero>
-            <FormTitle className="item--contained">Let's have a conversation</FormTitle>
-            <form class="contact__form item--contained" name="contact" method="POST" data-netlify="true">
-              <FloatingLabel id='name' name='name' placeholder='Name' type='text' styles={inputStyle} required />
-              <FloatingLabel id='email' name='email' placeholder='Email' type='email' styles={inputStyle} required />
-              <FloatingLabel id='comments' name='comments' placeholder='What are you working on?' styles={inputStyle} type='text' requried />
-            	<button className="btn btn--actionjackson--full" type="submit" styles={inputStyle}><span className="btn__text">Send message</span> <FaPaperPlane size="1.45em" /></button>
-             </form>
-             </Hero>
-           </Container>
-
+            <Hero>
+              <FormTitle className="item--contained">Let's have a conversation</FormTitle>
+              <form class="contact__form item--contained" name="contactme" method="post" data-netlify="true" data-netlify-honeypot="bot-field" onSubmit={this.handleSubmit} >
+              {/* The `form-name` hidden field is required to support form submissions without JavaScript */}
+                <input type="hidden" name="form-name" value="contact" />
+                <p hidden>
+                  <label>
+                    Don’t fill this out:{" "}
+                    <input name="bot-field" onChange={this.handleChange} />
+                  </label>
+                </p>
+                <FloatingLabel id='name' name='name' placeholder='Name' type='text' styles={inputStyle} required />
+                <FloatingLabel id='email' name='email' placeholder='Email' type='email' styles={inputStyle} required />
+                <FloatingLabel id='comments' name='comments' placeholder='What are you working on?' styles={inputStyle} type='text' requried />
+                <button className="btn btn--actionjackson--full" type="submit" styles={inputStyle}><span className="btn__text">Send message</span> <FaPaperPlane size="1.45em" /></button>
+              </form>
+            </Hero>
+          </Container>
         </ParallaxLayer>
-
 
         <ParallaxLayer offset={0} speed={1}>
           <HeaderContainer className="header__container">

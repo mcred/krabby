@@ -125,8 +125,8 @@ button {
   background-position: top center;
 }
 .oceanbg {
-  background: rgb(1,13,30);
-  background: linear-gradient(360deg, rgba(1,13,30,1) 0%, rgba(0,49,98,1) 78%, rgba(0,101,157,1) 100%);
+  background: rgb(0,5,10);
+  background: linear-gradient(360deg, rgba(0,5,10,1) 0%, rgba(0,49,98,1) 78%, rgba(0,101,157,1) 100%);
 }
 
 
@@ -395,7 +395,7 @@ $button-text-color: $white;
 .shottt-topaz {
   object-fit: cover;
   grid-area: image;
-  width: 940px;
+  width: 980px;
   justify-self: left;
   @media (max-width: 900px) {
     width: 100%;
@@ -425,11 +425,18 @@ $button-text-color: $white;
 .shottt-payscape {
   object-fit: cover;
   grid-area: image;
-  width: 940px;
+  width: 980px;
   justify-self: right;
   @media (max-width: 900px) {
     width: 100%;
   }
+}
+
+.squidSilhouette {
+  width: 800px;
+  opacity: .35;
+  position: relative;
+  right: -200px;
 }
 
 
@@ -456,13 +463,22 @@ $button-text-color: $white;
   background-size: contain !important;
 }
 
-.foreground--coral {
-  background: url('../../images/foreground-coral.png');
-  background-position: bottom;
+.background--cliffs {
+  // background-image: url('../../images/foreground-coral.png');
+  // background-position: bottom;
   background-repeat: no-repeat;
-  height: 1000px;
-  width: 100%;
-  background-size: cover !important;
+  // background-color: #666;
+  // width: 100%;
+  // background-size: cover !important;
+  // height: 100%;
+  // background-size: contain;
+  // background-repeat: no-repeat;
+  background-image:
+    url('../../images/bg-cliff-left.png'),
+    url('../../images/bg-cliff-right.png');
+  background-position:
+    bottom left,
+    bottom right;
 }
 
 .text__link--yellow {
