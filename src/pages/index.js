@@ -6,11 +6,7 @@ import { Link } from "gatsby";
 import SVG from '../components/SVG';
 import '../styles/global';
 import styled from 'react-emotion';
-
-
 import ProjectCardText from '../components/ProjectCardText';
-
-
 import { rotate, UpBubblesOne, UpBubblesOneTop, UpBubblesTwo, UpBubblesTwoTop, UpBubblesThree, UpBubblesThreeTop, UpDown, UpDownWide, waveAnimation } from '../styles/animations'
 import logotopaz from '../images/logo-topaz.svg';
 import logofreshtix from '../images/logo-freshtix.svg';
@@ -32,6 +28,7 @@ import anglerbright from '../images/angler-bright.png';
 import anglerdark from '../images/angler-dark.png';
 import '../assets/css/krabby.scss';
 import { FaChevronRight } from 'react-icons/fa';
+import { FaPaperPlane } from 'react-icons/fa';
 import FloatingLabel, { floatingStyles, focusStyles, inputStyles, labelStyles, spanStyles, buttonStyles, textareaStyles } from 'floating-label-react';
 
 
@@ -96,7 +93,9 @@ const inputStyle = {
   }
 }
 
-const OceanBG = styled(ParallaxLayer)``;
+const OceanBG = styled(ParallaxLayer)`
+
+`;
 const Container = styled.div`
   padding: 0 4rem;
   @media (max-width: 900px) {
@@ -108,6 +107,7 @@ const Navigation = styled.div`
   padding-bottom:0;
 `;
 const NavContact = styled.a``;
+const ButtonContact = styled.button``;
 const Hero = styled.div`
   ${tw('w-full')};
   display: grid;
@@ -139,22 +139,7 @@ const Description = styled.p`
   line-height: 1.45em;
 `;
 const ProjectWrapper = styled.div`
-
   display: grid;
-  grid-gap: 2rem;
-  grid-template-columns: repeat(2, minmax(200px, 1fr));
-  grid-template-rows: repeat(auto, 1fr);
-  grid-template-areas: "image text"
-                       "text image"
-                       "image text"
-                       "text image";
-  @media (max-width: 1200px) {
-    grid-gap: 2rem;
-  }
-  @media (max-width: 900px) {
-    grid-template-columns: 1fr;
-    grid-gap: 1rem;
-  }
 `;
 
 
@@ -164,11 +149,10 @@ const ProjectWrapper = styled.div`
 class App extends React.Component {
   render() {
     return (
-      <Parallax ref={ref => (this.parallax = ref)} pages={5}>
+      <Parallax ref={ref => (this.parallax = ref)} pages={6}>
 
-        <SunRaysfromGod offset={0} speed={.25} factor={4}  className={'sunrays'} style={{ backgroundSize: 'contain', backgroundColor: 'yellow' }} />
-
-
+        <OceanBG offset={0} speed={1} factor={5} className={'oceanbg'}   />
+        <SunRaysfromGod offset={0} speed={.25} factor={6}  className={'sunrays'} style={{ backgroundSize: 'contain' }} />
         <ParallaxLayer offset={0} speed={1}>
           <UpBubblesOneTop>
             <SVG icon="bubble" width={3} left="36%" top="32%" />
@@ -186,8 +170,7 @@ class App extends React.Component {
             <SVG icon="bubble" width={3} left="31%" top="35%" />
           </UpBubblesThreeTop>
         </ParallaxLayer>
-        <ParallaxLayer speed={-0.2} offset={1} factor={1} className={'background-01'} />
-        <ParallaxLayer speed={0.1} offset={1} factor={2}>
+        <ParallaxLayer offset={1} speed={0.1} factor={2}>
           <UpBubblesOne>
             <SVG icon="bubble" width={3} left="26%" top="32%" />
             <SVG icon="bubble" width={2} left="30%" top="34%" />
@@ -204,7 +187,7 @@ class App extends React.Component {
             <SVG icon="bubble" width={3} left="26%" top="31%" />
           </UpBubblesThree>
         </ParallaxLayer>
-        <ParallaxLayer speed={0.1} offset={1} factor={2}>
+        <ParallaxLayer offset={1} speed={0.1} factor={2}>
           <UpBubblesOne>
             <SVG icon="bubble" width={3} left="66%" top="28%" />
             <SVG icon="bubble" width={2} left="70%" top="38%" />
@@ -221,8 +204,9 @@ class App extends React.Component {
             <SVG icon="bubble" width={3} left="66%" top="21%" />
           </UpBubblesThree>
         </ParallaxLayer>
+        <ParallaxLayer speed={-0.2} offset={1} factor={1} className={'background-01'} />
 
-        <ParallaxLayer speed={0.2} offset={4.4} className={'foreground--coral'}>
+        <ParallaxLayer offset={5.4} speed={0.2} className={'foreground--coral'}>
           <UpBubblesOne>
             <SVG icon="bubble" width={3} left="26%" top="32%" />
             <SVG icon="bubble" width={2} left="30%" top="34%" />
@@ -254,22 +238,25 @@ class App extends React.Component {
             <SVG icon="bubble" width={3} left="66%" top="21%" />
           </UpBubblesThree>
         </ParallaxLayer>
-
-        <ParallaxLayer offset={1} speed={1} factor={1} style={{ backgroundColor: 'green' }}>
+        <ParallaxLayer offset={1} speed={1}>
           <Container>
-            <ProjectWrapper className="">
-
+            <ProjectWrapper className="project__grid--imageRight">
+              <img src={topazshottt} className="shottt-topaz" />
               <ProjectCardText title="UX DESIGN, FRONT END DEVELOPMENT">
                 <img src={logotopaz} />
                 <Description>This project was a redesign and rebuild of their attendee check in app. As part of their free ticketing software, this app allows an event organizer to check in participants and provides the organizer with attendance data.</Description>
-                <button class="btn btn--actionjackson btn-spinner">
+                <button class="btn btn--actionjackson">
                   <span class="btn__text">Case Study</span> <FaChevronRight size="1.45em" />
                 </button>
               </ProjectCardText>
-              <img src={topazshottt} className="shottt-topaz" />
+            </ProjectWrapper>
+          </Container>
+        </ParallaxLayer>
 
-
-              <img src={freshtixshottt} className="shottt-topaz" />
+        <ParallaxLayer offset={2} speed={1}>
+          <Container>
+            <ProjectWrapper className="project__grid--imageLeft">
+              <img src={freshtixshottt} className="shottt-freshtix" />
               <ProjectCardText title="UX DESIGN, FRONT END DEVELOPMENT">
                 <img src={logofreshtix} />
                 <Description>This project was a redesign and rebuild of their attendee check in app. As part of their free ticketing software, this app allows an event organizer to check in participants and provides the organizer with attendance data.</Description>
@@ -277,8 +264,14 @@ class App extends React.Component {
                   <span class="btn__text">Case Study</span> <FaChevronRight size="1.45em" />
                 </button>
               </ProjectCardText>
+            </ProjectWrapper>
+          </Container>
+        </ParallaxLayer>
 
-
+        <ParallaxLayer offset={3} speed={1}>
+          <Container>
+            <ProjectWrapper className="project__grid--imageRight">
+              <img src={robitshottt} className="shottt-robit" />
               <ProjectCardText title="UX DESIGN, FRONT END DEVELOPMENT">
                 <img src={logorobit} />
                 <Description>This project was a redesign and rebuild of their attendee check in app. As part of their free ticketing software, this app allows an event organizer to check in participants and provides the organizer with attendance data.</Description>
@@ -286,10 +279,14 @@ class App extends React.Component {
                   <span class="btn__text">Case Study</span> <FaChevronRight size="1.45em" />
                 </button>
               </ProjectCardText>
-              <img src={robitshottt} className="shottt-topaz" />
+            </ProjectWrapper>
+          </Container>
+        </ParallaxLayer>
 
-
-              <img src={payscapeshottt} className="shottt-topaz" />
+        <ParallaxLayer offset={4} speed={1}>
+          <Container>
+            <ProjectWrapper className="project__grid--imageLeft">
+              <img src={payscapeshottt} className="shottt-payscape" />
               <ProjectCardText title="UX DESIGN, FRONT END DEVELOPMENT">
                 <img src={logopayscape} />
                 <Description>This project was a redesign and rebuild of their attendee check in app. As part of their free ticketing software, this app allows an event organizer to check in participants and provides the organizer with attendance data.</Description>
@@ -297,18 +294,19 @@ class App extends React.Component {
                   <span class="btn__text">Case Study</span> <FaChevronRight size="1.45em" />
                 </button>
               </ProjectCardText>
-
             </ProjectWrapper>
           </Container>
         </ParallaxLayer>
 
-        <ParallaxLayer offset={3} speed={1} style={{ backgroundColor: 'green' }}>
+        <ParallaxLayer offset={4.8} speed={-0.15} style={{  }}>
           <Angler className={'anglerFish'}>
             <img class="bottom" src={anglerdark} />
             <img class="top" src={anglerbright} />
           </Angler>
         </ParallaxLayer>
-        <ParallaxLayer offset={4} speed={1} style={{ backgroundColor: 'red' }}>
+
+        <ParallaxLayer offset={5} speed={-0}>
+
           <Container>
           <Hero>
             <FormTitle className="item--contained">Let's have a conversation</FormTitle>
@@ -316,11 +314,13 @@ class App extends React.Component {
               <FloatingLabel id='name' name='name' placeholder='Name' type='text' styles={inputStyle} required />
               <FloatingLabel id='email' name='email' placeholder='Email' type='email' styles={inputStyle} required />
               <FloatingLabel id='comments' name='comments' placeholder='What are you working on?' styles={inputStyle} type='text' requried />
-            	<button className="btn btn--actionjackson--full" type="submit" styles={inputStyle}><span className="btn__text">Let's make something cool</span> <FaChevronRight size="1.45em" /></button>
+            	<button className="btn btn--actionjackson--full" type="submit" styles={inputStyle}><span className="btn__text">Send message</span> <FaPaperPlane size="1.45em" /></button>
              </form>
              </Hero>
            </Container>
+
         </ParallaxLayer>
+
 
         <ParallaxLayer offset={0} speed={1}>
           <HeaderContainer className="header__container">
@@ -332,7 +332,7 @@ class App extends React.Component {
                 <li>
                   <ul className="social-icons">
                     <li className="contact">
-                      <NavContact onClick={() => this.parallax.scrollTo(2)}>Contact</NavContact>
+                      <NavContact onClick={() => this.parallax.scrollTo(5)}>Contact</NavContact>
                     </li>
                     <li><a href="https://dribbble.com/trice" title="Follow me on Dribbble">
                       <img src={dribbble} className="" alt="Dribbble" /></a>
@@ -357,9 +357,7 @@ class App extends React.Component {
                 My name is Matt Trice.
               </BigTitle>
               <Subtitle className="item--contained">I am an Atlanta based UX, prototype, web designer, front end development, from concept to completion from design to deployment full life cycle of the design.</Subtitle>
-              <button className="item--contained btn btn--actionjackson">
-                <span className="btn__text">Let's make something cool</span> <FaChevronRight size="1.45em" />
-              </button>
+              <ButtonContact className="item--contained btn btn--actionjackson" onClick={() => this.parallax.scrollTo(5)}><span className="btn__text">Let's make something cool</span> <FaChevronRight size="1.45em" /></ButtonContact>
             </Hero>
           </Container>
         </ParallaxLayer>

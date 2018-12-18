@@ -298,7 +298,7 @@ class App extends React.Component {
           </Container>
         </ParallaxLayer>
 
-        <ParallaxLayer offset={4.4} speed={-0.3} style={{  }}>
+        <ParallaxLayer offset={4.8} speed={-0.15} style={{  }}>
           <Angler className={'anglerFish'}>
             <img class="bottom" src={anglerdark} />
             <img class="top" src={anglerbright} />
