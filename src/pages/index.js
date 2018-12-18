@@ -312,7 +312,20 @@ class App extends React.Component {
           <Container>
             <Hero>
               <FormTitle className="item--contained">Let's have a conversation</FormTitle>
-            
+              <form class="contact__form item--contained" name="contactme" method="post" data-netlify="true" data-netlify-honeypot="bot-field" onSubmit={this.handleSubmit} >
+              {/* The `form-name` hidden field is required to support form submissions without JavaScript */}
+                <input type="hidden" name="form-name" value="contact" />
+                <p hidden>
+                  <label>
+                    Don’t fill this out:{" "}
+                    <input name="bot-field" onChange={this.handleChange} />
+                  </label>
+                </p>
+                <FloatingLabel id='name' name='name' placeholder='Name' type='text' styles={inputStyle} required />
+                <FloatingLabel id='email' name='email' placeholder='Email' type='email' styles={inputStyle} required />
+                <FloatingLabel id='comments' name='comments' placeholder='What are you working on?' styles={inputStyle} type='text' requried />
+                <button className="btn btn--actionjackson--full" type="submit" styles={inputStyle}><span className="btn__text">Send message</span> <FaPaperPlane size="1.45em" /></button>
+              </form>
             </Hero>
           </Container>
         </ParallaxLayer>
