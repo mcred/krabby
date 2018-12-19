@@ -73,7 +73,15 @@ const inputStyle = {
     left: '1rem'
   }
 }
-const OceanBG = styled(ParallaxLayer)``;
+const OceanBG = styled(ParallaxLayer)`
+
+  background: rgb(0,5,10);
+  background: linear-gradient(360deg, rgba(0,5,10,1) 0%, rgba(0,49,98,1) 78%, rgba(0,101,157,1) 100%);
+  background-size: contain !important;
+  background-image: url('https://krabby.trice.design/static/sunraysfromgod-19f4706e5c5ca91ef97729db3ecd9bda.png');
+  background-repeat: no-repeat;
+  background-position: top center;
+`;
 const WhiteContent = styled(ParallaxLayer)`
   background: white;
 `;
@@ -119,7 +127,7 @@ const ProjectHero = styled.div`
   display: grid;
   grid-gap: 0;
   grid-template-columns: 50% minmax(300px, 1fr);
-  grid-template-rows: 2rem auto;
+  grid-template-rows: 6rem auto;
   grid-template-areas: ". ."
                        ". Image"
                        "Logo Image"
@@ -128,7 +136,7 @@ const ProjectHero = styled.div`
                        ". Image";
   @media (max-width: 900px) {
    grid-template-columns: 1fr;
-   grid-template-rows: 2rem auto;
+   grid-template-rows: 8rem auto;
    grid-gap: 0;
    grid-template-areas: "." "Logo" "Title" "Image" "Description";
   }
@@ -158,9 +166,27 @@ class App extends React.Component {
     return (
       <Parallax ref={ref => (this.parallax = ref)} pages={6}>
 
-        <OceanBG offset={0} speed={0} factor={1} className={'oceanbg'}   />
-        <SunRaysfromGod offset={0} speed={.25} factor={2}  className={'sunrays'} style={{ backgroundSize: 'contain' }} />
-        <WhiteContent offset={.85} speed={0} factor={6} className={''}>
+        <OceanBG offset={0} speed={0} factor={2}>
+          <Container>
+            <ProjectHero className="project__grid--hero">
+              <img src={topazshottt} className="shottt-topaz" />
+              <img src={logotopaz} style={{ gridArea: 'Logo' }} />
+              <ProjectCardTitle>UX DESIGN, FRONT END DEVELOPMENT</ProjectCardTitle>
+              <ProjectCardDescription>This project was a redesign and rebuild of their attendee check in app. As part of their free ticketing software, this app allows an event organizer to check in participants and provides the organizer with attendance data.<br />
+                <Link to="topaz">
+                  <button class="btn btn--actionjackson">
+                    <span class="btn__text">Case Study</span> <FaChevronRight size="1.45em" />
+                  </button>
+                </Link>
+              </ProjectCardDescription>
+            </ProjectHero>
+          </Container>
+        </OceanBG>
+
+
+
+
+        <WhiteContent offset={1.25} speed={0} factor={6} className={''}>
           <Container>
           <p>This project was a redesign and rebuild of their attendee check in app. As part of their free ticketing software, this app allows an event organizer to check in participants and provides the organizer with attendance data.<br />
             <Link to="topaz">
@@ -236,22 +262,7 @@ class App extends React.Component {
           </HeaderContainer>
         </ParallaxLayer>
 
-        <ParallaxLayer speed={0.5} offset={.1}>
-          <Container>
-            <ProjectHero className="project__grid--hero">
-              <img src={topazshottt} className="shottt-topaz" />
-              <img src={logotopaz} style={{ gridArea: 'Logo' }} />
-              <ProjectCardTitle>UX DESIGN, FRONT END DEVELOPMENT</ProjectCardTitle>
-              <ProjectCardDescription>This project was a redesign and rebuild of their attendee check in app. As part of their free ticketing software, this app allows an event organizer to check in participants and provides the organizer with attendance data.<br />
-                <Link to="topaz">
-                  <button class="btn btn--actionjackson">
-                    <span class="btn__text">Case Study</span> <FaChevronRight size="1.45em" />
-                  </button>
-                </Link>
-              </ProjectCardDescription>
-            </ProjectHero>
-          </Container>
-        </ParallaxLayer>
+
       </Parallax>
 
     )
