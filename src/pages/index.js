@@ -108,7 +108,7 @@ const Navigation = styled.div`
   padding-bottom:0;
 `;
 const NavContact = styled.a``;
-const ButtonContact = styled.button``;
+const ButtonCTA = styled.button``;
 const Hero = styled.div`
   ${tw('w-full')};
   display: grid;
@@ -249,9 +249,11 @@ class App extends React.Component {
               <ProjectCardText title="UX DESIGN, FRONT END DEVELOPMENT">
                 <img src={logotopaz} />
                 <Description>This project was a redesign and rebuild of their attendee check in app. As part of their free ticketing software, this app allows an event organizer to check in participants and provides the organizer with attendance data.</Description>
-                <button class="btn btn--actionjackson">
-                  <span class="btn__text">Case Study</span> <FaChevronRight size="1.45em" />
-                </button>
+                <Link to="lokk">
+                  <button class="btn btn--actionjackson">
+                    <span class="btn__text">Case Study</span> <FaChevronRight size="1.45em" />
+                  </button>
+                </Link>
               </ProjectCardText>
             </ProjectWrapper>
           </Container>
@@ -302,7 +304,7 @@ class App extends React.Component {
           </Container>
         </ParallaxLayer>
 
-        <ParallaxLayer offset={4.8} speed={-0.15} style={{  }}>
+        <ParallaxLayer offset={4.8} speed={-0.15}>
           <Angler className={'anglerFish'}>
             <img class="bottom" src={anglerdark} />
             <img class="top" src={anglerbright} />
@@ -359,7 +361,7 @@ class App extends React.Component {
                 My name is Matt Trice.
               </BigTitle>
               <Subtitle className="item--contained">I am an Atlanta based UX, prototype, web designer, front end development, from concept to completion from design to deployment full life cycle of the design.</Subtitle>
-              <ButtonContact className="item--contained btn btn--actionjackson" onClick={() => this.parallax.scrollTo(5)}><span className="btn__text">Let's make something cool</span> <FaChevronRight size="1.45em" /></ButtonContact>
+              <ButtonCTA className="item--contained btn btn--actionjackson" onClick={() => this.parallax.scrollTo(5)}><span className="btn__text">Let's make something cool</span> <FaChevronRight size="1.45em" /></ButtonCTA>
             </Hero>
           </Container>
         </ParallaxLayer>

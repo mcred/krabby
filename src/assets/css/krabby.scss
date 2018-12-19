@@ -26,11 +26,6 @@ background-image: linear-gradient(-180deg, #00111F 0%, #00161E 64%, #00282B 100%
 @import url('https://fonts.googleapis.com/css?family=Abril+Fatface|Oswald:400,700');
 
 
-
-
-
-
-
 /*****************************
 ******************************
 
@@ -437,6 +432,23 @@ $button-text-color: $white;
   right: -200px;
 }
 
+.project__grid--hero {
+  align-items: center;
+  grid-gap: 2rem;
+  grid-template-columns: repeat(2, minmax(200px, 1fr));
+  grid-template-rows: repeat(1fr);
+  grid-template-areas: "text image";
+  @media (max-width: 1200px) {
+   grid-gap: 2rem;
+  }
+  @media (max-width: 900px) {
+   grid-template-columns: 1fr;
+   grid-template-rows: auto;
+   grid-gap: 1rem;
+   grid-template-areas: "text" "image";
+  }
+}
+
 
 
 
@@ -462,16 +474,8 @@ $button-text-color: $white;
 }
 
 .background--cliffs {
-  // background-image: url('../../images/foreground-coral.png');
-  // background-position: bottom;
   background-size: contain;
   background-repeat: no-repeat;
-  // background-color: #666;
-  // width: 100%;
-  // background-size: cover !important;
-  // height: 100%;
-  // background-size: contain;
-  // background-repeat: no-repeat;
   background-image:
     url('../../images/bg-cliff-left.png'),
     url('../../images/bg-cliff-right.png');
@@ -498,32 +502,6 @@ $button-text-color: $white;
 }
 .green {
   background-color: green;
-}
-
-
-
-.shottt-freshtix {
-  // max-width: 100%;
-  // overflow-x: hidden;
-  // @media (max-width: 900px) {
-  //   max-width: 100%;
-  // }
-}
-
-.shottt-robit {
-  // max-width: 100%;
-  // overflow-x: hidden;
-  // @media (max-width: 900px) {
-  //   max-width: 100%;
-  // }
-}
-
-.shottt-payscape {
-  // max-width: 100%;
-  // overflow-x: hidden;
-  // @media (max-width: 900px) {
-  //   max-width: 100%;
-  // }
 }
 
 .anglerFish {
