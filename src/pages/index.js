@@ -314,7 +314,7 @@ class App extends React.Component {
             <Hero>
 
               <FormTitle className="item--contained">Let's have a conversation</FormTitle>
-              <form class="contact__form item--contained"  name="contact" method="post" action="https://formspree.io/matt@trice.design" method="POST" />
+              <form class="contact__form item--contained"  name="contact" method="post" action="https://formspree.io/matt@trice.design" method="POST">
                 <FloatingLabel id='name' name='name' placeholder='Name' type='text' styles={inputStyle} required />
                 <FloatingLabel id='email' name='email' placeholder='Email' type='email' styles={inputStyle} required />
                 <FloatingLabel id='comments' name='comments' placeholder='What are you working on?' styles={inputStyle} type='text' requried />
