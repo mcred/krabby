@@ -369,11 +369,14 @@ $button-text-color: $white;
 }
 
 .project__grid--imageRight {
-  align-items: center;
+  // align-items: center;
   grid-gap: 2rem;
-  grid-template-columns: repeat(2, minmax(200px, 1fr));
-  grid-template-rows: repeat(1fr);
-  grid-template-areas: "text image";
+  grid-template-columns: 50% minmax(300px, 1fr);
+  grid-template-rows: 1fr 2rem auto 1fr;
+  grid-template-areas: ". Image"
+                       "Title Image"
+                       "Description Image"
+                       ". Image";
   @media (max-width: 1200px) {
    grid-gap: 2rem;
   }
@@ -381,14 +384,40 @@ $button-text-color: $white;
    grid-template-columns: 1fr;
    grid-template-rows: auto;
    grid-gap: 1rem;
-   grid-template-areas: "image" "text";
+   grid-template-areas: "Title" "Image" "Description";
   }
+}
+
+//
+// .pg-grid-container {
+//   display: grid;
+//   grid-template-columns: 50% 1fr;
+//   grid-template-rows: 1fr 1auto;
+//   grid-template-areas: "Title Image" "Description Image";
+// }
+// .pg-Image { grid-area: pg-Image; }
+//
+// .pg-Title { grid-area: pg-Title; }
+//
+// .pg-Description { grid-area: pg-Description; }
+//
+
+
+.project__title {
+  grid-area: Title;
+}
+.project__logo {
+  padding: 0 0 1rem 0;
+  grid-area: Description;
+}
+.project__description {
+  grid-area: Description;
 }
 
 .shottt-topaz {
   object-fit: cover;
-  grid-area: image;
-  width: 980px;
+  grid-area: Image;
+  width: 1980px;
   justify-self: left;
   @media (max-width: 900px) {
     width: 100%;

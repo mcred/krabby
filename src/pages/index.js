@@ -142,6 +142,14 @@ const Description = styled.p`
 const ProjectWrapper = styled.div`
   display: grid;
 `;
+const ProjectCardTitle = styled.h4`
+  ${tw('text-white uppercase')};
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+`;
+const ProjectCardDescription = styled.p`
+  ${tw('text-white')};
+  line-height: 1.45em;
+`;
 
 
 
@@ -209,7 +217,6 @@ class App extends React.Component {
           <img src={squidsilhouette} className="squidSilhouette" />
         </ParallaxLayer>
         <ParallaxLayer offset={4.4} speed={-0.4} factor={1} className={'background-01'} />
-
         <ParallaxLayer offset={4} speed={-0.3} factor={2} className={'background--cliffs'}>
           <UpBubblesOne>
             <SVG icon="bubble" width={3} left="26%" top="32%" />
@@ -242,21 +249,32 @@ class App extends React.Component {
             <SVG icon="bubble" width={3} left="66%" top="21%" />
           </UpBubblesThree>
         </ParallaxLayer>
+
         <ParallaxLayer offset={1} speed={1}>
+
+
           <Container>
             <ProjectWrapper className="project__grid--imageRight">
+
               <img src={topazshottt} className="shottt-topaz" />
-              <ProjectCardText title="UX DESIGN, FRONT END DEVELOPMENT">
-                <img src={logotopaz} />
-                <Description>This project was a redesign and rebuild of their attendee check in app. As part of their free ticketing software, this app allows an event organizer to check in participants and provides the organizer with attendance data.</Description>
+
+              <ProjectCardTitle className="project__title">UX DESIGN, FRONT END DEVELOPMENT</ProjectCardTitle>
+
+              <ProjectCardDescription className="project__description">
+                <img src={logotopaz} className="project__logo" /><br />
+                This project was a redesign and rebuild of their attendee check in app. As part of their free ticketing software, this app allows an event organizer to check in participants and provides the organizer with attendance data.<br />
                 <Link to="lokk">
                   <button class="btn btn--actionjackson">
                     <span class="btn__text">Case Study</span> <FaChevronRight size="1.45em" />
                   </button>
                 </Link>
-              </ProjectCardText>
+              </ProjectCardDescription>
+
             </ProjectWrapper>
           </Container>
+
+
+        
         </ParallaxLayer>
 
         <ParallaxLayer offset={2} speed={1}>
