@@ -29,9 +29,7 @@ const HeaderContainer = styled.div`
 `;
 const SunRaysfromGod = styled(ParallaxLayer)`
 `;
-const ProjectHero = styled.div`
-display: grid;
-`;
+
 const FormTitle = styled.h3`
   ${tw('text-white mb-0')};
   text-shadow: -2px 4px 32px rgba(0, 0, 0, 1);
@@ -76,6 +74,9 @@ const inputStyle = {
   }
 }
 const OceanBG = styled(ParallaxLayer)``;
+const WhiteContent = styled(ParallaxLayer)`
+  background: white;
+`;
 const Container = styled.div`
   padding: 0 4rem;
   @media (max-width: 900px) {
@@ -114,20 +115,38 @@ const Subtitle = styled.p`
     font-size: 1em;
    }
 `;
+const ProjectHero = styled.div`
+  display: grid;
+  grid-gap: 0;
+  grid-template-columns: 50% minmax(300px, 1fr);
+  grid-template-rows: 2rem auto;
+  grid-template-areas: ". ."
+                       ". Image"
+                       "Logo Image"
+                       "Title Image"
+                       "Description Image"
+                       ". Image";
+  @media (max-width: 900px) {
+   grid-template-columns: 1fr;
+   grid-template-rows: 2rem auto;
+   grid-gap: 0;
+   grid-template-areas: "." "Logo" "Title" "Image" "Description";
+  }
+`;
 const Description = styled.p`
   ${tw('text-white')};
   line-height: 1.45em;
 `;
-const ProjectWrapper = styled.div`
-  display: grid;
-`;
+
 const ProjectCardTitle = styled.h4`
   ${tw('text-white uppercase')};
   text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+  grid-area: Title;
 `;
 const ProjectCardDescription = styled.p`
   ${tw('text-white')};
   line-height: 1.45em;
+  grid-area: Description;
 `;
 
 
@@ -139,32 +158,55 @@ class App extends React.Component {
     return (
       <Parallax ref={ref => (this.parallax = ref)} pages={6}>
 
-        <OceanBG offset={0} speed={0} factor={6} className={'oceanbg'}   />
-        <SunRaysfromGod offset={0} speed={.25} factor={6}  className={'sunrays'} style={{ backgroundSize: 'contain' }} />
-
-        <ParallaxLayer offset={1} speed={1}>
+        <OceanBG offset={0} speed={0} factor={1} className={'oceanbg'}   />
+        <SunRaysfromGod offset={0} speed={.25} factor={2}  className={'sunrays'} style={{ backgroundSize: 'contain' }} />
+        <WhiteContent offset={.85} speed={0} factor={6} className={''}>
           <Container>
-            <ProjectWrapper className="project__grid--imageRight">
-              <img src={topazshottt} className="shottt-topaz" />
-              <ProjectCardTitle className="project__title">UX DESIGN, FRONT END DEVELOPMENT</ProjectCardTitle>
-              <ProjectCardDescription className="project__description">
-                <img src={logotopaz} className="project__logo" /><br />
-                This project was a redesign and rebuild of their attendee check in app. As part of their free ticketing software, this app allows an event organizer to check in participants and provides the organizer with attendance data.<br />
-                <Link to="topaz">
-                  <button class="btn btn--actionjackson">
-                    <span class="btn__text">Case Study</span> <FaChevronRight size="1.45em" />
-                  </button>
-                </Link>
-              </ProjectCardDescription>
-            </ProjectWrapper>
+          <p>This project was a redesign and rebuild of their attendee check in app. As part of their free ticketing software, this app allows an event organizer to check in participants and provides the organizer with attendance data.<br />
+            <Link to="topaz">
+              <button class="btn btn--actionjackson">
+                <span class="btn__text">Case Study</span> <FaChevronRight size="1.45em" />
+              </button>
+            </Link>
+          </p><p>This project was a redesign and rebuild of their attendee check in app. As part of their free ticketing software, this app allows an event organizer to check in participants and provides the organizer with attendance data.<br />
+            <Link to="topaz">
+              <button class="btn btn--actionjackson">
+                <span class="btn__text">Case Study</span> <FaChevronRight size="1.45em" />
+              </button>
+            </Link>
+          </p><p>This project was a redesign and rebuild of their attendee check in app. As part of their free ticketing software, this app allows an event organizer to check in participants and provides the organizer with attendance data.<br />
+            <Link to="topaz">
+              <button class="btn btn--actionjackson">
+                <span class="btn__text">Case Study</span> <FaChevronRight size="1.45em" />
+              </button>
+            </Link>
+          </p><p>This project was a redesign and rebuild of their attendee check in app. As part of their free ticketing software, this app allows an event organizer to check in participants and provides the organizer with attendance data.<br />
+            <Link to="topaz">
+              <button class="btn btn--actionjackson">
+                <span class="btn__text">Case Study</span> <FaChevronRight size="1.45em" />
+              </button>
+            </Link>
+          </p><p>This project was a redesign and rebuild of their attendee check in app. As part of their free ticketing software, this app allows an event organizer to check in participants and provides the organizer with attendance data.<br />
+            <Link to="topaz">
+              <button class="btn btn--actionjackson">
+                <span class="btn__text">Case Study</span> <FaChevronRight size="1.45em" />
+              </button>
+            </Link>
+          </p><p>This project was a redesign and rebuild of their attendee check in app. As part of their free ticketing software, this app allows an event organizer to check in participants and provides the organizer with attendance data.<br />
+            <Link to="topaz">
+              <button class="btn btn--actionjackson">
+                <span class="btn__text">Case Study</span> <FaChevronRight size="1.45em" />
+              </button>
+            </Link>
+          </p><p>This project was a redesign and rebuild of their attendee check in app. As part of their free ticketing software, this app allows an event organizer to check in participants and provides the organizer with attendance data.<br />
+            <Link to="topaz">
+              <button class="btn btn--actionjackson">
+                <span class="btn__text">Case Study</span> <FaChevronRight size="1.45em" />
+              </button>
+            </Link>
+          </p>
           </Container>
-        </ParallaxLayer>
-
-
-
-
-
-
+        </WhiteContent>
 
         <ParallaxLayer offset={0} speed={1}>
           <HeaderContainer className="header__container">
@@ -193,15 +235,14 @@ class App extends React.Component {
             </Navigation>
           </HeaderContainer>
         </ParallaxLayer>
+
         <ParallaxLayer speed={0.5} offset={.1}>
           <Container>
-
             <ProjectHero className="project__grid--hero">
               <img src={topazshottt} className="shottt-topaz" />
-              <ProjectCardTitle className="project__title">UX DESIGN, FRONT END DEVELOPMENT</ProjectCardTitle>
-              <ProjectCardDescription className="project__description">
-                <img src={logotopaz} className="project__logo" /><br />
-                This project was a redesign and rebuild of their attendee check in app. As part of their free ticketing software, this app allows an event organizer to check in participants and provides the organizer with attendance data.<br />
+              <img src={logotopaz} style={{ gridArea: 'Logo' }} />
+              <ProjectCardTitle>UX DESIGN, FRONT END DEVELOPMENT</ProjectCardTitle>
+              <ProjectCardDescription>This project was a redesign and rebuild of their attendee check in app. As part of their free ticketing software, this app allows an event organizer to check in participants and provides the organizer with attendance data.<br />
                 <Link to="topaz">
                   <button class="btn btn--actionjackson">
                     <span class="btn__text">Case Study</span> <FaChevronRight size="1.45em" />
@@ -209,9 +250,6 @@ class App extends React.Component {
                 </Link>
               </ProjectCardDescription>
             </ProjectHero>
-
-
-          
           </Container>
         </ParallaxLayer>
       </Parallax>
