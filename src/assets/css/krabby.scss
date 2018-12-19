@@ -485,19 +485,19 @@ $button-text-color: $white;
 }
 
 .project__grid--hero {
-  align-items: center;
   grid-gap: 2rem;
-  grid-template-columns: repeat(2, minmax(200px, 1fr));
-  grid-template-rows: repeat(1fr);
-  grid-template-areas: "text image";
-  @media (max-width: 1200px) {
-   grid-gap: 2rem;
-  }
+  grid-template-columns: 50% minmax(300px, 1fr);
+  grid-template-rows: 4rem 1fr 2rem auto 1fr;
+  grid-template-areas: ". ."
+  ". Image"
+                       "Title Image"
+                       "Description Image"
+                       ". Image";
   @media (max-width: 900px) {
    grid-template-columns: 1fr;
    grid-template-rows: auto;
    grid-gap: 1rem;
-   grid-template-areas: "text" "image";
+   grid-template-areas: "Title" "Image" "Description";
   }
 }
 
