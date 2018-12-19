@@ -251,43 +251,37 @@ class App extends React.Component {
         </ParallaxLayer>
 
         <ParallaxLayer offset={1} speed={1}>
-
-
           <Container>
             <ProjectWrapper className="project__grid--imageRight">
-
               <img src={topazshottt} className="shottt-topaz" />
-
               <ProjectCardTitle className="project__title">UX DESIGN, FRONT END DEVELOPMENT</ProjectCardTitle>
-
               <ProjectCardDescription className="project__description">
                 <img src={logotopaz} className="project__logo" /><br />
                 This project was a redesign and rebuild of their attendee check in app. As part of their free ticketing software, this app allows an event organizer to check in participants and provides the organizer with attendance data.<br />
-                <Link to="lokk">
+                <Link to="topaz">
                   <button class="btn btn--actionjackson">
                     <span class="btn__text">Case Study</span> <FaChevronRight size="1.45em" />
                   </button>
                 </Link>
               </ProjectCardDescription>
-
             </ProjectWrapper>
           </Container>
-
-
-        
         </ParallaxLayer>
 
         <ParallaxLayer offset={2} speed={1}>
           <Container>
             <ProjectWrapper className="project__grid--imageLeft">
               <img src={freshtixshottt} className="shottt-freshtix" />
-              <ProjectCardText title="UX DESIGN, FRONT END DEVELOPMENT">
-                <img src={logofreshtix} />
-                <Description>This project was a redesign and rebuild of their attendee check in app. As part of their free ticketing software, this app allows an event organizer to check in participants and provides the organizer with attendance data.</Description>
-                <button class="btn btn--actionjackson btn-spinner">
-                  <span class="btn__text">Case Study</span> <FaChevronRight size="1.45em" />
-                </button>
-              </ProjectCardText>
+              <ProjectCardTitle className="project__title">UX DESIGN, FRONT END DEVELOPMENT</ProjectCardTitle>
+              <ProjectCardDescription className="project__description">
+                <img src={logofreshtix} className="project__logo" /><br />
+                This project was a redesign and rebuild of their attendee check in app. As part of their free ticketing software, this app allows an event organizer to check in participants and provides the organizer with attendance data.<br />
+                <Link to="freshtix">
+                  <button class="btn btn--actionjackson">
+                    <span class="btn__text">Case Study</span> <FaChevronRight size="1.45em" />
+                  </button>
+                </Link>
+              </ProjectCardDescription>
             </ProjectWrapper>
           </Container>
         </ParallaxLayer>
@@ -296,13 +290,16 @@ class App extends React.Component {
           <Container>
             <ProjectWrapper className="project__grid--imageRight">
               <img src={robitshottt} className="shottt-robit" />
-              <ProjectCardText title="UX DESIGN, FRONT END DEVELOPMENT">
-                <img src={logorobit} />
-                <Description>This project was a redesign and rebuild of their attendee check in app. As part of their free ticketing software, this app allows an event organizer to check in participants and provides the organizer with attendance data.</Description>
-                <button class="btn btn--actionjackson btn-spinner">
-                  <span class="btn__text">Case Study</span> <FaChevronRight size="1.45em" />
-                </button>
-              </ProjectCardText>
+              <ProjectCardTitle className="project__title">UX DESIGN, FRONT END DEVELOPMENT</ProjectCardTitle>
+              <ProjectCardDescription className="project__description">
+                <img src={logorobit} className="project__logo" /><br />
+                This project was a redesign and rebuild of their attendee check in app. As part of their free ticketing software, this app allows an event organizer to check in participants and provides the organizer with attendance data.<br />
+                <Link to="robit">
+                  <button class="btn btn--actionjackson">
+                    <span class="btn__text">Case Study</span> <FaChevronRight size="1.45em" />
+                  </button>
+                </Link>
+              </ProjectCardDescription>
             </ProjectWrapper>
           </Container>
         </ParallaxLayer>
@@ -310,14 +307,17 @@ class App extends React.Component {
         <ParallaxLayer offset={4} speed={1}>
           <Container>
             <ProjectWrapper className="project__grid--imageLeft">
-              <img src={payscapeshottt} className="shottt-payscape" />
-              <ProjectCardText title="UX DESIGN, FRONT END DEVELOPMENT">
-                <img src={logopayscape} />
-                <Description>This project was a redesign and rebuild of their attendee check in app. As part of their free ticketing software, this app allows an event organizer to check in participants and provides the organizer with attendance data.</Description>
-                <button class="btn btn--actionjackson btn-spinner">
-                  <span class="btn__text">Case Study</span> <FaChevronRight size="1.45em" />
-                </button>
-              </ProjectCardText>
+            <img src={payscapeshottt} className="shottt-payscape" />
+              <ProjectCardTitle className="project__title">UX DESIGN, FRONT END DEVELOPMENT</ProjectCardTitle>
+              <ProjectCardDescription className="project__description">
+                <img src={logopayscape} className="project__logo" /><br />
+                This project was a redesign and rebuild of their attendee check in app. As part of their free ticketing software, this app allows an event organizer to check in participants and provides the organizer with attendance data.<br />
+                <Link to="freshtix">
+                  <button class="btn btn--actionjackson">
+                    <span class="btn__text">Case Study</span> <FaChevronRight size="1.45em" />
+                  </button>
+                </Link>
+              </ProjectCardDescription>
             </ProjectWrapper>
           </Container>
         </ParallaxLayer>
