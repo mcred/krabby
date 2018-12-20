@@ -2,17 +2,15 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { Parallax, ParallaxLayer } from 'react-spring/dist/addons';
 import { Link } from "gatsby";
-
 import '../styles/global';
 import styled from 'react-emotion';
-
 import logotopaz from '../images/logo-topaz.svg';
 import topazshottt from '../images/shottt-topaz.png';
 import dribbble from '../images/icon-dribbble.svg';
 import instagram from '../images/icon-instagram.svg';
 import linkedin from '../images/icon-linkedin.svg';
 import logotd from '../images/logo-td.svg';
-
+import sunrays from '../images/sunraysfromgod.png';
 import '../assets/css/krabby.scss';
 import { FaChevronRight } from 'react-icons/fa';
 import { FaPaperPlane } from 'react-icons/fa';
@@ -26,9 +24,7 @@ const HeaderContainer = styled.div`
     padding: 0 1rem;
   }
 `;
-const SunRaysfromGod = styled(ParallaxLayer)`
-`;
-
+const SunRaysfromGod = styled(ParallaxLayer)``;
 const FormTitle = styled.h3`
   ${tw('text-white mb-0')};
   text-shadow: -2px 4px 32px rgba(0, 0, 0, 1);
@@ -76,7 +72,7 @@ const OceanBG = styled.div`
   background: rgb(0,5,10);
   background: linear-gradient(360deg, rgba(0,5,10,1) 0%, rgba(0,49,98,1) 78%, rgba(0,101,157,1) 100%);
   background-size: cover;
-  background-image: url('https://krabby.trice.design/static/sunraysfromgod-19f4706e5c5ca91ef97729db3ecd9bda.png');
+  background-image: url(${sunrays});
   background-repeat: no-repeat;
   background-position: top center;
 `;
@@ -142,12 +138,12 @@ const Description = styled.p`
   ${tw('text-white')};
   line-height: 1.45em;
 `;
-
 const ProjectCardTitle = styled.h4`
   ${tw('text-white uppercase')};
   text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
   grid-area: Title;
 `;
+
 const ProjectCardDescription = styled.p`
   ${tw('text-white')};
   line-height: 1.45em;
@@ -161,7 +157,7 @@ const ProjectCardDescription = styled.p`
 class App extends React.Component {
   render() {
     return (
-      <div style={{display: 'grid', overflowX: 'hidden' }}>
+      <div style={{display: 'grid', overflowX: 'hidden', gridGap: '0' }}>
 
         <OceanBG>
           <HeaderContainer className="header__container">
@@ -189,7 +185,6 @@ class App extends React.Component {
               </ul>
             </Navigation>
           </HeaderContainer>
-
           <Container>
             <ProjectHero>
               <img src={topazshottt} className="shottt-topaz" />
@@ -206,32 +201,13 @@ class App extends React.Component {
           </Container>
         </OceanBG>
 
-
-
-
         <WhiteContent>
           <Container>
-          <p>This project was a redesign and rebuild of their attendee check in app. As part of their free ticketing software, this app allows an event organizer to check in participants and provides the organizer with attendance data.<br />
-            <Link to="topaz">
-              <button className="btn btn--actionjackson">
-                <span className="btn__text">Case Study</span> <FaChevronRight size="1.45em" />
-              </button>
-            </Link>
-          </p><p>This project was a redesign and rebuild of their attendee check in app. As part of their free ticketing software, this app allows an event organizer to check in participants and provides the organizer with attendance data.<br />
-            <Link to="topaz">
-              <button className="btn btn--actionjackson">
-                <span className="btn__text">Case Study</span> <FaChevronRight size="1.45em" />
-              </button>
-            </Link>
-          </p>
+          
           </Container>
         </WhiteContent>
 
-
-
-
       </div>
-
     )
   }
 }
