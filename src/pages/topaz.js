@@ -9,6 +9,10 @@ import topazshottt from '../images/shottt-topaz.png';
 import dribbble from '../images/icon-dribbble.svg';
 import instagram from '../images/icon-instagram.svg';
 import linkedin from '../images/icon-linkedin.svg';
+import aftereffects from '../images/icon-after-effects.png';
+import framer from '../images/icon-framer.png';
+import illustrator from '../images/icon-illustrator.png';
+import sketch from '../images/icon-sketch.png';
 import logotd from '../images/logo-td.svg';
 import sunrays from '../images/sunraysfromgod.png';
 import '../assets/css/krabby.scss';
@@ -76,8 +80,12 @@ const OceanBG = styled.div`
   background-repeat: no-repeat;
   background-position: top center;
 `;
-const WhiteContent = styled.div`
+const WhiteContainer = styled.div`
   background: white;
+  padding: 0 4rem;
+  @media (max-width: 900px) {
+    padding: 0 1rem;
+  }
 `;
 const Container = styled.div`
   padding: 0 4rem;
@@ -143,12 +151,45 @@ const ProjectCardTitle = styled.h4`
   text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
   grid-area: Title;
 `;
-
 const ProjectCardDescription = styled.p`
   ${tw('text-white')};
   line-height: 1.45em;
   grid-area: Description;
 `;
+const ProjectContent = styled.div`
+  display: grid;
+  grid-gap: 1rem;
+  grid-template-columns: 1.25fr 0.75fr;
+  grid-template-rows: 2rem 1fr 1fr;
+  grid-template-areas: ". ." "Approach Workflow" "Swatches Swatches";
+  @media (max-width: 680px) {
+    grid-template-columns: 1fr;
+    grid-template-rows: 2rem auto;
+    grid-template-areas: "." "Approach" "Workflow" "Swatches";
+  }
+`;
+const Approach = styled.div`
+  grid-area: Approach;
+`;
+const Workflow = styled.div`
+  grid-area: Workflow;
+`;
+const WorkflowUL = styled.ul`
+  list-style-type: none;
+`;
+const WorkflowLI = styled.li`
+  font-weight: 900;
+  text-transform: uppercase;
+  font-family: 'Open Sans', sans-serif;
+  font-size: .85rem;
+  padding: 6px 6px 6px 0;
+`;
+const ContentTitle = styled.h4`
+  ${tw('uppercase')};
+`;
+
+
+
 
 
 
@@ -201,11 +242,23 @@ class App extends React.Component {
           </Container>
         </OceanBG>
 
-        <WhiteContent>
-          <Container>
-          
-          </Container>
-        </WhiteContent>
+        <WhiteContainer>
+          <ProjectContent>
+            <Approach>
+              <ContentTitle>Approach</ContentTitle>
+              <p>Being able to see where your idea sits in it’s creative lifecycle will help move it to completion. As a designer, I often times would find myself with  great ideas but would hit creative roadblocks when it came time to start creating.</p>
+            </Approach>
+            <Workflow>
+              <ContentTitle>Workflow</ContentTitle>
+              <WorkflowUL>
+                <WorkflowLI><img src={sketch} alt="Sketch" className="workflow__icon" />Sketch</WorkflowLI>
+                <WorkflowLI><img src={illustrator} alt="Illustrator" className="workflow__icon" />Illustrator</WorkflowLI>
+                <WorkflowLI><img src={aftereffects} alt="After Effects" className="workflow__icon" />After Effects</WorkflowLI>
+                <WorkflowLI><img src={framer} alt="Framer" className="workflow__icon" />Framer</WorkflowLI>
+              </WorkflowUL>
+            </Workflow>
+          </ProjectContent>
+        </WhiteContainer>
 
       </div>
     )
