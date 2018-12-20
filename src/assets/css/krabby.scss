@@ -505,6 +505,67 @@ img.workflow__icon {
   margin: 12px 8px -4px 0;
 }
 
+.card__swatch {
+  background: #FFFFFF;
+  box-shadow: 0px 12px 48px 0 rgba(0,0,0,0.16);
+  border-radius: 8px;
+  margin-bottom: 20px;
+  transition: 0.2s ease all;
+}
+.swatch__description {
+  font-family: Hack, monospace;
+  padding: 20px;
+  font-size: 14px;
+  display: inline-block;
+}
+.card__swatch--define {
+  background: #D81159;
+  border-radius: 8px 8px 0 0;
+  height: 140px;
+  background-position: center;
+  background-image: url(/assets/img/icon-1-define.svg);
+  background-repeat: no-repeat;
+  background-size: 48px;
+  text-align: center;
+}
+.card__swatch--ideate {
+  background: #246AFF;
+  border-radius: 8px 8px 0 0;
+  height: 140px;
+  background-position: center;
+  background-image: url(/assets/img/icon-2-ideate.svg);
+  background-repeat: no-repeat;
+  background-size: 48px;
+  text-align: center;
+}
+.card__swatch--create {
+  background: #00AA00;
+  border-radius: 8px 8px 0 0;
+  height: 140px;
+  background-position: center;
+  background-image: url(/assets/img/icon-3-create.svg);
+  background-repeat: no-repeat;
+  background-size: 48px;
+  text-align: center;
+}
+.card__swatch--finalize {
+  background: #E22E42;
+  border-radius: 8px 8px 0 0;
+  height: 140px;
+  background-position: center;
+  background-image: url(/assets/img/icon-4-finalize.svg);
+  background-repeat: no-repeat;
+  background-size: 48px;
+  text-align: center;
+}
+.swatch__description {
+  font-family: Hack, monospace;
+  padding: 20px;
+  font-size: 14px;
+  display: inline-block;
+}
+
+
 
 
 
