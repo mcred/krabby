@@ -73,10 +73,9 @@ const inputStyle = {
   }
 }
 const OceanBG = styled.div`
-
   background: rgb(0,5,10);
   background: linear-gradient(360deg, rgba(0,5,10,1) 0%, rgba(0,49,98,1) 78%, rgba(0,101,157,1) 100%);
-  background-size: contain !important;
+  background-size: cover;
   background-image: url('https://krabby.trice.design/static/sunraysfromgod-19f4706e5c5ca91ef97729db3ecd9bda.png');
   background-repeat: no-repeat;
   background-position: top center;
@@ -126,16 +125,15 @@ const ProjectHero = styled.div`
   display: grid;
   grid-gap: 0;
   grid-template-columns: 50% minmax(300px, 1fr);
-  grid-template-rows: 6rem auto;
-  grid-template-areas: ". ."
-                       ". Image"
+  grid-template-rows: auto;
+  grid-template-areas: ". Image"
                        "Logo Image"
                        "Title Image"
                        "Description Image"
                        ". Image";
   @media (max-width: 900px) {
    grid-template-columns: 1fr;
-   grid-template-rows: 8rem auto;
+   grid-template-rows: 2rem auto;
    grid-gap: 0;
    grid-template-areas: "." "Logo" "Title" "Image" "Description";
   }
@@ -163,36 +161,37 @@ const ProjectCardDescription = styled.p`
 class App extends React.Component {
   render() {
     return (
-      <Parallax ref={ref => (this.parallax = ref)} pages={6}>
+      <div style={{display: 'grid', overflowX: 'hidden' }}>
 
         <OceanBG>
-            <HeaderContainer className="header__container">
-              <Navigation>
-                <ul className="nav__main">
-                  <li>
-                    <Link to="/" className=""><img src={logotd} className="logo__main" /></Link>
-                  </li>
-                  <li>
-                    <ul className="social-icons">
-                      <li className="contact">
-                        <NavContact onClick={() => this.parallax.scrollTo(5)}>Contact</NavContact>
-                      </li>
-                      <li><a href="https://dribbble.com/trice" title="Follow me on Dribbble">
-                        <img src={dribbble} className="" alt="Dribbble" /></a>
-                      </li>
-                      <li><a href="https://www.linkedin.com/in/matt-trice-5053b325/" title="Serious as fuck">
-                        <img src={linkedin} className="" alt="LINKED FUCKING IN" /></a>
-                      </li>
-                      <li><a href="https://www.instagram.com/trice.design/" title="Follow me on Instagram">
-                        <img src={instagram} className="" alt="Instagram" /></a>
-                      </li>
-                    </ul>
-                  </li>
-                </ul>
-              </Navigation>
-            </HeaderContainer>
+          <HeaderContainer className="header__container">
+            <Navigation>
+              <ul className="nav__main">
+                <li>
+                  <Link to="/" className=""><img src={logotd} className="logo__main" /></Link>
+                </li>
+                <li>
+                  <ul className="social-icons">
+                    <li className="contact">
+                      <NavContact onClick={() => this.parallax.scrollTo(5)}>Contact</NavContact>
+                    </li>
+                    <li><a href="https://dribbble.com/trice" title="Follow me on Dribbble">
+                      <img src={dribbble} className="" alt="Dribbble" /></a>
+                    </li>
+                    <li><a href="https://www.linkedin.com/in/matt-trice-5053b325/" title="Serious as fuck">
+                      <img src={linkedin} className="" alt="LINKED FUCKING IN" /></a>
+                    </li>
+                    <li><a href="https://www.instagram.com/trice.design/" title="Follow me on Instagram">
+                      <img src={instagram} className="" alt="Instagram" /></a>
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+            </Navigation>
+          </HeaderContainer>
+
           <Container>
-            <ProjectHero className="project__grid--hero">
+            <ProjectHero>
               <img src={topazshottt} className="shottt-topaz" />
               <img src={logotopaz} style={{ gridArea: 'Logo' }} />
               <ProjectCardTitle>UX DESIGN, FRONT END DEVELOPMENT</ProjectCardTitle>
@@ -224,36 +223,6 @@ class App extends React.Component {
                 <span className="btn__text">Case Study</span> <FaChevronRight size="1.45em" />
               </button>
             </Link>
-          </p><p>This project was a redesign and rebuild of their attendee check in app. As part of their free ticketing software, this app allows an event organizer to check in participants and provides the organizer with attendance data.<br />
-            <Link to="topaz">
-              <button className="btn btn--actionjackson">
-                <span className="btn__text">Case Study</span> <FaChevronRight size="1.45em" />
-              </button>
-            </Link>
-          </p><p>This project was a redesign and rebuild of their attendee check in app. As part of their free ticketing software, this app allows an event organizer to check in participants and provides the organizer with attendance data.<br />
-            <Link to="topaz">
-              <button className="btn btn--actionjackson">
-                <span className="btn__text">Case Study</span> <FaChevronRight size="1.45em" />
-              </button>
-            </Link>
-          </p><p>This project was a redesign and rebuild of their attendee check in app. As part of their free ticketing software, this app allows an event organizer to check in participants and provides the organizer with attendance data.<br />
-            <Link to="topaz">
-              <button className="btn btn--actionjackson">
-                <span className="btn__text">Case Study</span> <FaChevronRight size="1.45em" />
-              </button>
-            </Link>
-          </p><p>This project was a redesign and rebuild of their attendee check in app. As part of their free ticketing software, this app allows an event organizer to check in participants and provides the organizer with attendance data.<br />
-            <Link to="topaz">
-              <button className="btn btn--actionjackson">
-                <span className="btn__text">Case Study</span> <FaChevronRight size="1.45em" />
-              </button>
-            </Link>
-          </p><p>This project was a redesign and rebuild of their attendee check in app. As part of their free ticketing software, this app allows an event organizer to check in participants and provides the organizer with attendance data.<br />
-            <Link to="topaz">
-              <button className="btn btn--actionjackson">
-                <span className="btn__text">Case Study</span> <FaChevronRight size="1.45em" />
-              </button>
-            </Link>
           </p>
           </Container>
         </WhiteContent>
@@ -261,7 +230,7 @@ class App extends React.Component {
 
 
 
-      </Parallax>
+      </div>
 
     )
   }
