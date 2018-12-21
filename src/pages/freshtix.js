@@ -6,13 +6,13 @@ import { rotate, UpBubblesOne, UpBubblesOneTop, UpBubblesTwo, UpBubblesTwoTop, U
 import SVG from '../components/SVG';
 import '../styles/global';
 import styled from 'react-emotion';
-import logotopaz from '../images/logo-topaz.svg';
-import topazshottt from '../images/shottt-topaz.png';
+import logofreshtix from '../images/logo-freshtix.svg';
+import freshtixshottt from '../images/shottt-freshtix.png';
 import dribbble from '../images/icon-dribbble.svg';
 import instagram from '../images/icon-instagram.svg';
 import linkedin from '../images/icon-linkedin.svg';
 import aftereffects from '../images/icon-after-effects.png';
-import framer from '../images/icon-framer.png';
+import invision from '../images/icon-invision-white.png';
 import illustrator from '../images/icon-illustrator.png';
 import sketch from '../images/icon-sketch.png';
 import logotd from '../images/logo-td.svg';
@@ -20,6 +20,7 @@ import sunrays from '../images/sunraysfromgod.png';
 import wireflow from '../images/wireflow-robit.png';
 import robitscreens from '../images/robit-design-screens.png';
 import '../assets/css/krabby.scss';
+import { FaChevronLeft } from 'react-icons/fa';
 import { FaChevronRight } from 'react-icons/fa';
 import { FaPaperPlane } from 'react-icons/fa';
 
@@ -31,12 +32,11 @@ const HeaderContainer = styled.div`
     padding: 0 1rem;
   }
 `;
-const SunRaysfromGod = styled(ParallaxLayer)``;
 const HeaderWrapper = styled.div`
   display: grid;
   grid-gap: 0;
   grid-template-columns: 1fr;
-  grid-template-rows: 1fr 2rem;
+  grid-template-rows: 1fr 0rem;
   grid-template-areas: "Header" "Whitespace";
   @media (max-width: 680px) {
     grid-template-rows: 1fr;
@@ -86,23 +86,6 @@ const Hero = styled.div`
         [container-start] minmax(0, 30em) [container-end]
         minmax(1em, 1fr) [viewport-end];
 `;
-const BigTitle = styled.h1`
-  ${tw('text-white mb-0')};
-  text-shadow: 0 5px 35px rgba(255, 255, 255, 0.15);
-  font-size: 3em;
-  @media (min-width: 0px) and (max-width: 767px) {
-    font-size: 1.85em;
-   }
-`;
-const Subtitle = styled.p`
-  ${tw('text-white')};
-  text-shadow: 0 2px 15px rgba(0, 0, 0, 0.2);
-  line-height: 1.45em;
-  font-size: 1.125em;
-  @media (min-width: 0px) and (max-width: 767px) {
-    font-size: 1em;
-   }
-`;
 const ProjectHero = styled.div`
   display: grid;
   grid-gap: 0;
@@ -121,6 +104,7 @@ const ProjectHero = styled.div`
    grid-template-areas: "." "Logo" "Title" "Image" "Description" ".";
   }
 `;
+const Bubbles = styled.div``;
 const Description = styled.p`
   ${tw('text-white')};
   line-height: 1.45em;
@@ -134,6 +118,9 @@ const ProjectCardDescription = styled.p`
   ${tw('text-white')};
   line-height: 1.45em;
   grid-area: Description;
+`;
+const ProjectCardCTA = styled.div`
+  margin: 2rem 0;
 `;
 const ProjectContentTop = styled.div`
   display: grid;
@@ -190,9 +177,9 @@ const WorkflowLI = styled.li`
 const ContentTitle = styled.h4`
   ${tw('uppercase')};
 `;
-const HeroTopaz = styled.div`
+const HeroFreshtix = styled.div`
   position: relative;
-  top: 3rem;
+  top: 0rem;
   grid-area: Image;
   @media (max-width: 900px) {
     position: relative;
@@ -241,10 +228,11 @@ const InterfaceText = styled.div`
   }
 `;
 const FooterLinks = styled.div`
-  display: grid;
-  justify-items: end;
+  display: flex;
+  justify-content: space-between;
   align-items: center;
-  grid-template-rows: 8rem;
+  grid-template-columns: 1fr;
+  height: 200px;
 `;
 const FooterBottom = styled.div`
   display: grid;
@@ -263,30 +251,16 @@ class App extends React.Component {
   render() {
     return (
       <div style={{ display: 'grid', overflowX: 'hidden', gridGap: '0' }}>
+
         <HeaderWrapper>
           <OceanBG>
-            <UpBubblesOne>
-              <SVG icon="bubble" width={3} left="66%" top="28%" />
-              <SVG icon="bubble" width={2} left="70%" top="38%" />
-              <SVG icon="bubble" width={4} left="72%" top="30%" />
-            </UpBubblesOne>
-            <UpBubblesTwo>
-              <SVG icon="bubble" width={4} left="64%" top="30%" />
-              <SVG icon="bubble" width={3} left="71%" top="14%" />
-              <SVG icon="bubble" width={2} left="69%" top="11%" />
-            </UpBubblesTwo>
-            <UpBubblesThree>
-              <SVG icon="bubble" width={2} left="62%" top="22%" />
-              <SVG icon="bubble" width={4} left="68%" top="44%" />
-              <SVG icon="bubble" width={3} left="66%" top="21%" />
-            </UpBubblesThree>
             <HeaderContainer className="header__container">
               <Navigation>
                 <ul className="nav__main">
                   <li>
                     <Link to="/"><img src={logotd} className="logo__main" /></Link>
                   </li>
-                  <li>
+                  <li style={{ display: 'grid', alignItems: 'center' }}>
                     <ul className="social-icons">
                       <li className="contact">
                         <Link to="/contact">Contact</Link>
@@ -307,10 +281,13 @@ class App extends React.Component {
             </HeaderContainer>
             <Container>
               <ProjectHero>
-                <HeroTopaz><img src={topazshottt} className="shottt-topaz" /></HeroTopaz>
-                <img src={logotopaz} style={{ gridArea: 'Logo' }} />
-                <ProjectCardTitle>UX DESIGN, FRONT END DEVELOPMENT</ProjectCardTitle>
-                <ProjectCardDescription>This project was a redesign and rebuild of their attendee check in app. As part of their free ticketing software, this app allows an event organizer to check in participants and provides the organizer with attendance data.<br />
+                <HeroFreshtix><img src={freshtixshottt} className="shottt-freshtix" /></HeroFreshtix>
+                <img src={logofreshtix} style={{ gridArea: 'Logo' }} />
+                <ProjectCardTitle>APP CONCEPT, PRODUCT DESIGN, UI & UX, PROTOTYPE</ProjectCardTitle>
+                <ProjectCardDescription>Robit is an app that aims to introduce design thinking with board style organization. Being able to see where your idea sits in it’s creative lifecycle will help move it to completion.<br />
+                <ProjectCardCTA>
+                  <a href="https://projects.invisionapp.com/share/23EEA8BQG#/screens/" className="hero__cta"><img src={invision} alt="InVision" className="workflow__icon" /> Check out a Prototype</a>
+                </ProjectCardCTA>
                 </ProjectCardDescription>
               </ProjectHero>
             </Container>
@@ -328,9 +305,7 @@ class App extends React.Component {
               <ContentTitle>Workflow</ContentTitle>
               <WorkflowUL>
                 <WorkflowLI><img src={sketch} alt="Sketch" className="workflow__icon" />Sketch</WorkflowLI>
-                <WorkflowLI><img src={illustrator} alt="Illustrator" className="workflow__icon" />Illustrator</WorkflowLI>
-                <WorkflowLI><img src={aftereffects} alt="After Effects" className="workflow__icon" />After Effects</WorkflowLI>
-                <WorkflowLI><img src={framer} alt="Framer" className="workflow__icon" />Framer</WorkflowLI>
+                <WorkflowLI><img src={invision} alt="Invision" className="workflow__icon" />Invision</WorkflowLI>
               </WorkflowUL>
             </Workflow>
             <Swatches>
@@ -372,8 +347,13 @@ class App extends React.Component {
             </InterfaceImage>
           </ProjectContentBottom>
           <FooterLinks>
-            <Link to="/freshtix">
-              <button className="btn btn--actionjackson">
+            <Link to="/topaz">
+              <button className="btn--textOnly">
+                <FaChevronLeft size="1.45em" /> <span className="btn__text">Prev Project</span>
+              </button>
+            </Link>
+            <Link to="/robit">
+              <button className="btn--textOnly">
                 <span className="btn__text">Next Project</span> <FaChevronRight size="1.45em" />
               </button>
             </Link>

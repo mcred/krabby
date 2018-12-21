@@ -351,12 +351,12 @@ class App extends React.Component {
           <FooterLinks>
             <Link to="/freshtix">
               <button className="btn--textOnly">
-                <FaChevronLeft size="1.45em" /> <span className="btn__text">Prev Project</span>
+                <FaChevronLeft size="1.45em" /><span className="btn__text"> Prev Project</span>
               </button>
             </Link>
             <Link to="/payscape">
               <button className="btn--textOnly">
-                <span className="btn__text">Next Project</span> <FaChevronRight size="1.45em" />
+                <span className="btn__text">Next Project </span><FaChevronRight size="1.45em" />
               </button>
             </Link>
           </FooterLinks>

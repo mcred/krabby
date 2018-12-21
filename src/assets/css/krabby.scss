@@ -465,6 +465,7 @@ $button-text-color: $white;
   object-fit: cover;
   grid-area: Image;
   width: 660px;
+  padding: 2rem;
   justify-self: right;
   @media (max-width: 900px) {
     width: 100%;
