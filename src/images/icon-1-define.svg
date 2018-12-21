@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="94px" height="95px" viewBox="0 0 94 95" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 50.2 (55047) - http://www.bohemiancoding.com/sketch -->
+    <title>icon-1-define</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round">
+        <g id="Case-Study---ROBIT" transform="translate(-456.000000, -3058.000000)" stroke="#FFFFFF">
+            <g id="Group-11" transform="translate(236.000000, 2959.000000)">
+                <g id="Group-10">
+                    <g id="icon-1-define" transform="translate(223.000000, 102.000000)">
+                        <path d="M85.2792102,14.9734823 L48.605082,51.8101138 L33,55 L36.2783786,39.4875395 L73.1273536,2.60721104 C74.7705415,0.939225208 77.0144557,0 79.3562729,0 C81.6980901,0 83.9420044,0.939225208 85.5851922,2.60721104 C87.1869085,4.28670697 88.0547216,6.53403431 87.9973236,8.85377369 C87.9399257,11.1735131 86.9620294,13.3752021 85.2792102,14.9734823 Z" id="Shape" stroke-width="4.38095238"></path>
+                        <path d="M71,4 L83,16" id="Shape" stroke-width="2.19047619"></path>
+                        <path d="M65,10 L77,22" id="Shape" stroke-width="2.19047619"></path>
+                        <path d="M36,38 L48,50" id="Shape" stroke-width="2.19047619"></path>
+                        <path d="M84.9996089,42.8448368 L84.9996089,78.7335474 C85.0480764,84.3382321 80.585777,88.9277352 75.0177035,89 L10.0263459,89 C7.34426693,88.976828 4.7811957,87.8821446 2.90102935,85.9567893 C1.02086301,84.031434 -0.0223696073,81.4331377 0.000851416694,78.7335474 L0.000851416694,17.3103264 C-0.0340286492,14.6031781 1.00403818,11.9935832 2.88546251,10.0587062 C4.76688683,8.12382913 7.33663158,7.02311181 10.0263459,7 L44.897631,7" id="Shape" stroke-width="4.38095238"></path>
+                        <path d="M13,21 L13,73" id="Shape" stroke-width="4.38095238"></path>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

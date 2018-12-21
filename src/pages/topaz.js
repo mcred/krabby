@@ -17,6 +17,8 @@ import illustrator from '../images/icon-illustrator.png';
 import sketch from '../images/icon-sketch.png';
 import logotd from '../images/logo-td.svg';
 import sunrays from '../images/sunraysfromgod.png';
+import wireflow from '../images/wireflow-robit.png';
+import robitscreens from '../images/robit-design-screens.png';
 import '../assets/css/krabby.scss';
 import { FaChevronRight } from 'react-icons/fa';
 import { FaPaperPlane } from 'react-icons/fa';
@@ -177,16 +179,16 @@ const ProjectCardDescription = styled.p`
   line-height: 1.45em;
   grid-area: Description;
 `;
-const ProjectContent = styled.div`
+const ProjectContentTop = styled.div`
   display: grid;
   grid-gap: 2rem;
   grid-template-columns: 1.25fr 0.75fr;
-  grid-template-rows: 2rem 1fr 1fr;
-  grid-template-areas: ". ." "Approach Workflow" "Swatches Swatches";
+  grid-template-rows: 2rem auto 1fr;
+  grid-template-areas: ". ." "Approach Workflow" "Swatches Swatches" "Aside Wireflow";
   @media (max-width: 680px) {
     grid-template-columns: 1fr;
     grid-template-rows: 0 auto;
-    grid-template-areas: "." "Approach" "Workflow" "Swatches";
+    grid-template-areas: "." "Approach" "Workflow" "Swatches" "Aside" "Wireflow";
   }
 `;
 const Approach = styled.div`
@@ -194,6 +196,29 @@ const Approach = styled.div`
 `;
 const Workflow = styled.div`
   grid-area: Workflow;
+`;
+const ProjectContentMiddle = styled.div`
+  display: grid;
+  margin-top: 1rem;
+  grid-gap: 2rem;
+  grid-template-columns: 0.55fr 1.45fr;
+  grid-template-rows: 1fr;
+  grid-template-areas: "WireflowText WireflowImage";
+  @media (max-width: 800px) {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    grid-template-areas: "WireflowText" "WireflowImage";
+  }
+`;
+const WireflowText = styled.div`
+  grid-area: WireflowText;
+  margin-top: 4rem;
+  @media (max-width: 1200px) {
+    margin-top: 0;
+  }
+`;
+const WireflowImage = styled.div`
+  grid-area: WireflowImage;
 `;
 const WorkflowUL = styled.ul`
   list-style-type: none;
@@ -220,10 +245,61 @@ const HeroTopaz = styled.div`
 `;
 const Swatches = styled.div`
   grid-area: Swatches;
+  display: grid;
 
+  grid-template-columns: 25% 25% 25% 25%;
+  grid-template-rows: auto 1fr;
+  grid-template-areas: "Title Title Title Title" "Cards Cards Cards Cards";
+  @media (max-width: 1200px) {
+    grid-template-columns: 50% 1fr;
+    grid-template-rows: auto 1fr;
+    grid-template-areas: "Title Title" "Cards Cards";
+  }
+  @media (max-width: 680px) {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto 1fr;
+    grid-template-areas: "Title" "Cards";
+  }
 `;
-
-
+const ProjectContentBottom = styled.div`
+  display: grid;
+  margin-top: 2rem;
+  grid-gap: 2rem;
+  grid-template-columns: 70% 1fr;
+  grid-template-rows: 1fr;
+  grid-template-areas: "InterfaceImage InterfaceText";
+  align-content: center;
+  @media (max-width: 800px) {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    grid-template-areas: "InterfaceText" "InterfaceImage";
+  }
+`;
+const InterfaceImage = styled.div`
+  grid-area: InterfaceImage;
+`;
+const InterfaceText = styled.div`
+  grid-area: InterfaceText;
+  margin-top: 4rem;
+  @media (max-width: 680px) {
+    margin-top: 0;
+  }
+`;
+const FooterLinks = styled.div`
+  display: grid;
+  justify-items: end;
+  align-items: center;
+  grid-template-rows: 8rem;
+`;
+const FooterBottom = styled.div`
+  display: grid;
+  grid-template-rows: 8rem;
+  justify-items: center;
+  align-items: center;
+  @media (max-width: 680px) {
+    grid-template-rows: 4rem;
+  }
+`;
 
 
 
@@ -236,6 +312,21 @@ class App extends React.Component {
 
         <HeaderWrapper>
           <OceanBG>
+            <UpBubblesOne>
+              <SVG icon="bubble" width={3} left="66%" top="28%" />
+              <SVG icon="bubble" width={2} left="70%" top="38%" />
+              <SVG icon="bubble" width={4} left="72%" top="30%" />
+            </UpBubblesOne>
+            <UpBubblesTwo>
+              <SVG icon="bubble" width={4} left="64%" top="30%" />
+              <SVG icon="bubble" width={3} left="71%" top="14%" />
+              <SVG icon="bubble" width={2} left="69%" top="11%" />
+            </UpBubblesTwo>
+            <UpBubblesThree>
+              <SVG icon="bubble" width={2} left="62%" top="22%" />
+              <SVG icon="bubble" width={4} left="68%" top="44%" />
+              <SVG icon="bubble" width={3} left="66%" top="21%" />
+            </UpBubblesThree>
             <HeaderContainer className="header__container">
               <Navigation>
                 <ul className="nav__main">
@@ -262,21 +353,6 @@ class App extends React.Component {
               </Navigation>
             </HeaderContainer>
             <Container>
-            <UpBubblesOne>
-              <SVG icon="bubble" width={3} left="66%" top="28%" />
-              <SVG icon="bubble" width={2} left="70%" top="38%" />
-              <SVG icon="bubble" width={4} left="72%" top="30%" />
-            </UpBubblesOne>
-            <UpBubblesTwo>
-              <SVG icon="bubble" width={4} left="64%" top="30%" />
-              <SVG icon="bubble" width={3} left="71%" top="14%" />
-              <SVG icon="bubble" width={2} left="69%" top="11%" />
-            </UpBubblesTwo>
-            <UpBubblesThree>
-              <SVG icon="bubble" width={2} left="62%" top="22%" />
-              <SVG icon="bubble" width={4} left="68%" top="44%" />
-              <SVG icon="bubble" width={3} left="66%" top="21%" />
-            </UpBubblesThree>
               <ProjectHero>
                 <HeroTopaz><img src={topazshottt} className="shottt-topaz" /></HeroTopaz>
                 <img src={logotopaz} style={{ gridArea: 'Logo' }} />
@@ -290,7 +366,7 @@ class App extends React.Component {
         </HeaderWrapper>
 
         <WhiteContainer>
-          <ProjectContent>
+          <ProjectContentTop>
             <Approach>
               <ContentTitle>Approach</ContentTitle>
               <p>Being able to see where your idea sits in it’s creative lifecycle will help move it to completion. As a designer, I often times would find myself with  great ideas but would hit creative roadblocks when it came time to start creating.</p>
@@ -305,29 +381,54 @@ class App extends React.Component {
               </WorkflowUL>
             </Workflow>
             <Swatches>
+              <ContentTitle style={{ gridArea: 'Title' }} >Colors &amp; Iconography</ContentTitle>
               <div className="card__swatch">
                 <div className="card__swatch--define"></div>
                 <span className="swatch__description">#D81159<br />rgba (216,17,89,100)</span>
               </div>
-
               <div className="card__swatch">
                 <div className="card__swatch--ideate"></div>
                 <span class="swatch__description">#246AFF<br />rgba (36,106,255,100)</span>
               </div>
-
               <div className="card__swatch">
                 <div className="card__swatch--create"></div>
                 <span className="swatch__description">#00AA00<br />rgba (0,170,0,100)</span>
               </div>
-
               <div className="card__swatch">
                 <div className="card__swatch--finalize"></div>
                 <span className="swatch__description">#E22E42<br />rgba (226,46,66,100)</span>
               </div>
             </Swatches>
-          </ProjectContent>
+          </ProjectContentTop>
+          <ProjectContentMiddle>
+            <WireflowText>
+              <ContentTitle>Wireflow</ContentTitle>
+              <p>Wireframed the user flow for a wireflow. I did an initial design of the user wireflow. This flow would help lay the roadmap for the prototype.</p>
+            </WireflowText>
+            <WireflowImage>
+              <img src={wireflow} style={{ gridArea: 'Wireflow', maxWidth: '100%', padding: '1rem' }} />
+            </WireflowImage>
+          </ProjectContentMiddle>
+          <ProjectContentBottom>
+            <InterfaceText>
+              <ContentTitle>Interface</ContentTitle>
+              <p>With the user flow figured out, I was able to quickly design screens.</p>
+            </InterfaceText>
+            <InterfaceImage>
+              <img src={robitscreens} style={{ gridArea: 'InterfaceImage', maxWidth: '100%' }} />
+            </InterfaceImage>
+          </ProjectContentBottom>
+          <FooterLinks>
+            <Link to="/robit">
+              <button class="btn btn--actionjackson">
+                <span class="btn__text">Next Project</span> <FaChevronRight size="1.45em" />
+              </button>
+            </Link>
+          </FooterLinks>
         </WhiteContainer>
-
+        <FooterBottom>
+          <p style={{ color: 'white', fontSize: '.85em' }}>Copyright &copy; 2019 trice.design</p>
+        </FooterBottom>
       </div>
     )
   }

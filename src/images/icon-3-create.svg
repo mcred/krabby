@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="85px" height="107px" viewBox="0 0 85 107" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 50.2 (55047) - http://www.bohemiancoding.com/sketch -->
+    <title>icon-3-create</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Case-Study---ROBIT" transform="translate(-1713.000000, -3045.000000)">
+            <g id="Group-11" transform="translate(236.000000, 2959.000000)">
+                <g id="Group-6" transform="translate(1257.333333, 0.000000)">
+                    <g id="icon-3-create" transform="translate(222.000000, 88.000000)">
+                        <path d="M75.9615385,70.2272727 L54.1025641,38.11 L54.1025641,11.2831818 C57.1220657,11.3093235 59.5980694,8.90604096 59.6495726,5.89909091 C59.5980694,2.89214086 57.1220657,0.488858354 54.1025641,0.515 L26.1324786,0.515 C23.112977,0.488858354 20.6369734,2.89214086 20.5854701,5.89909091 C20.6369734,8.90604096 23.112977,11.3093235 26.1324786,11.2831818 L26.1324786,38.11 L4.03846154,70.2272727 C1.8447559,73.2072157 0.482354276,76.7125005 0.0897435897,80.3868182 C-0.801314854,91.2999768 7.09232513,100.97747 18,102.344545 C18.8611519,102.392461 19.7243182,102.392461 20.5854701,102.344545 L59.4145299,102.344545 C60.2756818,102.392461 61.1388481,102.392461 62,102.344545 C72.9076749,100.97747 80.8013149,91.2999768 79.9102564,80.3868182 C79.5176457,76.7125005 78.1552441,73.2072157 75.9615385,70.2272727 Z" id="Shape" stroke="#FFFFFF" stroke-width="4.67864758" stroke-linecap="round" stroke-linejoin="round"></path>
+                        <path d="M15.7435897,54.1686364 C24.7074508,50.9856913 34.7030752,52.9839214 41.7393162,59.3654545 C53.4444444,70.2740909 69.6153846,64.89 69.6153846,64.89" id="Shape" stroke="#FFFFFF" stroke-width="2.33932379" stroke-linecap="round" stroke-linejoin="round"></path>
+                        <ellipse id="Oval" stroke="#FFFFFF" stroke-width="3.50898568" stroke-linecap="round" stroke-linejoin="round" cx="32.4316239" cy="81.0890909" rx="8.08547009" ry="8.05272727"></ellipse>
+                        <ellipse id="Oval" fill="#FFFFFF" fill-rule="nonzero" cx="38.2606838" cy="36.6586364" rx="3.52564103" ry="3.51136364"></ellipse>
+                        <ellipse id="Oval" fill="#FFFFFF" fill-rule="nonzero" cx="47.3333333" cy="51.5" rx="4.7008547" ry="4.68181818"></ellipse>
+                        <path d="M26.5555556,11.2831818 L37.3205128,11.2831818" id="Shape" stroke="#FFFFFF" stroke-width="4.67864758" stroke-linecap="round" stroke-linejoin="round"></path>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
