@@ -274,6 +274,15 @@ $button-text-color: $white;
   }
 }
 
+.link__text {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 1em;
+  font-weight: 900;
+  margin-right: 1em;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
 @keyframes spin {
     0% { transform: rotate(0deg); }
     100% { transform: rotate(720deg); }

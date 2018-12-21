@@ -17,8 +17,9 @@ import illustrator from '../images/icon-illustrator.png';
 import sketch from '../images/icon-sketch.png';
 import logotd from '../images/logo-td.svg';
 import sunrays from '../images/sunraysfromgod.png';
-import wireflow from '../images/wireflow-robit.png';
-import robitscreens from '../images/robit-design-screens.png';
+import mobileflow from '../images/ft-mobile-flow.png';
+import ftscreens01 from '../images/ft-screens-1.png';
+import ftscreens02 from '../images/ft-screens-2.png';
 import '../assets/css/krabby.scss';
 import { FaChevronLeft } from 'react-icons/fa';
 import { FaChevronRight } from 'react-icons/fa';
@@ -127,11 +128,11 @@ const ProjectContentTop = styled.div`
   grid-gap: 2rem;
   grid-template-columns: 1.25fr 0.75fr;
   grid-template-rows: 2rem auto 1fr;
-  grid-template-areas: ". ." "Approach Workflow" "Swatches Swatches" "Aside Wireflow";
+  grid-template-areas: ". ." "Approach Workflow" "Swatches Swatches" "Aside Mobileflow";
   @media (max-width: 680px) {
     grid-template-columns: 1fr;
     grid-template-rows: 0 auto;
-    grid-template-areas: "." "Approach" "Workflow" "Swatches" "Aside" "Wireflow";
+    grid-template-areas: "." "Approach" "Workflow" "Swatches" "Aside" "Mobileflow";
   }
 `;
 const Approach = styled.div`
@@ -146,22 +147,22 @@ const ProjectContentMiddle = styled.div`
   grid-gap: 2rem;
   grid-template-columns: 0.55fr 1.45fr;
   grid-template-rows: 1fr;
-  grid-template-areas: "WireflowText WireflowImage";
+  grid-template-areas: "MobileflowText MobileflowImage";
   @media (max-width: 800px) {
     grid-template-columns: 1fr;
     grid-template-rows: auto;
-    grid-template-areas: "WireflowText" "WireflowImage";
+    grid-template-areas: "MobileflowText" "MobileflowImage";
   }
 `;
-const WireflowText = styled.div`
-  grid-area: WireflowText;
+const MobileflowText = styled.div`
+  grid-area: MobileflowText;
   margin-top: 4rem;
   @media (max-width: 1200px) {
     margin-top: 0;
   }
 `;
-const WireflowImage = styled.div`
-  grid-area: WireflowImage;
+const MobileflowImage = styled.div`
+  grid-area: MobileflowImage;
 `;
 const WorkflowUL = styled.ul`
   list-style-type: none;
@@ -208,8 +209,22 @@ const ProjectContentBottom = styled.div`
   margin-top: 2rem;
   grid-gap: 2rem;
   grid-template-columns: 70% 1fr;
-  grid-template-rows: 1fr;
+  grid-template-rows: auto;
   grid-template-areas: "InterfaceImage InterfaceText";
+  align-content: center;
+  @media (max-width: 800px) {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    grid-template-areas: "InterfaceText" "InterfaceImage";
+  }
+`;
+const ProjectContentBottomAlt = styled.div`
+  display: grid;
+  margin-top: 2rem;
+  grid-gap: 2rem;
+  grid-template-columns: 1fr 70%;
+  grid-template-rows: auto;
+  grid-template-areas: "InterfaceText InterfaceImage";
   align-content: center;
   @media (max-width: 800px) {
     grid-template-columns: 1fr;
@@ -283,10 +298,10 @@ class App extends React.Component {
               <ProjectHero>
                 <HeroFreshtix><img src={freshtixshottt} className="shottt-freshtix" /></HeroFreshtix>
                 <img src={logofreshtix} style={{ gridArea: 'Logo' }} />
-                <ProjectCardTitle>APP CONCEPT, PRODUCT DESIGN, UI & UX, PROTOTYPE</ProjectCardTitle>
-                <ProjectCardDescription>Robit is an app that aims to introduce design thinking with board style organization. Being able to see where your idea sits in it’s creative lifecycle will help move it to completion.<br />
+                <ProjectCardTitle>PRODUCT DESIGN, MOBILE APP DESIGN, UI & UX, PROTOTYPING</ProjectCardTitle>
+                <ProjectCardDescription>FreshTix makes is easier to sell tickets online with their free ticketing software.<br />
                 <ProjectCardCTA>
-                  <a href="https://projects.invisionapp.com/share/23EEA8BQG#/screens/" className="hero__cta"><img src={invision} alt="InVision" className="workflow__icon" /> Check out a Prototype</a>
+                  <a href="https://projects.invisionapp.com/share/23EEA8BQG#/screens/" className="hero__cta"><img src={invision} alt="InVision" className="workflow__icon" /> View Prototype</a>
                 </ProjectCardCTA>
                 </ProjectCardDescription>
               </ProjectHero>
@@ -298,8 +313,9 @@ class App extends React.Component {
         <WhiteContainer>
           <ProjectContentTop>
             <Approach>
-              <ContentTitle>Approach</ContentTitle>
-              <p>Being able to see where your idea sits in it’s creative lifecycle will help move it to completion. As a designer, I often times would find myself with  great ideas but would hit creative roadblocks when it came time to start creating.</p>
+              <ContentTitle>Challenge</ContentTitle>
+              <p>This project was a redesign and rebuild of their attendee check in app. As part of their free ticketing software, this admin facing app allows an event organizer to check in participants using QR codes and provides the organizer with attendance data.</p>
+              <p>The current app lacked a thoughtful, user experience centered design, and overall showcased an outdated visual design. The app had confusing and unnecessary features and some higher level accessibility problems. In order to update the app and move it forward a complete redesign and a complete rebuild would be necessary.</p>
             </Approach>
             <Workflow>
               <ContentTitle>Workflow</ContentTitle>
@@ -308,44 +324,37 @@ class App extends React.Component {
                 <WorkflowLI><img src={invision} alt="Invision" className="workflow__icon" />Invision</WorkflowLI>
               </WorkflowUL>
             </Workflow>
-            <Swatches>
-              <ContentTitle style={{ gridArea: 'Title' }} >Colors &amp; Iconography</ContentTitle>
-              <div className="card__swatch">
-                <div className="card__swatch--define"></div>
-                <span className="swatch__description">#D81159<br />rgba (216,17,89,100)</span>
-              </div>
-              <div className="card__swatch">
-                <div className="card__swatch--ideate"></div>
-                <span className="swatch__description">#246AFF<br />rgba (36,106,255,100)</span>
-              </div>
-              <div className="card__swatch">
-                <div className="card__swatch--create"></div>
-                <span className="swatch__description">#00AA00<br />rgba (0,170,0,100)</span>
-              </div>
-              <div className="card__swatch">
-                <div className="card__swatch--finalize"></div>
-                <span className="swatch__description">#E22E42<br />rgba (226,46,66,100)</span>
-              </div>
-            </Swatches>
+
           </ProjectContentTop>
           <ProjectContentMiddle>
-            <WireflowText>
-              <ContentTitle>Wireflow</ContentTitle>
-              <p>Wireframed the user flow for a wireflow. I did an initial design of the user wireflow. This flow would help lay the roadmap for the prototype.</p>
-            </WireflowText>
-            <WireflowImage>
-              <img src={wireflow} style={{ gridArea: 'Wireflow', maxWidth: '100%', padding: '1rem' }} />
-            </WireflowImage>
+            <MobileflowText>
+              <ContentTitle>Process</ContentTitle>
+              <p>First, we met with the client for an exploratory session. This allowed us to get to know their pain points. I then mapped out the current app’s flow.</p>
+              <p>Mapping out the flow allowed me to identify unnecessary steps and ways to streamline the check in process.</p>
+            </MobileflowText>
+            <MobileflowImage>
+              <img src={mobileflow} style={{ gridArea: 'Mobileflow', maxWidth: '100%', padding: '1rem' }} />
+            </MobileflowImage>
           </ProjectContentMiddle>
           <ProjectContentBottom>
             <InterfaceText>
-              <ContentTitle>Interface</ContentTitle>
-              <p>With the user flow figured out, I was able to quickly design screens.</p>
+              <ContentTitle>Design</ContentTitle>
+              <p>From here I began the visual design process; presenting multiple versions to the client for approval. I worked closely with the engineers in order to keep the functionality on track and to stay within the framework.</p>
+              <p>After multiple iterations, I received approval and created a prototype that served as a foundation for development and visual aid for the client.</p>
             </InterfaceText>
             <InterfaceImage>
-              <img src={robitscreens} style={{ gridArea: 'InterfaceImage', maxWidth: '100%' }} />
+              <img src={ftscreens01} style={{ gridArea: 'InterfaceImage', maxWidth: '100%' }} />
             </InterfaceImage>
           </ProjectContentBottom>
+          <ProjectContentBottomAlt>
+            <InterfaceText>
+              <ContentTitle>Solution</ContentTitle>
+              <p>I designed a cleaner and more contemporary look while staying within the existing Freshtix brand. By identifying unnecessary and useless functions I was able to reduce clutter as well as streamline the check in process.</p>
+            </InterfaceText>
+            <InterfaceImage>
+              <img src={ftscreens02} style={{ gridArea: 'InterfaceImage', maxWidth: '100%' }} />
+            </InterfaceImage>
+          </ProjectContentBottomAlt>
           <FooterLinks>
             <Link to="/topaz">
               <button className="btn--textOnly">

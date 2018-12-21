@@ -192,7 +192,7 @@ const ContentTitle = styled.h4`
 `;
 const HeroTopaz = styled.div`
   position: relative;
-  top: 3rem;
+  top: 0rem;
   grid-area: Image;
   @media (max-width: 900px) {
     position: relative;
@@ -265,21 +265,6 @@ class App extends React.Component {
       <div style={{ display: 'grid', overflowX: 'hidden', gridGap: '0' }}>
         <HeaderWrapper>
           <OceanBG>
-            <UpBubblesOne>
-              <SVG icon="bubble" width={3} left="66%" top="28%" />
-              <SVG icon="bubble" width={2} left="70%" top="38%" />
-              <SVG icon="bubble" width={4} left="72%" top="30%" />
-            </UpBubblesOne>
-            <UpBubblesTwo>
-              <SVG icon="bubble" width={4} left="64%" top="30%" />
-              <SVG icon="bubble" width={3} left="71%" top="14%" />
-              <SVG icon="bubble" width={2} left="69%" top="11%" />
-            </UpBubblesTwo>
-            <UpBubblesThree>
-              <SVG icon="bubble" width={2} left="62%" top="22%" />
-              <SVG icon="bubble" width={4} left="68%" top="44%" />
-              <SVG icon="bubble" width={3} left="66%" top="21%" />
-            </UpBubblesThree>
             <HeaderContainer className="header__container">
               <Navigation>
                 <ul className="nav__main">
