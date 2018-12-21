@@ -20,6 +20,7 @@ import sunrays from '../images/sunraysfromgod.png';
 import wireflow from '../images/wireflow-robit.png';
 import robitscreens from '../images/robit-design-screens.png';
 import '../assets/css/krabby.scss';
+import { FaChevronLeft } from 'react-icons/fa';
 import { FaChevronRight } from 'react-icons/fa';
 import { FaPaperPlane } from 'react-icons/fa';
 
@@ -35,7 +36,7 @@ const HeaderWrapper = styled.div`
   display: grid;
   grid-gap: 0;
   grid-template-columns: 1fr;
-  grid-template-rows: 1fr 2rem;
+  grid-template-rows: 1fr 0rem;
   grid-template-areas: "Header" "Whitespace";
   @media (max-width: 680px) {
     grid-template-rows: 1fr;
@@ -99,10 +100,11 @@ const ProjectHero = styled.div`
    grid-template-columns: 1fr;
    grid-template-rows: 3rem repeat(4, auto) 3rem;
    grid-gap: 0;
-   justify-items: top;
+   justify-items: center;
    grid-template-areas: "." "Logo" "Title" "Image" "Description" ".";
   }
 `;
+const Bubbles = styled.div``;
 const Description = styled.p`
   ${tw('text-white')};
   line-height: 1.45em;
@@ -116,6 +118,9 @@ const ProjectCardDescription = styled.p`
   ${tw('text-white')};
   line-height: 1.45em;
   grid-area: Description;
+`;
+const ProjectCardCTA = styled.div`
+  margin: 2rem 0;
 `;
 const ProjectContentTop = styled.div`
   display: grid;
@@ -174,7 +179,7 @@ const ContentTitle = styled.h4`
 `;
 const HeroRobit = styled.div`
   position: relative;
-  top: 0;
+  top: 0rem;
   grid-area: Image;
   @media (max-width: 900px) {
     position: relative;
@@ -223,10 +228,11 @@ const InterfaceText = styled.div`
   }
 `;
 const FooterLinks = styled.div`
-  display: grid;
-  justify-items: end;
+  display: flex;
+  justify-content: space-between;
   align-items: center;
-  grid-template-rows: 8rem;
+  grid-template-columns: 1fr;
+  height: 200px;
 `;
 const FooterBottom = styled.div`
   display: grid;
@@ -245,30 +251,16 @@ class App extends React.Component {
   render() {
     return (
       <div style={{ display: 'grid', overflowX: 'hidden', gridGap: '0' }}>
+
         <HeaderWrapper>
           <OceanBG>
-            <UpBubblesOne>
-              <SVG icon="bubble" width={3} left="66%" top="28%" />
-              <SVG icon="bubble" width={2} left="70%" top="38%" />
-              <SVG icon="bubble" width={4} left="72%" top="30%" />
-            </UpBubblesOne>
-            <UpBubblesTwo>
-              <SVG icon="bubble" width={4} left="64%" top="30%" />
-              <SVG icon="bubble" width={3} left="71%" top="14%" />
-              <SVG icon="bubble" width={2} left="69%" top="11%" />
-            </UpBubblesTwo>
-            <UpBubblesThree>
-              <SVG icon="bubble" width={2} left="62%" top="22%" />
-              <SVG icon="bubble" width={4} left="68%" top="44%" />
-              <SVG icon="bubble" width={3} left="66%" top="21%" />
-            </UpBubblesThree>
             <HeaderContainer className="header__container">
               <Navigation>
                 <ul className="nav__main">
                   <li>
                     <Link to="/"><img src={logotd} className="logo__main" /></Link>
                   </li>
-                  <li>
+                  <li style={{ display: 'grid', alignItems: 'center' }}>
                     <ul className="social-icons">
                       <li className="contact">
                         <Link to="/contact">Contact</Link>
@@ -293,6 +285,9 @@ class App extends React.Component {
                 <img src={logorobit} style={{ gridArea: 'Logo' }} />
                 <ProjectCardTitle>APP CONCEPT, PRODUCT DESIGN, UI & UX, PROTOTYPE</ProjectCardTitle>
                 <ProjectCardDescription>Robit is an app that aims to introduce design thinking with board style organization. Being able to see where your idea sits in it’s creative lifecycle will help move it to completion.<br />
+                <ProjectCardCTA>
+                  <a href="https://framer.cloud/eIEgs/" className="hero__cta"><img src={framer} alt="Framer" className="workflow__icon" /> Create New Animation</a>
+                </ProjectCardCTA>
                 </ProjectCardDescription>
               </ProjectHero>
             </Container>
@@ -354,8 +349,13 @@ class App extends React.Component {
             </InterfaceImage>
           </ProjectContentBottom>
           <FooterLinks>
-            <Link to="/robit">
-              <button className="btn btn--actionjackson">
+            <Link to="/freshtix">
+              <button className="btn--textOnly">
+                <FaChevronLeft size="1.45em" /> <span className="btn__text">Prev Project</span>
+              </button>
+            </Link>
+            <Link to="/payscape">
+              <button className="btn--textOnly">
                 <span className="btn__text">Next Project</span> <FaChevronRight size="1.45em" />
               </button>
             </Link>
