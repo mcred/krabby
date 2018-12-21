@@ -2,7 +2,6 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { Parallax, ParallaxLayer } from 'react-spring/dist/addons';
 import { Link } from "gatsby";
-
 import SVG from '../components/SVG';
 import '../styles/global';
 import styled from 'react-emotion';
@@ -25,7 +24,6 @@ const HeaderContainer = styled.div`
     padding: 0 1rem;
   }
 `;
-
 const FormTitle = styled.h3`
   ${tw('text-white mb-0')};
   text-shadow: -2px 4px 32px rgba(0, 0, 0, .125);
@@ -71,7 +69,6 @@ const inputStyle = {
     left: '1rem'
   }
 }
-
 const OceanBG = styled(ParallaxLayer)``;
 const Container = styled.div`
   padding: 0 4rem;

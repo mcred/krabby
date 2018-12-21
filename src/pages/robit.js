@@ -6,8 +6,8 @@ import { rotate, UpBubblesOne, UpBubblesOneTop, UpBubblesTwo, UpBubblesTwoTop, U
 import SVG from '../components/SVG';
 import '../styles/global';
 import styled from 'react-emotion';
-import logotopaz from '../images/logo-topaz.svg';
-import topazshottt from '../images/shottt-topaz.png';
+import logorobit from '../images/logo-robit.svg';
+import robitshottt from '../images/shottt-robit.png';
 import dribbble from '../images/icon-dribbble.svg';
 import instagram from '../images/icon-instagram.svg';
 import linkedin from '../images/icon-linkedin.svg';
@@ -31,7 +31,6 @@ const HeaderContainer = styled.div`
     padding: 0 1rem;
   }
 `;
-const SunRaysfromGod = styled(ParallaxLayer)``;
 const HeaderWrapper = styled.div`
   display: grid;
   grid-gap: 0;
@@ -86,23 +85,6 @@ const Hero = styled.div`
         [container-start] minmax(0, 30em) [container-end]
         minmax(1em, 1fr) [viewport-end];
 `;
-const BigTitle = styled.h1`
-  ${tw('text-white mb-0')};
-  text-shadow: 0 5px 35px rgba(255, 255, 255, 0.15);
-  font-size: 3em;
-  @media (min-width: 0px) and (max-width: 767px) {
-    font-size: 1.85em;
-   }
-`;
-const Subtitle = styled.p`
-  ${tw('text-white')};
-  text-shadow: 0 2px 15px rgba(0, 0, 0, 0.2);
-  line-height: 1.45em;
-  font-size: 1.125em;
-  @media (min-width: 0px) and (max-width: 767px) {
-    font-size: 1em;
-   }
-`;
 const ProjectHero = styled.div`
   display: grid;
   grid-gap: 0;
@@ -117,7 +99,7 @@ const ProjectHero = styled.div`
    grid-template-columns: 1fr;
    grid-template-rows: 3rem repeat(4, auto) 3rem;
    grid-gap: 0;
-   justify-items: center;
+   justify-items: top;
    grid-template-areas: "." "Logo" "Title" "Image" "Description" ".";
   }
 `;
@@ -190,9 +172,9 @@ const WorkflowLI = styled.li`
 const ContentTitle = styled.h4`
   ${tw('uppercase')};
 `;
-const HeroTopaz = styled.div`
+const HeroRobit = styled.div`
   position: relative;
-  top: 3rem;
+  top: 0;
   grid-area: Image;
   @media (max-width: 900px) {
     position: relative;
@@ -307,10 +289,10 @@ class App extends React.Component {
             </HeaderContainer>
             <Container>
               <ProjectHero>
-                <HeroTopaz><img src={topazshottt} className="shottt-topaz" /></HeroTopaz>
-                <img src={logotopaz} style={{ gridArea: 'Logo' }} />
-                <ProjectCardTitle>UX DESIGN, FRONT END DEVELOPMENT</ProjectCardTitle>
-                <ProjectCardDescription>This project was a redesign and rebuild of their attendee check in app. As part of their free ticketing software, this app allows an event organizer to check in participants and provides the organizer with attendance data.<br />
+                <HeroRobit><img src={robitshottt} className="shottt-robit" /></HeroRobit>
+                <img src={logorobit} style={{ gridArea: 'Logo' }} />
+                <ProjectCardTitle>APP CONCEPT, PRODUCT DESIGN, UI & UX, PROTOTYPE</ProjectCardTitle>
+                <ProjectCardDescription>Robit is an app that aims to introduce design thinking with board style organization. Being able to see where your idea sits in it’s creative lifecycle will help move it to completion.<br />
                 </ProjectCardDescription>
               </ProjectHero>
             </Container>

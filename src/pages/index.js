@@ -2,7 +2,6 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { Parallax, ParallaxLayer } from 'react-spring/dist/addons';
 import { Link } from "gatsby";
-
 import SVG from '../components/SVG';
 import '../styles/global';
 import styled from 'react-emotion';
@@ -284,7 +283,7 @@ class App extends React.Component {
               <ProjectCardDescription className="project__description">
                 <img src={logorobit} className="project__logo" /><br />
                 This project was a redesign and rebuild of their attendee check in app. As part of their free ticketing software, this app allows an event organizer to check in participants and provides the organizer with attendance data.<br />
-                <Link to="robit">
+                <Link to="/robit">
                   <button className="btn btn--actionjackson">
                     <span className="btn__text">Case Study</span> <FaChevronRight size="1.45em" />
                   </button>
