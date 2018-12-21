@@ -246,7 +246,6 @@ const HeroTopaz = styled.div`
 const Swatches = styled.div`
   grid-area: Swatches;
   display: grid;
-
   grid-template-columns: 25% 25% 25% 25%;
   grid-template-rows: auto 1fr;
   grid-template-areas: "Title Title Title Title" "Cards Cards Cards Cards";
@@ -304,12 +303,10 @@ const FooterBottom = styled.div`
 
 
 
-
 class App extends React.Component {
   render() {
     return (
-      <div style={{display: 'grid', overflowX: 'hidden', gridGap: '0' }}>
-
+      <div style={{ display: 'grid', overflowX: 'hidden', gridGap: '0' }}>
         <HeaderWrapper>
           <OceanBG>
             <UpBubblesOne>
@@ -331,12 +328,12 @@ class App extends React.Component {
               <Navigation>
                 <ul className="nav__main">
                   <li>
-                    <Link to="/" className=""><img src={logotd} className="logo__main" /></Link>
+                    <Link to="/"><img src={logotd} className="logo__main" /></Link>
                   </li>
                   <li>
                     <ul className="social-icons">
                       <li className="contact">
-                        <NavContact onClick={() => this.parallax.scrollTo(5)}>Contact</NavContact>
+                        <Link to="/contact">Contact</Link>
                       </li>
                       <li><a href="https://dribbble.com/trice" title="Follow me on Dribbble">
                         <img src={dribbble} className="" alt="Dribbble" /></a>
@@ -388,7 +385,7 @@ class App extends React.Component {
               </div>
               <div className="card__swatch">
                 <div className="card__swatch--ideate"></div>
-                <span class="swatch__description">#246AFF<br />rgba (36,106,255,100)</span>
+                <span className="swatch__description">#246AFF<br />rgba (36,106,255,100)</span>
               </div>
               <div className="card__swatch">
                 <div className="card__swatch--create"></div>
@@ -420,8 +417,8 @@ class App extends React.Component {
           </ProjectContentBottom>
           <FooterLinks>
             <Link to="/robit">
-              <button class="btn btn--actionjackson">
-                <span class="btn__text">Next Project</span> <FaChevronRight size="1.45em" />
+              <button className="btn btn--actionjackson">
+                <span className="btn__text">Next Project</span> <FaChevronRight size="1.45em" />
               </button>
             </Link>
           </FooterLinks>

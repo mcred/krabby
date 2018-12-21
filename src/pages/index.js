@@ -6,8 +6,6 @@ import { Link } from "gatsby";
 import SVG from '../components/SVG';
 import '../styles/global';
 import styled from 'react-emotion';
-import ProjectCardText from '../components/ProjectCardText';
-import Contact from '../components/Contact';
 import { rotate, UpBubblesOne, UpBubblesOneTop, UpBubblesTwo, UpBubblesTwoTop, UpBubblesThree, UpBubblesThreeTop, UpDown, UpDownWide, waveAnimation } from '../styles/animations';
 import logotopaz from '../images/logo-topaz.svg';
 import logofreshtix from '../images/logo-freshtix.svg';
@@ -21,7 +19,6 @@ import dribbble from '../images/icon-dribbble.svg';
 import instagram from '../images/icon-instagram.svg';
 import linkedin from '../images/icon-linkedin.svg';
 import logotd from '../images/logo-td.svg';
-
 import squidsilhouette from '../images/squid-silhouette.png';
 import bottomburm from '../images/bottom-burm.svg';
 import howdy from '../images/howdy.svg';
@@ -40,16 +37,12 @@ const HeaderContainer = styled.div`
     padding: 0 1rem;
   }
 `;
-
-const SunRaysfromGod = styled(ParallaxLayer)`
-`;
-
+const SunRaysfromGod = styled(ParallaxLayer)``;
 const Angler = styled.div`
   position: relative;
   left: -2rem;
   max-width: 100%;
 `;
-
 const FormTitle = styled.h3`
   ${tw('text-white mb-0')};
   text-shadow: -2px 4px 32px rgba(0, 0, 0, 1);
@@ -93,9 +86,7 @@ const inputStyle = {
     left: '1rem'
   }
 }
-
 const OceanBG = styled(ParallaxLayer)`
-
 `;
 const Container = styled.div`
   padding: 0 4rem;
@@ -150,7 +141,6 @@ const ProjectCardDescription = styled.p`
   ${tw('text-white')};
   line-height: 1.45em;
 `;
-
 
 
 
@@ -259,8 +249,8 @@ class App extends React.Component {
                 <img src={logotopaz} className="project__logo" /><br />
                 This project was a redesign and rebuild of their attendee check in app. As part of their free ticketing software, this app allows an event organizer to check in participants and provides the organizer with attendance data.<br />
                 <Link to="topaz">
-                  <button class="btn btn--actionjackson">
-                    <span class="btn__text">Case Study</span> <FaChevronRight size="1.45em" />
+                  <button className="btn btn--actionjackson">
+                    <span className="btn__text">Case Study</span> <FaChevronRight size="1.45em" />
                   </button>
                 </Link>
               </ProjectCardDescription>
@@ -277,8 +267,8 @@ class App extends React.Component {
                 <img src={logofreshtix} className="project__logo" /><br />
                 This project was a redesign and rebuild of their attendee check in app. As part of their free ticketing software, this app allows an event organizer to check in participants and provides the organizer with attendance data.<br />
                 <Link to="freshtix">
-                  <button class="btn btn--actionjackson">
-                    <span class="btn__text">Case Study</span> <FaChevronRight size="1.45em" />
+                  <button className="btn btn--actionjackson">
+                    <span className="btn__text">Case Study</span> <FaChevronRight size="1.45em" />
                   </button>
                 </Link>
               </ProjectCardDescription>
@@ -295,8 +285,8 @@ class App extends React.Component {
                 <img src={logorobit} className="project__logo" /><br />
                 This project was a redesign and rebuild of their attendee check in app. As part of their free ticketing software, this app allows an event organizer to check in participants and provides the organizer with attendance data.<br />
                 <Link to="robit">
-                  <button class="btn btn--actionjackson">
-                    <span class="btn__text">Case Study</span> <FaChevronRight size="1.45em" />
+                  <button className="btn btn--actionjackson">
+                    <span className="btn__text">Case Study</span> <FaChevronRight size="1.45em" />
                   </button>
                 </Link>
               </ProjectCardDescription>
@@ -313,8 +303,8 @@ class App extends React.Component {
                 <img src={logopayscape} className="project__logo" /><br />
                 This project was a redesign and rebuild of their attendee check in app. As part of their free ticketing software, this app allows an event organizer to check in participants and provides the organizer with attendance data.<br />
                 <Link to="freshtix">
-                  <button class="btn btn--actionjackson">
-                    <span class="btn__text">Case Study</span> <FaChevronRight size="1.45em" />
+                  <button className="btn btn--actionjackson">
+                    <span className="btn__text">Case Study</span> <FaChevronRight size="1.45em" />
                   </button>
                 </Link>
               </ProjectCardDescription>
@@ -324,17 +314,16 @@ class App extends React.Component {
 
         <ParallaxLayer offset={4.8} speed={-0.15}>
           <Angler className={'anglerFish'}>
-            <img class="bottom" src={anglerdark} />
-            <img class="top" src={anglerbright} />
+            <img className="bottom" src={anglerdark} />
+            <img className="top" src={anglerbright} />
           </Angler>
         </ParallaxLayer>
 
         <ParallaxLayer offset={5} speed={-0}>
           <Container>
             <Hero>
-
               <FormTitle className="item--contained">Let's have a conversation</FormTitle>
-              <form class="contact__form item--contained"  name="contact" method="post" action="https://formspree.io/matt@trice.design" method="POST">
+              <form className="contact__form item--contained"  name="contact" method="post" action="https://formspree.io/matt@trice.design" method="POST">
                 <FloatingLabel id='name' name='name' placeholder='Name' type='text' styles={inputStyle} required />
                 <FloatingLabel id='email' name='email' placeholder='Email' type='email' styles={inputStyle} required />
                 <FloatingLabel id='comments' name='comments' placeholder='What are you working on?' styles={inputStyle} type='text' requried />
@@ -371,6 +360,7 @@ class App extends React.Component {
             </Navigation>
           </HeaderContainer>
         </ParallaxLayer>
+
         <ParallaxLayer speed={0.5} offset={.1}>
           <Container>
             <Hero>

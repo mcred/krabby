@@ -17,8 +17,8 @@ const icons = {
   bubble: {
     shape: (
       <React.Fragment>
-        <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" fill-opacity="0.08">
-            <g id="Artboard" transform="translate(-308.000000, -201.000000)" fill="#FFFFFF" fill-rule="nonzero">
+        <g id="Page-1" stroke="none" strokeWidth="1" fill="none" fillRule="evenodd" fillOpacity="0.08">
+            <g id="Artboard" transform="translate(-308.000000, -201.000000)" fill="#FFFFFF" fillRule="nonzero">
                 <g id="Group" transform="translate(309.000000, 202.000000)">
                     <circle id="Oval" stroke="#FFFFFF" cx="140.5" cy="140.5" r="140.5"></circle>
                     <circle id="Oval-Copy" cx="109" cy="84" r="42"></circle>
@@ -103,7 +103,7 @@ SVG.propTypes = {
   stroke: PropTypes.string,
   fill: PropTypes.string,
   width: PropTypes.number,
-  icon: PropTypes.oneOf(['triangle', 'circle', 'arrowUp', 'upDown', 'box', 'hexa']).isRequired,
+  icon: PropTypes.oneOf(['triangle', 'circle', 'arrowUp', 'upDown', 'box', 'hexa', 'bubble']).isRequired,
   left: PropTypes.string,
   top: PropTypes.string,
   className: PropTypes.string,
