@@ -11,15 +11,20 @@ import topazshottt from '../images/shottt-topaz.png';
 import dribbble from '../images/icon-dribbble.svg';
 import instagram from '../images/icon-instagram.svg';
 import linkedin from '../images/icon-linkedin.svg';
-import aftereffects from '../images/icon-after-effects.png';
-import framer from '../images/icon-framer.png';
 import illustrator from '../images/icon-illustrator.png';
 import sketch from '../images/icon-sketch.png';
 import logotd from '../images/logo-td.svg';
 import sunrays from '../images/sunraysfromgod.png';
-import wireflow from '../images/wireflow-robit.png';
-import robitscreens from '../images/robit-design-screens.png';
+import screens01 from '../images/payscape-screens-1.png';
+import screens02 from '../images/payscape-screens-2.png';
+import iconwebsites from '../images/icon-websites-circlebg.svg';
+import iconmobile from '../images/icon-mobile-circlebg.svg';
+import iconpos from '../images/icon-pos-circlebg.svg';
+import iconinvoice from '../images/icon-invoice-circlebg.svg';
+import iconregistration from '../images/icon-registration-circlebg.svg';
+import iconecommerce from '../images/icon-ecommerce-circlebg.svg';
 import '../assets/css/krabby.scss';
+import { FaChevronLeft } from 'react-icons/fa';
 import { FaChevronRight } from 'react-icons/fa';
 import { FaPaperPlane } from 'react-icons/fa';
 
@@ -31,12 +36,11 @@ const HeaderContainer = styled.div`
     padding: 0 1rem;
   }
 `;
-const SunRaysfromGod = styled(ParallaxLayer)``;
 const HeaderWrapper = styled.div`
   display: grid;
   grid-gap: 0;
   grid-template-columns: 1fr;
-  grid-template-rows: 1fr 2rem;
+  grid-template-rows: 1fr 0rem;
   grid-template-areas: "Header" "Whitespace";
   @media (max-width: 680px) {
     grid-template-rows: 1fr;
@@ -86,23 +90,6 @@ const Hero = styled.div`
         [container-start] minmax(0, 30em) [container-end]
         minmax(1em, 1fr) [viewport-end];
 `;
-const BigTitle = styled.h1`
-  ${tw('text-white mb-0')};
-  text-shadow: 0 5px 35px rgba(255, 255, 255, 0.15);
-  font-size: 3em;
-  @media (min-width: 0px) and (max-width: 767px) {
-    font-size: 1.85em;
-   }
-`;
-const Subtitle = styled.p`
-  ${tw('text-white')};
-  text-shadow: 0 2px 15px rgba(0, 0, 0, 0.2);
-  line-height: 1.45em;
-  font-size: 1.125em;
-  @media (min-width: 0px) and (max-width: 767px) {
-    font-size: 1em;
-   }
-`;
 const ProjectHero = styled.div`
   display: grid;
   grid-gap: 0;
@@ -121,6 +108,7 @@ const ProjectHero = styled.div`
    grid-template-areas: "." "Logo" "Title" "Image" "Description" ".";
   }
 `;
+const Bubbles = styled.div``;
 const Description = styled.p`
   ${tw('text-white')};
   line-height: 1.45em;
@@ -135,16 +123,19 @@ const ProjectCardDescription = styled.p`
   line-height: 1.45em;
   grid-area: Description;
 `;
+const ProjectCardCTA = styled.div`
+  margin: 2rem 0;
+`;
 const ProjectContentTop = styled.div`
   display: grid;
   grid-gap: 2rem;
-  grid-template-columns: 1.25fr 0.75fr;
-  grid-template-rows: 2rem auto 1fr;
-  grid-template-areas: ". ." "Approach Workflow" "Swatches Swatches" "Aside Wireflow";
+  grid-template-columns: 1.25fr .75fr;
+  grid-template-rows: 2rem auto;
+  grid-template-areas: ". ." "Approach Workflow";
   @media (max-width: 680px) {
     grid-template-columns: 1fr;
     grid-template-rows: 0 auto;
-    grid-template-areas: "." "Approach" "Workflow" "Swatches" "Aside" "Wireflow";
+    grid-template-areas: "." "Approach" "Workflow";
   }
 `;
 const Approach = styled.div`
@@ -155,26 +146,26 @@ const Workflow = styled.div`
 `;
 const ProjectContentMiddle = styled.div`
   display: grid;
-  margin-top: 1rem;
+  margin-top: 3rem;
   grid-gap: 2rem;
-  grid-template-columns: 0.55fr 1.45fr;
+  grid-template-columns: 2rem 40% 1fr 2rem;
   grid-template-rows: 1fr;
-  grid-template-areas: "WireflowText WireflowImage";
+  grid-template-areas: ". ProjectMiddleText ProjectMiddleImage .";
   @media (max-width: 800px) {
     grid-template-columns: 1fr;
     grid-template-rows: auto;
-    grid-template-areas: "WireflowText" "WireflowImage";
+    grid-template-areas: "ProjectMiddleText" "ProjectMiddleImage";
   }
 `;
-const WireflowText = styled.div`
-  grid-area: WireflowText;
-  margin-top: 4rem;
+const ProjectMiddleText = styled.div`
+  grid-area: ProjectMiddleText;
+  margin-top: -1rem;
   @media (max-width: 1200px) {
     margin-top: 0;
   }
 `;
-const WireflowImage = styled.div`
-  grid-area: WireflowImage;
+const ProjectMiddleImage = styled.div`
+  grid-area: ProjectMiddleImage;
 `;
 const WorkflowUL = styled.ul`
   list-style-type: none;
@@ -190,7 +181,7 @@ const WorkflowLI = styled.li`
 const ContentTitle = styled.h4`
   ${tw('uppercase')};
 `;
-const HeroTopaz = styled.div`
+const HeroPayscape = styled.div`
   position: relative;
   top: 0rem;
   grid-area: Image;
@@ -199,52 +190,48 @@ const HeroTopaz = styled.div`
     top: 0;
   }
 `;
-const Swatches = styled.div`
-  grid-area: Swatches;
+const ProjectContentGrid = styled.div`
   display: grid;
-  grid-template-columns: 25% 25% 25% 25%;
-  grid-template-rows: auto 1fr;
-  grid-template-areas: "Title Title Title Title" "Cards Cards Cards Cards";
-  @media (max-width: 1200px) {
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 8rem);
+  align-items: center;
+  justify-items: left;
+  @media (max-width: 680px) {
     grid-template-columns: 50% 1fr;
     grid-template-rows: auto 1fr;
-    grid-template-areas: "Title Title" "Cards Cards";
-  }
-  @media (max-width: 680px) {
-    grid-template-columns: 1fr;
-    grid-template-rows: auto 1fr;
-    grid-template-areas: "Title" "Cards";
   }
 `;
 const ProjectContentBottom = styled.div`
   display: grid;
-  margin-top: 2rem;
+  margin-top: 4rem;
   grid-gap: 2rem;
-  grid-template-columns: 70% 1fr;
+  grid-template-columns: 2rem 40% 1fr 2rem;
   grid-template-rows: 1fr;
-  grid-template-areas: "InterfaceImage InterfaceText";
+  grid-template-areas: ". ProjectBottomImage ProjectBottomText .";
   align-content: center;
   @media (max-width: 800px) {
+    margin-top: 2rem;
     grid-template-columns: 1fr;
     grid-template-rows: auto;
-    grid-template-areas: "InterfaceText" "InterfaceImage";
+    grid-template-areas: "ProjectBottomText" "ProjectBottomImage";
   }
 `;
-const InterfaceImage = styled.div`
-  grid-area: InterfaceImage;
+const ProjectBottomImage = styled.div`
+  grid-area: ProjectBottomImage;
 `;
-const InterfaceText = styled.div`
-  grid-area: InterfaceText;
-  margin-top: 4rem;
+const ProjectBottomText = styled.div`
+  grid-area: ProjectBottomText;
+  margin-top: 0;
   @media (max-width: 680px) {
     margin-top: 0;
   }
 `;
 const FooterLinks = styled.div`
-  display: grid;
-  justify-items: end;
+  display: flex;
+  justify-content: space-between;
   align-items: center;
-  grid-template-rows: 8rem;
+  grid-template-columns: 1fr;
+  height: 200px;
 `;
 const FooterBottom = styled.div`
   display: grid;
@@ -263,6 +250,7 @@ class App extends React.Component {
   render() {
     return (
       <div style={{ display: 'grid', overflowX: 'hidden', gridGap: '0' }}>
+
         <HeaderWrapper>
           <OceanBG>
             <HeaderContainer className="header__container">
@@ -271,7 +259,7 @@ class App extends React.Component {
                   <li>
                     <Link to="/"><img src={logotd} className="logo__main" /></Link>
                   </li>
-                  <li>
+                  <li style={{ display: 'grid', alignItems: 'center' }}>
                     <ul className="social-icons">
                       <li className="contact">
                         <Link to="/contact">Contact</Link>
@@ -292,10 +280,13 @@ class App extends React.Component {
             </HeaderContainer>
             <Container>
               <ProjectHero>
-                <HeroTopaz><img src={topazshottt} className="shottt-topaz" /></HeroTopaz>
+                <HeroPayscape><img src={topazshottt} className="shottt-topaz" /></HeroPayscape>
                 <img src={logotopaz} style={{ gridArea: 'Logo' }} />
-                <ProjectCardTitle>UX DESIGN, FRONT END DEVELOPMENT</ProjectCardTitle>
-                <ProjectCardDescription>This project was a redesign and rebuild of their attendee check in app. As part of their free ticketing software, this app allows an event organizer to check in participants and provides the organizer with attendance data.<br />
+                <ProjectCardTitle>WEBSITE DESIGN, UI & UX, WORDPRESS DESIGN</ProjectCardTitle>
+                <ProjectCardDescription>Payscape provides small to mid-size business owners with financial technologies that allow them to accept payments, streamline their business, and increase cash flow.<br />
+                <ProjectCardCTA>
+                  <a href="https://payscape.com" className="hero__cta"> Check out the site <FaChevronRight size="1.45em" style={{ marginLeft: '.5rem' }} /></a>
+                </ProjectCardCTA>
                 </ProjectCardDescription>
               </ProjectHero>
             </Container>
@@ -307,59 +298,49 @@ class App extends React.Component {
           <ProjectContentTop>
             <Approach>
               <ContentTitle>Approach</ContentTitle>
-              <p>Being able to see where your idea sits in it’s creative lifecycle will help move it to completion. As a designer, I often times would find myself with  great ideas but would hit creative roadblocks when it came time to start creating.</p>
+              <p>The old Payscape.com was in need of a redesign and restructure. The old look was getting stale, lacked depth, and was showing it's age.</p>
+              <p>Also, even though the site was built in a CMS, it was not easy for users to make changes to the content. The site needed a visual overhaul as well as a more user-friendly content management system.</p>
             </Approach>
             <Workflow>
               <ContentTitle>Workflow</ContentTitle>
               <WorkflowUL>
                 <WorkflowLI><img src={sketch} alt="Sketch" className="workflow__icon" />Sketch</WorkflowLI>
                 <WorkflowLI><img src={illustrator} alt="Illustrator" className="workflow__icon" />Illustrator</WorkflowLI>
-                <WorkflowLI><img src={aftereffects} alt="After Effects" className="workflow__icon" />After Effects</WorkflowLI>
-                <WorkflowLI><img src={framer} alt="Framer" className="workflow__icon" />Framer</WorkflowLI>
               </WorkflowUL>
             </Workflow>
-            <Swatches>
-              <ContentTitle style={{ gridArea: 'Title' }} >Colors &amp; Iconography</ContentTitle>
-              <div className="card__swatch">
-                <div className="card__swatch--define"></div>
-                <span className="swatch__description">#D81159<br />rgba (216,17,89,100)</span>
-              </div>
-              <div className="card__swatch">
-                <div className="card__swatch--ideate"></div>
-                <span className="swatch__description">#246AFF<br />rgba (36,106,255,100)</span>
-              </div>
-              <div className="card__swatch">
-                <div className="card__swatch--create"></div>
-                <span className="swatch__description">#00AA00<br />rgba (0,170,0,100)</span>
-              </div>
-              <div className="card__swatch">
-                <div className="card__swatch--finalize"></div>
-                <span className="swatch__description">#E22E42<br />rgba (226,46,66,100)</span>
-              </div>
-            </Swatches>
           </ProjectContentTop>
+          <ContentTitle>New Iconography</ContentTitle>
+          <ProjectContentGrid>
+            <img src={iconwebsites} alt="Websites" className="iconography" />
+            <img src={iconmobile} alt="Mobile" className="iconography" />
+            <img src={iconpos} alt="POS" className="iconography" />
+            <img src={iconinvoice} alt="Invoice" className="iconography" />
+            <img src={iconregistration} alt="Registration" className="iconography" />
+            <img src={iconecommerce} alt="Ecommerce" className="iconography" />
+          </ProjectContentGrid>
           <ProjectContentMiddle>
-            <WireflowText>
-              <ContentTitle>Wireflow</ContentTitle>
-              <p>Wireframed the user flow for a wireflow. I did an initial design of the user wireflow. This flow would help lay the roadmap for the prototype.</p>
-            </WireflowText>
-            <WireflowImage>
-              <img src={wireflow} style={{ gridArea: 'Wireflow', maxWidth: '100%', padding: '1rem' }} />
-            </WireflowImage>
+            <ProjectMiddleText>
+              <ContentTitle>Process</ContentTitle>
+              <p>I discovered current pain points by meeting with marketing and collecting feedback from various departments throughout the company.</p>
+              <p>As I began to look at the existing content as a whole I compared the sitemap against analytics and heat map data in order to identify opportunities to re-organize and streamline the content.</p>
+            </ProjectMiddleText>
+            <ProjectMiddleImage>
+              <img src={screens01} className="payscape_screens01" style={{ gridArea: 'ProjectMiddleImage' }} />
+            </ProjectMiddleImage>
           </ProjectContentMiddle>
           <ProjectContentBottom>
-            <InterfaceText>
-              <ContentTitle>Interface</ContentTitle>
-              <p>With the user flow figured out, I was able to quickly design screens.</p>
-            </InterfaceText>
-            <InterfaceImage>
-              <img src={robitscreens} style={{ gridArea: 'InterfaceImage', maxWidth: '100%' }} />
-            </InterfaceImage>
+            <ProjectBottomText>
+              <ContentTitle>Solution</ContentTitle>
+              <p>From a visual standpoint I wanted to bring the look and feel up to modern trends. I got away from the full screen video background to a cleaner illustration style and lifestyle photo style.</p>
+            </ProjectBottomText>
+            <ProjectBottomImage>
+              <img src={screens02} className="payscape_screens02" style={{ gridArea: 'ProjectBottomImage' }} />
+            </ProjectBottomImage>
           </ProjectContentBottom>
           <FooterLinks>
-            <Link to="/freshtix">
-              <button className="btn btn--actionjackson">
-                <span className="btn__text">Next Project</span> <FaChevronRight size="1.45em" />
+            <Link to="/robit">
+              <button className="btn--textOnly">
+                <FaChevronLeft size="1.45em" /> <span className="btn__text">Prev Project</span>
               </button>
             </Link>
           </FooterLinks>

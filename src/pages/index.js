@@ -246,7 +246,7 @@ class App extends React.Component {
               <ProjectCardTitle className="project__title">UX DESIGN, FRONT END DEVELOPMENT</ProjectCardTitle>
               <ProjectCardDescription className="project__description">
                 <img src={logotopaz} className="project__logo" /><br />
-                Topaz, a blockchain SaaS product, needed a website their upcoming launch. Working alongside a talented branding designer, I designed and developed a single page static site using Gatsby.js and React.<br />
+                Topaz is a blockchain SaaS product. Working alongside a talented branding designer, I designed and developed a single page static site running on <span>Gatsby.js</span> and React.<br />
                 <Link to="/topaz">
                   <button className="btn btn--actionjackson">
                     <span className="btn__text">Case Study</span> <FaChevronRight size="1.45em" />
