@@ -22,7 +22,6 @@ import robitscreens from '../images/robit-design-screens.png';
 import '../assets/css/krabby.scss';
 import { FaChevronLeft } from 'react-icons/fa';
 import { FaChevronRight } from 'react-icons/fa';
-import { FaPaperPlane } from 'react-icons/fa';
 
 
 const HeaderContainer = styled.div`
@@ -286,7 +285,7 @@ class App extends React.Component {
                 <ProjectCardTitle>APP CONCEPT, PRODUCT DESIGN, UI & UX, PROTOTYPE</ProjectCardTitle>
                 <ProjectCardDescription>Robit is an app that aims to introduce design thinking with board style organization. Being able to see where your idea sits in it’s creative lifecycle will help move it to completion.<br />
                 <ProjectCardCTA>
-                  <a href="https://framer.cloud/eIEgs/" className="hero__cta"><img src={framer} alt="Framer" className="workflow__icon" /> Create New Animation</a>
+                  <a href="https://framer.cloud/eIEgs/" className="hero__cta"><img src={framer} alt="Framer" className="cta__icon" /> Create New Animation</a>
                 </ProjectCardCTA>
                 </ProjectCardDescription>
               </ProjectHero>

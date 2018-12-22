@@ -17,7 +17,12 @@ import logotd from '../images/logo-td.svg';
 import sunrays from '../images/sunraysfromgod.png';
 import screens01 from '../images/payscape-screens-1.png';
 import screens02 from '../images/payscape-screens-2.png';
-import robitscreens from '../images/robit-design-screens.png';
+import iconwebsites from '../images/icon-websites-circlebg.svg';
+import iconmobile from '../images/icon-mobile-circlebg.svg';
+import iconpos from '../images/icon-pos-circlebg.svg';
+import iconinvoice from '../images/icon-invoice-circlebg.svg';
+import iconregistration from '../images/icon-registration-circlebg.svg';
+import iconecommerce from '../images/icon-ecommerce-circlebg.svg';
 import '../assets/css/krabby.scss';
 import { FaChevronLeft } from 'react-icons/fa';
 import { FaChevronRight } from 'react-icons/fa';
@@ -125,12 +130,12 @@ const ProjectContentTop = styled.div`
   display: grid;
   grid-gap: 2rem;
   grid-template-columns: 1.25fr .75fr;
-  grid-template-rows: 2rem auto 1fr;
-  grid-template-areas: ". ." "Approach Workflow" "Swatches Swatches" "Aside Wireflow";
+  grid-template-rows: 2rem auto;
+  grid-template-areas: ". ." "Approach Workflow";
   @media (max-width: 680px) {
     grid-template-columns: 1fr;
     grid-template-rows: 0 auto;
-    grid-template-areas: "." "Approach" "Workflow" "Swatches" "Aside" "Wireflow";
+    grid-template-areas: "." "Approach" "Workflow";
   }
 `;
 const Approach = styled.div`
@@ -141,7 +146,7 @@ const Workflow = styled.div`
 `;
 const ProjectContentMiddle = styled.div`
   display: grid;
-  margin-top: 1rem;
+  margin-top: 3rem;
   grid-gap: 2rem;
   grid-template-columns: 2rem 40% 1fr 2rem;
   grid-template-rows: 1fr;
@@ -185,21 +190,15 @@ const HeroPayscape = styled.div`
     top: 0;
   }
 `;
-const Swatches = styled.div`
-  grid-area: Swatches;
+const ProjectContentGrid = styled.div`
   display: grid;
-  grid-template-columns: 25% 25% 25% 25%;
-  grid-template-rows: auto 1fr;
-  grid-template-areas: "Title Title Title Title" "Cards Cards Cards Cards";
-  @media (max-width: 1200px) {
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 8rem);
+  align-items: center;
+  justify-items: left;
+  @media (max-width: 680px) {
     grid-template-columns: 50% 1fr;
     grid-template-rows: auto 1fr;
-    grid-template-areas: "Title Title" "Cards Cards";
-  }
-  @media (max-width: 680px) {
-    grid-template-columns: 1fr;
-    grid-template-rows: auto 1fr;
-    grid-template-areas: "Title" "Cards";
   }
 `;
 const ProjectContentBottom = styled.div`
@@ -286,7 +285,7 @@ class App extends React.Component {
                 <ProjectCardTitle>WEBSITE DESIGN, UI & UX, WORDPRESS DESIGN</ProjectCardTitle>
                 <ProjectCardDescription>Payscape provides small to mid-size business owners with financial technologies that allow them to accept payments, streamline their business, and increase cash flow.<br />
                 <ProjectCardCTA>
-                  <a href="https://projects.invisionapp.com/share/23EEA8BQG#/screens/" className="hero__cta"> Check out the site</a>
+                  <a href="https://payscape.com" className="hero__cta"> Check out the site <FaChevronRight size="1.45em" style={{ marginLeft: '.5rem' }} /></a>
                 </ProjectCardCTA>
                 </ProjectCardDescription>
               </ProjectHero>
@@ -310,6 +309,15 @@ class App extends React.Component {
               </WorkflowUL>
             </Workflow>
           </ProjectContentTop>
+          <ContentTitle>New Iconography</ContentTitle>
+          <ProjectContentGrid>
+            <img src={iconwebsites} alt="Websites" className="iconography" />
+            <img src={iconmobile} alt="Mobile" className="iconography" />
+            <img src={iconpos} alt="POS" className="iconography" />
+            <img src={iconinvoice} alt="Invoice" className="iconography" />
+            <img src={iconregistration} alt="Registration" className="iconography" />
+            <img src={iconecommerce} alt="Ecommerce" className="iconography" />
+          </ProjectContentGrid>
           <ProjectContentMiddle>
             <ProjectMiddleText>
               <ContentTitle>Process</ContentTitle>

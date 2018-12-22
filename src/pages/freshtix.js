@@ -301,7 +301,7 @@ class App extends React.Component {
                 <ProjectCardTitle>PRODUCT DESIGN, MOBILE APP DESIGN, UI & UX, PROTOTYPING</ProjectCardTitle>
                 <ProjectCardDescription>FreshTix makes is easier to sell tickets online with their free ticketing software.<br />
                 <ProjectCardCTA>
-                  <a href="https://projects.invisionapp.com/share/23EEA8BQG#/screens/" className="hero__cta"><img src={invision} alt="InVision" className="workflow__icon" /> View Prototype</a>
+                  <a href="https://projects.invisionapp.com/share/23EEA8BQG#/screens/" className="hero__cta"><img src={invision} alt="InVision" className="cta__icon" /> View Prototype</a>
                 </ProjectCardCTA>
                 </ProjectCardDescription>
               </ProjectHero>
