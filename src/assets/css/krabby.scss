@@ -607,7 +607,20 @@ img.workflow__icon {
   font-size: 14px;
   display: inline-block;
 }
-
+.payscape_screens01 {
+  max-width: 100%;
+  box-shadow: 0 2px 128px rgba(0, 0, 0, 0.3);
+  @media (max-width: 900px) {
+    max-width: 100%;
+  }
+}
+.payscape_screens02 {
+  max-width: 100%;
+  box-shadow: 0 2px 128px rgba(0, 0, 0, 0.3);
+  @media (max-width: 900px) {
+    max-width: 100%;
+  }
+}
 
 
 

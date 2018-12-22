@@ -247,7 +247,7 @@ class App extends React.Component {
               <ProjectCardDescription className="project__description">
                 <img src={logotopaz} className="project__logo" /><br />
                 Topaz, a blockchain SaaS product, needed a website their upcoming launch. Working alongside a talented branding designer, I designed and developed a single page static site using Gatsby.js and React.<br />
-                <Link to="topaz">
+                <Link to="/topaz">
                   <button className="btn btn--actionjackson">
                     <span className="btn__text">Case Study</span> <FaChevronRight size="1.45em" />
                   </button>
@@ -265,7 +265,7 @@ class App extends React.Component {
               <ProjectCardDescription className="project__description">
                 <img src={logofreshtix} className="project__logo" /><br />
                 This project was a redesign and rebuild of their attendee check in app. As part of their free ticketing software, this app allows an event organizer to check in participants and provides the organizer with attendance data.<br />
-                <Link to="freshtix">
+                <Link to="/freshtix">
                   <button className="btn btn--actionjackson">
                     <span className="btn__text">Case Study</span> <FaChevronRight size="1.45em" />
                   </button>
@@ -301,7 +301,7 @@ class App extends React.Component {
               <ProjectCardDescription className="project__description">
                 <img src={logopayscape} className="project__logo" /><br />
                 Payscape is an Atlanta based Financial Technology company that provides small to mid-size business owners with financial technologies that allow them to accept payments, streamline their business, and increase cash flow.<br />
-                <Link to="freshtix">
+                <Link to="/payscape">
                   <button className="btn btn--actionjackson">
                     <span className="btn__text">Case Study</span> <FaChevronRight size="1.45em" />
                   </button>

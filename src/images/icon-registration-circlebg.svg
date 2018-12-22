@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="140px" height="140px" viewBox="0 0 140 140" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 50 (54983) - http://www.bohemiancoding.com/sketch -->
+    <title>icon-registration-circlebg</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="icon-registration-circlebg">
+            <circle id="Oval-2" fill="#FFFFFF" cx="70" cy="70" r="70"></circle>
+            <g id="icon-registration-176x172" transform="translate(29.668874, 30.132450)">
+                <path d="M23.5639327,9.07328336 L32.100866,9.07328336" id="Shape" stroke="#000000" stroke-width="4.27916454" stroke-linecap="round" stroke-linejoin="round"></path>
+                <path d="M55.786042,65.6478738 L55.786042,75.2548796 C55.786042,77.6130146 53.8701944,79.5246603 51.5068771,79.5246603 L4.43606724,79.5246603 C2.07274992,79.5246603 0.1569027,77.6130146 0.1569027,75.2548796 L0.1569027,13.3430638 C0.1569027,10.9849292 2.07274992,9.07328336 4.43606724,9.07328336" id="Shape" stroke="#000000" stroke-width="4.27916454" stroke-linecap="round" stroke-linejoin="round"></path>
+                <path d="M51.5068771,9.07328336 C53.8701944,9.07328336 55.786042,10.9849292 55.786042,13.3430638 L55.786042,27.2198501" id="Shape" stroke="#000000" stroke-width="4.27916454" stroke-linecap="round" stroke-linejoin="round"></path>
+                <path d="M25.83189,31.4896305 L47.2277126,31.4896305" id="Shape" stroke="#BDCCD4" stroke-width="4.27916454" stroke-linecap="round" stroke-linejoin="round"></path>
+                <path d="M25.83189,46.4338621 L42.9485481,46.4338621" id="Shape" stroke="#BDCCD4" stroke-width="4.27916454" stroke-linecap="round" stroke-linejoin="round"></path>
+                <ellipse id="Oval" fill="#BDCCD4" fill-rule="nonzero" cx="13.1227713" cy="61.9118162" rx="4.27916454" ry="4.26978041"></ellipse>
+                <path d="M25.83189,61.3780935 L47.2277126,61.3780935" id="Shape" stroke="#BDCCD4" stroke-width="4.27916454" stroke-linecap="round" stroke-linejoin="round"></path>
+                <rect id="Rectangle-path" stroke="#000000" stroke-width="2.13958227" fill="#7AC943" fill-rule="nonzero" stroke-linecap="round" stroke-linejoin="round" x="10.8548141" y="0" width="6.41874679" height="14.4105089" rx="3.2093734"></rect>
+                <rect id="Rectangle-path" stroke="#000000" stroke-width="2.13958227" fill="#7AC943" fill-rule="nonzero" stroke-linecap="round" stroke-linejoin="round" x="38.6693836" y="0" width="6.41874679" height="14.4105089" rx="3.2093734"></rect>
+                <g id="Group" stroke-linecap="round" stroke-linejoin="round" transform="translate(50.886398, 24.410945)" fill-rule="nonzero" stroke="#000000" stroke-width="2.13958227">
+                    <rect id="Rectangle-path" fill="#3FA9F5" transform="translate(12.814639, 17.974929) rotate(-45.000000) translate(-12.814639, -17.974929) " x="1.16461311" y="13.1714258" width="23.300051" height="9.60700592"></rect>
+                    <polygon id="Shape" fill="#7AC943" points="8.00203772 29.5804287 10.1844116 27.4028407 3.38053999 20.6138899 1.17677025 22.7914779 0.0427916444 30.7119205"></polygon>
+                    <rect id="Rectangle-path" fill="#3FA9F5" transform="translate(23.712677, 7.113161) rotate(-45.000000) translate(-23.712677, -7.113161) " x="18.8986165" y="2.30965847" width="9.62812024" height="9.60700592"></rect>
+                </g>
+                <g id="Group" stroke-linecap="round" stroke-linejoin="round" transform="translate(10.983189, 28.680725)" stroke="#7AC943" stroke-width="3.20937341">
+                    <path d="M0,3.3426281 L2.13958227,5.47751831" id="Shape"></path>
+                    <path d="M7.48853797,0.140292785 L2.13958227,5.47751831" id="Shape"></path>
+                </g>
+                <g id="Group" stroke-linecap="round" stroke-linejoin="round" transform="translate(10.983189, 43.624956)" stroke="#7AC943" stroke-width="3.20937341">
+                    <path d="M0,3.3426281 L2.13958227,5.47751831" id="Shape"></path>
+                    <path d="M7.48853797,0.140292785 L2.13958227,5.47751831" id="Shape"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
