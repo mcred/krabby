@@ -238,9 +238,8 @@ const Caption = styled.caption`
 `;
 const FooterLinks = styled.div`
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-end;
   align-items: center;
-  grid-template-columns: 1fr;
   height: 200px;
 `;
 const FooterBottom = styled.div`
@@ -341,7 +340,7 @@ class App extends React.Component {
           <FooterLinks>
             <Link to="/freshtix">
               <button className="btn--textOnly">
-                <FaChevronLeft size="1.45em" /> <span className="btn__text">Next Project</span>
+                <span className="btn__text">Next Project </span><FaChevronRight size="1.45em" />
               </button>
             </Link>
           </FooterLinks>
