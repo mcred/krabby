@@ -47,14 +47,14 @@ module.exports = {
       },
     },
     {
-      resolve: `gatsby-plugin-google-fonts`,
+      resolve: 'gatsby-plugin-google-fonts',
       options: {
         fonts: [
-          `Abril Fatface`,
-          `Oswald\:400,700` // you can also specify font weights and styles
+          'Abril Fatface',
+          'Oswald\:400,700'
         ]
       }
-    }
+    },
     /* Must be placed at the end */
     'gatsby-plugin-offline',
     'gatsby-plugin-netlify',
