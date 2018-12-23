@@ -79,10 +79,10 @@ textarea {
   padding: 2rem 0 0 1rem;
 }
 
-button {
-  background: rgba(255,255,255,0.1);
-  border-radius: 48px;
-}
+// button {
+//   background: rgba(255,255,255,0.1);
+//   border-radius: 48px;
+// }
 
 
 
@@ -268,9 +268,18 @@ $button-text-color: $white;
   border: none;
   transition: 0.2s ease-in-out;
   cursor: pointer;
-
+  background-color: #FFF;
+  text-decoration: none;
   &:hover {
     color: #D81159;
+    text-decoration: none;
+  }
+  &__disabled {
+    color: #DAD9DA;
+    font-size: .5rem;
+    &:hover {
+      color: #DAD9DA;
+    }
   }
 }
 

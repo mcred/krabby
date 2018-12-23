@@ -96,13 +96,14 @@ const ProjectHero = styled.div`
                        "Logo Image"
                        "Title Image"
                        "Description Image"
+                       "CTA Image"
                        ". Image";
   @media (max-width: 900px) {
    grid-template-columns: 1fr;
-   grid-template-rows: 3rem repeat(4, auto) 3rem;
+   grid-template-rows: 3rem repeat(5, auto) 3rem;
    grid-gap: 0;
    justify-items: center;
-   grid-template-areas: "." "Logo" "Title" "Image" "Description" ".";
+   grid-template-areas: "." "Logo" "Title" "Image" "Description" "CTA" ".";
   }
 `;
 const Bubbles = styled.div``;
@@ -114,6 +115,9 @@ const ProjectCardTitle = styled.h4`
   ${tw('text-white uppercase')};
   text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
   grid-area: Title;
+  @media (max-width: 900px) {
+    text-align: center;
+  }
 `;
 const ProjectCardDescription = styled.p`
   ${tw('text-white')};
@@ -248,6 +252,9 @@ const FooterLinks = styled.div`
   align-items: center;
   grid-template-columns: 1fr;
   height: 200px;
+  @media (max-width: 768px) {
+    height: 100px;
+  }
 `;
 const FooterBottom = styled.div`
   display: grid;
@@ -256,6 +263,19 @@ const FooterBottom = styled.div`
   align-items: center;
   @media (max-width: 680px) {
     grid-template-rows: 4rem;
+  }
+`;
+const MobileContact = styled.div`
+  @media (max-width: 767px) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 140px;
+    margin-top: 4rem;
+    border-bottom: 2px solid #CCC;
+  }
+  @media (min-width: 768px) {
+    display: none;
   }
 `;
 
@@ -299,11 +319,11 @@ class App extends React.Component {
                 <HeroFreshtix><img src={freshtixshottt} className="shottt-freshtix" /></HeroFreshtix>
                 <img src={logofreshtix} style={{ gridArea: 'Logo' }} />
                 <ProjectCardTitle>PRODUCT DESIGN, MOBILE APP DESIGN, UI & UX, PROTOTYPING</ProjectCardTitle>
-                <ProjectCardDescription>FreshTix makes is easier to sell tickets online with their free ticketing software.<br />
-                <ProjectCardCTA>
+                <ProjectCardDescription>FreshTix makes is easier to sell tickets online with their free ticketing software.
+                </ProjectCardDescription>
+                <ProjectCardCTA style={{ gridArea: 'CTA' }}>
                   <a href="https://projects.invisionapp.com/share/23EEA8BQG#/screens/" className="hero__cta"><img src={invision} alt="InVision" className="cta__icon" /> View Prototype</a>
                 </ProjectCardCTA>
-                </ProjectCardDescription>
               </ProjectHero>
             </Container>
           </OceanBG>
@@ -355,21 +375,22 @@ class App extends React.Component {
               <img src={ftscreens02} style={{ gridArea: 'InterfaceImage', maxWidth: '100%' }} />
             </InterfaceImage>
           </ProjectContentBottomAlt>
-          <FooterLinks>
-            <Link to="/topaz">
-              <button className="btn--textOnly">
-                <FaChevronLeft size="1.45em" /> <span className="btn__text">Prev Project</span>
-              </button>
+          <MobileContact>
+            <Link to="/contact">
+              <ButtonCTA className="btn btn--actionjackson"><span className="btn__text">Contact Me</span> <FaPaperPlane size="1.45em" /></ButtonCTA>
             </Link>
-            <Link to="/robit">
-              <button className="btn--textOnly">
-                <span className="btn__text">Next Project</span> <FaChevronRight size="1.45em" />
-              </button>
+          </MobileContact>
+          <FooterLinks>
+            <Link to="/topaz" className="btn--textOnly">
+              <FaChevronLeft size="1.45em" /><span className="btn__text"> Prev Project</span>
+            </Link>
+            <Link to="/robit" className="btn--textOnly">
+              <span className="btn__text">Next Project </span><FaChevronRight size="1.45em" />
             </Link>
           </FooterLinks>
         </WhiteContainer>
         <FooterBottom>
-          <p style={{ color: 'white', fontSize: '.85em' }}>Copyright &copy; 2019 trice.design</p>
+          <p style={{ color: 'white', fontSize: '.65em' }}>Copyright &copy; 2019 trice.design</p>
         </FooterBottom>
       </div>
     )

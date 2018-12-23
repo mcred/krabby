@@ -93,13 +93,14 @@ const ProjectHero = styled.div`
                        "Logo Image"
                        "Title Image"
                        "Description Image"
+                       "CTA Image"
                        ". Image";
   @media (max-width: 900px) {
    grid-template-columns: 1fr;
-   grid-template-rows: 3rem repeat(4, auto) 3rem;
+   grid-template-rows: 3rem repeat(5, auto) 3rem;
    grid-gap: 0;
    justify-items: center;
-   grid-template-areas: "." "Logo" "Title" "Image" "Description" ".";
+   grid-template-areas: "." "Logo" "Title" "Image" "Description" "CTA" ".";
   }
 `;
 const Bubbles = styled.div``;
@@ -111,6 +112,9 @@ const ProjectCardTitle = styled.h4`
   ${tw('text-white uppercase')};
   text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
   grid-area: Title;
+  @media (max-width: 900px) {
+    text-align: center;
+  }
 `;
 const ProjectCardDescription = styled.p`
   ${tw('text-white')};
@@ -231,16 +235,23 @@ const ProjectBottomText = styled.div`
     margin-top: 0;
   }
 `;
-const Caption = styled.caption`
+const Caption = styled.p`
   text-align: left;
   font-size: .65rem;
   display: block;
+  width: 8rem;
+  @media (max-width: 800px) {
+    width: 100%;
+  }
 `;
 const FooterLinks = styled.div`
   display: flex;
-  justify-content: flex-end;
+  justify-content: space-between;
   align-items: center;
   height: 200px;
+  @media (max-width: 768px) {
+    height: 100px;
+  }
 `;
 const FooterBottom = styled.div`
   display: grid;
@@ -249,6 +260,19 @@ const FooterBottom = styled.div`
   align-items: center;
   @media (max-width: 680px) {
     grid-template-rows: 4rem;
+  }
+`;
+const MobileContact = styled.div`
+  @media (max-width: 767px) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 140px;
+    margin-top: 4rem;
+    border-bottom: 2px solid #CCC;
+  }
+  @media (min-width: 768px) {
+    display: none;
   }
 `;
 
@@ -292,11 +316,11 @@ class App extends React.Component {
                 <HeroPayscape><img src={topazshottt} className="shottt-topaz" /></HeroPayscape>
                 <img src={logotopaz} style={{ gridArea: 'Logo' }} />
                 <ProjectCardTitle>WEB DESIGN, UX DEVELOPMENT</ProjectCardTitle>
-                <ProjectCardDescription>Topaz is a blockchain SaaS product. Working alongside a talented branding designer, I designed and developed a single page static site running on <span>Gatsby.js</span> and React.<br />
-                <ProjectCardCTA>
+                <ProjectCardDescription>Topaz is a blockchain SaaS product. Working alongside a talented branding designer, I designed and developed a single page static site running on <span>Gatsby.js</span> and React.
+                </ProjectCardDescription>
+                <ProjectCardCTA style={{ gridArea: 'CTA' }} >
                   <a href="https://topaz.io" className="hero__cta"> Check out the site <FaChevronRight size="1.45em" style={{ marginLeft: '.5rem' }} /></a>
                 </ProjectCardCTA>
-                </ProjectCardDescription>
               </ProjectHero>
             </Container>
           </OceanBG>
@@ -337,16 +361,22 @@ class App extends React.Component {
               <img src={siteflow} className="topaz_siteflow" alt="Site flow" />
             </ProjectBottomImage>
           </ProjectContentBottom>
+          <MobileContact>
+            <Link to="/contact">
+              <ButtonCTA className="btn btn--actionjackson"><span className="btn__text">Contact Me</span> <FaPaperPlane size="1.45em" /></ButtonCTA>
+            </Link>
+          </MobileContact>
           <FooterLinks>
-            <Link to="/freshtix">
-              <button className="btn--textOnly">
-                <span className="btn__text">Next Project </span><FaChevronRight size="1.45em" />
-              </button>
+            <a className="btn--textOnly__disabled">
+              <FaChevronLeft size="1.45em" /><span className="btn__text"> Prev Project</span>
+            </a>
+            <Link to="/freshtix" className="btn--textOnly">
+              <span className="btn__text">Next Project </span><FaChevronRight size="1.45em" />
             </Link>
           </FooterLinks>
         </WhiteContainer>
         <FooterBottom>
-          <p style={{ color: 'white', fontSize: '.85em' }}>Copyright &copy; 2019 trice.design</p>
+          <p style={{ color: 'white', fontSize: '.65em' }}>Copyright &copy; 2019 trice.design</p>
         </FooterBottom>
       </div>
     )

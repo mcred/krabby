@@ -99,13 +99,14 @@ const ProjectHero = styled.div`
                        "Logo Image"
                        "Title Image"
                        "Description Image"
+                       "CTA Image"
                        ". Image";
   @media (max-width: 900px) {
    grid-template-columns: 1fr;
-   grid-template-rows: 3rem repeat(4, auto) 3rem;
+   grid-template-rows: 3rem repeat(5, auto) 3rem;
    grid-gap: 0;
    justify-items: center;
-   grid-template-areas: "." "Logo" "Title" "Image" "Description" ".";
+   grid-template-areas: "." "Logo" "Title" "Image" "Description" "CTA" ".";
   }
 `;
 const Bubbles = styled.div``;
@@ -117,6 +118,9 @@ const ProjectCardTitle = styled.h4`
   ${tw('text-white uppercase')};
   text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
   grid-area: Title;
+  @media (max-width: 900px) {
+    text-align: center;
+  }
 `;
 const ProjectCardDescription = styled.p`
   ${tw('text-white')};
@@ -232,6 +236,9 @@ const FooterLinks = styled.div`
   align-items: center;
   grid-template-columns: 1fr;
   height: 200px;
+  @media (max-width: 768px) {
+    height: 100px;
+  }
 `;
 const FooterBottom = styled.div`
   display: grid;
@@ -240,6 +247,19 @@ const FooterBottom = styled.div`
   align-items: center;
   @media (max-width: 680px) {
     grid-template-rows: 4rem;
+  }
+`;
+const MobileContact = styled.div`
+  @media (max-width: 767px) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 140px;
+    margin-top: 4rem;
+    border-bottom: 2px solid #CCC;
+  }
+  @media (min-width: 768px) {
+    display: none;
   }
 `;
 
@@ -283,11 +303,10 @@ class App extends React.Component {
                 <HeroPayscape><img src={payscapeshottt} className="shottt-payscape" /></HeroPayscape>
                 <img src={logopayscape} style={{ gridArea: 'Logo' }} />
                 <ProjectCardTitle>WEBSITE DESIGN, UI & UX, WORDPRESS DESIGN</ProjectCardTitle>
-                <ProjectCardDescription>Payscape provides small to mid-size business owners with financial technologies that allow them to accept payments, streamline their business, and increase cash flow.<br />
-                <ProjectCardCTA>
+                <ProjectCardDescription>Payscape provides small to mid-size business owners with financial technologies that allow them to accept payments, streamline their business, and increase cash flow.</ProjectCardDescription>
+                <ProjectCardCTA style={{ gridArea: 'CTA' }}>
                   <a href="https://payscape.com" className="hero__cta"> Check out the site <FaChevronRight size="1.45em" style={{ marginLeft: '.5rem' }} /></a>
                 </ProjectCardCTA>
-                </ProjectCardDescription>
               </ProjectHero>
             </Container>
           </OceanBG>
@@ -337,16 +356,22 @@ class App extends React.Component {
               <img src={screens02} className="payscape_screens02" style={{ gridArea: 'ProjectBottomImage' }} />
             </ProjectBottomImage>
           </ProjectContentBottom>
-          <FooterLinks>
-            <Link to="/robit">
-              <button className="btn--textOnly">
-                <FaChevronLeft size="1.45em" /> <span className="btn__text">Prev Project</span>
-              </button>
+          <MobileContact>
+            <Link to="/contact">
+              <ButtonCTA className="btn btn--actionjackson"><span className="btn__text">Contact Me</span> <FaPaperPlane size="1.45em" /></ButtonCTA>
             </Link>
+          </MobileContact>
+          <FooterLinks>
+            <Link to="/robit" className="btn--textOnly">
+              <FaChevronLeft size="1.45em" /><span className="btn__text"> Prev Project</span>
+            </Link>
+            <a className="btn--textOnly__disabled">
+              <span className="btn__text">Next Project </span><FaChevronRight size="1.45em" />
+            </a>
           </FooterLinks>
         </WhiteContainer>
         <FooterBottom>
-          <p style={{ color: 'white', fontSize: '.85em' }}>Copyright &copy; 2019 trice.design</p>
+          <p style={{ color: 'white', fontSize: '.65em' }}>Copyright &copy; 2019 trice.design</p>
         </FooterBottom>
       </div>
     )
