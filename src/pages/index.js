@@ -243,7 +243,7 @@ class App extends React.Component {
           <Container>
             <ProjectWrapper className="project__grid--imageRight">
               <img src={topazshottt} className="shottt-topaz" />
-              <ProjectCardTitle className="project__title">UX DESIGN, FRONT END DEVELOPMENT</ProjectCardTitle>
+              <ProjectCardTitle className="project__title">WEB DESIGN, UX DEVELOPMENT</ProjectCardTitle>
               <ProjectCardDescription className="project__description">
                 <img src={logotopaz} className="project__logo" /><br />
                 Topaz is a blockchain SaaS product. Working alongside a talented branding designer, I designed and developed a single page static site running on <span>Gatsby.js</span> and React.<br />

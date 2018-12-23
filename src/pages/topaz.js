@@ -11,18 +11,12 @@ import topazshottt from '../images/shottt-topaz.png';
 import dribbble from '../images/icon-dribbble.svg';
 import instagram from '../images/icon-instagram.svg';
 import linkedin from '../images/icon-linkedin.svg';
-import illustrator from '../images/icon-illustrator.png';
+import icongatsby from '../images/icon-gatsby.png';
 import sketch from '../images/icon-sketch.png';
 import logotd from '../images/logo-td.svg';
 import sunrays from '../images/sunraysfromgod.png';
-import screens01 from '../images/payscape-screens-1.png';
-import screens02 from '../images/payscape-screens-2.png';
-import iconwebsites from '../images/icon-websites-circlebg.svg';
-import iconmobile from '../images/icon-mobile-circlebg.svg';
-import iconpos from '../images/icon-pos-circlebg.svg';
-import iconinvoice from '../images/icon-invoice-circlebg.svg';
-import iconregistration from '../images/icon-registration-circlebg.svg';
-import iconecommerce from '../images/icon-ecommerce-circlebg.svg';
+import screensketch from '../images/screens-sketch-topaz.png';
+import siteflow from '../images/siteflow-topaz.svg';
 import '../assets/css/krabby.scss';
 import { FaChevronLeft } from 'react-icons/fa';
 import { FaChevronRight } from 'react-icons/fa';
@@ -148,24 +142,35 @@ const ProjectContentMiddle = styled.div`
   display: grid;
   margin-top: 3rem;
   grid-gap: 2rem;
-  grid-template-columns: 2rem 40% 1fr 2rem;
+  grid-template-columns: 4rem 40% 1fr 4rem;
   grid-template-rows: 1fr;
-  grid-template-areas: ". ProjectMiddleText ProjectMiddleImage .";
+  grid-template-areas: ". ProjectMiddleImageTop ProjectMiddleText .";
+  @media (max-width: 1330px) {
+    grid-template-columns: 50% 1fr;
+    grid-template-rows: 1fr 1fr;
+    grid-template-areas: "ProjectMiddleImageTop ProjectMiddleText";
+  }
   @media (max-width: 800px) {
     grid-template-columns: 1fr;
     grid-template-rows: auto;
-    grid-template-areas: "ProjectMiddleText" "ProjectMiddleImage";
+    grid-template-areas: "ProjectMiddleText" "ProjectMiddleImageTop";
   }
 `;
 const ProjectMiddleText = styled.div`
   grid-area: ProjectMiddleText;
-  margin-top: -1rem;
+  margin-top: 4rem;
   @media (max-width: 1200px) {
+    margin-top: 2rem;
+  }
+  @media (max-width: 800px) {
     margin-top: 0;
   }
 `;
-const ProjectMiddleImage = styled.div`
-  grid-area: ProjectMiddleImage;
+const ProjectMiddleImageTop = styled.div`
+  grid-area: ProjectMiddleImageTop;
+`;
+const ProjectMiddleImageBottom = styled.div`
+  grid-area: ProjectMiddleImageBottom;
 `;
 const WorkflowUL = styled.ul`
   list-style-type: none;
@@ -205,9 +210,9 @@ const ProjectContentBottom = styled.div`
   display: grid;
   margin-top: 4rem;
   grid-gap: 2rem;
-  grid-template-columns: 2rem 40% 1fr 2rem;
+  grid-template-columns: 40% 1fr;
   grid-template-rows: 1fr;
-  grid-template-areas: ". ProjectBottomImage ProjectBottomText .";
+  grid-template-areas:  "ProjectBottomText ProjectBottomImage";
   align-content: center;
   @media (max-width: 800px) {
     margin-top: 2rem;
@@ -225,6 +230,11 @@ const ProjectBottomText = styled.div`
   @media (max-width: 680px) {
     margin-top: 0;
   }
+`;
+const Caption = styled.caption`
+  text-align: left;
+  font-size: .65rem;
+  display: block;
 `;
 const FooterLinks = styled.div`
   display: flex;
@@ -282,10 +292,10 @@ class App extends React.Component {
               <ProjectHero>
                 <HeroPayscape><img src={topazshottt} className="shottt-topaz" /></HeroPayscape>
                 <img src={logotopaz} style={{ gridArea: 'Logo' }} />
-                <ProjectCardTitle>WEBSITE DESIGN, UI & UX, WORDPRESS DESIGN</ProjectCardTitle>
-                <ProjectCardDescription>Payscape provides small to mid-size business owners with financial technologies that allow them to accept payments, streamline their business, and increase cash flow.<br />
+                <ProjectCardTitle>WEB DESIGN, UX DEVELOPMENT</ProjectCardTitle>
+                <ProjectCardDescription>Topaz is a blockchain SaaS product. Working alongside a talented branding designer, I designed and developed a single page static site running on <span>Gatsby.js</span> and React.<br />
                 <ProjectCardCTA>
-                  <a href="https://payscape.com" className="hero__cta"> Check out the site <FaChevronRight size="1.45em" style={{ marginLeft: '.5rem' }} /></a>
+                  <a href="https://topaz.io" className="hero__cta"> Check out the site <FaChevronRight size="1.45em" style={{ marginLeft: '.5rem' }} /></a>
                 </ProjectCardCTA>
                 </ProjectCardDescription>
               </ProjectHero>
@@ -297,50 +307,41 @@ class App extends React.Component {
         <WhiteContainer>
           <ProjectContentTop>
             <Approach>
-              <ContentTitle>Approach</ContentTitle>
-              <p>The old Payscape.com was in need of a redesign and restructure. The old look was getting stale, lacked depth, and was showing it's age.</p>
-              <p>Also, even though the site was built in a CMS, it was not easy for users to make changes to the content. The site needed a visual overhaul as well as a more user-friendly content management system.</p>
+              <ContentTitle>Challenge</ContentTitle>
+              <p>Topaz needed a marketing site to announce their upcoming launch. This site needed to be scalable and play well with the Topaz product. Gatsby.js was a perfect fit.</p>
             </Approach>
             <Workflow>
               <ContentTitle>Workflow</ContentTitle>
               <WorkflowUL>
                 <WorkflowLI><img src={sketch} alt="Sketch" className="workflow__icon" />Sketch</WorkflowLI>
-                <WorkflowLI><img src={illustrator} alt="Illustrator" className="workflow__icon" />Illustrator</WorkflowLI>
+                <WorkflowLI><img src={icongatsby} alt="Gatsby" className="workflow__icon" />Gatsby.js</WorkflowLI>
               </WorkflowUL>
             </Workflow>
           </ProjectContentTop>
-          <ContentTitle>New Iconography</ContentTitle>
-          <ProjectContentGrid>
-            <img src={iconwebsites} alt="Websites" className="iconography" />
-            <img src={iconmobile} alt="Mobile" className="iconography" />
-            <img src={iconpos} alt="POS" className="iconography" />
-            <img src={iconinvoice} alt="Invoice" className="iconography" />
-            <img src={iconregistration} alt="Registration" className="iconography" />
-            <img src={iconecommerce} alt="Ecommerce" className="iconography" />
-          </ProjectContentGrid>
+
           <ProjectContentMiddle>
             <ProjectMiddleText>
               <ContentTitle>Process</ContentTitle>
-              <p>I discovered current pain points by meeting with marketing and collecting feedback from various departments throughout the company.</p>
-              <p>As I began to look at the existing content as a whole I compared the sitemap against analytics and heat map data in order to identify opportunities to re-organize and streamline the content.</p>
+              <p>We had a tight turnaround on this one and had to hit a hard deadline launch date. No problem. I partnered with a branding designer who created the logo and overall look and feel while I concurrently designed and developed the site.</p>
+              <Caption>Pages courtesy of Topaz Brand Style Guide, designed by <a href="https://dribbble.com/nsherrill">@NSherrill</a></Caption>
             </ProjectMiddleText>
-            <ProjectMiddleImage>
-              <img src={screens01} className="payscape_screens01" style={{ gridArea: 'ProjectMiddleImage' }} />
-            </ProjectMiddleImage>
+            <ProjectMiddleImageTop>
+              <img src={screensketch} className="topaz_screens" />
+            </ProjectMiddleImageTop>
           </ProjectContentMiddle>
           <ProjectContentBottom>
             <ProjectBottomText>
-              <ContentTitle>Solution</ContentTitle>
-              <p>From a visual standpoint I wanted to bring the look and feel up to modern trends. I got away from the full screen video background to a cleaner illustration style and lifestyle photo style.</p>
+              <ContentTitle>Results</ContentTitle>
+              <p>We did it. The site went live prior to launch and is ready to scale.</p><p>Development next steps include scoping out large documentation style site for the API.</p>
             </ProjectBottomText>
             <ProjectBottomImage>
-              <img src={screens02} className="payscape_screens02" style={{ gridArea: 'ProjectBottomImage' }} />
+              <img src={siteflow} className="topaz_siteflow" alt="Site flow" />
             </ProjectBottomImage>
           </ProjectContentBottom>
           <FooterLinks>
-            <Link to="/robit">
+            <Link to="/freshtix">
               <button className="btn--textOnly">
-                <FaChevronLeft size="1.45em" /> <span className="btn__text">Prev Project</span>
+                <FaChevronLeft size="1.45em" /> <span className="btn__text">Next Project</span>
               </button>
             </Link>
           </FooterLinks>
