@@ -37,6 +37,13 @@ const HeaderContainer = styled.div`
   }
 `;
 const SunRaysfromGod = styled(ParallaxLayer)``;
+
+const AnglerLayer = styled(ParallaxLayer)`
+  @media (max-width: 900px) {
+    display: none;
+  }
+`;
+
 const Angler = styled.div`
   position: relative;
   left: -2rem;
@@ -313,12 +320,12 @@ class App extends React.Component {
           </Container>
         </ParallaxLayer>
 
-        <ParallaxLayer offset={4.8} speed={-0.15}>
+        <AnglerLayer offset={4.8} speed={-0.15}>
           <Angler className={'anglerFish'}>
             <img className="bottom" src={anglerdark} />
             <img className="top" src={anglerbright} />
           </Angler>
-        </ParallaxLayer>
+        </AnglerLayer>
 
         <ParallaxLayer offset={5} speed={-0}>
           <Container>
