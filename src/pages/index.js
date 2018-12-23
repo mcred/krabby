@@ -367,7 +367,7 @@ class App extends React.Component {
               <BigTitle className="item--contained">
                 My name is Matt Trice.
               </BigTitle>
-              <Subtitle className="item--contained">I am an Atlanta based UX, prototype, web designer, front end development, from concept to completion from design to deployment full life cycle of the design.</Subtitle>
+              <Subtitle className="item--contained">I am an Atlanta based designer specializing in UI and Web Design, UX Development, and prototyping. From concept to completion, I love having a hand in the full life cycle of an idea.</Subtitle>
               <ButtonCTA className="item--contained btn btn--actionjackson" onClick={() => this.parallax.scrollTo(5)}><span className="btn__text">Let's make something cool</span> <FaChevronRight size="1.45em" /></ButtonCTA>
             </Hero>
           </Container>
