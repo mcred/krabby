@@ -51,6 +51,7 @@ module.exports = {
       options: {
         fonts: [
           'Abril Fatface',
+          'Source Serif Pro\:400,700',
           'Oswald\:400,700'
         ]
       }

@@ -47,7 +47,8 @@ const inputStyle = {
   },
   input: {
     ...inputStyles,
-    fontFamily: 'Abril Fatface, cursive',
+    fontFamily: 'Source Serif Pro, serif',
+    fontWeight: '700',
     borderBottomWidth: '2',
     borderColor: '#D81159',
     width: '100%',
@@ -63,7 +64,8 @@ const inputStyle = {
   },
   span: {
     ...spanStyles,
-    fontFamily: 'Abril Fatface, cursive',
+    fontFamily: 'Oswald, sans-serif',
+    fontWeight: '700',
     fontSize: '.85rem',
     top: '1rem',
     left: '1rem'
