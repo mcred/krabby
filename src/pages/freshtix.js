@@ -382,10 +382,10 @@ class App extends React.Component {
           </MobileContact>
           <FooterLinks>
             <Link to="/topaz" className="btn--textOnly">
-              <FaChevronLeft size="1.45em" /><span className="btn__text"> Prev Project</span>
+              <FaChevronLeft size="1.45em" />Prev Project
             </Link>
             <Link to="/robit" className="btn--textOnly">
-              <span className="btn__text">Next Project </span><FaChevronRight size="1.45em" />
+              Next Project<FaChevronRight size="1.45em" />
             </Link>
           </FooterLinks>
         </WhiteContainer>

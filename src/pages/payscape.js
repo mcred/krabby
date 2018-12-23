@@ -363,10 +363,10 @@ class App extends React.Component {
           </MobileContact>
           <FooterLinks>
             <Link to="/robit" className="btn--textOnly">
-              <FaChevronLeft size="1.45em" /><span className="btn__text"> Prev Project</span>
+              <FaChevronLeft size="1.45em" />Prev Project
             </Link>
             <a className="btn--textOnly__disabled">
-              <span className="btn__text">Next Project </span><FaChevronRight size="1.45em" />
+              Next Project<FaChevronRight size="1.45em" />
             </a>
           </FooterLinks>
         </WhiteContainer>

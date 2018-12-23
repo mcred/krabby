@@ -368,10 +368,10 @@ class App extends React.Component {
           </MobileContact>
           <FooterLinks>
             <a className="btn--textOnly__disabled">
-              <FaChevronLeft size="1.45em" /><span className="btn__text"> Prev Project</span>
+              <FaChevronLeft size="1.45em" />Prev Project
             </a>
             <Link to="/freshtix" className="btn--textOnly">
-              <span className="btn__text">Next Project </span><FaChevronRight size="1.45em" />
+              Next Project <FaChevronRight size="1.45em" />
             </Link>
           </FooterLinks>
         </WhiteContainer>

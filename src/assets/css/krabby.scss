@@ -261,24 +261,42 @@ $button-text-color: $white;
 }
 
 .btn--textOnly {
+  display: flex;
   color: #202020;
-  font-size: .5rem;
-  margin: 2em 0.5em;
-  padding: 1.85em 2.5em;
+  // margin: 2em 0.5em;
+  // padding: 1.85em 2.5em;
+  font-size: .85rem;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 700;
   border: none;
   transition: 0.2s ease-in-out;
   cursor: pointer;
-  background-color: #FFF;
   text-decoration: none;
   &:hover {
     color: #D81159;
     text-decoration: none;
   }
+  @media (max-width: 900px) {
+    font-size: .65rem;
+  }
   &__disabled {
+    display: flex;
     color: #DAD9DA;
-    font-size: .5rem;
+    // margin: 2em 0.5em;
+    // padding: 1.85em 2.5em;
+    font-size: .85rem;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 700;
+    border: none;
+    transition: 0.2s ease-in-out;
+    cursor: pointer;
+    text-decoration: none;
     &:hover {
       color: #DAD9DA;
+      text-decoration: none;
+    }
+    @media (max-width: 900px) {
+      font-size: .65rem;
     }
   }
 }
