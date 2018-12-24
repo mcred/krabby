@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { Helmet } from 'react-helmet';
 import { Parallax, ParallaxLayer } from 'react-spring/dist/addons';
 import { Link } from "gatsby";
 import { rotate, UpBubblesOne, UpBubblesOneTop, UpBubblesTwo, UpBubblesTwoTop, UpBubblesThree, UpBubblesThreeTop, UpDown, UpDownWide, waveAnimation } from '../styles/animations';
@@ -270,7 +271,10 @@ class App extends React.Component {
   render() {
     return (
       <div style={{ display: 'grid', overflowX: 'hidden', gridGap: '0' }}>
-
+        <Helmet>
+          <title>Payscape | Matt Trice Design | trice.design | UX Design, Front End Development</title>
+          <meta name="description" content="The Payscape site needed a visual overhaul as well as a more user-friendly content management system." />
+        </Helmet>
         <HeaderWrapper>
           <OceanBG>
             <HeaderContainer className="header__container">

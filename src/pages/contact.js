@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { Helmet } from 'react-helmet';
 import { Parallax, ParallaxLayer } from 'react-spring/dist/addons';
 import { Link } from "gatsby";
 import SVG from '../components/SVG';
@@ -101,6 +102,10 @@ class App extends React.Component {
   render() {
     return (
       <Parallax ref={ref => (this.parallax = ref)} pages={1.5}>
+        <Helmet>
+          <title>Contact Me | trice.design | UX Design, Front End Development</title>
+          <meta name="description" content="I am an Atlanta based designer specializing in UI and Web Design, UX Development, and prototyping." />
+        </Helmet>
         <OceanBG offset={0} speed={0} factor={2} className={'oceanbg'}   />
         <ParallaxLayer offset={1} speed={0.1} factor={2}>
           <UpBubblesOne>

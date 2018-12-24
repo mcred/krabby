@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { Helmet } from 'react-helmet';
 import { Parallax, ParallaxLayer } from 'react-spring/dist/addons';
 import { Link } from "gatsby";
 import { rotate, UpBubblesOne, UpBubblesOneTop, UpBubblesTwo, UpBubblesTwoTop, UpBubblesThree, UpBubblesThreeTop, UpDown, UpDownWide, waveAnimation } from '../styles/animations';
@@ -283,6 +284,10 @@ class App extends React.Component {
   render() {
     return (
       <div style={{ display: 'grid', overflowX: 'hidden', gridGap: '0' }}>
+        <Helmet>
+          <title>Topaz.io | Matt Trice Design | trice.design | UX Design, Front End Development</title>
+          <meta name="description" content="Topaz needed a marketing site to announce their upcoming launch. This site needed to be scalable and play well with the Topaz product." />
+        </Helmet>
 
         <HeaderWrapper>
           <OceanBG>

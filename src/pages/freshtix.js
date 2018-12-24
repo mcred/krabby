@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { Helmet } from 'react-helmet';
 import { Parallax, ParallaxLayer } from 'react-spring/dist/addons';
 import { Link } from "gatsby";
 import { rotate, UpBubblesOne, UpBubblesOneTop, UpBubblesTwo, UpBubblesTwoTop, UpBubblesThree, UpBubblesThreeTop, UpDown, UpDownWide, waveAnimation } from '../styles/animations';
@@ -286,7 +287,10 @@ class App extends React.Component {
   render() {
     return (
       <div style={{ display: 'grid', overflowX: 'hidden', gridGap: '0' }}>
-
+        <Helmet>
+          <title>Freshtix | Matt Trice Design | trice.design | UX Design, Front End Development</title>
+          <meta name="description" content="This project was a redesign and rebuild of their attendee check in app." />
+        </Helmet>
         <HeaderWrapper>
           <OceanBG>
             <HeaderContainer className="header__container">
