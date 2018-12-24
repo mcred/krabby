@@ -3,6 +3,8 @@ import ReactDOM from 'react-dom';
 import { Helmet } from 'react-helmet';
 import { Parallax, ParallaxLayer } from 'react-spring/dist/addons';
 import { Link } from "gatsby";
+import { Link, graphql } from 'gatsby';
+import Img from 'gatsby-image';
 import SVG from '../components/SVG';
 import '../styles/global';
 import styled from 'react-emotion';
@@ -392,3 +394,15 @@ class App extends React.Component {
 }
 
 export default App;
+
+export const pageQuery = graphql`
+  query {
+    imageOne: file(relativePath: { eq: "sunraysfromgod.png" }) {
+      childImageSharp {
+        fluid(maxWidth: 1000) {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
+  }
+`
