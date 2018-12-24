@@ -2,8 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { Helmet } from 'react-helmet';
 import { Parallax, ParallaxLayer } from 'react-spring/dist/addons';
-import { Link, graphql } from 'gatsby';
-import Img from 'gatsby-image';
+
 import SVG from '../components/SVG';
 import '../styles/global';
 import styled from 'react-emotion';
@@ -29,7 +28,8 @@ import '../assets/css/krabby.scss';
 import { FaChevronRight } from 'react-icons/fa';
 import { FaPaperPlane } from 'react-icons/fa';
 import FloatingLabel, { floatingStyles, focusStyles, inputStyles, labelStyles, spanStyles, buttonStyles, textareaStyles } from 'floating-label-react';
-
+import { Link, graphql } from 'gatsby';
+import Img from 'gatsby-image';
 
 const HeaderContainer = styled.div`
   ${tw('justify-center items-center flex z-50')};
@@ -164,7 +164,9 @@ class App extends React.Component {
           <meta name="description" content="I am an Atlanta based designer specializing in UI and Web Design, UX Development, and prototyping." />
         </Helmet>
         <OceanBG offset={0} speed={0} factor={6} className={'oceanbg'}   />
-        <SunRaysfromGod offset={0} speed={.25} factor={6}  className={'sunrays'} style={{ backgroundSize: 'contain' }} />
+        <SunRaysfromGod offset={0} speed={.25} factor={6}>
+          <Img fluid={this.props.data.imageOne.childImageSharp.fluid} />
+        </SunRaysfromGod>
         <ParallaxLayer offset={0} speed={1}>
           <UpBubblesOneTop>
             <SVG icon="bubble" width={3} left="36%" top="32%" />
@@ -327,8 +329,8 @@ class App extends React.Component {
 
         <AnglerLayer offset={4.8} speed={-0.15}>
           <Angler className={'anglerFish'}>
-            <img className="bottom" src={anglerdark} />
-            <img className="top" src={anglerbright} />
+            <img className="bottom" src={anglerdark} alt="This is a dark Angler Fish" />
+            <img className="top" src={anglerbright} alt="This is an illuminated Angler Fish" />
           </Angler>
         </AnglerLayer>
 
@@ -392,16 +394,16 @@ class App extends React.Component {
   }
 }
 
-export default App;
+export default App
 
 export const pageQuery = graphql`
-  query {
-    imageOne: file(relativePath: { eq: "sunraysfromgod.png" }) {
-      childImageSharp {
-        fluid(maxWidth: 1000) {
-          ...GatsbyImageSharpFluid
-        }
+query {
+imageOne: file(relativePath: { eq: "sunraysfromgod.png" }) {
+  childImageSharp {
+    fluid(maxWidth: 1000) {
+      ...GatsbyImageSharpFluid
       }
     }
   }
+}
 `
