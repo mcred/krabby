@@ -9,9 +9,6 @@ import '../styles/global';
 import styled from 'react-emotion';
 import logorobit from '../images/logo-robit.svg';
 import robitshottt from '../images/shottt-robit.png';
-import dribbble from '../images/icon-dribbble.svg';
-import instagram from '../images/icon-instagram.svg';
-import linkedin from '../images/icon-linkedin.svg';
 import aftereffects from '../images/icon-after-effects.png';
 import framer from '../images/icon-framer.png';
 import illustrator from '../images/icon-illustrator.png';
@@ -24,6 +21,9 @@ import '../assets/css/krabby.scss';
 import { FaChevronLeft } from 'react-icons/fa';
 import { FaChevronRight } from 'react-icons/fa';
 import { FaPaperPlane } from 'react-icons/fa';
+import Navigation from '../components/Navigation';
+
+
 
 
 const HeaderContainer = styled.div`
@@ -72,11 +72,6 @@ const Container = styled.div`
     padding: 0 1rem;
   }
 `;
-const Navigation = styled.div`
-  ${tw('w-full')};
-  padding-bottom:0;
-`;
-const NavContact = styled.a``;
 const ButtonCTA = styled.button``;
 const Hero = styled.div`
   ${tw('w-full')};
@@ -279,29 +274,7 @@ class App extends React.Component {
         <HeaderWrapper>
           <OceanBG>
             <HeaderContainer className="header__container">
-              <Navigation>
-                <ul className="nav__main">
-                  <li>
-                    <Link to="/"><img src={logotd} className="logo__main" /></Link>
-                  </li>
-                  <li style={{ display: 'grid', alignItems: 'center' }}>
-                    <ul className="social-icons">
-                      <li className="contact">
-                        <Link to="/contact">Contact</Link>
-                      </li>
-                      <li><a href="https://dribbble.com/trice" title="Follow me on Dribbble">
-                        <img src={dribbble} className="" alt="Dribbble" /></a>
-                      </li>
-                      <li><a href="https://www.linkedin.com/in/matt-trice-5053b325/" title="Serious as fuck">
-                        <img src={linkedin} className="" alt="LINKED FUCKING IN" /></a>
-                      </li>
-                      <li><a href="https://www.instagram.com/trice.design/" title="Follow me on Instagram">
-                        <img src={instagram} className="" alt="Instagram" /></a>
-                      </li>
-                    </ul>
-                  </li>
-                </ul>
-              </Navigation>
+              <Navigation />
             </HeaderContainer>
             <Container>
               <ProjectHero>
@@ -317,7 +290,6 @@ class App extends React.Component {
           </OceanBG>
           <WhiteSpace />
         </HeaderWrapper>
-
         <WhiteContainer>
           <ProjectContentTop>
             <Approach>

@@ -327,7 +327,6 @@ $button-text-color: $white;
   }
   @media (min-width: 0px) and (max-width: 767px) {
     padding-inline-start: 0px;
-    margin-block-end: 0px;
     li {
       padding: 1em 0 0 0;
     }
@@ -363,15 +362,6 @@ $button-text-color: $white;
     &:hover {
       color: #FFEE00;
     }
-  }
-  // li.contact a::before {
-  //   content: url('../../images/icon-message-in-a-bottle.svg');
-  //   padding:1em;
-  //   position: relative;
-  //   top: 8px;
-  // }
-  li:nth-child(1) {
-  	/*margin-right: auto; applied only to the right*/
   }
 }
 

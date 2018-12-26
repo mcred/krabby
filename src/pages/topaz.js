@@ -8,9 +8,6 @@ import '../styles/global';
 import styled from 'react-emotion';
 import logotopaz from '../images/logo-topaz.svg';
 import topazshottt from '../images/shottt-topaz.png';
-import dribbble from '../images/icon-dribbble.svg';
-import instagram from '../images/icon-instagram.svg';
-import linkedin from '../images/icon-linkedin.svg';
 import icongatsby from '../images/icon-gatsby.png';
 import sketch from '../images/icon-sketch.png';
 import logotd from '../images/logo-td.svg';
@@ -22,6 +19,7 @@ import { FaChevronRight } from 'react-icons/fa';
 import { FaPaperPlane } from 'react-icons/fa';
 import { Link, graphql } from 'gatsby';
 import Img from 'gatsby-image';
+import Navigation from '../components/Navigation';
 
 
 const HeaderContainer = styled.div`
@@ -70,11 +68,8 @@ const Container = styled.div`
     padding: 0 1rem;
   }
 `;
-const Navigation = styled.div`
-  ${tw('w-full')};
-  padding-bottom:0;
-`;
-const NavContact = styled.a``;
+
+
 const ButtonCTA = styled.button``;
 const Hero = styled.div`
   ${tw('w-full')};
@@ -292,29 +287,7 @@ class App extends React.Component {
         <HeaderWrapper>
           <OceanBG>
             <HeaderContainer className="header__container">
-              <Navigation>
-                <ul className="nav__main">
-                  <li>
-                    <Link to="/"><img src={logotd} className="logo__main" /></Link>
-                  </li>
-                  <li style={{ display: 'grid', alignItems: 'center' }}>
-                    <ul className="social-icons">
-                      <li className="contact">
-                        <Link to="/contact">Contact</Link>
-                      </li>
-                      <li><a href="https://dribbble.com/trice" title="Follow me on Dribbble">
-                        <img src={dribbble} className="" alt="Dribbble" /></a>
-                      </li>
-                      <li><a href="https://www.linkedin.com/in/matt-trice-5053b325/" title="Serious as fuck">
-                        <img src={linkedin} className="" alt="LINKED FUCKING IN" /></a>
-                      </li>
-                      <li><a href="https://www.instagram.com/trice.design/" title="Follow me on Instagram">
-                        <img src={instagram} className="" alt="Instagram" /></a>
-                      </li>
-                    </ul>
-                  </li>
-                </ul>
-              </Navigation>
+              <Navigation />
             </HeaderContainer>
             <Container>
               <ProjectHero>
@@ -394,13 +367,13 @@ export default App
 
 export const pageQuery = graphql`
 query {
-imageSunRays: file(relativePath: { eq: "sunraysfromgod.png" }) {
-  childImageSharp {
-    fluid(maxWidth: 1000) {
-      ...GatsbyImageSharpFluid
+  imageSunRays: file(relativePath: { eq: "sunraysfromgod.png" }) {
+    childImageSharp {
+      fluid(maxWidth: 1000) {
+        ...GatsbyImageSharpFluid
+        }
       }
     }
-  }
 imageScreenSketch: file(relativePath: { eq: "screens-sketch-topaz.webp" }) {
   childImageSharp {
     fluid(maxWidth: 1000) {
