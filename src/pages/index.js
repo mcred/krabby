@@ -11,15 +11,10 @@ import logotopaz from '../images/logo-topaz.svg';
 import logofreshtix from '../images/logo-freshtix.svg';
 import logorobit from '../images/logo-robit.svg';
 import logopayscape from '../images/logo-payscape.svg';
-import topazshottt from '../images/shottt-topaz.png';
-import freshtixshottt from '../images/shottt-freshtix.png';
-import robitshottt from '../images/shottt-robit.png';
-import payscapeshottt from '../images/shottt-payscape.png';
 import dribbble from '../images/icon-dribbble.svg';
 import instagram from '../images/icon-instagram.svg';
 import linkedin from '../images/icon-linkedin.svg';
 import logotd from '../images/logo-td.svg';
-import squidsilhouette from '../images/squid-silhouette.png';
 import bottomburm from '../images/bottom-burm.svg';
 import howdy from '../images/howdy.svg';
 import anglerbright from '../images/angler-bright.png';
@@ -218,8 +213,8 @@ class App extends React.Component {
             <SVG icon="bubble" width={3} left="66%" top="21%" />
           </UpBubblesThree>
         </ParallaxLayer>
-        <ParallaxLayer offset={2.2} speed={-0.45} style={{ display: 'grid', justifyContent: 'right' }}>
-          <img src={squidsilhouette} className="squidSilhouette" />
+        <ParallaxLayer offset={2.2} speed={-0.45} style={{ display: 'grid', justifyContent: 'right', height: 'auto' }}>
+          <Img alt={'Giant Squid in the background'} fluid={this.props.data.imageSquidSilhouette.childImageSharp.fluid} className="squid-silhouette" />
         </ParallaxLayer>
         <ParallaxLayer offset={4.4} speed={-0.4} factor={1} className={'background-01'} />
         <ParallaxLayer offset={4} speed={-0.3} factor={2} className={'background--cliffs'}>
@@ -276,7 +271,7 @@ class App extends React.Component {
         <ParallaxLayer offset={2} speed={1}>
           <Container>
             <ProjectWrapper className="project__grid--imageLeft">
-              <img src={freshtixshottt} className="shottt-freshtix" />
+              <Img alt={'Freshtix Designs'} fluid={this.props.data.imageShotttFreshtix.childImageSharp.fluid} className="shottt-freshtix" />
               <ProjectCardTitle className="project__title">PRODUCT DESIGN, MOBILE APP DESIGN, UI & UX, PROTOTYPING</ProjectCardTitle>
               <ProjectCardDescription className="project__description">
                 <img src={logofreshtix} className="project__logo" /><br />
@@ -294,7 +289,7 @@ class App extends React.Component {
         <ParallaxLayer offset={3} speed={1}>
           <Container>
             <ProjectWrapper className="project__grid--imageRight">
-              <img src={robitshottt} className="shottt-robit" />
+              <Img alt={'Robit Designs'} fluid={this.props.data.imageShotttRobit.childImageSharp.fluid} className="shottt-robit" />
               <ProjectCardTitle className="project__title">APP CONCEPT, PRODUCT DESIGN, UI & UX, PROTOTYPE</ProjectCardTitle>
               <ProjectCardDescription className="project__description">
                 <img src={logorobit} className="project__logo" /><br />
@@ -312,7 +307,7 @@ class App extends React.Component {
         <ParallaxLayer offset={4} speed={1}>
           <Container>
             <ProjectWrapper className="project__grid--imageLeft">
-            <img src={payscapeshottt} className="shottt-payscape" />
+            <Img alt={'Payscape Designs'} fluid={this.props.data.imageShotttPayscape.childImageSharp.fluid} className="shottt-payscape" />
               <ProjectCardTitle className="project__title">WEBSITE DESIGN, UI & UX, WORDPRESS DESIGN</ProjectCardTitle>
               <ProjectCardDescription className="project__description">
                 <img src={logopayscape} className="project__logo" /><br />
@@ -406,6 +401,34 @@ imageSunRays: file(relativePath: { eq: "sunraysfromgod.png" }) {
     }
   }
 imageShotttTopaz: file(relativePath: { eq: "shottt-topaz.webp" }) {
+  childImageSharp {
+    fluid(maxWidth: 1000) {
+      ...GatsbyImageSharpFluid
+      }
+    }
+  }
+imageShotttFreshtix: file(relativePath: { eq: "shottt-freshtix.webp" }) {
+  childImageSharp {
+    fluid(maxWidth: 1000) {
+      ...GatsbyImageSharpFluid
+      }
+    }
+  }
+imageShotttRobit: file(relativePath: { eq: "shottt-robit.webp" }) {
+  childImageSharp {
+    fluid(maxWidth: 1000) {
+      ...GatsbyImageSharpFluid
+      }
+    }
+  }
+imageShotttPayscape: file(relativePath: { eq: "shottt-payscape.webp" }) {
+  childImageSharp {
+    fluid(maxWidth: 1000) {
+      ...GatsbyImageSharpFluid
+      }
+    }
+  }
+imageSquidSilhouette: file(relativePath: { eq: "squid-silhouette.webp" }) {
   childImageSharp {
     fluid(maxWidth: 1000) {
       ...GatsbyImageSharpFluid

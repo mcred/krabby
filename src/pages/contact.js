@@ -2,7 +2,6 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { Helmet } from 'react-helmet';
 import { Parallax, ParallaxLayer } from 'react-spring/dist/addons';
-import { Link } from "gatsby";
 import SVG from '../components/SVG';
 import '../styles/global';
 import styled from 'react-emotion';
@@ -12,11 +11,11 @@ import dribbble from '../images/icon-dribbble.svg';
 import instagram from '../images/icon-instagram.svg';
 import linkedin from '../images/icon-linkedin.svg';
 import logotd from '../images/logo-td.svg';
-import squidsilhouette from '../images/squid-silhouette.png';
 import '../assets/css/krabby.scss';
 import { FaPaperPlane } from 'react-icons/fa';
 import FloatingLabel, { floatingStyles, focusStyles, inputStyles, labelStyles, spanStyles, buttonStyles, textareaStyles } from 'floating-label-react';
-
+import { Link, graphql } from 'gatsby';
+import Img from 'gatsby-image';
 
 const HeaderContainer = styled.div`
   ${tw('justify-center items-center flex z-50')};
@@ -141,8 +140,8 @@ class App extends React.Component {
             <SVG icon="bubble" width={3} left="66%" top="21%" />
           </UpBubblesThree>
         </ParallaxLayer>
-        <ParallaxLayer offset={0.35} speed={-0.45} style={{ display: 'grid', justifyContent: 'right' }}>
-          <img src={squidsilhouette} className="squidSilhouette" />
+        <ParallaxLayer offset={0.35} speed={-0.45} style={{ }}>
+          <Img alt={'Giant Squid in the background'} fluid={this.props.data.imageSquidSilhouette.childImageSharp.fluid} className="squid-silhouette" />
         </ParallaxLayer>
         <ParallaxLayer offset={0} speed={1}>
           <HeaderContainer className="header__container">
@@ -189,4 +188,51 @@ class App extends React.Component {
   }
 }
 
-export default App;
+export default App
+
+export const pageQuery = graphql`
+query {
+imageSunRays: file(relativePath: { eq: "sunraysfromgod.png" }) {
+  childImageSharp {
+    fluid(maxWidth: 1000) {
+      ...GatsbyImageSharpFluid
+      }
+    }
+  }
+imageShotttTopaz: file(relativePath: { eq: "shottt-topaz.webp" }) {
+  childImageSharp {
+    fluid(maxWidth: 1000) {
+      ...GatsbyImageSharpFluid
+      }
+    }
+  }
+imageShotttFreshtix: file(relativePath: { eq: "shottt-freshtix.webp" }) {
+  childImageSharp {
+    fluid(maxWidth: 1000) {
+      ...GatsbyImageSharpFluid
+      }
+    }
+  }
+imageShotttRobit: file(relativePath: { eq: "shottt-robit.webp" }) {
+  childImageSharp {
+    fluid(maxWidth: 1000) {
+      ...GatsbyImageSharpFluid
+      }
+    }
+  }
+imageShotttPayscape: file(relativePath: { eq: "shottt-payscape.webp" }) {
+  childImageSharp {
+    fluid(maxWidth: 1000) {
+      ...GatsbyImageSharpFluid
+      }
+    }
+  }
+imageSquidSilhouette: file(relativePath: { eq: "squid-silhouette.webp" }) {
+  childImageSharp {
+    fluid(maxWidth: 1000) {
+      ...GatsbyImageSharpFluid
+      }
+    }
+  }
+}
+`
