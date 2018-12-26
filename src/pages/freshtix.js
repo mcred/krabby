@@ -2,7 +2,6 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { Helmet } from 'react-helmet';
 import { Parallax, ParallaxLayer } from 'react-spring/dist/addons';
-import { Link } from "gatsby";
 import { rotate, UpBubblesOne, UpBubblesOneTop, UpBubblesTwo, UpBubblesTwoTop, UpBubblesThree, UpBubblesThreeTop, UpDown, UpDownWide, waveAnimation } from '../styles/animations';
 import SVG from '../components/SVG';
 import '../styles/global';
@@ -21,6 +20,8 @@ import '../assets/css/krabby.scss';
 import { FaChevronLeft } from 'react-icons/fa';
 import { FaChevronRight } from 'react-icons/fa';
 import { FaPaperPlane } from 'react-icons/fa';
+import { Link, graphql } from 'gatsby';
+import Img from 'gatsby-image';
 import Navigation from '../components/Navigation';
 
 
@@ -292,7 +293,9 @@ class App extends React.Component {
             </HeaderContainer>
             <Container>
               <ProjectHero>
-                <HeroFreshtix><img src={freshtixshottt} className="shottt-freshtix" /></HeroFreshtix>
+                <HeroFreshtix>
+                  <Img alt={'Freshtix Designs'} fluid={this.props.data.imageShotttFreshtix.childImageSharp.fluid} className="shottt-freshtix" />
+                </HeroFreshtix>
                 <img src={logofreshtix} style={{ gridArea: 'Logo' }} />
                 <ProjectCardTitle>PRODUCT DESIGN, MOBILE APP DESIGN, UI & UX, PROTOTYPING</ProjectCardTitle>
                 <ProjectCardDescription>FreshTix makes is easier to sell tickets online with their free ticketing software.
@@ -373,4 +376,30 @@ class App extends React.Component {
   }
 }
 
-export default App;
+export default App
+
+export const pageQuery = graphql`
+query {
+  imageSunRays: file(relativePath: { eq: "sunraysfromgod.png" }) {
+    childImageSharp {
+      fluid(maxWidth: 1000) {
+        ...GatsbyImageSharpFluid
+        }
+      }
+    }
+imageScreenSketch: file(relativePath: { eq: "screens-sketch-topaz.webp" }) {
+  childImageSharp {
+    fluid(maxWidth: 1000) {
+      ...GatsbyImageSharpFluid
+      }
+    }
+  }
+imageShotttFreshtix: file(relativePath: { eq: "shottt-freshtix.webp" }) {
+  childImageSharp {
+    fluid(maxWidth: 1000) {
+      ...GatsbyImageSharpFluid
+      }
+    }
+  }
+}
+`
