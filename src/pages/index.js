@@ -165,7 +165,7 @@ class App extends React.Component {
         </Helmet>
         <OceanBG offset={0} speed={0} factor={6} className={'oceanbg'}   />
         <SunRaysfromGod offset={0} speed={.25} factor={6}>
-          <Img fluid={this.props.data.imageOne.childImageSharp.fluid} />
+          <Img alt={'Sun rays from god'} fluid={this.props.data.imageSunRays.childImageSharp.fluid} />
         </SunRaysfromGod>
         <ParallaxLayer offset={0} speed={1}>
           <UpBubblesOneTop>
@@ -258,7 +258,7 @@ class App extends React.Component {
         <ParallaxLayer offset={1} speed={1}>
           <Container>
             <ProjectWrapper className="project__grid--imageRight">
-              <img src={topazshottt} className="shottt-topaz" />
+              <Img alt={'Topaz Designs'} fluid={this.props.data.imageShotttTopaz.childImageSharp.fluid} className="shottt-topaz" />
               <ProjectCardTitle className="project__title">WEB DESIGN, UX DEVELOPMENT</ProjectCardTitle>
               <ProjectCardDescription className="project__description">
                 <img src={logotopaz} className="project__logo" /><br />
@@ -398,7 +398,14 @@ export default App
 
 export const pageQuery = graphql`
 query {
-imageOne: file(relativePath: { eq: "sunraysfromgod.png" }) {
+imageSunRays: file(relativePath: { eq: "sunraysfromgod.png" }) {
+  childImageSharp {
+    fluid(maxWidth: 1000) {
+      ...GatsbyImageSharpFluid
+      }
+    }
+  }
+imageShotttTopaz: file(relativePath: { eq: "shottt-topaz.webp" }) {
   childImageSharp {
     fluid(maxWidth: 1000) {
       ...GatsbyImageSharpFluid
