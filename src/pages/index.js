@@ -2,7 +2,6 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { Helmet } from 'react-helmet';
 import { Parallax, ParallaxLayer } from 'react-spring/dist/addons';
-
 import SVG from '../components/SVG';
 import '../styles/global';
 import styled from 'react-emotion';
@@ -26,6 +25,7 @@ import FloatingLabel, { floatingStyles, focusStyles, inputStyles, labelStyles, s
 import { Link, graphql } from 'gatsby';
 import Img from 'gatsby-image';
 
+
 const HeaderContainer = styled.div`
   ${tw('justify-center items-center flex z-50')};
   padding: .5rem 4rem;
@@ -34,13 +34,11 @@ const HeaderContainer = styled.div`
   }
 `;
 const SunRaysfromGod = styled(ParallaxLayer)``;
-
 const AnglerLayer = styled(ParallaxLayer)`
   @media (max-width: 900px) {
     display: none;
   }
 `;
-
 const Angler = styled.div`
   position: relative;
   left: -2rem;
@@ -256,7 +254,7 @@ class App extends React.Component {
               <Img alt={'Topaz Designs'} fluid={this.props.data.imageShotttTopaz.childImageSharp.fluid} className="shottt-topaz" />
               <ProjectCardTitle className="project__title">WEB DESIGN, UX DEVELOPMENT</ProjectCardTitle>
               <ProjectCardDescription className="project__description">
-                <img src={logotopaz} className="project__logo" /><br />
+                <img alt="Logo for Topaz" src={logotopaz} className="project__logo" /><br />
                 Topaz is a blockchain SaaS product. Working alongside a talented branding designer, I designed and developed a single page static site running on <span>Gatsby.js</span> and React.<br />
                 <Link to="/topaz">
                   <button className="btn btn--actionjackson">
@@ -274,7 +272,7 @@ class App extends React.Component {
               <Img alt={'Freshtix Designs'} fluid={this.props.data.imageShotttFreshtix.childImageSharp.fluid} className="shottt-freshtix" />
               <ProjectCardTitle className="project__title">PRODUCT DESIGN, MOBILE APP DESIGN, UI & UX, PROTOTYPING</ProjectCardTitle>
               <ProjectCardDescription className="project__description">
-                <img src={logofreshtix} className="project__logo" /><br />
+                <img alt="Logo for Freshtix" src={logofreshtix} className="project__logo" /><br />
                 This project was a redesign and rebuild of their attendee check in app. As part of their free ticketing software, this app allows an event organizer to check in participants and provides the organizer with attendance data.<br />
                 <Link to="/freshtix">
                   <button className="btn btn--actionjackson">
@@ -292,7 +290,7 @@ class App extends React.Component {
               <Img alt={'Robit Designs'} fluid={this.props.data.imageShotttRobit.childImageSharp.fluid} className="shottt-robit" />
               <ProjectCardTitle className="project__title">APP CONCEPT, PRODUCT DESIGN, UI & UX, PROTOTYPE</ProjectCardTitle>
               <ProjectCardDescription className="project__description">
-                <img src={logorobit} className="project__logo" /><br />
+                <img alt="Logo for Robit" src={logorobit} className="project__logo" /><br />
                 Robit is an app that aims to introduce design thinking with board style organization. Being able to see where your idea sits in it’s creative lifecycle will help move it to completion<br />
                 <Link to="/robit">
                   <button className="btn btn--actionjackson">
@@ -310,7 +308,7 @@ class App extends React.Component {
             <Img alt={'Payscape Designs'} fluid={this.props.data.imageShotttPayscape.childImageSharp.fluid} className="shottt-payscape" />
               <ProjectCardTitle className="project__title">WEBSITE DESIGN, UI & UX, WORDPRESS DESIGN</ProjectCardTitle>
               <ProjectCardDescription className="project__description">
-                <img src={logopayscape} className="project__logo" /><br />
+                <img alt="logo for Payscape" src={logopayscape} className="project__logo" /><br />
                 Payscape is an Atlanta based Financial Technology company that provides small to mid-size business owners with financial technologies that allow them to accept payments, streamline their business, and increase cash flow.<br />
                 <Link to="/payscape">
                   <button className="btn btn--actionjackson">
@@ -348,7 +346,7 @@ class App extends React.Component {
             <Navigation>
               <ul className="nav__main">
                 <li>
-                  <Link to="/" className=""><img src={logotd} className="logo__main" /></Link>
+                  <Link to="/" className=""><img alt="trice.design Logo" src={logotd} className="logo__main" /></Link>
                 </li>
                 <li>
                   <ul className="social-icons">
@@ -356,13 +354,13 @@ class App extends React.Component {
                       <NavContact onClick={() => this.parallax.scrollTo(5)}>Contact</NavContact>
                     </li>
                     <li><a href="https://dribbble.com/trice" title="Follow me on Dribbble">
-                      <img src={dribbble} className="" alt="Dribbble" /></a>
+                      <img alt="Dribbble" src={dribbble} /></a>
                     </li>
                     <li><a href="https://www.linkedin.com/in/matt-trice-5053b325/" title="Serious as fuck">
-                      <img src={linkedin} className="" alt="LINKED FUCKING IN" /></a>
+                      <img alt="Linked In" src={linkedin} /></a>
                     </li>
                     <li><a href="https://www.instagram.com/trice.design/" title="Follow me on Instagram">
-                      <img src={instagram} className="" alt="Instagram" /></a>
+                      <img alt="Instagram" src={instagram} /></a>
                     </li>
                   </ul>
                 </li>
@@ -374,7 +372,7 @@ class App extends React.Component {
         <ParallaxLayer speed={0.5} offset={.1}>
           <Container>
             <Hero>
-              <img src={howdy} className="item--contained howdy__main" />
+              <img alt="Howdy, Partner!" src={howdy} className="item--contained howdy__main" />
               <BigTitle className="item--contained">
                 My name is Matt Trice.
               </BigTitle>
