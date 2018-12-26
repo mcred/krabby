@@ -10,9 +10,6 @@ import logotopaz from '../images/logo-topaz.svg';
 import logofreshtix from '../images/logo-freshtix.svg';
 import logorobit from '../images/logo-robit.svg';
 import logopayscape from '../images/logo-payscape.svg';
-import dribbble from '../images/icon-dribbble.svg';
-import instagram from '../images/icon-instagram.svg';
-import linkedin from '../images/icon-linkedin.svg';
 import logotd from '../images/logo-td.svg';
 import bottomburm from '../images/bottom-burm.svg';
 import howdy from '../images/howdy.svg';
@@ -24,6 +21,7 @@ import { FaPaperPlane } from 'react-icons/fa';
 import FloatingLabel, { floatingStyles, focusStyles, inputStyles, labelStyles, spanStyles, buttonStyles, textareaStyles } from 'floating-label-react';
 import { Link, graphql } from 'gatsby';
 import Img from 'gatsby-image';
+import Navigation from '../components/Navigation';
 
 
 const HeaderContainer = styled.div`
@@ -34,14 +32,10 @@ const HeaderContainer = styled.div`
   }
 `;
 const SunRaysfromGod = styled(ParallaxLayer)``;
-const AnglerLayer = styled(ParallaxLayer)`
-  @media (max-width: 900px) {
-    display: none;
-  }
-`;
+const AnglerLayer = styled(ParallaxLayer)``;
 const Angler = styled.div`
   position: relative;
-  left: -2rem;
+  left: 2rem;
   max-width: 100%;
 `;
 const FormTitle = styled.h3`
@@ -97,11 +91,6 @@ const Container = styled.div`
     padding: 0 1rem;
   }
 `;
-const Navigation = styled.div`
-  ${tw('w-full')};
-  padding-bottom:0;
-`;
-const NavContact = styled.a``;
 const ButtonCTA = styled.button``;
 const Hero = styled.div`
   ${tw('w-full')};
@@ -320,52 +309,16 @@ class App extends React.Component {
           </Container>
         </ParallaxLayer>
 
-        <AnglerLayer offset={4.8} speed={-0.15}>
+        <AnglerLayer offset={5.35} speed={-0.15}>
           <Angler className={'anglerFish'}>
             <img className="bottom" src={anglerdark} alt="This is a dark Angler Fish" />
             <img className="top" src={anglerbright} alt="This is an illuminated Angler Fish" />
           </Angler>
         </AnglerLayer>
 
-        <ParallaxLayer offset={5} speed={-0}>
-          <Container>
-            <Hero>
-              <FormTitle className="item--contained">Let's have a conversation</FormTitle>
-              <form className="contact__form item--contained"  name="contact" method="post" action="https://formspree.io/matt@trice.design" method="POST">
-                <FloatingLabel id='name' name='name' placeholder='Name' type='text' styles={inputStyle} required />
-                <FloatingLabel id='email' name='email' placeholder='Email' type='email' styles={inputStyle} required />
-                <FloatingLabel id='comments' name='comments' placeholder='What are you working on?' styles={inputStyle} type='text' requried />
-                <button className="btn btn--actionjackson--full" type="submit" styles={inputStyle}><span className="btn__text">Send message</span> <FaPaperPlane size="1.45em" /></button>
-              </form>
-            </Hero>
-          </Container>
-        </ParallaxLayer>
-
         <ParallaxLayer offset={0} speed={1}>
           <HeaderContainer className="header__container">
-            <Navigation>
-              <ul className="nav__main">
-                <li>
-                  <Link to="/" className=""><img alt="trice.design Logo" src={logotd} className="logo__main" /></Link>
-                </li>
-                <li>
-                  <ul className="social-icons">
-                    <li className="contact">
-                      <NavContact onClick={() => this.parallax.scrollTo(5)}>Contact</NavContact>
-                    </li>
-                    <li><a href="https://dribbble.com/trice" title="Follow me on Dribbble">
-                      <img alt="Dribbble" src={dribbble} /></a>
-                    </li>
-                    <li><a href="https://www.linkedin.com/in/matt-trice-5053b325/" title="Serious as fuck">
-                      <img alt="Linked In" src={linkedin} /></a>
-                    </li>
-                    <li><a href="https://www.instagram.com/trice.design/" title="Follow me on Instagram">
-                      <img alt="Instagram" src={instagram} /></a>
-                    </li>
-                  </ul>
-                </li>
-              </ul>
-            </Navigation>
+            <Navigation />
           </HeaderContainer>
         </ParallaxLayer>
 
