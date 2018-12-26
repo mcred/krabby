@@ -192,41 +192,6 @@ export default App
 
 export const pageQuery = graphql`
 query {
-imageSunRays: file(relativePath: { eq: "sunraysfromgod.png" }) {
-  childImageSharp {
-    fluid(maxWidth: 1000) {
-      ...GatsbyImageSharpFluid
-      }
-    }
-  }
-imageShotttTopaz: file(relativePath: { eq: "shottt-topaz.webp" }) {
-  childImageSharp {
-    fluid(maxWidth: 1000) {
-      ...GatsbyImageSharpFluid
-      }
-    }
-  }
-imageShotttFreshtix: file(relativePath: { eq: "shottt-freshtix.webp" }) {
-  childImageSharp {
-    fluid(maxWidth: 1000) {
-      ...GatsbyImageSharpFluid
-      }
-    }
-  }
-imageShotttRobit: file(relativePath: { eq: "shottt-robit.webp" }) {
-  childImageSharp {
-    fluid(maxWidth: 1000) {
-      ...GatsbyImageSharpFluid
-      }
-    }
-  }
-imageShotttPayscape: file(relativePath: { eq: "shottt-payscape.webp" }) {
-  childImageSharp {
-    fluid(maxWidth: 1000) {
-      ...GatsbyImageSharpFluid
-      }
-    }
-  }
 imageSquidSilhouette: file(relativePath: { eq: "squid-silhouette.webp" }) {
   childImageSharp {
     fluid(maxWidth: 1000) {

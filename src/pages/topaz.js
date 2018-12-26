@@ -2,7 +2,6 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { Helmet } from 'react-helmet';
 import { Parallax, ParallaxLayer } from 'react-spring/dist/addons';
-import { Link } from "gatsby";
 import { rotate, UpBubblesOne, UpBubblesOneTop, UpBubblesTwo, UpBubblesTwoTop, UpBubblesThree, UpBubblesThreeTop, UpDown, UpDownWide, waveAnimation } from '../styles/animations';
 import SVG from '../components/SVG';
 import '../styles/global';
@@ -16,12 +15,13 @@ import icongatsby from '../images/icon-gatsby.png';
 import sketch from '../images/icon-sketch.png';
 import logotd from '../images/logo-td.svg';
 import sunrays from '../images/sunraysfromgod.png';
-import screensketch from '../images/screens-sketch-topaz.png';
 import siteflow from '../images/siteflow-topaz.svg';
 import '../assets/css/krabby.scss';
 import { FaChevronLeft } from 'react-icons/fa';
 import { FaChevronRight } from 'react-icons/fa';
 import { FaPaperPlane } from 'react-icons/fa';
+import { Link, graphql } from 'gatsby';
+import Img from 'gatsby-image';
 
 
 const HeaderContainer = styled.div`
@@ -318,7 +318,9 @@ class App extends React.Component {
             </HeaderContainer>
             <Container>
               <ProjectHero>
-                <HeroPayscape><img src={topazshottt} className="shottt-topaz" /></HeroPayscape>
+                <HeroPayscape>
+                  <Img alt={'Topaz Designs'} fluid={this.props.data.imageShotttTopaz.childImageSharp.fluid} className="shottt-topaz" />
+                </HeroPayscape>
                 <img src={logotopaz} style={{ gridArea: 'Logo' }} />
                 <ProjectCardTitle>WEB DESIGN, UX DEVELOPMENT</ProjectCardTitle>
                 <ProjectCardDescription>Topaz is a blockchain SaaS product. Working alongside a talented branding designer, I designed and developed a single page static site running on <span>Gatsby.js</span> and React.
@@ -354,7 +356,7 @@ class App extends React.Component {
               <Caption>Pages courtesy of Topaz Brand Style Guide, designed by <a href="https://dribbble.com/nsherrill">@NSherrill</a></Caption>
             </ProjectMiddleText>
             <ProjectMiddleImageTop>
-              <img src={screensketch} className="topaz_screens" />
+              <Img alt={'Examples of design'} fluid={this.props.data.imageScreenSketch.childImageSharp.fluid} className="topaz_screens" />
             </ProjectMiddleImageTop>
           </ProjectContentMiddle>
           <ProjectContentBottom>
@@ -388,4 +390,30 @@ class App extends React.Component {
   }
 }
 
-export default App;
+export default App
+
+export const pageQuery = graphql`
+query {
+imageSunRays: file(relativePath: { eq: "sunraysfromgod.png" }) {
+  childImageSharp {
+    fluid(maxWidth: 1000) {
+      ...GatsbyImageSharpFluid
+      }
+    }
+  }
+imageScreenSketch: file(relativePath: { eq: "screens-sketch-topaz.webp" }) {
+  childImageSharp {
+    fluid(maxWidth: 1000) {
+      ...GatsbyImageSharpFluid
+      }
+    }
+  }
+imageShotttTopaz: file(relativePath: { eq: "shottt-topaz.webp" }) {
+  childImageSharp {
+    fluid(maxWidth: 1000) {
+      ...GatsbyImageSharpFluid
+      }
+    }
+  }
+}
+`

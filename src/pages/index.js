@@ -158,7 +158,7 @@ class App extends React.Component {
         </Helmet>
         <OceanBG offset={0} speed={0} factor={6} className={'oceanbg'}   />
         <SunRaysfromGod offset={0} speed={.25} factor={6}>
-          <Img alt={'Sun rays from god'} fluid={this.props.data.imageSunRays.childImageSharp.fluid} />
+          <Img alt={'Sun rays from God'} fluid={this.props.data.imageSunRays.childImageSharp.fluid} />
         </SunRaysfromGod>
         <ParallaxLayer offset={0} speed={1}>
           <UpBubblesOneTop>
