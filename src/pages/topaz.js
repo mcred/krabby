@@ -21,6 +21,9 @@ import { FaPaperPlane } from 'react-icons/fa';
 import { Link, graphql } from 'gatsby';
 import Img from 'gatsby-image';
 import Navigation from '../components/Navigation';
+import Footer from '../components/Footer';
+
+
 
 
 const HeaderContainer = styled.div`
@@ -356,9 +359,7 @@ class App extends React.Component {
             </Link>
           </FooterLinks>
         </WhiteContainer>
-        <FooterBottom>
-          <p style={{ color: 'white', fontSize: '.65em' }}>Copyright &copy; 2019 trice.design</p>
-        </FooterBottom>
+        <Footer />
       </div>
     )
   }

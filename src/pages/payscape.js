@@ -25,6 +25,7 @@ import { FaChevronLeft } from 'react-icons/fa';
 import { FaChevronRight } from 'react-icons/fa';
 import { FaPaperPlane } from 'react-icons/fa';
 import Navigation from '../components/Navigation';
+import Footer from '../components/Footer';
 
 
 
@@ -346,9 +347,7 @@ class App extends React.Component {
             </a>
           </FooterLinks>
         </WhiteContainer>
-        <FooterBottom>
-          <p style={{ color: 'white', fontSize: '.65em' }}>Copyright &copy; 2019 trice.design</p>
-        </FooterBottom>
+        <Footer />
       </div>
     )
   }
