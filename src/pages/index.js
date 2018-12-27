@@ -349,7 +349,7 @@ class App extends React.Component {
             </Hero>
           </Container>
         </ParallaxLayer>
-        <ParallaxLayer speed={1} offset={5.8} style={{ background: '#000' }}>
+        <ParallaxLayer speed={1} offset={5.7} style={{ background: '#000' }}>
           <Footer />
         </ParallaxLayer>
       </Parallax>
