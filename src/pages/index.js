@@ -23,6 +23,7 @@ import FloatingLabel, { floatingStyles, focusStyles, inputStyles, labelStyles, s
 import { Link, graphql } from 'gatsby';
 import Img from 'gatsby-image';
 import Navigation from '../components/Navigation';
+import Footer from '../components/Footer';
 
 
 const HeaderContainer = styled.div`
@@ -324,11 +325,6 @@ class App extends React.Component {
         </ParallaxLayer>
 
         <AnglerLayer offset={5.35} speed={-0.15}>
-          <MobileContact>
-            <Link to="/contact">
-              <ButtonCTA className="btn btn--actionjackson"><span className="btn__text">Contact Me</span> <FaPaperPlane size="1.45em" /></ButtonCTA>
-            </Link>
-          </MobileContact>
           <Angler className={'anglerFish'}>
             <img alt="This is a dark Angler Fish" className="bottom" src={anglerdark} />
             <img alt="This is an illuminated Angler Fish" className="top" src={anglerbright} />
@@ -352,6 +348,9 @@ class App extends React.Component {
               <ButtonCTA className="item--contained btn btn--actionjackson" onClick={() => this.parallax.scrollTo(5)}><span className="btn__text">Let's make something cool</span> <FaChevronRight size="1.45em" /></ButtonCTA>
             </Hero>
           </Container>
+        </ParallaxLayer>
+        <ParallaxLayer speed={1} offset={5.8} style={{ background: '#000' }}>
+          <Footer />
         </ParallaxLayer>
       </Parallax>
 
