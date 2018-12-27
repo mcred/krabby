@@ -12,7 +12,7 @@ import icongatsby from '../images/icon-gatsby.png';
 import sketch from '../images/icon-sketch.png';
 import logotd from '../images/logo-td.svg';
 import sunrays from '../images/sunraysfromgod.png';
-import screensketch from '../images/screens-sketch-topaz.png';
+import screensketch from '../images/screens-sketch-topaz.webp';
 import siteflow from '../images/siteflow-topaz.svg';
 import '../assets/css/krabby.scss';
 import { FaChevronLeft } from 'react-icons/fa';

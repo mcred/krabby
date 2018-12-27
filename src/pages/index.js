@@ -138,6 +138,19 @@ const ProjectCardDescription = styled.p`
   ${tw('text-white')};
   line-height: 1.45em;
 `;
+const MobileContact = styled.div`
+  @media (max-width: 767px) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 140px;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+  }
+  @media (min-width: 768px) {
+    display: none;
+  }
+`;
 
 
 
@@ -315,6 +328,11 @@ class App extends React.Component {
         </ParallaxLayer>
 
         <AnglerLayer offset={5.35} speed={-0.15}>
+          <MobileContact>
+            <Link to="/contact">
+              <ButtonCTA className="btn btn--actionjackson"><span className="btn__text">Contact Me</span> <FaPaperPlane size="1.45em" /></ButtonCTA>
+            </Link>
+          </MobileContact>
           <Angler className={'anglerFish'}>
             <img alt="This is a dark Angler Fish" className="bottom" src={anglerdark} />
             <img alt="This is an illuminated Angler Fish" className="top" src={anglerbright} />
