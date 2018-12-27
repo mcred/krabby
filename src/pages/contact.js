@@ -11,7 +11,7 @@ import dribbble from '../images/icon-dribbble.svg';
 import instagram from '../images/icon-instagram.svg';
 import linkedin from '../images/icon-linkedin.svg';
 import logotd from '../images/logo-td.svg';
-import squidsilhouette from '../images/squid-silhouette.webp';
+import squidsilhouette from '../images/squid-silhouette.png';
 import '../assets/css/krabby.scss';
 import { FaPaperPlane } from 'react-icons/fa';
 import FloatingLabel, { floatingStyles, focusStyles, inputStyles, labelStyles, spanStyles, buttonStyles, textareaStyles } from 'floating-label-react';
@@ -193,7 +193,7 @@ export default App
 
 export const pageQuery = graphql`
 query {
-imageSquidSilhouette: file(relativePath: { eq: "squid-silhouette.webp" }) {
+imageSquidSilhouette: file(relativePath: { eq: "squid-silhouette.png" }) {
   childImageSharp {
     fluid(maxWidth: 1000) {
       ...GatsbyImageSharpFluid
