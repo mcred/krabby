@@ -11,6 +11,7 @@ import dribbble from '../images/icon-dribbble.svg';
 import instagram from '../images/icon-instagram.svg';
 import linkedin from '../images/icon-linkedin.svg';
 import logotd from '../images/logo-td.svg';
+import squidsilhouette from '../images/squid-silhouette.webp';
 import '../assets/css/krabby.scss';
 import { FaPaperPlane } from 'react-icons/fa';
 import FloatingLabel, { floatingStyles, focusStyles, inputStyles, labelStyles, spanStyles, buttonStyles, textareaStyles } from 'floating-label-react';
@@ -141,7 +142,7 @@ class App extends React.Component {
           </UpBubblesThree>
         </ParallaxLayer>
         <ParallaxLayer offset={0.35} speed={-0.45} style={{ }}>
-          <Img alt={'Giant Squid in the background'} fluid={this.props.data.imageSquidSilhouette.childImageSharp.fluid} className="squid-silhouette" />
+          <img alt="The infamous Giant Squid lurking in the background" src={squidsilhouette} className="squid-silhouette" />
         </ParallaxLayer>
         <ParallaxLayer offset={0} speed={1}>
           <HeaderContainer className="header__container">
