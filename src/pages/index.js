@@ -374,35 +374,35 @@ imageSunRays: file(relativePath: { eq: "sunraysfromgod.png" }) {
       }
     }
   }
-imageShotttTopaz: file(relativePath: { eq: "shottt-topaz.webp" }) {
+imageShotttTopaz: file(relativePath: { eq: "shottt-topaz.png" }) {
   childImageSharp {
     fluid(maxWidth: 1000) {
       ...GatsbyImageSharpFluid
       }
     }
   }
-imageShotttFreshtix: file(relativePath: { eq: "shottt-freshtix.webp" }) {
+imageShotttFreshtix: file(relativePath: { eq: "shottt-freshtix.png" }) {
   childImageSharp {
     fluid(maxWidth: 1000) {
       ...GatsbyImageSharpFluid
       }
     }
   }
-imageShotttRobit: file(relativePath: { eq: "shottt-robit.webp" }) {
+imageShotttRobit: file(relativePath: { eq: "shottt-robit.png" }) {
   childImageSharp {
     fluid(maxWidth: 1000) {
       ...GatsbyImageSharpFluid
       }
     }
   }
-imageShotttPayscape: file(relativePath: { eq: "shottt-payscape.webp" }) {
+imageShotttPayscape: file(relativePath: { eq: "shottt-payscape.png" }) {
   childImageSharp {
     fluid(maxWidth: 1000) {
       ...GatsbyImageSharpFluid
       }
     }
   }
-imageSquidSilhouette: file(relativePath: { eq: "squid-silhouette.webp" }) {
+imageSquidSilhouette: file(relativePath: { eq: "squid-silhouette.png" }) {
   childImageSharp {
     fluid(maxWidth: 1000) {
       ...GatsbyImageSharpFluid

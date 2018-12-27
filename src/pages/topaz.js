@@ -375,14 +375,14 @@ query {
         }
       }
     }
-imageScreenSketch: file(relativePath: { eq: "screens-sketch-topaz.webp" }) {
+imageScreenSketch: file(relativePath: { eq: "screens-sketch-topaz.png" }) {
   childImageSharp {
     fluid(maxWidth: 1000) {
       ...GatsbyImageSharpFluid
       }
     }
   }
-imageShotttTopaz: file(relativePath: { eq: "shottt-topaz.webp" }) {
+imageShotttTopaz: file(relativePath: { eq: "shottt-topaz.png" }) {
   childImageSharp {
     fluid(maxWidth: 1000) {
       ...GatsbyImageSharpFluid
