@@ -294,7 +294,7 @@ class App extends React.Component {
             <Container>
               <ProjectHero>
                 <HeroFreshtix>
-                  <Img alt={'Freshtix Designs'} fluid={this.props.data.imageShotttFreshtix.childImageSharp.fluid} className="shottt-freshtix" />
+                  <img src={freshtixshottt} className="shottt-freshtix" />
                 </HeroFreshtix>
                 <img src={logofreshtix} style={{ gridArea: 'Logo' }} />
                 <ProjectCardTitle>PRODUCT DESIGN, MOBILE APP DESIGN, UI & UX, PROTOTYPING</ProjectCardTitle>
@@ -389,14 +389,14 @@ query {
     }
 imageScreenSketch: file(relativePath: { eq: "screens-sketch-topaz.png" }) {
   childImageSharp {
-    fluid(maxWidth: 1000) {
+    fluid(maxWidth: 900) {
       ...GatsbyImageSharpFluid
       }
     }
   }
 imageShotttFreshtix: file(relativePath: { eq: "shottt-freshtix.png" }) {
   childImageSharp {
-    fluid(maxWidth: 1000) {
+    fluid(maxWidth: 900) {
       ...GatsbyImageSharpFluid
       }
     }

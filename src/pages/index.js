@@ -15,11 +15,7 @@ import bottomburm from '../images/bottom-burm.svg';
 import howdy from '../images/howdy.svg';
 import anglerbright from '../images/angler-bright.png';
 import anglerdark from '../images/angler-dark.png';
-import topazshottt from '../images/shottt-topaz.png';
-import freshtixshottt from '../images/shottt-freshtix.png';
-import robitshottt from '../images/shottt-robit.png';
-import payscapeshottt from '../images/shottt-payscape.png';
-import squidsilhouette from '../images/squid-silhouette.png';
+
 import '../assets/css/krabby.scss';
 import { FaChevronRight } from 'react-icons/fa';
 import { FaPaperPlane } from 'react-icons/fa';
@@ -219,7 +215,7 @@ class App extends React.Component {
           </UpBubblesThree>
         </ParallaxLayer>
         <ParallaxLayer offset={2.2} speed={-0.45} style={{ display: 'grid', justifyContent: 'right', height: 'auto' }}>
-          <img alt="The infamous Giant Squid lurking in the background" src={squidsilhouette} className="squid-silhouette" />
+          <Img alt={'The infamous squid lurking in the background'} fluid={this.props.data.imageSquid.childImageSharp.fluid} className="squid-silhouette" />
         </ParallaxLayer>
         <ParallaxLayer offset={4.4} speed={-0.4} factor={1} className={'background-01'} />
         <ParallaxLayer offset={4} speed={-0.3} factor={2} className={'background--cliffs'}>
@@ -258,7 +254,7 @@ class App extends React.Component {
         <ParallaxLayer offset={1} speed={1}>
           <Container>
             <ProjectWrapper className="project__grid--imageRight">
-              <img alt="Topaz designs mocked up in hardware" src={topazshottt} className="shottt-topaz" />
+              <Img alt={'Topaz Designs'} fluid={this.props.data.imageShotttTopaz.childImageSharp.fluid} className="shottt-topaz" />
               <ProjectCardTitle className="project__title">WEB DESIGN, UX DEVELOPMENT</ProjectCardTitle>
               <ProjectCardDescription className="project__description">
                 <img alt="Logo for Topaz" src={logotopaz} className="project__logo" /><br />
@@ -276,7 +272,7 @@ class App extends React.Component {
         <ParallaxLayer offset={2} speed={1}>
           <Container>
             <ProjectWrapper className="project__grid--imageLeft">
-              <img alt="Freshtix designs mocked up in hardware" src={freshtixshottt} className="shottt-freshtix" />
+              <Img alt={'Freshtix designs mocked up in hardware'} fluid={this.props.data.imageShotttFreshtix.childImageSharp.fluid} className="shottt-freshtix" />
               <ProjectCardTitle className="project__title">PRODUCT DESIGN, MOBILE APP DESIGN, UI & UX, PROTOTYPING</ProjectCardTitle>
               <ProjectCardDescription className="project__description">
                 <img alt="Logo for Freshtix" src={logofreshtix} className="project__logo" /><br />
@@ -294,7 +290,7 @@ class App extends React.Component {
         <ParallaxLayer offset={3} speed={1}>
           <Container>
             <ProjectWrapper className="project__grid--imageRight">
-              <img alt="Robit designs mocked up in hardware" src={robitshottt} className="shottt-robit" />
+              <Img alt={'Robit designs mocked up in hardware'} fluid={this.props.data.imageShotttRobit.childImageSharp.fluid} className="shottt-robit" />
               <ProjectCardTitle className="project__title">APP CONCEPT, PRODUCT DESIGN, UI & UX, PROTOTYPE</ProjectCardTitle>
               <ProjectCardDescription className="project__description">
                 <img alt="Logo for Robit" src={logorobit} className="project__logo" /><br />
@@ -312,7 +308,7 @@ class App extends React.Component {
         <ParallaxLayer offset={4} speed={1}>
           <Container>
             <ProjectWrapper className="project__grid--imageLeft">
-              <img alt="Payscape designs mocked up in hardware" src={payscapeshottt} className="shottt-payscape" />
+              <Img alt={'Payscape designs mocked up in hardware'} fluid={this.props.data.imageShotttPayscape.childImageSharp.fluid} className="shottt-payscape" />
               <ProjectCardTitle className="project__title">WEBSITE DESIGN, UI & UX, WORDPRESS DESIGN</ProjectCardTitle>
               <ProjectCardDescription className="project__description">
                 <img alt="logo for Payscape" src={logopayscape} className="project__logo" /><br />
@@ -402,7 +398,7 @@ imageShotttPayscape: file(relativePath: { eq: "shottt-payscape.png" }) {
       }
     }
   }
-imageSquidSilhouette: file(relativePath: { eq: "squid-silhouette.png" }) {
+imageSquid: file(relativePath: { eq: "squid-silhouette.png" }) {
   childImageSharp {
     fluid(maxWidth: 1000) {
       ...GatsbyImageSharpFluid
