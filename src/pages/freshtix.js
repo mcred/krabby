@@ -389,14 +389,14 @@ query {
     }
 imageScreenSketch: file(relativePath: { eq: "screens-sketch-topaz.png" }) {
   childImageSharp {
-    fluid(maxWidth: 900) {
+    fluid(maxWidth: 600) {
       ...GatsbyImageSharpFluid
       }
     }
   }
 imageShotttFreshtix: file(relativePath: { eq: "shottt-freshtix.png" }) {
   childImageSharp {
-    fluid(maxWidth: 900) {
+    fluid(maxWidth: 600) {
       ...GatsbyImageSharpFluid
       }
     }
