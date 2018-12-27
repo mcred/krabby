@@ -7,11 +7,12 @@ import SVG from '../components/SVG';
 import '../styles/global';
 import styled from 'react-emotion';
 import logotopaz from '../images/logo-topaz.svg';
-import topazshottt from '../images/shottt-topaz.png';
+import topazshottt from '../images/shottt-topaz.webp';
 import icongatsby from '../images/icon-gatsby.png';
 import sketch from '../images/icon-sketch.png';
 import logotd from '../images/logo-td.svg';
 import sunrays from '../images/sunraysfromgod.png';
+import screensketch from '../images/screens-sketch-topaz.png';
 import siteflow from '../images/siteflow-topaz.svg';
 import '../assets/css/krabby.scss';
 import { FaChevronLeft } from 'react-icons/fa';
@@ -186,7 +187,7 @@ const WorkflowLI = styled.li`
 const ContentTitle = styled.h4`
   ${tw('uppercase')};
 `;
-const HeroPayscape = styled.div`
+const HeroTopaz = styled.div`
   position: relative;
   top: 0rem;
   grid-area: Image;
@@ -291,10 +292,10 @@ class App extends React.Component {
             </HeaderContainer>
             <Container>
               <ProjectHero>
-                <HeroPayscape>
-                  <Img alt={'Topaz Designs'} fluid={this.props.data.imageShotttTopaz.childImageSharp.fluid} className="shottt-topaz" />
-                </HeroPayscape>
-                <img src={logotopaz} style={{ gridArea: 'Logo' }} />
+                <HeroTopaz>
+                  <img alt="Topaz designs mocked up in hardware" src={topazshottt} className="shottt-topaz" />
+                </HeroTopaz>
+                <img alt="Client logo" src={logotopaz} style={{ gridArea: 'Logo' }} />
                 <ProjectCardTitle>WEB DESIGN, UX DEVELOPMENT</ProjectCardTitle>
                 <ProjectCardDescription>Topaz is a blockchain SaaS product. Working alongside a talented branding designer, I designed and developed a single page static site running on <span>Gatsby.js</span> and React.
                 </ProjectCardDescription>
@@ -316,8 +317,8 @@ class App extends React.Component {
             <Workflow>
               <ContentTitle>Workflow</ContentTitle>
               <WorkflowUL>
-                <WorkflowLI><img src={sketch} alt="Sketch" className="workflow__icon" />Sketch</WorkflowLI>
-                <WorkflowLI><img src={icongatsby} alt="Gatsby" className="workflow__icon" />Gatsby.js</WorkflowLI>
+                <WorkflowLI><img alt="Sketch icon" src={sketch} className="workflow__icon" />Sketch</WorkflowLI>
+                <WorkflowLI><img alt="Gatsby icon" src={icongatsby} className="workflow__icon" />Gatsby.js</WorkflowLI>
               </WorkflowUL>
             </Workflow>
           </ProjectContentTop>
@@ -329,7 +330,7 @@ class App extends React.Component {
               <Caption>Pages courtesy of Topaz Brand Style Guide, designed by <a href="https://dribbble.com/nsherrill">@NSherrill</a></Caption>
             </ProjectMiddleText>
             <ProjectMiddleImageTop>
-              <Img alt={'Examples of design'} fluid={this.props.data.imageScreenSketch.childImageSharp.fluid} className="topaz_screens" />
+              <img alt="Designs from style guide" src={screensketch} className="topaz_screens" />
             </ProjectMiddleImageTop>
           </ProjectContentMiddle>
           <ProjectContentBottom>
@@ -338,7 +339,7 @@ class App extends React.Component {
               <p>We did it. The site went live prior to launch and is ready to scale.</p><p>Development next steps include scoping out large documentation style site for the API.</p>
             </ProjectBottomText>
             <ProjectBottomImage>
-              <img src={siteflow} className="topaz_siteflow" alt="Site flow" />
+              <img alt="Site flow" src={siteflow} className="topaz_siteflow" />
             </ProjectBottomImage>
           </ProjectContentBottom>
           <MobileContact>
