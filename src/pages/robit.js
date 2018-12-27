@@ -344,11 +344,6 @@ class App extends React.Component {
               <img src={robitscreens} style={{ gridArea: 'InterfaceImage', maxWidth: '100%' }} />
             </InterfaceImage>
           </ProjectContentBottom>
-          <MobileContact>
-            <Link to="/contact">
-              <ButtonCTA className="btn btn--actionjackson"><span className="btn__text">Contact Me</span> <FaPaperPlane size="1.45em" /></ButtonCTA>
-            </Link>
-          </MobileContact>
           <FooterLinks>
             <Link to="/freshtix" className="btn--textOnly">
               <FaChevronLeft size="1.45em" />Prev Project

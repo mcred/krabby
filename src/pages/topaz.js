@@ -345,11 +345,6 @@ class App extends React.Component {
               <img alt="Site flow" src={siteflow} className="topaz_siteflow" />
             </ProjectBottomImage>
           </ProjectContentBottom>
-          <MobileContact>
-            <Link to="/contact">
-              <ButtonCTA className="btn btn--actionjackson"><span className="btn__text">Contact Me</span> <FaPaperPlane size="1.45em" /></ButtonCTA>
-            </Link>
-          </MobileContact>
           <FooterLinks>
             <a className="btn--textOnly__disabled">
               <FaChevronLeft size="1.45em" />Prev Project

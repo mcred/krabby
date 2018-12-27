@@ -333,11 +333,6 @@ class App extends React.Component {
               <img src={screens02} className="payscape_screens02" style={{ gridArea: 'ProjectBottomImage' }} />
             </ProjectBottomImage>
           </ProjectContentBottom>
-          <MobileContact>
-            <Link to="/contact">
-              <ButtonCTA className="btn btn--actionjackson"><span className="btn__text">Contact Me</span> <FaPaperPlane size="1.45em" /></ButtonCTA>
-            </Link>
-          </MobileContact>
           <FooterLinks>
             <Link to="/robit" className="btn--textOnly">
               <FaChevronLeft size="1.45em" />Prev Project
