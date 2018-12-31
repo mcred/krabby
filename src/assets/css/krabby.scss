@@ -496,11 +496,13 @@ $button-text-color: $white;
 .project__grid--imageRight {
   grid-gap: 2rem;
   grid-template-columns: 50% minmax(300px, 1fr);
-  grid-template-rows: 1fr 2rem auto 1fr;
-  grid-template-areas: ". Image"
+  grid-template-rows: 2rem 1fr 2rem auto 1fr 2rem;
+  grid-template-areas: ". ."
+                       ". Image"
                        "Title Image"
                        "Description Image"
-                       ". Image";
+                       ". Image"
+                       ". .";
   @media (max-width: 900px) {
    grid-template-columns: 1fr;
    grid-template-rows: auto;
