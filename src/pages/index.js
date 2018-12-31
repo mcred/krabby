@@ -14,7 +14,6 @@ import logotd from '../images/logo-td.svg';
 import bottomburm from '../images/bottom-burm.svg';
 import howdy from '../images/howdy.svg';
 import anglerbright from '../images/angler-bright.png';
-import anglerdark from '../images/angler-dark.png';
 
 import '../assets/css/krabby.scss';
 import { FaChevronRight } from 'react-icons/fa';
@@ -326,8 +325,7 @@ class App extends React.Component {
 
         <AnglerLayer offset={5.35} speed={-0.15}>
           <Angler className={'anglerFish'}>
-            <img alt="This is a dark Angler Fish" className="bottom" src={anglerdark} />
-            <img alt="This is an illuminated Angler Fish" className="top" src={anglerbright} />
+            <img alt="This is an illuminated Angler Fish" className="bottom" src={anglerbright} />
           </Angler>
         </AnglerLayer>
 
