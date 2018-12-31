@@ -8,6 +8,7 @@
     "aos": "^2.3.4",
     "babel-plugin-tailwind": "^0.1.10",
     "classnames": "^2.2.6",
+    "delay": "^4.1.0",
     "emotion": "^9.2.12",
     "emotion-server": "^9.2.12",
     "floating-label-react": "^0.3.0",
