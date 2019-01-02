@@ -33,6 +33,18 @@ const HeaderContainer = styled.div`
   }
 `;
 const SunRaysfromGod = styled(ParallaxLayer)``;
+const TheOceanfromGod = styled(ParallaxLayer)`
+  background: rgb(0,3,92);
+  background: linear-gradient(360deg, rgba(0,3,92,1) 0%, rgba(0,56,75,1) 100%);
+`;
+const BodyContent = styled(ParallaxLayer)`
+  display: grid;
+  grid-gap: 0;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 10rem;
+  grid-template-areas: "Top"
+                       "Footer";
+`;
 const AnglerLayer = styled(ParallaxLayer)``;
 const Angler = styled.div`
   position: relative;
@@ -59,13 +71,30 @@ const Container = styled.div`
 `;
 const ButtonCTA = styled.button``;
 const Hero = styled.div`
-  ${tw('w-full')};
   display: grid;
   justify-items: center;
-  grid-template-columns:
-        [viewport-start] minmax(1em, 1fr)
-        [container-start] minmax(0, 30em) [container-end]
-        minmax(1em, 1fr) [viewport-end];
+  text-align: center;
+  grid-template-rows: 4rem repeat(4, auto) 6rem;
+  grid-template-columns: 12rem 1fr 12rem;
+  grid-template-areas: ". . ."
+                       ". HeroHowdy ."
+                       ". HeroBigtitle ."
+                       ". HeroSubtitle ."
+                       ". HeroLink .";
+                       ". . ."
+   @media (max-width: 1400px) {
+     grid-template-columns: 6rem 1fr 6rem;
+   }
+   @media (max-width: 900px) {
+    grid-template-columns: 1fr;
+    grid-template-rows: 4rem repeat(4, auto);
+    grid-gap: .25rem;
+    grid-template-areas: "."
+                         "HeroHowdy"
+                         "HeroBigtitle"
+                         "HeroSubtitle"
+                         "HeroLink";
+   }
 `;
 const BigTitle = styled.h1`
   ${tw('text-white mb-0')};
@@ -90,6 +119,42 @@ const Description = styled.p`
 `;
 const ProjectWrapper = styled.div`
   display: grid;
+`;
+const ProjectWrapperImageRight = styled.div`
+  display: grid;
+  grid-gap: 1rem;
+  grid-template-columns: 50% 1fr;
+  grid-template-rows: 4rem 1fr 2rem auto 1fr 4rem;
+  grid-template-areas: ". ."
+                       ". Image"
+                       "Title Image"
+                       "Description Image"
+                       ". Image"
+                       ". .";
+  @media (max-width: 900px) {
+   grid-template-columns: 1fr;
+   grid-template-rows: 2rem repeat(3, auto) 2rem;
+   grid-gap: .25rem;
+   grid-template-areas: "." "Title" "Image" "Description" ".";
+  }
+`;
+const ProjectWrapperImageLeft = styled.div`
+  display: grid;
+  grid-gap: 1rem;
+  grid-template-columns: 50% 1fr;
+  grid-template-rows: 4rem 1fr 2rem auto 1fr 4rem;
+  grid-template-areas: ". ."
+                       "Image ."
+                       "Image Title"
+                       "Image Description"
+                       "Image ."
+                       ". .";
+  @media (max-width: 900px) {
+   grid-template-columns: 1fr;
+   grid-template-rows: 2rem repeat(3, auto) 2rem;
+   grid-gap: .25rem;
+   grid-template-areas: "." "Title" "Image" "Description" ".";
+  }
 `;
 const ProjectCardTitle = styled.h4`
   ${tw('text-white uppercase')};
@@ -121,15 +186,16 @@ class App extends React.Component {
     return (
       <div>
 
-        <Parallax ref={ref => (this.parallax = ref)} pages={7}>
+        <Parallax ref={ref => (this.parallax = ref)} pages={9}>
           <Helmet>
             <title>Matt Trice Design | trice.design | UX Design, Front End Development</title>
             <meta name="description" content="I am an Atlanta based designer specializing in UI and Web Design, UX Development, and prototyping." />
           </Helmet>
-          <OceanBG offset={0} speed={0} factor={7} className={'oceanbg'}   />
+          <TheOceanfromGod offset={0} speed={0} factor={9} />
           <SunRaysfromGod offset={0} speed={.25} factor={6}>
             <Img alt={'Sun rays from God'} fluid={this.props.data.imageSunRays.childImageSharp.fluid} />
           </SunRaysfromGod>
+
           <ParallaxLayer offset={0} speed={1}>
             <UpBubblesOneTop>
               <SVG icon="bubble" width={3} left="36%" top="32%" />
@@ -181,11 +247,79 @@ class App extends React.Component {
               <SVG icon="bubble" width={3} left="66%" top="21%" />
             </UpBubblesThree>
           </ParallaxLayer>
-          <ParallaxLayer offset={2.2} speed={-0.45} style={{ display: 'grid', justifyContent: 'right', height: 'auto' }}>
+          <ParallaxLayer offset={2.5} speed={0.1} factor={2}>
+            <UpBubblesOne>
+              <SVG icon="bubble" width={3} left="76%" top="28%" />
+              <SVG icon="bubble" width={2} left="60%" top="38%" />
+              <SVG icon="bubble" width={4} left="82%" top="30%" />
+            </UpBubblesOne>
+            <UpBubblesTwo>
+              <SVG icon="bubble" width={4} left="74%" top="30%" />
+              <SVG icon="bubble" width={3} left="61%" top="14%" />
+              <SVG icon="bubble" width={2} left="49%" top="11%" />
+            </UpBubblesTwo>
+            <UpBubblesThree>
+              <SVG icon="bubble" width={2} left="52%" top="22%" />
+              <SVG icon="bubble" width={4} left="38%" top="44%" />
+              <SVG icon="bubble" width={3} left="46%" top="21%" />
+            </UpBubblesThree>
+          </ParallaxLayer>
+          <ParallaxLayer offset={3.5} speed={0.1} factor={2}>
+            <UpBubblesOne>
+              <SVG icon="bubble" width={3} left="36%" top="32%" />
+              <SVG icon="bubble" width={2} left="20%" top="34%" />
+              <SVG icon="bubble" width={4} left="42%" top="33%" />
+            </UpBubblesOne>
+            <UpBubblesTwo>
+              <SVG icon="bubble" width={4} left="34%" top="32%" />
+              <SVG icon="bubble" width={3} left="21%" top="34%" />
+              <SVG icon="bubble" width={2} left="39%" top="31%" />
+            </UpBubblesTwo>
+            <UpBubblesThree>
+              <SVG icon="bubble" width={2} left="12%" top="32%" />
+              <SVG icon="bubble" width={4} left="38%" top="34%" />
+              <SVG icon="bubble" width={3} left="16%" top="31%" />
+            </UpBubblesThree>
+          </ParallaxLayer>
+          <ParallaxLayer offset={5.5} speed={0.1} factor={2}>
+            <UpBubblesOne>
+              <SVG icon="bubble" width={3} left="26%" top="32%" />
+              <SVG icon="bubble" width={2} left="30%" top="34%" />
+              <SVG icon="bubble" width={4} left="32%" top="33%" />
+            </UpBubblesOne>
+            <UpBubblesTwo>
+              <SVG icon="bubble" width={4} left="24%" top="32%" />
+              <SVG icon="bubble" width={3} left="31%" top="34%" />
+              <SVG icon="bubble" width={2} left="29%" top="31%" />
+            </UpBubblesTwo>
+            <UpBubblesThree>
+              <SVG icon="bubble" width={2} left="22%" top="32%" />
+              <SVG icon="bubble" width={4} left="28%" top="34%" />
+              <SVG icon="bubble" width={3} left="26%" top="31%" />
+            </UpBubblesThree>
+          </ParallaxLayer>
+          <ParallaxLayer offset={4.5} speed={0.1} factor={2}>
+            <UpBubblesOne>
+              <SVG icon="bubble" width={3} left="66%" top="28%" />
+              <SVG icon="bubble" width={2} left="70%" top="38%" />
+              <SVG icon="bubble" width={4} left="72%" top="30%" />
+            </UpBubblesOne>
+            <UpBubblesTwo>
+              <SVG icon="bubble" width={4} left="64%" top="30%" />
+              <SVG icon="bubble" width={3} left="71%" top="14%" />
+              <SVG icon="bubble" width={2} left="69%" top="11%" />
+            </UpBubblesTwo>
+            <UpBubblesThree>
+              <SVG icon="bubble" width={2} left="62%" top="22%" />
+              <SVG icon="bubble" width={4} left="68%" top="44%" />
+              <SVG icon="bubble" width={3} left="66%" top="21%" />
+            </UpBubblesThree>
+          </ParallaxLayer>
+          <ParallaxLayer offset={4.2} speed={-0.45} style={{ display: 'grid', justifyContent: 'right', height: 'auto' }}>
             <Img alt={'The infamous squid lurking in the background'} fluid={this.props.data.imageSquid.childImageSharp.fluid} className="squid-silhouette" />
           </ParallaxLayer>
-          <ParallaxLayer offset={5.4} speed={-0.4} factor={1} className={'background-01'} />
-          <ParallaxLayer offset={5} speed={-0.3} factor={2} className={'background--cliffs'}>
+          <ParallaxLayer offset={8} speed={-0.75} factor={1} className={'background-01'} />
+          <ParallaxLayer offset={7} speed={-0.25} factor={2} className={'background--cliffs'}>
             <UpBubblesOne>
               <SVG icon="bubble" width={3} left="26%" top="32%" />
               <SVG icon="bubble" width={2} left="30%" top="34%" />
@@ -220,20 +354,20 @@ class App extends React.Component {
 
 
 
-          <ParallaxLayer offset={0.15} speed={0} factor={7}>
+          <BodyContent offset={0} speed={0} factor={9}>
             <Container>
               <Hero>
-                <img alt="Howdy, Partner!" src={howdy} className="item--contained howdy__main" />
-                <BigTitle className="item--contained">
+                <img alt="Howdy, Partner!" src={howdy} className="howdy__main" style={{ gridArea: "HeroHowdy" }} />
+                <BigTitle style={{ gridArea: "HeroBigtitle" }} >
                   My name is Matt Trice.
                 </BigTitle>
-                <Subtitle className="item--contained">I am an Atlanta based designer specializing in UI and Web Design, UX Development, and prototyping. From concept to completion, I love having a hand in the full life cycle of an idea.</Subtitle>
-                <Link to="/contact" className="item--contained">
+                <Subtitle style={{ gridArea: "HeroSubtitle" }} >I am an Atlanta based designer specializing in UI and Web Design, UX Development, and prototyping. From concept to completion, I love having a hand in the full life cycle of an idea.</Subtitle>
+                <Link to="/contact" style={{ gridArea: "HeroLink" }} >
                   <ButtonCTA className="btn btn--actionjackson"><span className="btn__text">Let's make something cool</span> <FaChevronRight size="1.45em" /></ButtonCTA>
                 </Link>
               </Hero>
-              <ProjectWrapper className="project__grid--imageRight">
-                <Img alt={'Topaz Designs'} fluid={this.props.data.imageShotttTopaz.childImageSharp.fluid} className="shottt-topaz" />
+              <ProjectWrapperImageRight>
+                <Img alt={'Topaz Designs'} fluid={this.props.data.imageShotttTopaz.childImageSharp.fluid} className="shottt-topaz--home" imgStyle={{ objectFit: "contain" }} />
                 <ProjectCardTitle className="project__title">WEB DESIGN, UX DEVELOPMENT</ProjectCardTitle>
                 <ProjectCardDescription className="project__description">
                   <img alt="Logo for Topaz" src={logotopaz} className="project__logo" /><br />
@@ -244,9 +378,9 @@ class App extends React.Component {
                     </button>
                   </Link>
                 </ProjectCardDescription>
-              </ProjectWrapper>
-              <ProjectWrapper className="project__grid--imageLeft">
-                <Img alt={'Freshtix designs mocked up in hardware'} fluid={this.props.data.imageShotttFreshtix.childImageSharp.fluid} className="shottt-freshtix" />
+              </ProjectWrapperImageRight>
+              <ProjectWrapperImageLeft>
+                <Img alt={'Freshtix designs mocked up in hardware'} fluid={this.props.data.imageShotttFreshtix.childImageSharp.fluid} imgStyle={{ objectFit: "contain" }}  style={{ gridArea: "Image" }} />
                 <ProjectCardTitle className="project__title">PRODUCT DESIGN, MOBILE APP DESIGN, UI & UX, PROTOTYPING</ProjectCardTitle>
                 <ProjectCardDescription className="project__description">
                   <img alt="Logo for Freshtix" src={logofreshtix} className="project__logo" /><br />
@@ -257,9 +391,9 @@ class App extends React.Component {
                     </button>
                   </Link>
                 </ProjectCardDescription>
-              </ProjectWrapper>
-              <ProjectWrapper className="project__grid--imageRight">
-                <Img alt={'Robit designs mocked up in hardware'} fluid={this.props.data.imageShotttRobit.childImageSharp.fluid} className="shottt-robit" />
+              </ProjectWrapperImageLeft>
+              <ProjectWrapperImageRight>
+                <Img alt={'Robit designs mocked up in hardware'} fluid={this.props.data.imageShotttRobit.childImageSharp.fluid} imgStyle={{ objectFit: "contain" }}  style={{ gridArea: "Image" }} />
                 <ProjectCardTitle className="project__title">APP CONCEPT, PRODUCT DESIGN, UI & UX, PROTOTYPE</ProjectCardTitle>
                 <ProjectCardDescription className="project__description">
                   <img alt="Logo for Robit" src={logorobit} className="project__logo" /><br />
@@ -270,9 +404,9 @@ class App extends React.Component {
                     </button>
                   </Link>
                 </ProjectCardDescription>
-              </ProjectWrapper>
-              <ProjectWrapper className="project__grid--imageLeft">
-                <Img alt={'Payscape designs mocked up in hardware'} fluid={this.props.data.imageShotttPayscape.childImageSharp.fluid} className="shottt-payscape" />
+              </ProjectWrapperImageRight>
+              <ProjectWrapperImageLeft>
+                <Img alt={'Payscape designs mocked up in hardware'} fluid={this.props.data.imageShotttPayscape.childImageSharp.fluid} imgStyle={{ objectFit: "contain" }}  style={{ gridArea: "Image" }} />
                 <ProjectCardTitle className="project__title">WEBSITE DESIGN, UI & UX, WORDPRESS DESIGN</ProjectCardTitle>
                 <ProjectCardDescription className="project__description">
                   <img alt="logo for Payscape" src={logopayscape} className="project__logo" /><br />
@@ -283,14 +417,14 @@ class App extends React.Component {
                     </button>
                   </Link>
                 </ProjectCardDescription>
-              </ProjectWrapper>
+              </ProjectWrapperImageLeft>
             </Container>
             <Footer />
-          </ParallaxLayer>
+          </BodyContent>
 
 
 
-          <AnglerLayer offset={5.35} speed={-0.15}>
+          <AnglerLayer offset={8.15} speed={-0.15}>
             <Angler className={'anglerFish'}>
               <img alt="This is an illuminated Angler Fish" className="bottom" src={anglerbright} />
             </Angler>
@@ -325,14 +459,14 @@ imageSunRays: file(relativePath: { eq: "sunraysfromgod.png" }) {
   }
 imageShotttTopaz: file(relativePath: { eq: "shottt-topaz.png" }) {
   childImageSharp {
-    fluid(maxWidth: 1000) {
+    fluid(maxWidth: 800) {
       ...GatsbyImageSharpFluid
       }
     }
   }
 imageShotttFreshtix: file(relativePath: { eq: "shottt-freshtix.png" }) {
   childImageSharp {
-    fluid(maxWidth: 1000) {
+    fluid(maxWidth: 800) {
       ...GatsbyImageSharpFluid
       }
     }
