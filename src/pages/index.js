@@ -289,8 +289,8 @@ class Home extends React.Component {
 
 export default Home
 
-export const fluidImage = graphql`
-fragment fluidImage on File {
+export const fluidImageHome = graphql`
+fragment fluidImageHome on File {
   childImageSharp {
     fluid(maxWidth: 1000) {
       ...GatsbyImageSharpFluid
@@ -302,22 +302,22 @@ fragment fluidImage on File {
 export const pageQuery = graphql`
   query {
     imageSunRays: file(relativePath: { eq: "sunraysfromgod.png" }) {
-      ...fluidImage
+      ...fluidImageHome
     }
     imageShotttTopaz: file(relativePath: { eq: "shottt-topaz.png" }) {
-      ...fluidImage
+      ...fluidImageHome
     }
     imageShotttFreshtix: file(relativePath: { eq: "shottt-freshtix.png" }) {
-      ...fluidImage
+      ...fluidImageHome
     }
     imageShotttRobit: file(relativePath: { eq: "shottt-robit.png" }) {
-      ...fluidImage
+      ...fluidImageHome
     }
     imageShotttPayscape: file(relativePath: { eq: "shottt-payscape.png" }) {
-      ...fluidImage
+      ...fluidImageHome
     }
     imageSquid: file(relativePath: { eq: "squid-silhouette.png" }) {
-      ...fluidImage
+      ...fluidImageHome
     }
   }
 `

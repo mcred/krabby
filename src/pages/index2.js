@@ -8,8 +8,8 @@ import { TimingAnimation, Easing } from 'react-spring/dist/addons';
 import SVG from '../components/SVG';
 import Bubbles from '../components/Bubbles';
 import '../styles/global';
+import '../assets/css/krabby.scss';
 import styled from 'react-emotion';
-import { rotate, UpBubblesOne, UpBubblesOneTop, UpBubblesTwo, UpBubblesTwoTop, UpBubblesThree, UpBubblesThreeTop, UpDown, UpDownWide, waveAnimation } from '../styles/animations';
 import logotopaz from '../images/logo-topaz.svg';
 import logofreshtix from '../images/logo-freshtix.svg';
 import logorobit from '../images/logo-robit.svg';
@@ -18,11 +18,7 @@ import logotd from '../images/logo-td.svg';
 import bottomburm from '../images/bottom-burm.svg';
 import howdy from '../images/howdy.svg';
 import anglerbright from '../images/angler-bright.png';
-
-import '../assets/css/krabby.scss';
 import { FaChevronRight } from 'react-icons/fa';
-import { FaPaperPlane } from 'react-icons/fa';
-import FloatingLabel, { floatingStyles, focusStyles, inputStyles, labelStyles, spanStyles, buttonStyles, textareaStyles } from 'floating-label-react';
 import { Link, graphql } from 'gatsby';
 import Img from 'gatsby-image';
 import Navigation from '../components/Navigation';
@@ -54,16 +50,6 @@ const Angler = styled.div`
   position: relative;
   left: 2rem;
   max-width: 100%;
-`;
-const FormTitle = styled.h3`
-  ${tw('text-white mb-0')};
-  text-shadow: -2px 4px 32px rgba(0, 0, 0, 1);
-  font-size: 2rem;
-  font-family: 'Abril Fatface', cursive;
-  color: #FFEE00;
-  @media (min-width: 0px) and (max-width: 767px) {
-    font-size: 1.85em;
-   }
 `;
 const OceanBG = styled(ParallaxLayer)`
 `;
@@ -184,22 +170,11 @@ const MobileContact = styled.div`
     display: none;
   }
 `;
-const Cuntainer = Keyframes.Spring({
-  show: { opacity: 1 },
-  showAndHide: [{ opacity: 1 }, { opacity: 0 }],
-  wiggle: async (next, cancel, ownProps) => {
-    await next({ x: 100, config: config.wobbly })
-    await delay(1000)
-    await next({ x: 0, config: config.gentle })
-    while (true)
-        await next({ opacity: 1, from: { opacity: 0 }, reset: true })
-  }
-})
 
 
 
 
-class App extends React.Component {
+class Home extends React.Component {
   render() {
     return (
       <div>
@@ -213,26 +188,18 @@ class App extends React.Component {
           <SunRaysfromGod offset={0} speed={.25} factor={6}>
             <Img alt={'Sun rays from God'} fluid={this.props.data.imageSunRays.childImageSharp.fluid} />
           </SunRaysfromGod>
-
           <Bubbles />
           <ParallaxLayer offset={4.2} speed={-0.45} style={{ display: 'grid', justifyContent: 'right', height: 'auto' }}>
             <Img alt={'The infamous squid lurking in the background'} fluid={this.props.data.imageSquid.childImageSharp.fluid} className="squid-silhouette" />
           </ParallaxLayer>
-
-
           <BodyContent offset={0} speed={0} factor={9}>
             <Container>
               <Hero>
                 <img alt="Howdy, Partner!" src={howdy} className="howdy__main" style={{ gridArea: "HeroHowdy" }} />
                 <BigTitle style={{ gridArea: "HeroBigtitle" }} >
                   My name is Matt Trice.
-
-
                 </BigTitle>
-                <Subtitle style={{ gridArea: "HeroSubtitle" }} >I am an Atlanta based designer specializing in UI and Web Design, UX Development, and prototyping. From concept to completion, I love having a hand in the full life cycle of an idea.
-
-
-                </Subtitle>
+                <Subtitle style={{ gridArea: "HeroSubtitle" }} >I am an Atlanta based designer specializing in UI and Web Design, UX Development, and prototyping. From concept to completion, I love having a hand in the full life cycle of an idea.</Subtitle>
                 <Link to="/contact" style={{ gridArea: "HeroLink" }} >
                   <ButtonCTA className="btn btn--actionjackson"><span className="btn__text">Let's make something cool</span> <FaChevronRight size="1.45em" /></ButtonCTA>
                 </Link>
@@ -317,51 +284,37 @@ class App extends React.Component {
   }
 }
 
-export default App
+export default Home
 
-export const pageQuery = graphql`
-query {
-imageSunRays: file(relativePath: { eq: "sunraysfromgod.png" }) {
+export const fluidImageHome2 = graphql`
+fragment fluidImageHome2 on File {
   childImageSharp {
     fluid(maxWidth: 1000) {
       ...GatsbyImageSharpFluid
-      }
-    }
-  }
-imageShotttTopaz: file(relativePath: { eq: "shottt-topaz.png" }) {
-  childImageSharp {
-    fluid(maxWidth: 800) {
-      ...GatsbyImageSharpFluid
-      }
-    }
-  }
-imageShotttFreshtix: file(relativePath: { eq: "shottt-freshtix.png" }) {
-  childImageSharp {
-    fluid(maxWidth: 800) {
-      ...GatsbyImageSharpFluid
-      }
-    }
-  }
-imageShotttRobit: file(relativePath: { eq: "shottt-robit.png" }) {
-  childImageSharp {
-    fluid(maxWidth: 1000) {
-      ...GatsbyImageSharpFluid
-      }
-    }
-  }
-imageShotttPayscape: file(relativePath: { eq: "shottt-payscape.png" }) {
-  childImageSharp {
-    fluid(maxWidth: 1000) {
-      ...GatsbyImageSharpFluid
-      }
-    }
-  }
-imageSquid: file(relativePath: { eq: "squid-silhouette.png" }) {
-  childImageSharp {
-    fluid(maxWidth: 1000) {
-      ...GatsbyImageSharpFluid
-      }
     }
   }
 }
+`;
+
+export const pageQuery = graphql`
+  query {
+    imageSunRays: file(relativePath: { eq: "sunraysfromgod.png" }) {
+      ...fluidImageHome2
+    }
+    imageShotttTopaz: file(relativePath: { eq: "shottt-topaz.png" }) {
+      ...fluidImageHome2
+    }
+    imageShotttFreshtix: file(relativePath: { eq: "shottt-freshtix.png" }) {
+      ...fluidImageHome2
+    }
+    imageShotttRobit: file(relativePath: { eq: "shottt-robit.png" }) {
+      ...fluidImageHome2
+    }
+    imageShotttPayscape: file(relativePath: { eq: "shottt-payscape.png" }) {
+      ...fluidImageHome2
+    }
+    imageSquid: file(relativePath: { eq: "squid-silhouette.png" }) {
+      ...fluidImageHome2
+    }
+  }
 `
