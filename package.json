@@ -5,6 +5,7 @@
   "author": "LekoArts <hello@lekoarts.de>",
   "license": "MIT",
   "dependencies": {
+    "animate.css": "^3.7.0",
     "aos": "^2.3.4",
     "babel-plugin-tailwind": "^0.1.10",
     "classnames": "^2.2.6",
@@ -32,6 +33,7 @@
     "postcss-cli": "^6.0.1",
     "prop-types": "^15.6.2",
     "react": "^16.6.0",
+    "react-animate-on-scroll": "^2.1.5",
     "react-dom": "^16.6.0",
     "react-emotion": "^9.2.12",
     "react-helmet": "^5.2.0",

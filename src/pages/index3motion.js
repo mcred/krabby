@@ -6,6 +6,7 @@ import { Spring  } from 'react-spring';
 import { animated as a, Keyframes } from 'react-spring';
 import { TimingAnimation, Easing } from 'react-spring/dist/addons';
 import SVG from '../components/SVG';
+import Bubbles from '../components/Bubbles';
 import '../styles/global';
 import styled from 'react-emotion';
 import { rotate, UpBubblesOne, UpBubblesOneTop, UpBubblesTwo, UpBubblesTwoTop, UpBubblesThree, UpBubblesThreeTop, UpDown, UpDownWide, waveAnimation } from '../styles/animations';
@@ -183,6 +184,17 @@ const MobileContact = styled.div`
     display: none;
   }
 `;
+const Cuntainer = Keyframes.Spring({
+  show: { opacity: 1 },
+  showAndHide: [{ opacity: 1 }, { opacity: 0 }],
+  wiggle: async (next, cancel, ownProps) => {
+    await next({ x: 100, config: config.wobbly })
+    await delay(1000)
+    await next({ x: 0, config: config.gentle })
+    while (true)
+        await next({ opacity: 1, from: { opacity: 0 }, reset: true })
+  }
+})
 
 
 
@@ -366,8 +378,36 @@ class App extends React.Component {
                 <img alt="Howdy, Partner!" src={howdy} className="howdy__main" style={{ gridArea: "HeroHowdy" }} />
                 <BigTitle style={{ gridArea: "HeroBigtitle" }} >
                   My name is Matt Trice.
+                  <Bubbles /><Bubbles /><Bubbles /><Bubbles /><Bubbles /><Bubbles />
+                  <Cuntainer state="showAndHide">
+                    {styles => <div style={styles}>Hello</div>}
+                  </Cuntainer>
                 </BigTitle>
-                <Subtitle style={{ gridArea: "HeroSubtitle" }} >I am an Atlanta based designer specializing in UI and Web Design, UX Development, and prototyping. From concept to completion, I love having a hand in the full life cycle of an idea.</Subtitle>
+                <Subtitle style={{ gridArea: "HeroSubtitle" }} >I am an Atlanta based designer specializing in UI and Web Design, UX Development, and prototyping. From concept to completion, I love having a hand in the full life cycle of an idea.
+                <Spring from={{ opacity: 0, marginTop: -1000 }} to={{ opacity: 1, marginTop: 0 }} config={{ duration: 20000 }}>
+                          { props => (
+                            <div  className="App" style={ props }>
+                              <div >
+                                <header className="App-header" >
+                                    <p>
+                                      Edit <code>src/App.js</code> and save to reload.
+                                    </p>
+                                      <a
+                                        className="App-link"
+                                        href="https://reactjs.org"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                      >
+                                      Learn React
+                                    </a>
+                                  </header>
+                                </div>
+                              </div>
+                            )
+                          }
+                        </Spring>
+
+                </Subtitle>
                 <Link to="/contact" style={{ gridArea: "HeroLink" }} >
                   <ButtonCTA className="btn btn--actionjackson"><span className="btn__text">Let's make something cool</span> <FaChevronRight size="1.45em" /></ButtonCTA>
                 </Link>
@@ -433,6 +473,28 @@ class App extends React.Component {
           <AnglerLayer offset={8.15} speed={-0.15}>
             <Angler className={'anglerFish'}>
               <img alt="This is an illuminated Angler Fish" className="bottom" src={anglerbright} />
+              <Spring from={{ opacity: 0, marginTop: -1000 }} to={{ opacity: 1, marginTop: 0 }}>
+                        { props => (
+                          <div  className="App" style={ props }>
+                            <div >
+                              <header className="App-header" >
+                                  <p>
+                                    Edit <code>src/App.js</code> and save to reload.
+                                  </p>
+                                    <a
+                                      className="App-link"
+                                      href="https://reactjs.org"
+                                      target="_blank"
+                                      rel="noopener noreferrer"
+                                    >
+                                    Learn React
+                                  </a>
+                                </header>
+                              </div>
+                            </div>
+                          )
+                        }
+                      </Spring>
             </Angler>
           </AnglerLayer>
 
