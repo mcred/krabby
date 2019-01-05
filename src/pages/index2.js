@@ -5,6 +5,8 @@ import { Parallax, ParallaxLayer } from 'react-spring/dist/addons';
 import { Spring  } from 'react-spring';
 import { animated as a, Keyframes } from 'react-spring';
 import { TimingAnimation, Easing } from 'react-spring/dist/addons';
+import { config, Transition } from 'react-spring';
+import delay from 'delay';
 import SVG from '../components/SVG';
 import Bubbles from '../components/Bubbles';
 import '../styles/global';
@@ -17,6 +19,7 @@ import logopayscape from '../images/logo-payscape.svg';
 import logotd from '../images/logo-td.svg';
 import bottomburm from '../images/bottom-burm.svg';
 import howdy from '../images/howdy.svg';
+import school1 from '../images/school-1.svg';
 import anglerbright from '../images/angler-bright.png';
 import { FaChevronRight } from 'react-icons/fa';
 import { Link, graphql } from 'gatsby';
@@ -170,6 +173,18 @@ const MobileContact = styled.div`
     display: none;
   }
 `;
+const Anim = Keyframes.Spring({
+  // Single props
+  show: { opacity: 1 },
+  // Chained animations (arrays)
+  showAndHide: [{ opacity: 1 }, { opacity: 0.5 }],
+  // Functions with side-effects with access to component props
+  wiggle: async (next, cancel, ownProps) => {
+    await next({ x: 500, config: config.wobbly })
+    await delay(1000)
+    await next({ x: 10000, config: config.gentle })
+  }
+})
 
 
 
@@ -184,17 +199,49 @@ class Home extends React.Component {
             <title>Matt Trice Design | trice.design | UX Design, Front End Development</title>
             <meta name="description" content="I am an Atlanta based designer specializing in UI and Web Design, UX Development, and prototyping." />
           </Helmet>
+
           <TheOceanfromGod offset={0} speed={0} factor={9} />
+
           <SunRaysfromGod offset={0} speed={.25} factor={6}>
             <Img alt={'Sun rays from God'} fluid={this.props.data.imageSunRays.childImageSharp.fluid} />
           </SunRaysfromGod>
+
           <Bubbles />
+          <ParallaxLayer offset={0.5} speed={-0.125}>
+            <Spring from={{
+              opacity: 1,
+              transform: 'scale(2)'
+
+            }} to={{
+              opacity: 1,
+              transform: 'scale(1)'
+            }} config={{
+
+            }}>
+              { props => (
+                <div style={ props }>
+                  <img alt="" src={school1} style={{ width: "16rem" }} />
+                </div>
+                )
+              }
+            </Spring>
+            <Anim state="wiggle">
+              {styles => <h1 style={styles}>HHHHEEELELELello</h1>}
+            </Anim>
+          </ParallaxLayer>
           <ParallaxLayer offset={4.2} speed={-0.45} style={{ display: 'grid', justifyContent: 'right', height: 'auto' }}>
             <Img alt={'The infamous squid lurking in the background'} fluid={this.props.data.imageSquid.childImageSharp.fluid} className="squid-silhouette" />
           </ParallaxLayer>
+
           <BodyContent offset={0} speed={0} factor={9}>
             <Container>
-              <Hero>
+
+            <Spring
+              from={{ opacity: 0 }}
+              to={{ opacity: 1 }}
+              config={{ duration: 1000 }}
+              >
+              {props => <div style={props}><Hero>
                 <img alt="Howdy, Partner!" src={howdy} className="howdy__main" style={{ gridArea: "HeroHowdy" }} />
                 <BigTitle style={{ gridArea: "HeroBigtitle" }} >
                   My name is Matt Trice.
@@ -203,7 +250,13 @@ class Home extends React.Component {
                 <Link to="/contact" style={{ gridArea: "HeroLink" }} >
                   <ButtonCTA className="btn btn--actionjackson"><span className="btn__text">Let's make something cool</span> <FaChevronRight size="1.45em" /></ButtonCTA>
                 </Link>
-              </Hero>
+              </Hero></div>}
+
+
+            </Spring>
+
+
+
               <ProjectWrapperImageRight>
                 <Img alt={'Topaz Designs'} fluid={this.props.data.imageShotttTopaz.childImageSharp.fluid} className="shottt-topaz--home" imgStyle={{ objectFit: "contain" }} />
                 <ProjectCardTitle className="project__title">WEB DESIGN, UX DEVELOPMENT</ProjectCardTitle>
@@ -217,6 +270,7 @@ class Home extends React.Component {
                   </Link>
                 </ProjectCardDescription>
               </ProjectWrapperImageRight>
+
               <ProjectWrapperImageLeft>
                 <Img alt={'Freshtix designs mocked up in hardware'} fluid={this.props.data.imageShotttFreshtix.childImageSharp.fluid} imgStyle={{ objectFit: "contain" }}  style={{ gridArea: "Image" }} />
                 <ProjectCardTitle className="project__title">PRODUCT DESIGN, MOBILE APP DESIGN, UI & UX, PROTOTYPING</ProjectCardTitle>
@@ -230,6 +284,7 @@ class Home extends React.Component {
                   </Link>
                 </ProjectCardDescription>
               </ProjectWrapperImageLeft>
+
               <ProjectWrapperImageRight>
                 <Img alt={'Robit designs mocked up in hardware'} fluid={this.props.data.imageShotttRobit.childImageSharp.fluid} imgStyle={{ objectFit: "contain" }}  style={{ gridArea: "Image" }} />
                 <ProjectCardTitle className="project__title">APP CONCEPT, PRODUCT DESIGN, UI & UX, PROTOTYPE</ProjectCardTitle>
@@ -243,6 +298,7 @@ class Home extends React.Component {
                   </Link>
                 </ProjectCardDescription>
               </ProjectWrapperImageRight>
+
               <ProjectWrapperImageLeft>
                 <Img alt={'Payscape designs mocked up in hardware'} fluid={this.props.data.imageShotttPayscape.childImageSharp.fluid} imgStyle={{ objectFit: "contain" }}  style={{ gridArea: "Image" }} />
                 <ProjectCardTitle className="project__title">WEBSITE DESIGN, UI & UX, WORDPRESS DESIGN</ProjectCardTitle>
@@ -256,11 +312,10 @@ class Home extends React.Component {
                   </Link>
                 </ProjectCardDescription>
               </ProjectWrapperImageLeft>
+
             </Container>
             <Footer />
           </BodyContent>
-
-
 
           <AnglerLayer offset={8.15} speed={-0.15}>
             <Angler className={'anglerFish'}>
@@ -273,9 +328,6 @@ class Home extends React.Component {
               <Navigation />
             </HeaderContainer>
           </ParallaxLayer>
-
-
-
 
         </Parallax>
 
