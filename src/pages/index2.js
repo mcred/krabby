@@ -1,11 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Helmet } from 'react-helmet';
-import { Parallax, ParallaxLayer } from 'react-spring/dist/addons';
-import { Spring  } from 'react-spring';
-import { animated as a, Keyframes } from 'react-spring';
-import { TimingAnimation, Easing } from 'react-spring/dist/addons';
-import { config, Transition } from 'react-spring';
+import { Spring, Keyframes, Transition, animated as a, animated, config } from 'react-spring';
+import { Parallax, ParallaxLayer, TimingAnimation, Easing } from 'react-spring/dist/addons';
 import delay from 'delay';
 import SVG from '../components/SVG';
 import Bubbles from '../components/Bubbles';
@@ -175,7 +172,7 @@ const MobileContact = styled.div`
 `;
 const Anim = Keyframes.Spring({
   // Single props
-  show: { opacity: 1 },
+  show: { color: 'red' },
   // Chained animations (arrays)
   showAndHide: [{ opacity: 1 }, { opacity: 0.5 }],
   // Functions with side-effects with access to component props
@@ -185,7 +182,38 @@ const Anim = Keyframes.Spring({
     await next({ x: 10000, config: config.gentle })
   }
 })
+const Anglerswim = Keyframes.Spring(async next => {
+  // None of this will cause React to render, the component renders only once :-)
+  while (true) {
+    await next({
+      from: { left: '-10%', opacity: 0.125, width: 340, height: 340 },
+      opacity: 1,
+      width: 480,
+      height: 480,
+    })
+    await next({
+      from: { left: '0%' },
+      left: '6%',
+      width: 480,
+      height: 480,
+    })
+    next({
+      from: { top: '0%' },
+      top: '2%',
+      config: config.wobbly,
+    })
 
+    await delay(4000)
+    await next({ left: '-10%' })
+    await next({ top: '0%' })
+    await next({
+      opacity: 0.5,
+      width: 480,
+      height: 480,
+    })
+    await delay(4000)
+  }
+})
 
 
 
@@ -225,9 +253,7 @@ class Home extends React.Component {
                 )
               }
             </Spring>
-            <Anim state="wiggle">
-              {styles => <h1 style={styles}>HHHHEEELELELello</h1>}
-            </Anim>
+
           </ParallaxLayer>
           <ParallaxLayer offset={4.2} speed={-0.45} style={{ display: 'grid', justifyContent: 'right', height: 'auto' }}>
             <Img alt={'The infamous squid lurking in the background'} fluid={this.props.data.imageSquid.childImageSharp.fluid} className="squid-silhouette" />
@@ -251,8 +277,6 @@ class Home extends React.Component {
                   <ButtonCTA className="btn btn--actionjackson"><span className="btn__text">Let's make something cool</span> <FaChevronRight size="1.45em" /></ButtonCTA>
                 </Link>
               </Hero></div>}
-
-
             </Spring>
 
 
@@ -318,9 +342,17 @@ class Home extends React.Component {
           </BodyContent>
 
           <AnglerLayer offset={8.15} speed={-0.15}>
-            <Angler className={'anglerFish'}>
-              <img alt="This is an illuminated Angler Fish" className="bottom" src={anglerbright} />
-            </Angler>
+            <Anglerswim native>
+              {props => (
+                <animated.div
+                  style={{ position: 'relative', ...props }}
+                >
+                  <Angler className={'anglerFish'}>
+                    <img alt="This is an illuminated Angler Fish" className="bottom" src={anglerbright} />
+                  </Angler>
+                </animated.div>
+              )}
+            </Anglerswim>
           </AnglerLayer>
 
           <ParallaxLayer offset={0} speed={1}>
